@@ -1,0 +1,775 @@
+
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  
+  <title>KaTeX 数学公式测试 | My Daybook</title>
+  
+  <meta name="description" content="测试 daybook 对 KaTeX 数学公式、align 环境、矩阵、希腊字母和常用数学符号的渲染支持。">
+  
+
+  <link rel="canonical" href="/notes/examples/KaTeX%20%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95/">
+  
+    
+  
+  <link rel="alternate" hreflang="zh-CN" href="/notes/examples/KaTeX%20%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95/">
+  <link rel="alternate" hreflang="x-default" href="/notes/examples/KaTeX%20%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95/">
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="/en/notes/examples/katex-mathematical-demo/">
+  
+  
+
+  <meta property="og:title" content="KaTeX 数学公式测试 | My Daybook">
+  <meta property="og:description" content="测试 daybook 对 KaTeX 数学公式、align 环境、矩阵、希腊字母和常用数学符号的渲染支持。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="/notes/examples/KaTeX 数学公式测试/">
+  
+  <meta property="og:site_name" content="My Daybook">
+  <meta property="og:locale" content="zh_CN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KaTeX 数学公式测试 | My Daybook">
+  <meta name="twitter:description" content="测试 daybook 对 KaTeX 数学公式、align 环境、矩阵、希腊字母和常用数学符号的渲染支持。">
+  
+
+  
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"/notes/examples/KaTeX 数学公式测试/#article","url":"/notes/examples/KaTeX 数学公式测试/","headline":"KaTeX 数学公式测试","description":"测试 daybook 对 KaTeX 数学公式、align 环境、矩阵、希腊字母和常用数学符号的渲染支持。","datePublished":"2026-06-18","dateModified":"2026-06-18","author":{"@id":"/#person"},"mainEntityOfPage":"/notes/examples/KaTeX 数学公式测试/","keywords":"Markdown, KaTeX, 数学公式"},{"@type":"BreadcrumbList","@id":"/notes/examples/KaTeX 数学公式测试/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"/"},{"@type":"ListItem","position":2,"name":"笔记","item":"/notes/"},{"@type":"ListItem","position":3,"name":"KaTeX 数学公式测试","item":"/notes/examples/KaTeX 数学公式测试/"}]}]}
+  </script>
+  
+
+  <script src="/js/theme.7ffa5cd396.js"></script>
+  <script>
+    (function() {
+      try {
+        var raw = localStorage.getItem('daybook:user-settings');
+        if (raw) {
+          var settings = JSON.parse(raw);
+          var html = document.documentElement;
+          if (settings.useSystemCursor) html.setAttribute('data-use-system-cursor', 'true');
+          if (settings.disableComments) html.setAttribute('data-comments-disabled', 'true');
+          if (settings.reducedMotion || settings.disableTitleTransition) html.setAttribute('data-reduced-motion', 'true');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/js/code-copy.0248e0ee56.js" defer></script>
+  <script src="/js/toc.1d0eb2941e.js" defer></script>
+  <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
+  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/note-filters.abd605d41a.js" defer></script>
+  <script src="/js/lightbox.a15c0f66e6.js" defer></script>
+  <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
+  <script src="/js/gallery.3040baa394.js" defer></script>
+  <script src="/js/embeds.b844a84028.js" defer></script>
+  <script src="/js/page-transition-engine.f6cb3c2db8.js" defer></script>
+  <script src="/js/graph-loader.b1c100b294.js" defer></script>
+  <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
+  <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
+  <script src="/js/daybook-router.71093c5f1e.js" defer></script>
+  <script src="/js/katex-loader.a8aaa8fbda.js" defer></script>
+  <script src="/js/custom-cursor.bcb8f786d8.js" defer></script>
+  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
+  <link rel="stylesheet" href="/css/global.066de11735.css">
+  
+  <link rel="stylesheet" href="/vendor/katex/katex.min.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+</head>
+
+<body class="note-body page-body" data-page-kind="note" data-search-index-url="/search.json" data-stats-enabled="true">
+  
+<div class="persistent-logo-container" id="mobile-top-bar">
+  <div class="persistent-logo-main">
+    <a class="site-logo persistent-logo" href="/" aria-label="Author 首页">
+      <span>Author</span>
+    </a>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-label="打开导航菜单" aria-controls="mobile-drawer">
+      <span class="material-symbol icon-menu" aria-hidden="true">menu</span>
+      <span class="material-symbol icon-close" aria-hidden="true">close</span>
+    </button>
+  </div>
+</div>
+
+  
+<div id="settings-overlay" class="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title" aria-hidden="true" inert>
+  <div class="settings-backdrop" data-settings-close aria-label="关闭设置面板" data-i18n-aria-en="Close Settings" data-i18n-aria-zh="关闭设置面板"></div>
+  <div class="settings-paper">
+    <button class="settings-close-btn" type="button" data-settings-close aria-label="关闭设置面板" data-i18n-aria-en="Close Settings" data-i18n-aria-zh="关闭设置面板">
+      <span class="material-symbol" aria-hidden="true">close</span>
+    </button>
+    
+    <h2 id="settings-title" class="settings-title" data-i18n-en="Settings" data-i18n-zh="设置">设置</h2>
+    
+    <div class="settings-content">
+      <label class="settings-checkbox-label setting-item-cursor">
+        <input type="checkbox" id="setting-system-cursor" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Use System Cursor" data-i18n-zh="使用系统默认光标">
+          使用系统默认光标
+        </span>
+      </label>
+
+      <label class="settings-checkbox-label setting-item-clock-cursor" style="margin-left: 2rem; margin-top: -15px;">
+        <input type="checkbox" id="setting-clock-cursor" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Enable Clock Cursor Effect" data-i18n-zh="启用时钟光标效果">
+          启用时钟光标效果
+        </span>
+      </label>
+      
+      <label class="settings-checkbox-label">
+        <input type="checkbox" id="setting-disable-comments" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Disable Comments" data-i18n-zh="禁用评论区">
+          禁用评论区
+        </span>
+      </label>
+
+      <label class="settings-checkbox-label">
+        <input type="checkbox" id="setting-reduced-motion" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Reduce Motion" data-i18n-zh="减少动画">
+          减少动画
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+  <div class="page-frame" id="daybook-page" data-daybook-page>
+  
+  <div class="page-shell">
+    
+<aside class="side-rail" aria-label="站点导航">
+  <a class="side-avatar-link" href="/" aria-label="回到首页">
+    <img class="side-avatar" src="/images/avatar/default.png" alt="Author头像">
+  </a>
+
+  <nav class="side-nav" aria-label="主导航">
+    <a class="nav-link" href="/">
+      <span class="nav-icon material-symbol" aria-hidden="true">home</span>
+      <span class="nav-label">首页</span>
+    </a>
+    <a class="nav-link" href="/notes/">
+      <span class="nav-icon material-symbol" aria-hidden="true">article</span>
+      <span class="nav-label">笔记</span>
+    </a>
+    <a class="nav-link" href="/archive/">
+      <span class="nav-icon material-symbol" aria-hidden="true">archive</span>
+      <span class="nav-label">归档</span>
+    </a>
+    <a class="nav-link" href="/graph/">
+      <span class="nav-icon material-symbol" aria-hidden="true">account_tree</span>
+      <span class="nav-label">图谱</span>
+    </a>
+    <a class="nav-link" href="/about/">
+      <span class="nav-icon material-symbol" aria-hidden="true">info</span>
+      <span class="nav-label">关于</span>
+    </a>
+  </nav>
+
+
+</aside>
+
+
+    <main class="site-main page-main">
+      <div id="main-content-wrapper">
+        
+<div class="mobile-reading-controls" id="mobile-reading-controls" style="--reading-progress: 0%;">
+  <div class="rc-layer rc-base">
+    <button class="mobile-reading-btn mobile-top-btn" type="button" aria-label="回到顶部">
+      <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    </button>
+    <span class="mobile-reading-percentage" data-mobile-progress-text>0%</span>
+    <button class="mobile-reading-btn mobile-bottom-btn" type="button" aria-label="前往底部">
+      <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    </button>
+  </div>
+  <div class="rc-layer rc-progress">
+    <button class="mobile-reading-btn mobile-top-btn" type="button" tabindex="-1" aria-hidden="true">
+      <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    </button>
+    <span class="mobile-reading-percentage" data-mobile-progress-text>0%</span>
+    <button class="mobile-reading-btn mobile-bottom-btn" type="button" tabindex="-1" aria-hidden="true">
+      <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    </button>
+  </div>
+</div>
+<div class="notes-page note-detail-page has-toc">
+  <section class="note-detail article-stage" aria-label="文章详情">
+    <article class="note" data-has-mermaid="false" data-has-math="true">
+      <header class="note-header">
+        <div class="note-title-wrapper">
+          <a class="note-back-link" href="/notes/" aria-label="返回">
+            <span class="material-symbol" aria-hidden="true">arrow_back</span>
+          </a>
+          <h1 class="note-title">
+            <span data-title-transition-key="examples/KaTeX 数学公式测试">
+              <span class="article-title--morphable" data-title-id="examples/KaTeX 数学公式测试"><span class="title-glyph" data-glyph-index="0">K</span><span class="title-glyph" data-glyph-index="1">a</span><span class="title-glyph" data-glyph-index="2">T</span><span class="title-glyph" data-glyph-index="3">e</span><span class="title-glyph" data-glyph-index="4">X</span><span class="title-glyph" data-glyph-index="5"> </span><span class="title-glyph" data-glyph-index="6">数</span><span class="title-glyph" data-glyph-index="7">学</span><span class="title-glyph" data-glyph-index="8">公</span><span class="title-glyph" data-glyph-index="9">式</span><span class="title-glyph" data-glyph-index="10">测</span><span class="title-glyph" data-glyph-index="11">试</span></span>
+            </span>
+          </h1>
+        </div>
+        
+        <p class="note-meta">
+          <span class="meta-transition-group" data-meta-transition-key="examples/KaTeX 数学公式测试">
+            <time datetime="2026-06-18" data-date-transition-key="examples/KaTeX 数学公式测试">2026-06-18</time>
+            <span class="reading-time">2 min</span>
+          </span>
+          <span class="meta-stagger">
+            <span>354 chars</span>
+          </span>
+          
+          <span class="meta-stagger">
+            <span data-page-views data-path="/notes/examples/KaTeX 数学公式测试/">--</span>
+            <span data-page-views-label data-path="/notes/examples/KaTeX 数学公式测试/">views</span>
+          </span>
+          
+          
+          <span class="meta-stagger note-bilingual-wrapper">
+            <button type="button" class="bilingual-toggle-btn" aria-label="Toggle Bilingual Translation" data-current-lang="zh-CN" data-alt-fragment-url="/en/notes/examples/katex-mathematical-demo/fragment.json">
+              <span class="bilingual-char bilingual-zh">中</span>
+              <span class="bilingual-char bilingual-en">En</span>
+            </button>
+          </span>
+          
+        </p>
+        
+        <p class="note-summary">测试 daybook 对 KaTeX 数学公式、align 环境、矩阵、希腊字母和常用数学符号的渲染支持。</p>
+      </header>
+
+      
+
+      
+
+      <div class="markdown post-content">
+        <p>KaTeX 是一个跨浏览器的 JavaScript 库，可在网页浏览器中渲染数学公式。其设计以快速和易用为核心，最初由可汗学院开发，后成为 GitHub 上最热门的五大项目之一。</p>
+<h2 id="heading">群论</h2>
+<p>Burnside 引理，有时也称为 Burnside 计数定理、Cauchy-Frobenius 引理或轨道计数定理。</p>
+<p>设 <span class="math math-inline">\(\wedge\)</span> 是有限群 <span class="math math-inline">\(G\)</span> 在有限集合 <span class="math math-inline">\(X\)</span> 上的群作用。那么作用的轨道数 <span class="math math-inline">\(t\)</span> 由下面的公式给出。</p>
+<div class="math math-display">$$
+t=\frac{1}{|G|}\sum_{g\in G}|\text{Fix}(g)|
+$$</div>
+<p>对于每个整数 <span class="math math-inline">\(n\ge2\)</span>，商群 <span class="math math-inline">\(\mathbb{Z}/n\mathbb{Z}\)</span> 是由 <span class="math math-inline">\(1+n\mathbb{Z}\)</span> 生成的循环群，因此 <span class="math math-inline">\(\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n\)</span>。</p>
+<p>商群 <span class="math math-inline">\(\mathbb{R}/\mathbb{Z}\)</span> 同构于 <span class="math math-inline">\(([0,1),+_1)\)</span>，即区间 <span class="math math-inline">\([0,1)\)</span> 上以 1 为模的实数加法群。</p>
+<p>同构定理。设 <span class="math math-inline">\(\phi\colon(G,\circ)\to(H,*)\)</span> 是一个同态。那么函数</p>
+<div class="math math-display">$$
+\begin{aligned}
+f\colon G/\text{Ker}(\phi)&amp;\to\text{Im}(\phi)\\
+x\text{Ker}(\phi)&amp;\mapsto\phi(x)
+\end{aligned}
+$$</div>
+<p>是一个同构，因此</p>
+<div class="math math-display">$$
+G/\text{Ker}(\phi)\cong \text{Im}(\phi)
+$$</div>
+<h2 id="heading-1">泰勒定理</h2>
+<p>设函数 <span class="math math-inline">\(f\)</span> 在包含点 <span class="math math-inline">\(a\)</span> 和 <span class="math math-inline">\(x\)</span> 的开区间上 <span class="math math-inline">\((n+1)\)</span> 次可微。那么</p>
+<div class="math math-display">$$
+ f(x)=f(a)+f&#39;(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)
+$$</div>
+<p>其中</p>
+<div class="math math-display">$$
+ R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1},
+$$</div>
+<p>对于 <span class="math math-inline">\(a\)</span> 和 <span class="math math-inline">\(x\)</span> 之间的某个 <span class="math math-inline">\(c\)</span>。</p>
+<p><span class="math math-inline">\(\KaTeX\)</span> 没有右对齐选项，因此使用额外的对齐列来显示方程编号。它们通过 mkern 间距（默认为 \mkern100mu）被推到右侧。align 和 align* 环境都可以使用，\tag 和 \notag 也可以使用。</p>
+<h2 id="align-">Align 环境</h2>
+<div class="math math-display">$$
+\begin{align}
+\frac{\pi}{4n^2} &amp;= \frac{4^n(n!)^2}{2n^2(2n)!}n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{2n^2(2n)!}2n^2J_n \tag{1} \\
+&amp;= \frac{4^n}{4(2n)!}\left(\frac{n!}{n}\right)^22n(2n-1)J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{$\ddagger$} \\
+&amp;= \frac{4^{n-1}((n-1)!)^2}{(2n-2)!}J_{n-1}-\frac{4^n(n!)^2}{(2n)!}J_n \tag{2}
+\end{align}
+$$</div>
+<h2 id="align--1">Align* 环境</h2>
+<div class="math math-display">$$
+\begin{align}
+\frac{4^N(N!)^2}{(2N)!}J_N &amp;\leq \frac{4^N(N!)^2}{(2N)!}\frac{\pi^2}{4}\frac{1}{2n+2}I_{2N} \tag{*} \\
+&amp;= \frac{\pi^2}{8(N+1)}\frac{4^N(N!)^2}{(2N)!}I_{2N} \\
+&amp;= \frac{\pi^2}{8(N+1)}\frac{\pi}{2} \tag{**} \\
+&amp;= \frac{\pi^3}{16(N+1)} \\
+\frac{x}{\sin x} &amp;\leq \frac{\pi}{2} \tag{3} \\
+\text{所以} \qquad\qquad x &amp;\leq \frac{\pi}{2}\sin x \tag{4}
+\end{align}
+$$</div>
+<h2 id="heading-2">级数求和</h2>
+<div class="math math-display">$$
+\begin{align*}
+\sum_{i=1}^{k+1}i &amp;= \left(\sum_{i=1}^{k}i\right) +(k+1) \tag{1} \\
+&amp;= \frac{k(k+1)}{2}+k+1 \tag{2} \\
+&amp;= \frac{k(k+1)+2(k+1)}{2} \tag{3} \\
+&amp;= \frac{(k+1)(k+2)}{2} \tag{4} \\
+&amp;= \frac{(k+1)((k+1)+1)}{2} \tag{5}
+\end{align*}
+$$</div>
+<h2 id="heading-3">乘积符号</h2>
+<div class="math math-display">$$
+1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots
+= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\text{ 对于 }\lvert q\rvert &lt; 1.
+$$</div>
+<h2 id="heading-4">叉积</h2>
+<div class="math math-display">$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\[1ex]
+\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \\[2.5ex]
+\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+$$</div>
+<h2 id="heading-5">麦克斯韦方程组</h2>
+<div class="math math-display">$$
+\begin{align*}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &amp;= 0
+\end{align*}
+$$</div>
+<h2 id="heading-6">希腊字母</h2>
+<div class="math math-display">$$
+\begin{align*}
+&amp;\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega\\
+&amp;\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi\ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\end{align*}
+$$</div>
+<h2 id="heading-7">箭头符号</h2>
+<div class="math math-display">$$
+\begin{align*}
+&amp;\gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow\\
+&amp;\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow\\
+&amp;\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow\\
+&amp;\Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup\\
+&amp;\rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
+\end{align*}
+$$</div>
+<h2 id="heading-8">符号</h2>
+<div class="math math-display">$$
+\begin{align*}
+&amp;\surd\ \barwedge\ \veebar\ \odot\ \oplus\ \otimes\ \oslash\ \circledcirc\ \boxdot\ \bigtriangleup\\
+&amp;\bigtriangledown\ \dagger\ \diamond\ \star\ \triangleleft\ \triangleright\ \angle\ \infty\ \prime\ \triangle
+\end{align*}
+$$</div>
+<p><em>示例取自 <a href="https://sixthform.info/katex/examples/demo.html">KaTeX Live Demo</a></em></p>
+
+      </div>
+
+      
+      <section class="note-tags" aria-label="标签">
+        <hr class="note-tags-divider">
+        <div class="note-tags-list">
+          
+          <a href="/tags/Markdown/" class="note-tag-capsule">#Markdown</a>
+          
+          <a href="/tags/KaTeX/" class="note-tag-capsule">#KaTeX</a>
+          
+          <a href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" class="note-tag-capsule">#数学公式</a>
+          
+        </div>
+      </section>
+      
+
+      
+    </article>
+  </section>
+
+  
+<aside class="notes-aside" aria-label="站点信息">
+  <div class="notes-brand notes-aside-identity">
+    <h1 class="notes-brand-name">
+      <span class="notes-brand-cn">Author</span>
+      <span class="notes-brand-en">Author</span>
+    </h1>
+    <p>记录思考与笔记的个人空间。</p>
+  </div>
+
+  <div class="notes-aside-controls">
+    <div class="notes-tools" data-notes-tools>
+      <div class="notes-tool-panel notes-search-panel" id="notes-search-panel" data-notes-panel="search" aria-hidden="true">
+        <input class="notes-search-input" type="search" placeholder="搜索：标题/摘要/标签" autocomplete="off" spellcheck="false" aria-label="搜索：标题/摘要/标签" data-notes-search>
+      </div>
+
+      <div class="notes-tool-panel notes-tags-panel" id="notes-tags-panel" data-notes-panel="tags" aria-hidden="true">
+        
+        <nav class="notes-tag-list" aria-label="标签筛选">
+          
+          <a class="notes-tag-link" href="/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
+            <span class="notes-tag-text">daybook</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+            <span class="notes-tag-text">KaTeX</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+            <span class="notes-tag-text">Markdown</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
+            <span class="notes-tag-text">Obsidian</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+            <span class="notes-tag-text">Poetry</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+            <span class="notes-tag-text">Shakespeare</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+            <span class="notes-tag-text">Sonnet</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+            <span class="notes-tag-text">Test</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+            <span class="notes-tag-text">唐诗</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
+            <span class="notes-tag-text">字体</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+            <span class="notes-tag-text">数学公式</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+            <span class="notes-tag-text">李白</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
+            <span class="notes-tag-text">测试</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+            <span class="notes-tag-text">诗歌</span>
+          </a>
+          
+        </nav>
+        
+      </div>
+    </div>
+
+    <div class="notes-footer">
+      
+<div class="notes-footer-actions" aria-label="页面操作">
+  <button class="notes-action-button" type="button" aria-label="搜索" aria-expanded="false" aria-controls="notes-search-panel" data-tooltip="搜索" data-notes-tool="search">
+    <span class="material-symbol" aria-hidden="true">search</span>
+  </button>
+  <button class="notes-action-button" type="button" aria-label="标签" aria-expanded="false" aria-controls="notes-tags-panel" data-tooltip="标签" data-notes-tool="tags">
+    <span class="material-symbol" aria-hidden="true">sell</span>
+  </button>
+  
+<button class="notes-action-button theme-toggle" type="button" aria-label="切换亮暗模式" data-tooltip="切换亮暗模式">
+  <span class="material-symbol" aria-hidden="true">dark_mode</span>
+</button>
+<button class="notes-action-button eye-care-toggle" type="button" aria-label="切换主题" aria-pressed="true" data-tooltip="切换主题">
+  <span class="material-symbol" aria-hidden="true">palette</span>
+</button>
+<a class="notes-action-button lang-toggle" href="/en/notes/examples/katex-mathematical-demo/" aria-label="中/EN" data-tooltip="中/EN" data-notes-tool="lang">
+  <span class="material-symbol" aria-hidden="true">translate</span>
+</a>
+
+</div>
+
+      
+<nav class="notes-footer-links" aria-label="页脚链接">
+  <div class="footer-link-row">
+    <a href="/rss.xml">RSS</a>
+    <span class="footer-separator" aria-hidden="true">/</span>
+    <a href="https://github.com/StatIndet" target="_blank" rel="noopener noreferrer">Github</a>
+    <span class="footer-separator" aria-hidden="true">/</span>
+    <a href="mailto:shi-zhi@outlook.com">email</a>
+  </div>
+  <div class="footer-link-row">
+    <a href="https://space.bilibili.com/1837364961" target="_blank" rel="noopener noreferrer">bilibili</a>
+    <span class="footer-separator" aria-hidden="true">/</span>
+    <a href="https://qm.qq.com/q/JQkjSvKBwI" target="_blank" rel="noopener noreferrer">QQ</a>
+  </div>
+</nav>
+
+      <p>© 2026 Author</p>
+    </div>
+  </div>
+</aside>
+
+</div>
+
+      </div>
+    </main>
+  </div>
+  
+  </div>
+  
+<div class="mobile-drawer-mask" id="mobile-drawer-mask" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobile-drawer" aria-label="移动端导航" aria-hidden="true">
+  <div class="mobile-drawer-content">
+    <nav class="mobile-drawer-nav" aria-label="主导航">
+      <a class="drawer-nav-link" href="/">
+        <span class="material-symbol" aria-hidden="true">home</span>
+        <span class="drawer-nav-label">首页</span>
+      </a>
+      <a class="drawer-nav-link" href="/notes/">
+        <span class="material-symbol" aria-hidden="true">article</span>
+        <span class="drawer-nav-label">笔记</span>
+      </a>
+      <a class="drawer-nav-link" href="/archive/">
+        <span class="material-symbol" aria-hidden="true">archive</span>
+        <span class="drawer-nav-label">归档</span>
+      </a>
+      <a class="drawer-nav-link" href="/graph/">
+        <span class="material-symbol" aria-hidden="true">account_tree</span>
+        <span class="drawer-nav-label">图谱</span>
+      </a>
+      <a class="drawer-nav-link" href="/about/">
+        <span class="material-symbol" aria-hidden="true">info</span>
+        <span class="drawer-nav-label">关于</span>
+      </a>
+    </nav>
+
+    <div class="mobile-drawer-divider"></div>
+
+    <div class="mobile-drawer-funcs" data-mobile-overlay-tools>
+      <button class="drawer-nav-link" type="button" aria-expanded="false" data-mobile-overlay-target="search" id="drawer-search-btn">
+        <span class="material-symbol" aria-hidden="true">search</span>
+        <span class="drawer-nav-label">搜索</span>
+      </button>
+      <button class="drawer-nav-link" type="button" aria-expanded="false" data-mobile-overlay-target="tags" id="drawer-tags-btn">
+        <span class="material-symbol" aria-hidden="true">sell</span>
+        <span class="drawer-nav-label">标签</span>
+      </button>
+
+    </div>
+
+    <div class="mobile-drawer-switches">
+      <label class="drawer-switch-item">
+        <div class="drawer-switch-label">
+          <span class="material-symbol drawer-theme-icon" aria-hidden="true">dark_mode</span>
+          <span class="drawer-switch-text theme-switch-text">暗色模式</span>
+        </div>
+        <button type="button" class="material-switch drawer-theme-toggle theme-toggle" role="switch" aria-checked="false" aria-label="切换暗色模式">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </button>
+      </label>
+
+      <label class="drawer-switch-item">
+        <div class="drawer-switch-label">
+          <span class="material-symbol drawer-eyecare-icon" aria-hidden="true">palette</span>
+          <span class="drawer-switch-text">切换主题</span>
+        </div>
+        <button type="button" class="material-switch drawer-eyecare-toggle eye-care-toggle" role="switch" aria-checked="false" aria-label="切换主题">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </button>
+      </label>
+      
+      <a class="drawer-switch-item" href="/en/notes/examples/katex-mathematical-demo/" style="text-decoration: none; color: inherit;">
+        <div class="drawer-switch-label">
+          <span class="material-symbol" aria-hidden="true">translate</span>
+          <span class="drawer-switch-text">中/EN</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-footer-row">
+        <a href="/rss.xml">RSS</a>
+        <span class="footer-separator" aria-hidden="true">/</span>
+        <a href="https://github.com/StatIndet" target="_blank" rel="noopener noreferrer">Github</a>
+        <span class="footer-separator" aria-hidden="true">/</span>
+        <a href="mailto:shi-zhi@outlook.com">email</a>
+      </div>
+      <div class="drawer-footer-row">
+        <a href="https://space.bilibili.com/1837364961" target="_blank" rel="noopener noreferrer">bilibili</a>
+        <span class="footer-separator" aria-hidden="true">/</span>
+        <a href="https://qm.qq.com/q/JQkjSvKBwI" target="_blank" rel="noopener noreferrer">QQ</a>
+      </div>
+      <p class="drawer-copyright">© 2026 Author</p>
+    </div>
+  </div>
+</aside>
+
+  
+<div class="mobile-overlay-container" id="mobile-overlay-container" aria-hidden="true">
+  <div class="mobile-overlay-mask" id="mobile-overlay-mask"></div>
+
+  <div class="mobile-overlay mobile-tags-overlay" id="mobile-tags-overlay" data-overlay-panel="tags" aria-label="标签筛选">
+    <div class="mobile-overlay-header">
+      <h2 class="mobile-overlay-title">标签</h2>
+      <button class="mobile-overlay-close" type="button" aria-label="关闭标签" data-overlay-close>
+        <span class="material-symbol" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="mobile-overlay-content">
+      
+      <nav class="notes-tag-list" aria-label="标签列表">
+        
+        <a class="notes-tag-link" href="/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
+          <span class="notes-tag-text">daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+          <span class="notes-tag-text">KaTeX</span>
+          <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+          <span class="notes-tag-text">Markdown</span>
+          <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+          <span class="notes-tag-text">Poetry</span>
+          <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+          <span class="notes-tag-text">Shakespeare</span>
+          <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+          <span class="notes-tag-text">Sonnet</span>
+          <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+          <span class="notes-tag-text">Test</span>
+          <span class="notes-tag-measure" aria-hidden="true">Test</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+          <span class="notes-tag-text">唐诗</span>
+          <span class="notes-tag-measure" aria-hidden="true">唐诗</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
+          <span class="notes-tag-text">字体</span>
+          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+          <span class="notes-tag-text">数学公式</span>
+          <span class="notes-tag-measure" aria-hidden="true">数学公式</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+          <span class="notes-tag-text">李白</span>
+          <span class="notes-tag-measure" aria-hidden="true">李白</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
+          <span class="notes-tag-text">测试</span>
+          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+          <span class="notes-tag-text">诗歌</span>
+          <span class="notes-tag-measure" aria-hidden="true">诗歌</span>
+        </a>
+        
+      </nav>
+      
+    </div>
+  </div>
+
+  <div class="mobile-overlay mobile-search-overlay" id="mobile-search-overlay" data-overlay-panel="search" aria-label="搜索">
+    <div class="mobile-overlay-header">
+      <div class="mobile-search-input-wrapper">
+        <span class="material-symbol mobile-search-icon" aria-hidden="true">search</span>
+        <input class="mobile-search-input" type="search" placeholder="搜索：标题/摘要/标签" autocomplete="off" spellcheck="false" aria-label="搜索：标题/摘要/标签" id="mobile-search-input">
+      </div>
+      <button class="mobile-overlay-close" type="button" aria-label="关闭搜索" data-overlay-close>
+        <span class="material-symbol" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="mobile-overlay-content mobile-search-results-container">
+      <div class="mobile-search-results" id="mobile-search-results">
+        
+      </div>
+      <p class="mobile-overlay-empty mobile-search-empty" id="mobile-search-empty" hidden>没有找到匹配的文章。</p>
+      <div class="mobile-search-loading" id="mobile-search-loading" hidden>
+        <p>正在加载搜索索引...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="module">
+    let walineLoader = null;
+    document.addEventListener("daybook:page-load", async () => {
+      const container = document.getElementById("waline");
+      if (container) {
+        if (!walineLoader) {
+          walineLoader = await import("\/js\/waline-loader.8738d7dad3.js");
+        }
+        walineLoader.setupWaline();
+      } else if (walineLoader) {
+        walineLoader.setupWaline(); 
+      }
+    });
+
+    import("\/js\/reading-controls.6c432bd8cf.js").then(module => {
+      module.initReadingControls();
+      document.addEventListener("daybook:page-load", () => {
+        module.initReadingControls();
+      });
+    });
+
+    import("\/js\/settings-overlay.22a68a665c.js").then(module => {
+      module.initSettingsOverlay();
+    });
+
+    import("\/js\/image-loader.9dcdac9c73.js");
+    import("\/js\/lightbox.a15c0f66e6.js");
+  </script>
+</body>
+</html>

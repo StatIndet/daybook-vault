@@ -1,0 +1,68 @@
+[daybook] stats: enabled=true
+[obsidian] local attachment may exceed Pages single-file limit: audio_JayChou-ai-zai-xi-yuan-qian.FLAC
+[obsidian] local attachment may exceed Pages single-file limit: audio_JayChou-ai-zai-xi-yuan-qian.FLAC
+
+warning[obsidian/ambiguous-attachment]: attachment "shelby.jpg" matches multiple files
+  --> notes/markdown-syntax.md:88:1
+   |
+88 | ![[shelby.jpg|center|300]]
+   | ^~~~~~
+
+  candidates:
+    attachments/picture/shelby.jpg
+    public/attachments/picture/shelby.jpg
+    public/images/avatar/shelby.jpg
+
+warning[obsidian/unresolved-attachment]: attachment "thoughts-in-a-quiet-night" could not be resolved
+  --> notes/markdown-syntax.md:188:1
+   |
+188 | ![[thoughts-in-a-quiet-night]]
+   | ^~~~~~
+
+warning[obsidian/ambiguous-attachment]: attachment "shelby.jpg" matches multiple files
+  --> notes/examples/obsidian-media-local-remote-test.md:17:1
+   |
+17 | ![[shelby.jpg]]
+   | ^~~~~~
+
+  candidates:
+    attachments/picture/shelby.jpg
+    public/attachments/picture/shelby.jpg
+    public/images/avatar/shelby.jpg
+
+warning[obsidian/ambiguous-attachment]: attachment "shelby.jpg" matches multiple files
+  --> notes/examples/obsidian-media-local-remote-test.md:21:1
+   |
+21 | ![[shelby.jpg|center|500]]
+   | ^~~~~~
+
+  candidates:
+    attachments/picture/shelby.jpg
+    public/attachments/picture/shelby.jpg
+    public/images/avatar/shelby.jpg
+
+warning[obsidian/ambiguous-attachment]: attachment "shi-jian-lun.pdf" matches multiple files
+  --> notes/examples/obsidian-media-local-remote-test.md:25:1
+   |
+25 | ![[shi-jian-lun.pdf]]
+   | ^~~~~~
+
+  candidates:
+    attachments/pdf/shi-jian-lun.pdf
+    public/attachments/pdf/shi-jian-lun.pdf
+
+warning[obsidian/ambiguous-attachment]: attachment "audio_JayChou-ai-zai-xi-yuan-qian.FLAC" matches multiple files
+  --> notes/examples/obsidian-media-local-remote-test.md:29:1
+   |
+29 | ![[audio_JayChou-ai-zai-xi-yuan-qian.FLAC]]
+   | ^~~~~~
+
+  candidates:
+    attachments/music/audio_JayChou-ai-zai-xi-yuan-qian.FLAC
+    public/attachments/music/audio_JayChou-ai-zai-xi-yuan-qian.FLAC
+
+[daybook] build completed with 6 warnings:
+  5 ambiguous attachments
+  1 unresolved attachment
+构建完成: 生成 10 篇笔记到 public/
+预览地址: http://localhost:1313

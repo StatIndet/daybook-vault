@@ -1,0 +1,37 @@
+site:
+  title: "My Daybook"
+  url: ""
+  startedAt: "2024-01-01"
+
+profile:
+  author:
+    name: "Author"
+    nameEn: "Author"
+    logoText: "Author"
+    avatar: "/images/avatar/default.png"
+    aboutUrl: "/about"
+  slogan:
+    en: "A personal space for thoughts and notes."
+    zh: "记录思考与笔记的个人空间。"
+
+seo:
+  homeTitle:
+    en: "My Daybook"
+    zh: "我的 Daybook"
+  homeDescription:
+    en: "Welcome to my personal Daybook."
+    zh: "欢迎来到我的个人 Daybook。"
+
+comment:
+  enabled: false
+  provider: "waline"
+  waline:
+    serverURL: ""
+    lang: "zh-CN"
+    pageSize: 10
+    commentSorting: "latest"
+    search: false
+    imageUploader: false
+
+stats:
+  enabled: true
