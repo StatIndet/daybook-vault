@@ -1,0 +1,5 @@
+# Obsidian
+# Daybook needs app.json for attachmentFolderPath,
+# but other Obsidian user/workspace settings stay private.
+**/.obsidian/*
+!**/.obsidian/app.json
