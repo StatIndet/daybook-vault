@@ -85,7 +85,7 @@ Daybook 完整兼容了 Obsidian 的双链附件引用语法。
 - 组合参数：`![[shi-li.jpg|center|300]]`
 
 **渲染示例**：
-![[shi-li.jpg|center|300]]
+![[shelby.jpg|center|300]]
 
 ### 音视频与 PDF 嵌入
 
@@ -186,6 +186,8 @@ Daybook 提供了自有的 `::type` directive 语法用于加载远程媒体资�
 **页面整体嵌入**：
 语法：`![[english test]]`
 ![[thoughts-in-a-quiet-night]]
+
+
 
 **小节标题嵌入**：
 语法：`![[obsidian-embed-test#可被标题嵌入的小节]]`

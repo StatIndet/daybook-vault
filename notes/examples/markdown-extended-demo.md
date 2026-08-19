@@ -233,44 +233,4 @@ To embed CodePen demos, use the leaf directive `::codepen{url="codepen-url"}`.
 
 ::codepen{url="https://codepen.io/jh3y/pen/NWdNMBJ"}
 
-## Daybook Music Player
 
-Use the double-colon syntax `::music{url="https://example.com/audio.flac"}` to embed a seamless music player. Daybook will automatically parse the FLAC metadata.
-
-### Syntax
-
-```
-::music{https://static.daybook.page/music/1406633327.flac}
-```
-
-### Preview
-
-_(Autoplay is disabled for this demo card.)_
-
-## Unordered List
-
-- First-level unordered list
-    
-    - Second-level unordered list
-        
-        - Third-level unordered list
-            
-
-## Ordered List
-
-1. First-level ordered list
-    
-    1. Second-level ordered list
-        
-        1. Third-level ordered list
-            
-
-## Nested Task List
-
--  First-level task
-    
-    -  Second-level task
-        
-        -  Third-level task
-            
--  Completed task

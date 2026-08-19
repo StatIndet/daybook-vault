@@ -1,8 +1,8 @@
 ---
 title: "{{title}}"
-date: {{date:YYYY-MM-DD}}
+date:
+  "{ date:YYYY-MM-DD }":
 updated:
-slug:
 tags: []
 summary:
 draft: false
@@ -11,6 +11,4 @@ math: false
 pin: false
 lang: zh
 listed: true
-tags_zh: []
-tags_en: []
 ---
