@@ -40,3 +40,4 @@ draft: false
 
 ::music{url="https://static.daybook.page/music/474667755.flac"}
 
+

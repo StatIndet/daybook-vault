@@ -22,16 +22,16 @@ To create automatic figure captions, use the standard Markdown image syntax `![a
 ### Syntax
 
 ```
-![Image description](https://image.radishzz.cc/image/gallery/06.webp)
+![Image description](https://static.daybook.page/image/gallery/06.webp)
 
-![_Image description](https://image.radishzz.cc/image/gallery/06.webp)
+![_Image description](https://static.daybook.page/image/gallery/06.webp)
 ```
 
 ### Output
 
-![Image description](https://image.radishzz.cc/image/gallery/06.webp)
+![Image description](https://static.daybook.page/image/gallery/06.webp)
 
-![_Image description](https://image.radishzz.cc/image/gallery/06.webp)
+![_Image description](https://static.daybook.page/image/gallery/06.webp)
 
 ## Admonition Blocks
 
@@ -137,22 +137,22 @@ To create image galleries, use the container directive `:::gallery`. Scroll hori
 
 ```
 :::gallery
-![Alpaca](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![Turning head](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![Eye contact](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![Baby alpaca](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![Aww, so cute!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+![Alpaca](https://static.daybook.page/image/gallery/sheep-1.jpg)
+![Turning head](https://static.daybook.page/image/gallery/sheep-2.jpg)
+![Eye contact](https://static.daybook.page/image/gallery/sheep-3.jpg)
+![Baby alpaca](https://static.daybook.page/image/gallery/sheep-4.jpg)
+![Aww, so cute!](https://static.daybook.page/image/gallery/sheep-5.jpg)
 :::
 ```
 
 ### Output
 
 :::gallery
-![Alpaca](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![Turning head](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![Eye contact](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![Baby alpaca](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![Aww, so cute!](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+![Alpaca](https://static.daybook.page/image/gallery/sheep-1.jpg)
+![Turning head](https://static.daybook.page/image/gallery/sheep-2.jpg)
+![Eye contact](https://static.daybook.page/image/gallery/sheep-3.jpg)
+![Baby alpaca](https://static.daybook.page/image/gallery/sheep-4.jpg)
+![Aww, so cute!](https://static.daybook.page/image/gallery/sheep-5.jpg)
 :::
 
 ## GitHub Repositories
