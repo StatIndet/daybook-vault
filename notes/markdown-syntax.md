@@ -185,7 +185,7 @@ Daybook 提供了自有的 `::type` directive 语法用于加载远程媒体资�
 
 **页面整体嵌入**：
 语法：`![[english test]]`
-![[thoughts-in-a-quiet-night]]
+![[静夜思]]
 
 
 

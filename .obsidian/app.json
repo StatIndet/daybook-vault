@@ -1,5 +1,6 @@
 {
   "attachmentFolderPath": "attachments",
   "alwaysUpdateLinks": true,
-  "newFileLocation": "root"
+  "newFileLocation": "root",
+  "newLinkFormat": "shortest"
 }
