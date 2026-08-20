@@ -1,0 +1,831 @@
+
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  
+  <title>Markdown 扩展语法测试页 | My Daybook</title>
+  
+  <meta name="description" content="用于检查 daybook Markdown 扩展语法、嵌入组件、Lightbox、Mermaid 和嵌套任务列表渲染。">
+  
+
+  <link rel="canonical" href="/notes/examples/Markdown%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95%e6%b5%8b%e8%af%95%e9%a1%b5/">
+  
+    
+  
+  <link rel="alternate" hreflang="zh-CN" href="/notes/examples/Markdown%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95%e6%b5%8b%e8%af%95%e9%a1%b5/">
+  <link rel="alternate" hreflang="x-default" href="/notes/examples/Markdown%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95%e6%b5%8b%e8%af%95%e9%a1%b5/">
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="/en/notes/examples/markdown-extended-demo/">
+  
+  
+
+  <meta property="og:title" content="Markdown 扩展语法测试页 | My Daybook">
+  <meta property="og:description" content="用于检查 daybook Markdown 扩展语法、嵌入组件、Lightbox、Mermaid 和嵌套任务列表渲染。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="/notes/examples/Markdown扩展语法测试页/">
+  
+  <meta property="og:site_name" content="My Daybook">
+  <meta property="og:locale" content="zh_CN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown 扩展语法测试页 | My Daybook">
+  <meta name="twitter:description" content="用于检查 daybook Markdown 扩展语法、嵌入组件、Lightbox、Mermaid 和嵌套任务列表渲染。">
+  
+
+  
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"/notes/examples/Markdown扩展语法测试页/#article","url":"/notes/examples/Markdown扩展语法测试页/","headline":"Markdown 扩展语法测试页","description":"用于检查 daybook Markdown 扩展语法、嵌入组件、Lightbox、Mermaid 和嵌套任务列表渲染。","datePublished":"2026-06-16","dateModified":"2026-06-16","author":{"@id":"/#person"},"mainEntityOfPage":"/notes/examples/Markdown扩展语法测试页/","keywords":"Markdown, Test"},{"@type":"BreadcrumbList","@id":"/notes/examples/Markdown扩展语法测试页/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"/"},{"@type":"ListItem","position":2,"name":"笔记","item":"/notes/"},{"@type":"ListItem","position":3,"name":"Markdown 扩展语法测试页","item":"/notes/examples/Markdown扩展语法测试页/"}]}]}
+  </script>
+  
+
+  <script src="/js/theme.7ffa5cd396.js"></script>
+  <script>
+    (function() {
+      try {
+        var raw = localStorage.getItem('daybook:user-settings');
+        if (raw) {
+          var settings = JSON.parse(raw);
+          var html = document.documentElement;
+          if (settings.useSystemCursor) html.setAttribute('data-use-system-cursor', 'true');
+          if (settings.disableComments) html.setAttribute('data-comments-disabled', 'true');
+          if (settings.reducedMotion || settings.disableTitleTransition) html.setAttribute('data-reduced-motion', 'true');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/js/code-copy.0248e0ee56.js" defer></script>
+  <script src="/js/toc.a9633301e6.js" defer></script>
+  <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
+  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/note-filters.abd605d41a.js" defer></script>
+  <script src="/js/lightbox.a15c0f66e6.js" defer></script>
+  <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
+  <script src="/js/gallery.3040baa394.js" defer></script>
+  <script src="/js/embeds.046d92db98.js" defer></script>
+  <script src="/js/page-transition-engine.071954c809.js" defer></script>
+  <script src="/js/graph-loader.b1c100b294.js" defer></script>
+  <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
+  <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
+  <script src="/js/daybook-router.f7c4180dec.js" defer></script>
+  <script src="/js/katex-loader.233fef91e2.js" defer></script>
+  <script src="/js/custom-cursor.48e98217d0.js" defer></script>
+  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
+  <link rel="stylesheet" href="/css/global.2e36303a25.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+</head>
+
+<body class="note-body page-body" data-page-kind="note" data-search-index-url="/search.json" data-stats-enabled="true">
+  
+<div class="persistent-logo-container" id="mobile-top-bar">
+  <div class="persistent-logo-main">
+    <a class="site-logo persistent-logo" href="/" aria-label="Author 首页">
+      <span>Author</span>
+    </a>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-label="打开导航菜单" aria-controls="mobile-drawer">
+      <span class="material-symbol icon-menu" aria-hidden="true">menu</span>
+      <span class="material-symbol icon-close" aria-hidden="true">close</span>
+    </button>
+  </div>
+</div>
+
+  
+<div id="settings-overlay" class="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title" aria-hidden="true" inert>
+  <div class="settings-backdrop" data-settings-close aria-label="关闭设置面板" data-i18n-aria-en="Close Settings" data-i18n-aria-zh="关闭设置面板"></div>
+  <div class="settings-paper">
+    <button class="settings-close-btn" type="button" data-settings-close aria-label="关闭设置面板" data-i18n-aria-en="Close Settings" data-i18n-aria-zh="关闭设置面板">
+      <span class="material-symbol" aria-hidden="true">close</span>
+    </button>
+    
+    <h2 id="settings-title" class="settings-title" data-i18n-en="Settings" data-i18n-zh="设置">设置</h2>
+    
+    <div class="settings-content">
+      <label class="settings-checkbox-label setting-item-cursor">
+        <input type="checkbox" id="setting-system-cursor" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Use System Cursor" data-i18n-zh="使用系统默认光标">
+          使用系统默认光标
+        </span>
+      </label>
+
+      <label class="settings-checkbox-label setting-item-clock-cursor" style="margin-left: 2rem; margin-top: -15px;">
+        <input type="checkbox" id="setting-clock-cursor" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Enable Clock Cursor Effect" data-i18n-zh="启用时钟光标效果">
+          启用时钟光标效果
+        </span>
+      </label>
+      
+      <label class="settings-checkbox-label">
+        <input type="checkbox" id="setting-disable-comments" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Disable Comments" data-i18n-zh="禁用评论区">
+          禁用评论区
+        </span>
+      </label>
+
+      <label class="settings-checkbox-label">
+        <input type="checkbox" id="setting-reduced-motion" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Reduce Motion" data-i18n-zh="减少动画">
+          减少动画
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+  <div class="page-frame" id="daybook-page" data-daybook-page>
+  
+  <div class="page-shell">
+    
+<aside class="side-rail" aria-label="站点导航">
+  <a class="side-avatar-link" href="/" aria-label="回到首页">
+    <div class="side-avatar-wrap" data-site-avatar>
+      
+    </div>
+  </a>
+
+  <nav class="side-nav" aria-label="主导航">
+    <a class="nav-link" href="/">
+      <span class="nav-icon material-symbol" aria-hidden="true">home</span>
+      <span class="nav-label">首页</span>
+    </a>
+    <a class="nav-link" href="/notes/">
+      <span class="nav-icon material-symbol" aria-hidden="true">article</span>
+      <span class="nav-label">笔记</span>
+    </a>
+    <a class="nav-link" href="/archive/">
+      <span class="nav-icon material-symbol" aria-hidden="true">archive</span>
+      <span class="nav-label">归档</span>
+    </a>
+    <a class="nav-link" href="/graph/">
+      <span class="nav-icon material-symbol" aria-hidden="true">account_tree</span>
+      <span class="nav-label">图谱</span>
+    </a>
+    <a class="nav-link" href="/about/">
+      <span class="nav-icon material-symbol" aria-hidden="true">info</span>
+      <span class="nav-label">关于</span>
+    </a>
+  </nav>
+
+
+</aside>
+
+
+    <main class="site-main page-main">
+      <div id="main-content-wrapper">
+        
+<div class="mobile-reading-controls" id="mobile-reading-controls" style="--reading-progress: 0%;">
+  <div class="rc-layer rc-base">
+    <button class="mobile-reading-btn mobile-top-btn" type="button" aria-label="回到顶部">
+      <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    </button>
+    <span class="mobile-reading-percentage" data-mobile-progress-text>0%</span>
+    <button class="mobile-reading-btn mobile-bottom-btn" type="button" aria-label="前往底部">
+      <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    </button>
+  </div>
+  <div class="rc-layer rc-progress">
+    <button class="mobile-reading-btn mobile-top-btn" type="button" tabindex="-1" aria-hidden="true">
+      <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    </button>
+    <span class="mobile-reading-percentage" data-mobile-progress-text>0%</span>
+    <button class="mobile-reading-btn mobile-bottom-btn" type="button" tabindex="-1" aria-hidden="true">
+      <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    </button>
+  </div>
+</div>
+<div class="notes-page note-detail-page has-toc">
+  <section class="note-detail article-stage" aria-label="文章详情">
+    <article class="note" data-has-mermaid="true" data-has-math="false">
+      <header class="note-header">
+        <div class="note-title-wrapper">
+          <a class="note-back-link" href="/notes/" aria-label="返回">
+            <span class="material-symbol" aria-hidden="true">arrow_back</span>
+          </a>
+          <h1 class="note-title">
+            <span data-title-transition-key="examples/Markdown扩展语法测试页">
+              <span class="title-morphable" data-title-transition-key="examples/Markdown扩展语法测试页"><span class="title-glyph" data-glyph-index="0">M</span><span class="title-glyph" data-glyph-index="1">a</span><span class="title-glyph" data-glyph-index="2">r</span><span class="title-glyph" data-glyph-index="3">k</span><span class="title-glyph" data-glyph-index="4">d</span><span class="title-glyph" data-glyph-index="5">o</span><span class="title-glyph" data-glyph-index="6">w</span><span class="title-glyph" data-glyph-index="7">n</span><span class="title-glyph" data-glyph-index="8"> </span><span class="title-glyph" data-glyph-index="9">扩</span><span class="title-glyph" data-glyph-index="10">展</span><span class="title-glyph" data-glyph-index="11">语</span><span class="title-glyph" data-glyph-index="12">法</span><span class="title-glyph" data-glyph-index="13">测</span><span class="title-glyph" data-glyph-index="14">试</span><span class="title-glyph" data-glyph-index="15">页</span></span>
+            </span>
+          </h1>
+        </div>
+        
+        <p class="note-meta">
+          <span class="meta-transition-group" data-meta-transition-key="examples/Markdown扩展语法测试页">
+            <time datetime="2026-06-16" data-date-transition-key="examples/Markdown扩展语法测试页">2026-06-16</time>
+            <span class="reading-time">2 min</span>
+          </span>
+          <span class="meta-stagger">
+            <span>493 chars</span>
+          </span>
+          
+          <span class="meta-stagger">
+            <span data-page-views data-path="/notes/examples/Markdown扩展语法测试页/">--</span>
+            <span data-page-views-label data-path="/notes/examples/Markdown扩展语法测试页/">views</span>
+          </span>
+          
+          
+          <span class="meta-stagger note-bilingual-wrapper">
+            <button type="button" class="bilingual-toggle-btn" aria-label="Toggle Bilingual Translation" data-current-lang="zh-CN" data-alt-fragment-url="/en/notes/examples/markdown-extended-demo/fragment.json">
+              <span class="bilingual-char bilingual-zh">中</span>
+              <span class="bilingual-char bilingual-en">En</span>
+            </button>
+          </span>
+          
+        </p>
+        
+        <p class="note-summary">用于检查 daybook Markdown 扩展语法、嵌入组件、Lightbox、Mermaid 和嵌套任务列表渲染。</p>
+      </header>
+
+      
+
+      
+
+      <div class="markdown post-content">
+        <p>本文介绍 Markdown 扩展功能，包括语法示例与效果展示。
+<em>示例取自 <a href="https://retypeset.radishzz.cc/en/posts/markdown-extended-features/">Retypeset</a></em></p>
+<h2 id="heading">图注</h2>
+<p>使用标准的 Markdown 图像语法 <code>![alt](src)</code>，即可自动生成图注。在 <code>alt</code> 前添加下划线 <code>_</code> 或留空 <code>alt</code>，即可隐藏图注。</p>
+<h3 id="heading-1">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>![图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+
+![_图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+</code></pre></div><h3 id="heading-2">效果</h3>
+<figure><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="图片描述" loading="lazy" decoding="async"><figcaption>图片描述</figcaption></figure>
+<p><img src="https://image.radishzz.cc/image/gallery/06.webp" alt="图片描述" loading="lazy" decoding="async"></p>
+<h2 id="heading-3">提示块</h2>
+<p>使用 GitHub 语法 <code>&gt; [!TYPE]</code> 或三冒号语法 <code>:::type</code>，即可创建提示块。支持 <code>note</code>、<code>tip</code>、<code>important</code>、<code>warning</code>、<code>caution</code> 五种类型。</p>
+<h3 id="heading-4">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>&gt; [!NOTE]
+&gt; 即使快速浏览，也值得用户留意的信息。
+
+&gt; [!TIP]
+&gt; 可选信息，可帮助用户更轻松地完成操作。
+
+&gt; [!IMPORTANT]
+&gt; 用户成功所需的关键信息。
+
+:::warning
+由于存在潜在风险，需要用户立即关注的关键内容。
+:::
+
+:::caution
+某些操作可能带来的负面后果。
+:::
+
+:::note[自定义标题]
+这是一个自定义标题的提示块。
+:::
+</code></pre></div><h3 id="heading-5">效果</h3>
+<details class="callout is-collapsible" data-callout="note"><summary class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">Note</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>即使快速浏览，也值得用户留意的信息。</p></div></details>
+<div class="callout" data-callout="tip"><div class="callout-title"><span class="callout-icon material-symbol">lightbulb</span><div class="callout-title-inner">Tip</div></div><div class="callout-content"><p>可选信息，可帮助用户更轻松地完成操作。</p></div></div>
+<div class="callout" data-callout="important"><div class="callout-title"><span class="callout-icon material-symbol">priority_high</span><div class="callout-title-inner">Important</div></div><div class="callout-content"><p>用户成功所需的关键信息。</p></div></div>
+<div class="callout" data-callout="warning"><div class="callout-title"><span class="callout-icon material-symbol">warning</span><div class="callout-title-inner">Warning</div></div><div class="callout-content"><p>由于存在潜在风险，需要用户立即关注的关键内容。</p></div></div>
+<div class="callout" data-callout="caution"><div class="callout-title"><span class="callout-icon material-symbol">error</span><div class="callout-title-inner">Caution</div></div><div class="callout-content"><p>某些操作可能带来的负面后果。</p></div></div>
+<div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">自定义标题</div></div><div class="callout-content"><p>这是一个自定义标题的提示块。</p></div></div>
+<h2 id="heading-6">折叠块</h2>
+<p>使用三冒号语法 <code>:::fold[title]</code>，即可创建折叠块。点击标题可以展开或收起。</p>
+<h3 id="heading-7">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>:::fold[使用提示]
+如果需要添加并非所有读者都会感兴趣的内容，可以将其放在折叠块中。
+:::
+</code></pre></div><h3 id="heading-8">效果</h3>
+<details class="md-fold"><summary>使用提示</summary><div class="md-fold-content"><p>如果需要添加并非所有读者都会感兴趣的内容，可以将其放在折叠块中。</p></div></details>
+<h2 id="mermaid-">Mermaid 图表</h2>
+<p>使用代码块包裹 Mermaid 语法，并标注语言类型 <code>mermaid</code>，即可创建 Mermaid 图表。</p>
+<h3 id="heading-9">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>```mermaid
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+```
+</code></pre></div><h3 id="heading-10">效果</h3>
+<div class="mermaid-block" data-mermaid-status="pending"><pre class="mermaid-source"><code>graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;</code></pre><div class="mermaid-diagram" aria-hidden="true"></div><p class="mermaid-error" hidden></p></div>
+<h2 id="heading-11">画廊</h2>
+<p>使用三冒号语法 <code>:::gallery</code>，即可创建图片画廊。水平滚动以查看更多图片。</p>
+<h3 id="heading-12">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>:::gallery
+![羊驼](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
+![转头](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
+![对视](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
+![小羊驼](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
+![可爱捏](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+:::
+</code></pre></div><h3 id="heading-13">效果</h3>
+<div class="md-gallery"><figure><img src="https://image.radishzz.cc/image/gallery/sheep-1.jpg" alt="羊驼" loading="lazy" decoding="async"><figcaption>羊驼</figcaption></figure><figure><img src="https://image.radishzz.cc/image/gallery/sheep-2.jpg" alt="转头" loading="lazy" decoding="async"><figcaption>转头</figcaption></figure><figure><img src="https://image.radishzz.cc/image/gallery/sheep-3.jpg" alt="对视" loading="lazy" decoding="async"><figcaption>对视</figcaption></figure><figure><img src="https://image.radishzz.cc/image/gallery/sheep-4.jpg" alt="小羊驼" loading="lazy" decoding="async"><figcaption>小羊驼</figcaption></figure><figure><img src="https://image.radishzz.cc/image/gallery/sheep-5.jpg" alt="可爱捏" loading="lazy" decoding="async"><figcaption>可爱捏</figcaption></figure></div>
+<h2 id="github-">GitHub 仓库</h2>
+<p>使用双冒号语法 <code>::github{repo=&quot;owner/repo&quot;}</code>，即可嵌入 GitHub 仓库。</p>
+<h3 id="heading-14">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::github{repo=&quot;radishzzz/astro-theme-retypeset&quot;}
+</code></pre></div><h3 id="heading-15">效果</h3>
+
+    <a href="https://github.com/radishzzz/astro-theme-retypeset" class="no-heti gc-container" target="_blank" rel="noopener noreferrer" data-repo="radishzzz/astro-theme-retypeset">
+      <div class="gc-title-bar">
+        <div class="gc-owner-avatar" aria-hidden="true"></div>
+        <span class="gc-repo-title">
+          <span>radishzzz<span class="gc-slash" aria-hidden="true">/</span><strong>astro-theme-retypeset</strong></span>
+        </span>
+        <svg class="gc-github-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
+        </svg>
+      </div>
+      <p class="gc-repo-description">Loading repository data...</p>
+      <div class="gc-info-bar">
+        <svg class="gc-info-icon" height="16" width="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path>
+        </svg>
+        <span class="gc-stars-count" aria-label="Stars count">--</span>
+        <svg class="gc-info-icon" height="16" width="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
+        </svg>
+        <span class="gc-forks-count" aria-label="Forks count">--</span>
+        <svg class="gc-info-icon" height="16" width="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8.75.75V2h.985c.304 0 .603.08.867.231l1.29.736c.038.022.08.033.124.033h2.234a.75.75 0 0 1 0 1.5h-.427l2.111 4.692a.75.75 0 0 1-.154.838l-.53-.53.529.531-.001.002-.002.002-.006.006-.006.005-.01.01-.045.04c-.21.176-.441.327-.686.45C14.556 10.78 13.88 11 13 11a4.498 4.498 0 0 1-2.023-.454 3.544 3.544 0 0 1-.686-.45l-.045-.04-.016-.015-.006-.006-.004-.004v-.001a.75.75 0 0 1-.154-.838L12.178 4.5h-.162c-.305 0-.604-.079-.868-.231l-1.29-.736a.245.245 0 0 0-.124-.033H8.75V13h2.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5h2.5V3.5h-.984a.245.245 0 0 0-.124.033l-1.289.737c-.265.15-.564.23-.869.23h-.162l2.112 4.692a.75.75 0 0 1-.154.838l-.53-.53.529.531-.001.002-.002.002-.006.006-.016.015-.045.04c-.21.176-.441.327-.686.45C4.556 10.78 3.88 11 3 11a4.498 4.498 0 0 1-2.023-.454 3.544 3.544 0 0 1-.686-.45l-.045-.04-.016-.015-.006-.006-.004-.004v-.001a.75.75 0 0 1-.154-.838L2.178 4.5H1.75a.75.75 0 0 1 0-1.5h2.234a.249.249 0 0 0 .125-.033l1.288-.737c.265-.15.564-.23.869-.23h.984V.75a.75.75 0 0 1 1.5 0Zm2.945 8.477c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327Zm-10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327Z"></path>
+        </svg>
+        <span class="gc-license-info" aria-label="License">--</span>
+      </div>
+    </a>
+<h2 id="heading-16">视频</h2>
+<p>使用双冒号语法 <code>::youtube{id=&quot;video-id&quot;}</code>，即可嵌入视频。</p>
+<h3 id="heading-17">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::youtube{id=&quot;9pP0pIgP2kE&quot;}
+
+::bilibili{id=&quot;BV1sK4y1Z7KG&quot;}
+</code></pre></div><h3 id="heading-18">效果</h3>
+<div class="embed-card embed-frame embed-frame-video embed-frame-youtube"><iframe src="https://www.youtube-nocookie.com/embed/9pP0pIgP2kE" title="YouTube video player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="embed-card embed-frame embed-frame-video embed-frame-bilibili"><iframe src="https://player.bilibili.com/player.html?autoplay=0&amp;bvid=BV1sK4y1Z7KG&amp;isOutside=true&amp;muted=0&amp;p=1" title="Bilibili video player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<h2 id="spotify">Spotify</h2>
+<p>使用双冒号语法 <code>::spotify{url=&quot;spotify-url&quot;}</code>，即可嵌入 Spotify 内容。</p>
+<h3 id="heading-19">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::spotify{url=&quot;https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6&quot;}
+
+::spotify{url=&quot;https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG&quot;}
+</code></pre></div><h3 id="heading-20">效果</h3>
+
+    <figure class="embed-frame embed-frame-spotify" style="border-radius: 12px; overflow: hidden; padding: 0; line-height: 0;">
+      <iframe
+        class="spotify-embed"
+        src="https://open.spotify.com/embed/track/0HYAsQwJIO6FLqpyTeD3l6"
+        title="Spotify Embed"
+        height="152"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </figure>
+
+    <figure class="embed-frame embed-frame-spotify" style="border-radius: 12px; overflow: hidden; padding: 0; line-height: 0;">
+      <iframe
+        class="spotify-embed"
+        src="https://open.spotify.com/embed/album/03QiFOKDh6xMiSTkOnsmMG"
+        title="Spotify Embed"
+        height="352"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </figure>
+<h2 id="x-">X 推文</h2>
+<p>使用双冒号语法 <code>::tweet{url=&quot;tweet-url&quot;}</code>，即可嵌入 X 推文。</p>
+<h3 id="heading-21">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::tweet{url=&quot;https://x.com/hachi_08/status/1906456524337123549&quot;}
+</code></pre></div><h3 id="heading-22">效果</h3>
+
+    <figure>
+      <blockquote class="twitter-tweet" data-dnt="true">
+        <a href="https://twitter.com/hachi_08/status/1906456524337123549"></a>
+      </blockquote>
+    </figure>
+<h2 id="codepen">CodePen</h2>
+<p>使用双冒号语法 <code>::codepen{url=&quot;codepen-url&quot;}</code>，即可嵌入 CodePen 演示。</p>
+<h3 id="heading-23">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::codepen{url=&quot;https://codepen.io/jh3y/pen/NWdNMBJ&quot;}
+</code></pre></div><h3 id="heading-24">效果</h3>
+<div class="embed-card embed-frame embed-frame-codepen"><iframe src="https://codepen.io/jh3y/embed/NWdNMBJ?default-tab=result" title="CodePen embed" height="420" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+      </div>
+
+      
+      <section class="note-tags" aria-label="标签">
+        <hr class="note-tags-divider">
+        <div class="note-tags-list">
+          
+          <a href="/tags/Markdown/" class="note-tag-capsule">#Markdown</a>
+          
+          <a href="/tags/Test/" class="note-tag-capsule">#Test</a>
+          
+        </div>
+      </section>
+      
+
+      
+    </article>
+  </section>
+
+  
+<aside class="notes-aside" aria-label="站点信息">
+  <div class="notes-brand notes-aside-identity">
+    <h1 class="notes-brand-name">
+      <span class="notes-brand-cn">佚名</span>
+      <span class="notes-brand-en">Author</span>
+    </h1>
+    <p class="notes-brand-slogan"><span class="slogan-morphable" data-slogan-transition-key="site-slogan"><span class="slogan-glyph" style="view-transition-name: slogan-glyph-0" data-glyph-index="0">记</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-1" data-glyph-index="1">录</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-2" data-glyph-index="2">思</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-3" data-glyph-index="3">考</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-4" data-glyph-index="4">与</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-5" data-glyph-index="5">笔</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-6" data-glyph-index="6">记</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-7" data-glyph-index="7">的</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-8" data-glyph-index="8">个</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-9" data-glyph-index="9">人</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-10" data-glyph-index="10">空</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-11" data-glyph-index="11">间</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-12" data-glyph-index="12">。</span></span></p>
+  </div>
+
+  <div class="notes-aside-controls">
+    <div class="notes-tools" data-notes-tools>
+      <div class="notes-tool-panel notes-search-panel" id="notes-search-panel" data-notes-panel="search" aria-hidden="true">
+        <input class="notes-search-input" type="search" placeholder="搜索：标题/摘要/标签" autocomplete="off" spellcheck="false" aria-label="搜索：标题/摘要/标签" data-notes-search>
+      </div>
+
+      <div class="notes-tool-panel notes-tags-panel" id="notes-tags-panel" data-notes-panel="tags" aria-hidden="true">
+        
+        <nav class="notes-tag-list" aria-label="标签筛选">
+          
+          <a class="notes-tag-link" href="/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
+            <span class="notes-tag-text">daybook</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+            <span class="notes-tag-text">KaTeX</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+            <span class="notes-tag-text">Markdown</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/obsidian/" data-notes-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
+            <span class="notes-tag-text">obsidian</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+            <span class="notes-tag-text">Poetry</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+            <span class="notes-tag-text">Shakespeare</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+            <span class="notes-tag-text">Sonnet</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+            <span class="notes-tag-text">Test</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+            <span class="notes-tag-text">唐诗</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
+            <span class="notes-tag-text">字体</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+            <span class="notes-tag-text">数学公式</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+            <span class="notes-tag-text">李白</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
+            <span class="notes-tag-text">测试</span>
+          </a>
+          
+          <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+            <span class="notes-tag-text">诗歌</span>
+          </a>
+          
+        </nav>
+        
+      </div>
+    </div>
+
+    <div class="notes-footer">
+      
+<div class="notes-footer-actions" aria-label="页面操作">
+  <button class="notes-action-button" type="button" aria-label="搜索" aria-expanded="false" aria-controls="notes-search-panel" data-tooltip="搜索" data-notes-tool="search">
+    <span class="material-symbol" aria-hidden="true">search</span>
+  </button>
+  <button class="notes-action-button" type="button" aria-label="标签" aria-expanded="false" aria-controls="notes-tags-panel" data-tooltip="标签" data-notes-tool="tags">
+    <span class="material-symbol" aria-hidden="true">sell</span>
+  </button>
+  
+<button class="notes-action-button theme-toggle" type="button" aria-label="切换亮暗模式" data-tooltip="切换亮暗模式">
+  <span class="material-symbol" aria-hidden="true">dark_mode</span>
+</button>
+<button class="notes-action-button eye-care-toggle" type="button" aria-label="切换主题" aria-pressed="true" data-tooltip="切换主题">
+  <span class="material-symbol" aria-hidden="true">palette</span>
+</button>
+<a class="notes-action-button lang-toggle" href="/en/notes/examples/markdown-extended-demo/" aria-label="中/EN" data-tooltip="中/EN" data-notes-tool="lang">
+  <span class="material-symbol" aria-hidden="true">translate</span>
+</a>
+
+</div>
+
+      
+<nav class="notes-footer-links" aria-label="页脚链接">
+  <div class="footer-link-row">
+    <a href="/rss.xml">RSS</a>
+    <span class="footer-separator" aria-hidden="true">/</span>
+    <a href="https://github.com/StatIndet" target="_blank" rel="noopener noreferrer">Github</a>
+    <span class="footer-separator" aria-hidden="true">/</span>
+    <a href="mailto:shi-zhi@outlook.com">email</a>
+  </div>
+  <div class="footer-link-row">
+    <a href="https://space.bilibili.com/1837364961" target="_blank" rel="noopener noreferrer">bilibili</a>
+    <span class="footer-separator" aria-hidden="true">/</span>
+    <a href="https://qm.qq.com/q/JQkjSvKBwI" target="_blank" rel="noopener noreferrer">QQ</a>
+  </div>
+</nav>
+
+      <p>© 2026 佚名</p>
+    </div>
+  </div>
+</aside>
+
+</div>
+
+      </div>
+    </main>
+  </div>
+  
+  </div>
+  
+<div class="mobile-drawer-mask" id="mobile-drawer-mask" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobile-drawer" aria-label="移动端导航" aria-hidden="true">
+  <div class="mobile-drawer-content">
+    <nav class="mobile-drawer-nav" aria-label="主导航">
+      <a class="drawer-nav-link" href="/">
+        <span class="material-symbol" aria-hidden="true">home</span>
+        <span class="drawer-nav-label">首页</span>
+      </a>
+      <a class="drawer-nav-link" href="/notes/">
+        <span class="material-symbol" aria-hidden="true">article</span>
+        <span class="drawer-nav-label">笔记</span>
+      </a>
+      <a class="drawer-nav-link" href="/archive/">
+        <span class="material-symbol" aria-hidden="true">archive</span>
+        <span class="drawer-nav-label">归档</span>
+      </a>
+      <a class="drawer-nav-link" href="/graph/">
+        <span class="material-symbol" aria-hidden="true">account_tree</span>
+        <span class="drawer-nav-label">图谱</span>
+      </a>
+      <a class="drawer-nav-link" href="/about/">
+        <span class="material-symbol" aria-hidden="true">info</span>
+        <span class="drawer-nav-label">关于</span>
+      </a>
+    </nav>
+
+    <div class="mobile-drawer-divider"></div>
+
+    <div class="mobile-drawer-funcs" data-mobile-overlay-tools>
+      <button class="drawer-nav-link" type="button" aria-expanded="false" data-mobile-overlay-target="search" id="drawer-search-btn">
+        <span class="material-symbol" aria-hidden="true">search</span>
+        <span class="drawer-nav-label">搜索</span>
+      </button>
+      <button class="drawer-nav-link" type="button" aria-expanded="false" data-mobile-overlay-target="tags" id="drawer-tags-btn">
+        <span class="material-symbol" aria-hidden="true">sell</span>
+        <span class="drawer-nav-label">标签</span>
+      </button>
+
+    </div>
+
+    <div class="mobile-drawer-switches">
+      <label class="drawer-switch-item">
+        <div class="drawer-switch-label">
+          <span class="material-symbol drawer-theme-icon" aria-hidden="true">dark_mode</span>
+          <span class="drawer-switch-text theme-switch-text">暗色模式</span>
+        </div>
+        <button type="button" class="material-switch drawer-theme-toggle theme-toggle" role="switch" aria-checked="false" aria-label="切换暗色模式">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </button>
+      </label>
+
+      <label class="drawer-switch-item">
+        <div class="drawer-switch-label">
+          <span class="material-symbol drawer-eyecare-icon" aria-hidden="true">palette</span>
+          <span class="drawer-switch-text">切换主题</span>
+        </div>
+        <button type="button" class="material-switch drawer-eyecare-toggle eye-care-toggle" role="switch" aria-checked="false" aria-label="切换主题">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </button>
+      </label>
+      
+      <a class="drawer-switch-item" href="/en/notes/examples/markdown-extended-demo/" style="text-decoration: none; color: inherit;">
+        <div class="drawer-switch-label">
+          <span class="material-symbol" aria-hidden="true">translate</span>
+          <span class="drawer-switch-text">中/EN</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-footer-row">
+        <a href="/rss.xml">RSS</a>
+        <span class="footer-separator" aria-hidden="true">/</span>
+        <a href="https://github.com/StatIndet" target="_blank" rel="noopener noreferrer">Github</a>
+        <span class="footer-separator" aria-hidden="true">/</span>
+        <a href="mailto:shi-zhi@outlook.com">email</a>
+      </div>
+      <div class="drawer-footer-row">
+        <a href="https://space.bilibili.com/1837364961" target="_blank" rel="noopener noreferrer">bilibili</a>
+        <span class="footer-separator" aria-hidden="true">/</span>
+        <a href="https://qm.qq.com/q/JQkjSvKBwI" target="_blank" rel="noopener noreferrer">QQ</a>
+      </div>
+      <p class="drawer-copyright">© 2026 佚名</p>
+    </div>
+  </div>
+</aside>
+
+  
+<div class="mobile-overlay-container" id="mobile-overlay-container" aria-hidden="true">
+  <div class="mobile-overlay-mask" id="mobile-overlay-mask"></div>
+
+  <div class="mobile-overlay mobile-tags-overlay" id="mobile-tags-overlay" data-overlay-panel="tags" aria-label="标签筛选">
+    <div class="mobile-overlay-header">
+      <h2 class="mobile-overlay-title">标签</h2>
+      <button class="mobile-overlay-close" type="button" aria-label="关闭标签" data-overlay-close>
+        <span class="material-symbol" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="mobile-overlay-content">
+      
+      <nav class="notes-tag-list" aria-label="标签列表">
+        
+        <a class="notes-tag-link" href="/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
+          <span class="notes-tag-text">daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+          <span class="notes-tag-text">KaTeX</span>
+          <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+          <span class="notes-tag-text">Markdown</span>
+          <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/obsidian/" data-mobile-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
+          <span class="notes-tag-text">obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+          <span class="notes-tag-text">Poetry</span>
+          <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+          <span class="notes-tag-text">Shakespeare</span>
+          <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+          <span class="notes-tag-text">Sonnet</span>
+          <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+          <span class="notes-tag-text">Test</span>
+          <span class="notes-tag-measure" aria-hidden="true">Test</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+          <span class="notes-tag-text">唐诗</span>
+          <span class="notes-tag-measure" aria-hidden="true">唐诗</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
+          <span class="notes-tag-text">字体</span>
+          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+          <span class="notes-tag-text">数学公式</span>
+          <span class="notes-tag-measure" aria-hidden="true">数学公式</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+          <span class="notes-tag-text">李白</span>
+          <span class="notes-tag-measure" aria-hidden="true">李白</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
+          <span class="notes-tag-text">测试</span>
+          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+          <span class="notes-tag-text">诗歌</span>
+          <span class="notes-tag-measure" aria-hidden="true">诗歌</span>
+        </a>
+        
+      </nav>
+      
+    </div>
+  </div>
+
+  <div class="mobile-overlay mobile-search-overlay" id="mobile-search-overlay" data-overlay-panel="search" aria-label="搜索">
+    <div class="mobile-overlay-header">
+      <div class="mobile-search-input-wrapper">
+        <span class="material-symbol mobile-search-icon" aria-hidden="true">search</span>
+        <input class="mobile-search-input" type="search" placeholder="搜索：标题/摘要/标签" autocomplete="off" spellcheck="false" aria-label="搜索：标题/摘要/标签" id="mobile-search-input">
+      </div>
+      <button class="mobile-overlay-close" type="button" aria-label="关闭搜索" data-overlay-close>
+        <span class="material-symbol" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="mobile-overlay-content mobile-search-results-container">
+      <div class="mobile-search-results" id="mobile-search-results">
+        
+      </div>
+      <p class="mobile-overlay-empty mobile-search-empty" id="mobile-search-empty" hidden>没有找到匹配的文章。</p>
+      <div class="mobile-search-loading" id="mobile-search-loading" hidden>
+        <p>正在加载搜索索引...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="module">
+    let walineLoader = null;
+    document.addEventListener("daybook:page-load", async () => {
+      const container = document.getElementById("waline");
+      if (container) {
+        if (!walineLoader) {
+          walineLoader = await import("\/js\/waline-loader.8738d7dad3.js");
+        }
+        walineLoader.setupWaline();
+      } else if (walineLoader) {
+        walineLoader.setupWaline(); 
+      }
+    });
+
+    import("\/js\/reading-controls.6c432bd8cf.js").then(module => {
+      module.initReadingControls();
+      document.addEventListener("daybook:page-load", () => {
+        module.initReadingControls();
+      });
+    });
+
+    import("\/js\/settings-overlay.5e8ef74fdc.js").then(module => {
+      module.initSettingsOverlay();
+    });
+
+    import("\/js\/image-loader.9dcdac9c73.js");
+    import("\/js\/lightbox.a15c0f66e6.js");
+  </script>
+</body>
+</html>

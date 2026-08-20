@@ -5,10 +5,10 @@ site:
 
 profile:
   author:
-    name: "Author"
+    name: "佚名"
     nameEn: "Author"
     logoText: "Author"
-    avatar: "/images/avatar/default.png"
+    avatar: ""
     aboutUrl: "/about"
   slogan:
     en: "A personal space for thoughts and notes."

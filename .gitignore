@@ -4,4 +4,4 @@
 **/.obsidian/*
 !**/.obsidian/app.json
 
-/public/
+# /public/
