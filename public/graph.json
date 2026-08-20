@@ -32,7 +32,7 @@
         }
       ],
       "date": "2026-06-29",
-      "degree": 0,
+      "degree": 1,
       "exists": true
     },
     {
@@ -57,7 +57,7 @@
         }
       ],
       "date": "2026-06-28",
-      "degree": 0,
+      "degree": 1,
       "exists": true
     },
     {
@@ -101,7 +101,7 @@
         }
       ],
       "date": "2026-06-25",
-      "degree": 0,
+      "degree": 1,
       "exists": true
     },
     {
@@ -119,7 +119,7 @@
         }
       ],
       "date": "2026-06-23",
-      "degree": 0,
+      "degree": 1,
       "exists": true
     },
     {
@@ -163,11 +163,17 @@
       "exists": true
     }
   ],
-  "links": [],
+  "links": [
+    {
+      "source": "",
+      "target": "thoughts-in-a-quiet-night",
+      "type": "wikilink"
+    }
+  ],
   "meta": {
     "nodeCount": 7,
-    "linkCount": 0,
-    "maxDegree": 0,
+    "linkCount": 1,
+    "maxDegree": 1,
     "defaultScale": 1.75
   }
 }

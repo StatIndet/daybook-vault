@@ -3,10 +3,22 @@
 }
 
 ::view-transition-group(site-avatar),
-::view-transition-group(site-name) {
+::view-transition-group(site-name-cn),
+::view-transition-group(site-name-en) {
   animation-duration: var(--duration-shared);
   animation-timing-function: var(--ease-out);
 }
+::view-transition-old(site-name-cn),
+::view-transition-old(site-name-en) {
+  animation: none;
+  opacity: 0;
+}
+::view-transition-new(site-name-cn),
+::view-transition-new(site-name-en) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 
 :root {
   --theme-reveal-from: 100% 0 0 0;
@@ -111,28 +123,12 @@ html.article-transition::view-transition-new(root) {
 
 html.article-transition .side-avatar-wrap,
 html.article-transition .hero-avatar-wrap,
-html.article-transition .notes-brand-name,
-  .slogan-glyph,
-html.article-transition .hero-identity {
+html.article-transition .hero-name-cn,
+html.article-transition .hero-name-en,
+html.article-transition .notes-brand-cn,
+html.article-transition .notes-brand-en,
+html.article-transition .slogan-glyph {
   view-transition-name: none;
-}
-
-html.identity-exit-down .hero-name,
-  .slogan-glyph,
-html.identity-exit-down .notes-aside-identity {
-  animation: identity-exit-down var(--transition-exit-delay) var(--ease-out) both;
-  view-transition-name: none;
-}
-
-@keyframes identity-exit-down {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(16px);
-  }
 }
 
 @keyframes nav-exit-up {

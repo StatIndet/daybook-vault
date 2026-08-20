@@ -7,7 +7,7 @@ tags:
   - Test
 summary: Used to test the rendering of Daybook’s extended Markdown syntax, embedded components, Lightbox, Mermaid, and nested task lists.
 draft: false
-toc: true
+toc: false
 i18n_key: markdown-extended-demo
 lang: en
 ---

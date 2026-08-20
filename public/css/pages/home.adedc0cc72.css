@@ -51,7 +51,6 @@
 }
 
 .hero-name {
-  view-transition-name: site-name;
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
@@ -189,3 +188,7 @@
     padding-top: clamp(5.25rem, 14vh, 7.5rem);
   }
 }
+
+
+.hero-name-cn { view-transition-name: site-name-cn; }
+.hero-name-en { view-transition-name: site-name-en; }
