@@ -10,6 +10,12 @@ profile:
     logoText: "Author"
     avatar: ""
     aboutUrl: "/about"
+  social: []
+  # - type: github
+  #   url: "https://github.com/your-name"
+  # - type: youtube
+  #   url: "https://youtube.com/@your-channel"
+
   slogan:
     en: "A personal space for thoughts and notes."
     zh: "记录思考与笔记的个人空间。"
