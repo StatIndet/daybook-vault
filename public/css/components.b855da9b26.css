@@ -88,7 +88,11 @@
   font-size: 1.28rem;
 }
 
-.notes-action-button::after {
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
   background: var(--color-tooltip-bg);
   border-radius: 3px;
   top: calc(100% + 9px);
@@ -107,6 +111,13 @@
     opacity 160ms ease,
     transform 160ms ease;
   white-space: nowrap;
+  z-index: 100;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .notes-action-button:hover,
@@ -134,11 +145,7 @@
   color: var(--color-accent);
 }
 
-.notes-action-button:hover::after,
-.notes-action-button:focus-visible::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
+
 
 .notes-action-button:focus-visible {
   outline: 1px solid var(--color-accent);
@@ -1235,3 +1242,171 @@ body.is-search-overlay-open .mobile-search-overlay {
 
 /* Article Title Morphable Layout */
 
+
+/* Theme Icons Container */
+.theme-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.theme-icon-container svg {
+  display: none;
+  transition: transform 0.25s ease;
+  color: inherit;
+}
+
+:root[data-theme-mode="light"] .theme-toggle svg.lucide-sun,
+:root[data-theme-mode="dark"] .theme-toggle svg.lucide-moon,
+:root[data-theme-mode="system"] .theme-toggle svg.lucide-sun-moon {
+  display: block;
+}
+
+.theme-toggle:hover .theme-icon-container svg,
+.theme-toggle:focus-visible .theme-icon-container svg {
+  transform: rotate(20deg);
+}
+
+.theme-toggle:active .theme-icon-container svg {
+  transform: rotate(90deg);
+}
+
+/* Ensure palette icon is highlighted in warm or cool mode appropriately? 
+   Instruction 14: Desktop palette icon always highlights like warm state.
+   Wait, "无论当前是 Cool 还是 Warm，Desktop 的 palette icon 都保持与 warm 状态相同等级的高亮色... Visual highlight and accessibility state 分离"
+*/
+.notes-action-button.palette-toggle .material-symbol {
+  color: var(--color-accent); /* Always visually active */
+}
+
+/* Mobile Theme Selector */
+.mobile-theme-selector {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: max-content;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-line) 40%, transparent);
+}
+
+.theme-selector-indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-accent-soft-strong);
+  transition: transform var(--motion-expressive-fast-spatial-duration) var(--motion-expressive-fast-spatial-easing);
+  z-index: 0;
+}
+
+:root[data-theme-mode="light"] .theme-selector-indicator {
+  transform: translateX(0);
+}
+:root[data-theme-mode="system"] .theme-selector-indicator {
+  transform: translateX(36px);
+}
+:root[data-theme-mode="dark"] .theme-selector-indicator {
+  transform: translateX(72px);
+}
+
+.theme-selector-btn {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color 150ms ease;
+}
+
+.theme-selector-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-selector-btn:hover,
+.theme-selector-btn:focus-visible,
+.theme-selector-btn[aria-checked="true"] {
+  color: var(--color-hover-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-selector-indicator,
+  .theme-icon-container svg {
+    transition: none !important;
+  }
+}
+
+/* Reader Mode Toggle */
+.reader-mode-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: color 160ms ease, transform 160ms ease;
+  vertical-align: text-bottom;
+}
+
+.reader-mode-toggle:hover,
+.reader-mode-toggle:focus-visible {
+  color: var(--color-hover-text);
+}
+
+.reader-mode-toggle[aria-pressed="true"] {
+  color: var(--color-accent);
+}
+
+.reader-mode-toggle .material-symbol {
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.reader-mode-exit {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  height: calc(var(--note-title-size) * 1.15);
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  transition: color 160ms ease;
+  width: 36px;
+  z-index: 10;
+}
+
+.reader-mode-exit:hover,
+.reader-mode-exit:focus-visible {
+  color: var(--color-hover-text);
+}
+
+.reader-mode-exit .material-symbol {
+  font-size: 1.3rem;
+}
+
+.reader-mode-exit[hidden] {
+  display: none !important;
+}
