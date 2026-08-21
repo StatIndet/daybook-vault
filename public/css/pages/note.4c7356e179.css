@@ -872,48 +872,59 @@ body[data-reader-mode="immersive"] .note-title-wrapper {
 }
 
 /* Adjust mobile controls to sit properly without topbar */
-  /* Reader Mode specific controls (two sets of code) */
-  .reader-mode-controls {
-    display: none; /* Hidden by default globally */
+@media (max-width: 960px) {
+  /* Reader Mode specific controls (Single DOM Architecture) */
+  body[data-reader-mode="immersive"] .mobile-reading-controls {
+    /* Host is ALWAYS 32px tall to avoid Gecko compositor bug */
+    top: 0;
+    transform: translateY(0) !important;
+    height: 32px !important;
+    background: transparent !important;
+    transition: none !important;
   }
 
-@media (max-width: 960px) {
-  /* Hide ordinary controls in Reader Mode */
-  body[data-reader-mode="immersive"] .mobile-reading-controls {
-    display: none !important;
+  /* 1. Collapsed state (default) */
+  body[data-reader-mode="immersive"]:not(.reader-controls-expanded) .mobile-reading-controls {
+    pointer-events: none; /* Prevent 32px invisible box from blocking article clicks */
   }
-  
-  .reader-mode-controls {
-    position: fixed;
-    top: 0; /* Flush to absolute top for the 2px progress bar */
+
+  /* Hide inner controls */
+  body[data-reader-mode="immersive"]:not(.reader-controls-expanded) .mobile-reading-controls .rc-layer {
+    visibility: hidden;
+    transition: none !important;
+  }
+
+  /* The real 2px progress bar via pseudo-element */
+  body[data-reader-mode="immersive"]:not(.reader-controls-expanded) .mobile-reading-controls::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
-    z-index: 2005;
-    overflow: hidden;
     height: 2px;
-    background: transparent;
-    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, top 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  }
-  
-  body[data-reader-mode="immersive"] .reader-mode-controls {
-    display: block;
-  }
-  
-  body[data-reader-mode="immersive"].reader-controls-expanded .reader-mode-controls {
-    height: 32px;
-    top: env(safe-area-inset-top, 0px); /* Move down to safe area for clickable buttons */
-  }
-  
-  /* Ensure the progress bar track is visible when collapsed */
-  body[data-reader-mode="immersive"]:not(.reader-controls-expanded) .reader-mode-controls .rc-base {
-    background: var(--color-line);
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      var(--color-accent) 0,
+      var(--color-accent) var(--reading-progress),
+      var(--color-line) var(--reading-progress),
+      var(--color-line) 100%
+    );
   }
 
-  body[data-reader-mode="immersive"]:not(.reader-controls-expanded) .reader-mode-controls .rc-progress {
-    background: var(--color-accent);
+  /* 2. Expanded state */
+  body[data-reader-mode="immersive"].reader-controls-expanded .mobile-reading-controls {
+    pointer-events: auto;
+    top: env(safe-area-inset-top, 0px);
   }
-  
-  body[data-reader-mode="immersive"].reader-controls-expanded .reader-mode-controls .rc-progress {
-    background: var(--color-text);
+
+  body[data-reader-mode="immersive"].reader-controls-expanded .mobile-reading-controls::before {
+    display: none;
+  }
+
+  body[data-reader-mode="immersive"].reader-controls-expanded .mobile-reading-controls .rc-layer {
+    visibility: visible;
+    transition: none !important;
   }
 }
