@@ -15,12 +15,12 @@
   
     
   
-  <link rel="alternate" hreflang="en" href="/en/notes/examples/markdown-extended-demo/">
-  
-  
-  
   <link rel="alternate" hreflang="zh-CN" href="/notes/examples/Markdown%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95%e6%b5%8b%e8%af%95%e9%a1%b5/">
   <link rel="alternate" hreflang="x-default" href="/notes/examples/Markdown%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95%e6%b5%8b%e8%af%95%e9%a1%b5/">
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="/en/notes/examples/markdown-extended-demo/">
   
   
 
@@ -79,7 +79,7 @@
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
   <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.a57877a67e.css">
+  <link rel="stylesheet" href="/css/global.790b996e39.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -167,6 +167,37 @@
           Reduce Motion
         </span>
       </label>
+    </div>
+  </div>
+</div>
+
+  
+<div id="share-overlay" class="settings-overlay share-overlay" role="dialog" aria-modal="true" aria-labelledby="share-title" aria-hidden="true" inert>
+  <div class="settings-backdrop share-backdrop" data-share-close aria-label="Close share" data-i18n-aria-en="Close share" data-i18n-aria-zh="关闭分享"></div>
+  <div class="settings-paper share-paper">
+    <button class="settings-close-btn share-close-btn" type="button" data-share-close aria-label="Close share" data-i18n-aria-en="Close share" data-i18n-aria-zh="关闭分享">
+      <span class="material-symbol" aria-hidden="true">close</span>
+    </button>
+    
+    <h2 id="share-title" class="settings-title share-title" data-i18n-en="Share" data-i18n-zh="分享">Share</h2>
+    
+    <div class="settings-content share-content">
+      <textarea id="share-textarea" class="share-textarea" aria-label="Share" data-i18n-aria-en="Share" data-i18n-aria-zh="分享"></textarea>
+      
+      <div class="share-actions">
+        <button type="button" class="share-action-btn share-x-btn" data-share-x aria-label="X">
+          <img src="/icons/social/x.svg" alt="" width="24" height="24">
+          <span class="share-btn-text">X</span>
+        </button>
+        <button type="button" class="share-action-btn share-tg-btn" data-share-tg aria-label="Telegram">
+          <img src="/icons/social/telegram.svg" alt="" width="24" height="24">
+          <span class="share-btn-text">Telegram</span>
+        </button>
+        <button type="button" class="share-action-btn share-copy-btn" data-share-copy aria-label="Copy" data-i18n-aria-en="Copy" data-i18n-aria-zh="复制">
+          <span class="material-symbol" aria-hidden="true">content_copy</span>
+          <span class="share-copy-text" data-text-copy-en="Copy" data-text-copied-en="Copied" data-text-copy-zh="复制" data-text-copied-zh="已复制" data-i18n-en="Copy" data-i18n-zh="复制">Copy</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -270,6 +301,12 @@
               <span data-page-views-label data-path="/en/notes/examples/markdown-extended-demo/">views</span>
             </span>
             
+
+            <span class="meta-stagger-item share-entry">
+              <button type="button" class="share-toggle-btn" aria-label="Share" data-tooltip="Share" data-share-open data-share-title="Markdown Extended Syntax Test Page" data-share-url="/en/notes/examples/markdown-extended-demo/" data-share-text="&#34;Markdown Extended Syntax Test Page&#34;">
+                <span class="material-symbol" aria-hidden="true">share</span>
+              </button>
+            </span>
             
             <span class="meta-stagger-item reader-mode-entry">
               <button type="button" class="reader-mode-toggle" aria-label="Reader mode" aria-pressed="false" data-tooltip="Reader mode" data-reader-toggle>
@@ -852,6 +889,10 @@ graph TD;
 
     import("\/js\/settings-overlay.5e8ef74fdc.js").then(module => {
       module.initSettingsOverlay();
+    });
+
+    import("\/js\/share-overlay.77cf886ab5.js").then(module => {
+      module.initShareOverlay();
     });
 
     import("\/js\/image-loader.9dcdac9c73.js");
