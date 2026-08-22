@@ -74,7 +74,7 @@
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
   <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.7db93902ce.css">
+  <link rel="stylesheet" href="/css/global.672e28267a.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -82,6 +82,7 @@
 </head>
 
 <body class="tag-body page-body" data-page-kind="tag" data-search-index-url="/search.json" data-stats-enabled="true">
+  <div class="reader-progress-bar" aria-hidden="true"><div class="reader-progress-bar__line"></div></div>
   
 <div class="persistent-logo-container" id="mobile-top-bar">
   <div class="persistent-logo-main">
@@ -636,7 +637,7 @@
       }
     });
 
-    import("\/js\/reading-controls.7ec9c1ef4e.js").then(module => {
+    import("\/js\/reading-controls.926df4579a.js").then(module => {
       module.initReadingControls();
       document.addEventListener("daybook:page-load", () => {
         module.initReadingControls();
