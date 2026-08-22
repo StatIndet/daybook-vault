@@ -1,6 +1,6 @@
 site:
   title: "My Daybook"
-  url: ""
+  url: "http://localhost:1313"
   startedAt: "2024-01-01"
 
 profile:
@@ -43,4 +43,4 @@ stats:
   enabled: true
 
 share:
-  text: '"{Title}"'
+  text: '「{Title}」'
