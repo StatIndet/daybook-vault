@@ -41,8 +41,8 @@
     </item>
     <item>
       <title>KaTeX Mathematical Formula Test</title>
-      <link>/en/notes/examples/katex-mathematical-demo/</link>
-      <guid>/en/notes/examples/katex-mathematical-demo/</guid>
+      <link>/en/notes/examples/katex mathematical demo/</link>
+      <guid>/en/notes/examples/katex mathematical demo/</guid>
       <description>Test Daybook’s rendering support for KaTeX mathematical formulas, the align environment, matrices, Greek letters, and common mathematical symbols.</description>
       <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
     </item>
