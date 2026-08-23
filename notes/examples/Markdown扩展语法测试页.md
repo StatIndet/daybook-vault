@@ -22,16 +22,16 @@ lang: zh-CN
 ### 语法
 
 ```
-![图片描述](https://static.daybook.page/image/gallery/06.webp)
+![图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_图片描述](https://static.daybook.page/image/gallery/06.webp)
+![_图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 ```
 
 ### 效果
 
-![图片描述](https://static.daybook.page/image/gallery/06.webp)
+![图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_图片描述](https://static.daybook.page/image/gallery/06.webp)
+![_图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
 ## 提示块
 
@@ -137,22 +137,22 @@ graph TD;
 
 ```
 :::gallery
-![羊驼](https://static.daybook.page/image/gallery/sheep-1.jpg)
-![转头](https://static.daybook.page/image/gallery/sheep-2.jpg)
-![对视](https://static.daybook.page/image/gallery/sheep-3.jpg)
-![小羊驼](https://static.daybook.page/image/gallery/sheep-4.jpg)
-![可爱捏](https://static.daybook.page/image/gallery/sheep-5.jpg)
+![羊驼](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![转头](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![对视](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![小羊驼](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![可爱捏](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
 ```
 
 ### 效果
 
 :::gallery
-![羊驼](https://static.daybook.page/image/gallery/sheep-1.jpg)
-![转头](https://static.daybook.page/image/gallery/sheep-2.jpg)
-![对视](https://static.daybook.page/image/gallery/sheep-3.jpg)
-![小羊驼](https://static.daybook.page/image/gallery/sheep-4.jpg)
-![可爱捏](https://static.daybook.page/image/gallery/sheep-5.jpg)
+![羊驼](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![转头](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![对视](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![小羊驼](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![可爱捏](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
 
 ## GitHub 仓库
