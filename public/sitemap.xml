@@ -56,7 +56,7 @@
     <loc>http://localhost:1313/tags/诗歌/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/notes/examples/obsidian-media-local-remote-test/</loc>
+    <loc>http://localhost:1313/notes/obsidian-media-local-remote-test/</loc>
     <lastmod>2026-06-29</lastmod>
   </url>
   <url>
@@ -64,7 +64,7 @@
     <lastmod>2026-06-28</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/notes/莎士比亚/</loc>
+    <loc>http://localhost:1313/notes/Shakespeare/</loc>
     <lastmod>2026-06-25</lastmod>
   </url>
   <url>
@@ -136,7 +136,7 @@
     <loc>http://localhost:1313/en/tags/测试/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/en/notes/examples/obsidian-media-local-remote-test/</loc>
+    <loc>http://localhost:1313/en/notes/obsidian-media-local-remote-test/</loc>
     <lastmod>2026-06-29</lastmod>
   </url>
   <url>
@@ -144,7 +144,7 @@
     <lastmod>2026-06-28</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/en/notes/莎士比亚/</loc>
+    <loc>http://localhost:1313/en/notes/Shakespeare/</loc>
     <lastmod>2026-06-25</lastmod>
   </url>
   <url>

@@ -6,8 +6,8 @@
     <description>My Daybook</description>
     <item>
       <title>Obsidian 本地与远程附件测试</title>
-      <link>http://localhost:1313/en/notes/examples/obsidian-media-local-remote-test/</link>
-      <guid>http://localhost:1313/en/notes/examples/obsidian-media-local-remote-test/</guid>
+      <link>http://localhost:1313/en/notes/obsidian-media-local-remote-test/</link>
+      <guid>http://localhost:1313/en/notes/obsidian-media-local-remote-test/</guid>
       <description>测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。</description>
       <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
     </item>
@@ -20,8 +20,8 @@
     </item>
     <item>
       <title>Shall I Compare Thee to a Summer’s Day?</title>
-      <link>http://localhost:1313/en/notes/莎士比亚/</link>
-      <guid>http://localhost:1313/en/notes/莎士比亚/</guid>
+      <link>http://localhost:1313/en/notes/Shakespeare/</link>
+      <guid>http://localhost:1313/en/notes/Shakespeare/</guid>
       <description>Shakespeare’s Sonnet 18, used here as an English-only sample post for Daybook’s multilingual article model.</description>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     </item>
