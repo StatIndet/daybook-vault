@@ -22,16 +22,16 @@ To create automatic figure captions, use the standard Markdown image syntax `![a
 ### Syntax
 
 ```
-![Image description](https://static.daybook.page/image/gallery/06.webp)
+![Image description](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_Image description](https://static.daybook.page/image/gallery/06.webp)
+![_Image description](https://static.daybook.page/picture/06_27TtR7.webp)
 ```
 
 ### Output
 
-![Image description](https://static.daybook.page/image/gallery/06.webp)
+![Image description](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_Image description](https://static.daybook.page/image/gallery/06.webp)
+![_Image description](https://static.daybook.page/picture/06_27TtR7.webp)
 
 ## Admonition Blocks
 
@@ -85,6 +85,30 @@ Advises about risks or negative outcomes of certain actions.
 This is a note with a custom title.
 :::
 
+### Obsidian Style
+
+```markdown
+> [!note]
+> A short note.
+
+> [!warning]- Collapsed by default
+> Click the title to expand.
+
+> [!tip]+ Expanded by default
+> You can still collapse it manually.
+```
+
+Actual result:
+
+> [!note]
+> A short note.
+
+> [!warning]- Collapsed by default
+> Click the title to expand.
+
+> [!tip]+ Expanded by default
+> You can still collapse it manually.
+
 ## Collapsible Sections
 
 To create collapsible sections, use the container directive syntax `:::fold[title]`. Click the title to expand or collapse.
@@ -137,22 +161,22 @@ To create image galleries, use the container directive `:::gallery`. Scroll hori
 
 ```
 :::gallery
-![Alpaca](https://static.daybook.page/image/gallery/sheep-1.jpg)
-![Turning head](https://static.daybook.page/image/gallery/sheep-2.jpg)
-![Eye contact](https://static.daybook.page/image/gallery/sheep-3.jpg)
-![Baby alpaca](https://static.daybook.page/image/gallery/sheep-4.jpg)
-![Aww, so cute!](https://static.daybook.page/image/gallery/sheep-5.jpg)
+![Alpaca](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![Turning head](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![Eye contact](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![Baby alpaca](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![Aww, so cute!](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
 ```
 
 ### Output
 
 :::gallery
-![Alpaca](https://static.daybook.page/image/gallery/sheep-1.jpg)
-![Turning head](https://static.daybook.page/image/gallery/sheep-2.jpg)
-![Eye contact](https://static.daybook.page/image/gallery/sheep-3.jpg)
-![Baby alpaca](https://static.daybook.page/image/gallery/sheep-4.jpg)
-![Aww, so cute!](https://static.daybook.page/image/gallery/sheep-5.jpg)
+![Alpaca](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![Turning head](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![Eye contact](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![Baby alpaca](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![Aww, so cute!](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
 
 ## GitHub Repositories
@@ -162,12 +186,12 @@ To embed GitHub repositories, use the leaf directive `::github{repo="owner/repo"
 ### Syntax
 
 ```
-::github{repo="radishzzz/astro-theme-retypeset"}
+::github{repo="StatIndet/daybook"}
 ```
 
 ### Output
 
-::github{repo="radishzzz/astro-theme-retypeset"}
+::github{repo="StatIndet/daybook"}
 
 ## Videos
 

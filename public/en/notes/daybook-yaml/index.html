@@ -1,0 +1,1158 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>daybook.yaml 配置 | My Daybook</title>
+  
+  <meta name="description" content="Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。">
+  
+
+  <link rel="canonical" href="http://localhost:1313/en/notes/daybook-yaml/">
+  
+    
+  
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/en/notes/daybook-yaml/">
+  
+  
+
+  <meta property="og:title" content="daybook.yaml 配置 | My Daybook">
+  <meta property="og:description" content="Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://localhost:1313/en/notes/daybook-yaml/">
+  
+  <meta property="og:site_name" content="My Daybook">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="daybook.yaml 配置 | My Daybook">
+  <meta name="twitter:description" content="Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。">
+  
+
+  
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/en/notes/daybook-yaml/#article","url":"http://localhost:1313/en/notes/daybook-yaml/","headline":"daybook.yaml 配置","description":"Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/en/notes/daybook-yaml/","keywords":"Daybook, Configuration, Guide"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/en/notes/daybook-yaml/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"http://localhost:1313/en/"},{"@type":"ListItem","position":2,"name":"Notes","item":"http://localhost:1313/en/notes/"},{"@type":"ListItem","position":3,"name":"daybook.yaml 配置","item":"http://localhost:1313/en/notes/daybook-yaml/"}]}]}
+  </script>
+  
+
+  <script src="/js/theme.6007d7a351.js"></script>
+  <script>
+    (function() {
+      try {
+        var raw = localStorage.getItem('daybook:user-settings');
+        if (raw) {
+          var settings = JSON.parse(raw);
+          var html = document.documentElement;
+          if (settings.useSystemCursor) html.setAttribute('data-use-system-cursor', 'true');
+          if (settings.disableComments) html.setAttribute('data-comments-disabled', 'true');
+          if (settings.reducedMotion || settings.disableTitleTransition) html.setAttribute('data-reduced-motion', 'true');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/js/code-copy.0248e0ee56.js" defer></script>
+  <script src="/js/toc.f2baf40c54.js" defer></script>
+  <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
+  <script src="/js/heading-anchors.a0aad74fb9.js" defer></script>
+  <script src="/js/note-filters.2d2f20797c.js" defer></script>
+  <script src="/js/lightbox.a15c0f66e6.js" defer></script>
+  <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
+  <script src="/js/gallery.3040baa394.js" defer></script>
+  <script src="/js/embeds.046d92db98.js" defer></script>
+  <script src="/js/page-transition-engine.b35c2942ae.js" defer></script>
+  <script src="/js/graph-loader.b1c100b294.js" defer></script>
+  <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
+  <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
+  <script src="/js/daybook-router.3a0f3938c4.js" defer></script>
+  <script src="/js/katex-loader.b639ed40fa.js" defer></script>
+  <script src="/js/custom-cursor.5a89752a8a.js" defer></script>
+  <script src="/js/note-bilingual.27772b9611.js" defer></script>
+  <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
+  <link rel="stylesheet" href="/vendor/fonts/noto-serif-sc/wght.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.baec377b53.css">
+  <link rel="stylesheet" href="/css/global.b70a6d448a.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
+  
+  <link rel="icon" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  
+</head>
+
+<body class="note-body page-body" data-page-kind="note" data-search-index-url="/search.json" data-stats-enabled="true">
+  <div class="reader-progress-bar" aria-hidden="true"></div>
+  
+<div class="persistent-logo-container" id="mobile-top-bar">
+  <div class="persistent-logo-main">
+    <a class="site-logo persistent-logo" href="/" aria-label="Author 首页">
+      <span>Author</span>
+    </a>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-label="打开导航菜单" aria-controls="mobile-drawer">
+      <span class="material-symbol icon-menu" aria-hidden="true">menu</span>
+      <span class="material-symbol icon-close" aria-hidden="true">close</span>
+    </button>
+  </div>
+</div>
+
+  
+<div id="settings-overlay" class="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title" aria-hidden="true" inert>
+  <div class="settings-backdrop" data-settings-close aria-label="Close Settings" data-i18n-aria-en="Close Settings" data-i18n-aria-zh="关闭设置面板"></div>
+  <div class="settings-paper">
+    <button class="settings-close-btn" type="button" data-settings-close aria-label="Close Settings" data-i18n-aria-en="Close Settings" data-i18n-aria-zh="关闭设置面板">
+      <span class="material-symbol" aria-hidden="true">close</span>
+    </button>
+    
+    <h2 id="settings-title" class="settings-title" data-i18n-en="Settings" data-i18n-zh="设置">Settings</h2>
+    
+    <div class="settings-content">
+      <label class="settings-checkbox-label setting-item-cursor">
+        <input type="checkbox" id="setting-system-cursor" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Use System Cursor" data-i18n-zh="使用系统默认光标">
+          Use System Cursor
+        </span>
+      </label>
+
+      <label class="settings-checkbox-label setting-item-clock-cursor" style="margin-left: 2rem; margin-top: -15px;">
+        <input type="checkbox" id="setting-clock-cursor" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Enable Clock Cursor Effect" data-i18n-zh="启用时钟光标效果">
+          Enable Clock Cursor Effect
+        </span>
+      </label>
+      
+      <label class="settings-checkbox-label">
+        <input type="checkbox" id="setting-disable-comments" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Disable Comments" data-i18n-zh="禁用评论区">
+          Disable Comments
+        </span>
+      </label>
+
+      <label class="settings-checkbox-label">
+        <input type="checkbox" id="setting-reduced-motion" class="settings-checkbox-input" />
+        <svg viewBox="0 0 24 24" class="settings-checkbox-svg">
+          <polyline points="5,15 10,19 19,5"></polyline>
+          <line x1="0" y1="0" x2="24" y2="0"></line>
+          <line x1="24" y1="0" x2="24" y2="24"></line>
+          <line x1="0" y1="24" x2="24" y2="24"></line>
+          <line x1="0" y1="0" x2="0" y2="24"></line>
+        </svg>
+        <span class="settings-checkbox-text" data-i18n-en="Reduce Motion" data-i18n-zh="减少动画">
+          Reduce Motion
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+
+  
+<div id="share-overlay" class="settings-overlay share-overlay" role="dialog" aria-modal="true" aria-labelledby="share-title" aria-hidden="true" inert>
+  <div class="settings-backdrop share-backdrop" data-share-close aria-label="Close share" data-i18n-aria-en="Close share" data-i18n-aria-zh="关闭分享"></div>
+  <div class="settings-paper share-paper">
+    <button class="settings-close-btn share-close-btn" type="button" data-share-close aria-label="Close share" data-i18n-aria-en="Close share" data-i18n-aria-zh="关闭分享">
+      <span class="material-symbol" aria-hidden="true">close</span>
+    </button>
+    
+    <h2 id="share-title" class="settings-title share-title" data-i18n-en="Share" data-i18n-zh="分享">Share</h2>
+    
+    <div class="settings-content share-content">
+      <textarea id="share-textarea" class="share-textarea" aria-label="Share" data-i18n-aria-en="Share" data-i18n-aria-zh="分享"></textarea>
+      
+      <div class="share-actions">
+        <button type="button" class="share-action-btn share-x-btn" data-share-x aria-label="X">
+          <img src="/icons/social/x.svg" alt="" width="24" height="24">
+          <span class="share-btn-text">X</span>
+        </button>
+        <button type="button" class="share-action-btn share-tg-btn" data-share-tg aria-label="Telegram">
+          <img src="/icons/social/telegram.svg" alt="" width="24" height="24">
+          <span class="share-btn-text">Telegram</span>
+        </button>
+        <button type="button" class="share-action-btn share-copy-btn" data-share-copy aria-label="Copy" data-i18n-aria-en="Copy" data-i18n-aria-zh="复制">
+          <span class="material-symbol" aria-hidden="true">content_copy</span>
+          <span class="share-copy-text" data-text-copy-en="Copy" data-text-copied-en="Copied" data-text-copy-zh="复制" data-text-copied-zh="已复制" data-i18n-en="Copy" data-i18n-zh="复制">Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="page-frame" id="daybook-page" data-daybook-page>
+  
+  <div class="page-shell">
+    
+<aside class="side-rail" aria-label="站点导航">
+  <a class="side-avatar-link" href="/" aria-label="回到首页">
+    <div class="side-avatar-wrap" data-site-avatar>
+      
+    </div>
+  </a>
+
+  <nav class="side-nav" aria-label="主导航" data-transition-region="side-nav">
+    <a class="nav-link" href="/en/">
+      <span class="nav-icon material-symbol" aria-hidden="true">home</span>
+      <span class="nav-label">Home</span>
+    </a>
+    <a class="nav-link" href="/en/notes/">
+      <span class="nav-icon material-symbol" aria-hidden="true">article</span>
+      <span class="nav-label">Notes</span>
+    </a>
+    <a class="nav-link" href="/en/archive/">
+      <span class="nav-icon material-symbol" aria-hidden="true">archive</span>
+      <span class="nav-label">Archive</span>
+    </a>
+    <a class="nav-link" href="/en/graph/">
+      <span class="nav-icon material-symbol" aria-hidden="true">account_tree</span>
+      <span class="nav-label">Graph</span>
+    </a>
+    <a class="nav-link" href="/en/about/">
+      <span class="nav-icon material-symbol" aria-hidden="true">info</span>
+      <span class="nav-label">About</span>
+    </a>
+  </nav>
+
+
+</aside>
+
+
+    <main class="site-main page-main">
+      <div id="main-content-wrapper">
+        
+<div class="mobile-reading-controls" id="mobile-reading-controls">
+  <div class="rc-layer rc-base">
+    <button class="mobile-reading-btn mobile-top-btn" type="button" aria-label="回到顶部">
+      <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    </button>
+    <span class="mobile-reading-percentage" data-mobile-progress-text>0%</span>
+    <button class="mobile-reading-btn mobile-bottom-btn" type="button" aria-label="前往底部">
+      <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    </button>
+  </div>
+  <div class="rc-layer rc-progress">
+    <button class="mobile-reading-btn mobile-top-btn" type="button" tabindex="-1" aria-hidden="true">
+      <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    </button>
+    <span class="mobile-reading-percentage" data-mobile-progress-text>0%</span>
+    <button class="mobile-reading-btn mobile-bottom-btn" type="button" tabindex="-1" aria-hidden="true">
+      <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    </button>
+  </div>
+</div>
+
+<div class="notes-page note-detail-page has-toc">
+  <section class="note-detail article-stage" aria-label="文章详情">
+    <article class="note" data-has-mermaid="false" data-has-math="false">
+      <header class="note-header">
+        <div class="note-title-wrapper">
+          <a class="note-back-link" href="/en/notes/" aria-label="Back">
+            <span class="material-symbol" aria-hidden="true">arrow_back</span>
+          </a>
+          <h1 class="note-title">
+            <span data-title-transition-key="daybook-yaml">
+              <span class="title-morphable" data-title-transition-key="daybook-yaml"><span class="title-glyph" data-glyph-index="0">d</span><span class="title-glyph" data-glyph-index="1">a</span><span class="title-glyph" data-glyph-index="2">y</span><span class="title-glyph" data-glyph-index="3">b</span><span class="title-glyph" data-glyph-index="4">o</span><span class="title-glyph" data-glyph-index="5">o</span><span class="title-glyph" data-glyph-index="6">k</span><span class="title-glyph" data-glyph-index="7">.</span><span class="title-glyph" data-glyph-index="8">y</span><span class="title-glyph" data-glyph-index="9">a</span><span class="title-glyph" data-glyph-index="10">m</span><span class="title-glyph" data-glyph-index="11">l</span> <span class="title-glyph" data-glyph-index="13">配</span><span class="title-glyph" data-glyph-index="14">置</span></span>
+            </span>
+          </h1>
+          <button type="button" class="reader-mode-exit" aria-label="Exit reader mode" data-tooltip="Exit reader mode" data-reader-exit hidden>
+            <span class="material-symbol" aria-hidden="true">exit_to_app</span>
+          </button>
+        </div>
+        
+        <div class="note-fallback-warning">
+          <p>This post is not available in English yet. The original Chinese version is shown below.</p>
+        </div>
+        
+        <div class="article-meta-rows" data-transition-scope="daybook-yaml">
+          <div class="article-shared-meta">
+            
+            
+            
+            <time datetime="2026-08-23" data-article-shared="published">2026-08-23</time>
+            <span class="reading-time" data-article-shared="reading">3 min</span>
+            
+          </div>
+          <div class="article-stagger-meta">
+            <span class="meta-stagger-item">799 words</span>
+            
+            <span class="meta-stagger-item">
+              <span data-page-views data-path="/en/notes/daybook-yaml/">--</span>
+              <span data-page-views-label data-path="/en/notes/daybook-yaml/">views</span>
+            </span>
+            
+
+            <span class="meta-stagger-item share-entry">
+              <button type="button" class="share-toggle-btn" aria-label="Share" data-tooltip="Share" data-share-open data-share-title="daybook.yaml 配置" data-share-link="http://localhost:1313/en/notes/daybook-yaml/" data-share-text="「daybook.yaml 配置」">
+                <span class="material-symbol" aria-hidden="true">share</span>
+              </button>
+            </span>
+            
+            <span class="meta-stagger-item reader-mode-entry">
+              <button type="button" class="reader-mode-toggle" aria-label="Reader mode" aria-pressed="false" data-tooltip="Reader mode" data-reader-toggle>
+                <span class="material-symbol" aria-hidden="true">chrome_reader_mode</span>
+              </button>
+            </span>
+
+            
+          </div>
+        </div>
+        <p class="note-summary">Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。</p>
+      </header>
+
+      
+      <div class="note-toc-wrapper">
+        <div class="note-sticky-column">
+          
+
+<div class="note-toc-stage" data-note-toc-stage>
+  <aside class="note-toc is-open" data-note-toc aria-label="文章目录">
+    <div class="note-toc-header">
+      <button class="note-toc-toggle" type="button" aria-expanded="true" aria-controls="note-toc-list" aria-label="展开或收起文章目录">
+        <span class="material-symbol" aria-hidden="true">menu_open</span>
+      </button>
+      <span class="note-toc-title">目录</span>
+    </div>
+    <nav class="note-toc-panel" id="note-toc-list" aria-label="文章目录">
+      <div class="note-toc-indicator" aria-hidden="true"></div>
+      <ol>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 0">
+          <a href="#%23%e4%b8%80%e4%bb%bd%e5%8f%af%e7%9b%b4%e6%8e%a5%e4%bf%ae%e6%94%b9%e7%9a%84%e7%a4%ba%e4%be%8b">一份可直接修改的示例</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 1">
+          <a href="#%23site">site</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 2">
+          <a href="#%23title">title</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 3">
+          <a href="#%23%23url">url</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 4">
+          <a href="#%23%23startedAt">startedAt</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 5">
+          <a href="#%23%23favicon">favicon</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 6">
+          <a href="#%23profile">profile</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 7">
+          <a href="#%23%23author">author</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 8">
+          <a href="#%23%23social">social</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 9">
+          <a href="#%23%23slogan">slogan</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 10">
+          <a href="#%23seo">seo</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 11">
+          <a href="#%23comment">comment</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 12">
+          <a href="#%23stats">stats</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 13">
+          <a href="#%23share">share</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 14">
+          <a href="#%23%e9%85%8d%e7%bd%ae%e4%b8%8e%e5%86%85%e5%ae%b9%e4%bf%9d%e6%8c%81%e7%8b%ac%e7%ab%8b">配置与内容保持独立</a>
+        </li>
+        
+      </ol>
+    </nav>
+    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 15"></div>
+    <div class="note-toc-reading-controls" style="--toc-index: 15">
+      
+<div class="note-right-controls" aria-label="阅读进度控制">
+  <div class="note-rc-progress">
+    <svg class="note-rc-ring" width="24" height="24" viewBox="0 0 24 24">
+      <circle class="note-rc-ring-bg" cx="12" cy="12" r="10" />
+      <circle class="note-rc-ring-fg" cx="12" cy="12" r="10" data-progress-circle />
+    </svg>
+    <span class="note-rc-text" data-desktop-progress-text>0%</span>
+  </div>
+  <button class="note-rc-btn back-to-top-btn" type="button" aria-label="回到顶部">
+    <span class="material-symbol" aria-hidden="true">arrow_upward</span>
+    <span class="note-rc-btn-text">回到顶部</span>
+  </button>
+  <button class="note-rc-btn go-to-bottom-btn" type="button" aria-label="前往底部">
+    <span class="material-symbol" aria-hidden="true">arrow_downward</span>
+    <span class="note-rc-btn-text">前往底部</span>
+  </button>
+</div>
+
+    </div>
+  </aside>
+
+  <nav class="reading-toc-rail" data-reading-toc-rail aria-label="Reading progress" aria-hidden="true" inert>
+    <svg class="reading-toc-rail-svg" data-reading-toc-rail-svg viewBox="0 0 208 640" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="reading-toc-rail-base" data-reading-toc-rail-base d="M 0 0"></path>
+      <path class="reading-toc-rail-accent" data-reading-toc-rail-accent d="M 0 0" pathLength="1" stroke-dasharray="0.12 2" stroke-dashoffset="0.06"></path>
+    </svg>
+    <div class="reading-toc-rail-dots" data-reading-toc-rail-dots></div>
+    <a class="reading-toc-rail-current" data-reading-toc-rail-label data-reading-toc-rail-link href="#" aria-label="Jump to current section">
+      <span class="reading-toc-rail-title-stage">
+        <span class="reading-toc-rail-title is-active" data-reading-toc-rail-title></span>
+        <span class="reading-toc-rail-title" data-reading-toc-rail-title aria-hidden="true"></span>
+      </span>
+      <span class="reading-toc-rail-percent" data-reading-toc-rail-percent>0%</span>
+    </a>
+  </nav>
+</div>
+
+
+        </div>
+      </div>
+      
+
+      
+      
+
+<button class="mobile-toc-fab" data-mobile-toc-fab aria-label="Open Table of Contents">
+  <span class="material-symbol">format_list_bulleted</span>
+</button>
+
+<div class="mobile-toc-sheet" data-mobile-toc-sheet aria-hidden="true" inert>
+  <div class="mobile-toc-backdrop" data-mobile-toc-backdrop></div>
+  <div class="mobile-toc-panel">
+    <div class="mobile-toc-drag-handle" data-mobile-toc-drag-handle></div>
+    <div class="mobile-toc-header">
+      <span class="note-toc-title">Table of Contents</span>
+    </div>
+    <nav class="mobile-toc-nav" aria-label="文章目录">
+      <div class="note-toc-indicator" data-mobile-toc-indicator aria-hidden="true"></div>
+      <ol>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 0">
+          <a href="#%23%e4%b8%80%e4%bb%bd%e5%8f%af%e7%9b%b4%e6%8e%a5%e4%bf%ae%e6%94%b9%e7%9a%84%e7%a4%ba%e4%be%8b">一份可直接修改的示例</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 1">
+          <a href="#%23site">site</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 2">
+          <a href="#%23title">title</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 3">
+          <a href="#%23%23url">url</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 4">
+          <a href="#%23%23startedAt">startedAt</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 5">
+          <a href="#%23%23favicon">favicon</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 6">
+          <a href="#%23profile">profile</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 7">
+          <a href="#%23%23author">author</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 8">
+          <a href="#%23%23social">social</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 9">
+          <a href="#%23%23slogan">slogan</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 10">
+          <a href="#%23seo">seo</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 11">
+          <a href="#%23comment">comment</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 12">
+          <a href="#%23stats">stats</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 13">
+          <a href="#%23share">share</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 14">
+          <a href="#%23%e9%85%8d%e7%bd%ae%e4%b8%8e%e5%86%85%e5%ae%b9%e4%bf%9d%e6%8c%81%e7%8b%ac%e7%ab%8b">配置与内容保持独立</a>
+        </li>
+        
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+      
+
+      <div class="markdown post-content">
+        <p><code>daybook.yaml</code> 是 Daybook 的站点级配置文件，放在 <strong>Vault 根目录</strong>。<code>daybook build</code> 会从当前工作目录读取它；文件不存在或 YAML 无法解析时，构建会直接报错。</p>
+<p>文章自己的标题、日期、语言等信息不写在这里，而是写在各自的 frontmatter 中。两者的分工可参考 <a href="/notes/frontmatter/">文章 Frontmatter</a>。</p>
+<h2 id="#一份可直接修改的示例">一份可直接修改的示例</h2>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">site</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;My Daybook&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://example.com&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">startedAt</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2024-01-01&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">profile</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;佚名&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nameEn</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Author&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">logoText</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Author&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">aboutUrl</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/about&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">social</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">github</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://github.com/your-name&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">slogan</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;A personal space for thoughts and notes.&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;记录思考与笔记的个人空间。&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">seo</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">homeTitle</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;My Daybook&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;我的 Daybook&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">homeDescription</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Welcome to my personal Daybook.&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;欢迎来到我的个人 Daybook。&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">comment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;waline&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">waline</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">serverURL</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;zh-CN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">pageSize</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">commentSorting</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;latest&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">imageUploader</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">stats</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">share</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;「{Title}」&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>本地预览时，<code>site.url</code> 也可以使用 <code>http://localhost:1313</code>。正式部署后应改为最终公开地址。</p>
+<h2 id="#site">site</h2>
+<h2 id="#title"><strong>title</strong></h2>
+<p>站点名称。为空时使用 <code>Daybook</code>。</p>
+<h3 id="##url"><code>url</code></h3>
+<p>站点的公开基础 URL，用于生成 canonical、分享链接、sitemap 等绝对地址。非空时必须以 <code>http://</code> 或 <code>https://</code> 开头。</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://example.com&#34;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="##startedAt"><code>startedAt</code></h3>
+<p>站点起始日期。建议使用 <code>YYYY-MM-DD</code>。为空时当前实现使用 <code>2026-06-08</code> 作为默认值。</p>
+<h3 id="##favicon"><code>favicon</code></h3>
+<p>自定义 favicon 的路径，<strong>相对于 Vault 根目录</strong>。为空时使用 Daybook 内置 favicon。</p>
+<p>例如源文件位于：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">assets/favicon.svg
+</span></span></code></pre></div><p>则可写：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;assets/favicon.svg&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>构建时如果这里指定的文件不存在，Daybook 会报错。</p>
+<h2 id="#profile"><code>profile</code></h2>
+<h3 id="##author"><code>author</code></h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">author</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;佚名&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nameEn</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Author&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">logoText</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Author&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">aboutUrl</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/about&#34;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li><code>name</code>：主要作者名。</li>
+<li><code>nameEn</code>：英文作者名。</li>
+<li><code>logoText</code>：Logo 区域使用的文本；为空时依次回退到 <code>nameEn</code>、<code>name</code>。</li>
+<li><code>avatar</code>：头像资源。为空可以保留主题默认行为。若使用 Vault 内图片，可让文件随构建发布，并使用站点根路径引用，例如 <code>/attachments/picture/avatar.jpg</code>。</li>
+<li><code>aboutUrl</code>：作者信息区域指向的 About 页面地址，默认模板通常使用 <code>/about</code>。</li>
+</ul>
+<h3 id="##social"><code>social</code></h3>
+<p>每项包含 <code>type</code> 与 <code>url</code>：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">social</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">github</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://github.com/your-name&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">youtube</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://youtube.com/@your-channel&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>当前内置类型包括：</p>
+<p><code>bilibili</code>、<code>bluesky</code>、<code>discord</code>、<code>email</code>、<code>github</code>、<code>gitlab</code>、<code>instagram</code>、<code>mastodon</code>、<code>qq</code>、<code>reddit</code>、<code>telegram</code>、<code>threads</code>、<code>twitch</code>、<code>x</code>、<code>youtube</code>。</p>
+<p>不支持的类型会被跳过并给出警告。RSS 链接由 Daybook 按当前语言自动添加，因此不需要在 <code>social</code> 中手动写 <code>rss</code>。</p>
+<h3 id="##slogan"><code>slogan</code></h3>
+<p>首页/侧栏的多语言 slogan：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">slogan</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;A personal space for thoughts and notes.&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">zh</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;记录思考与笔记的个人空间。&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>站点界面使用英文时读取 <code>en</code>；中文环境会回退到 <code>zh</code>。</p>
+<h2 id="#seo"><code>seo</code></h2>
+<p>首页标题与描述分别配置中英文：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">seo</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">homeTitle</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;My Daybook&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;我的 Daybook&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">homeDescription</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Welcome to my personal Daybook.&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;欢迎来到我的个人 Daybook。&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>文章详情页的 SEO 标题、摘要、发布日期和标签主要来自文章 frontmatter，因此首页配置与文章配置互不替代。</p>
+<h2 id="#comment"><code>comment</code></h2>
+<p>Daybook 当前内置 Waline 前端集成：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">comment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;waline&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">waline</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">serverURL</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://comment.example.com&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;zh-CN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">pageSize</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">commentSorting</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;latest&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">imageUploader</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li><code>enabled</code>：站点级评论开关。</li>
+<li><code>provider</code>：当前实现使用 <code>waline</code>。</li>
+<li><code>serverURL</code>：Waline 服务地址。启用 Waline 却不填写该字段时，Daybook 会警告并关闭评论。</li>
+<li><code>lang</code>：Waline 界面语言；为空时默认 <code>zh-CN</code>。</li>
+<li><code>pageSize</code>：每页评论数；<code>0</code> 会回退到 <code>10</code>。</li>
+<li><code>commentSorting</code>：评论排序；为空时默认 <code>latest</code>。</li>
+<li><code>search</code>：是否启用 Waline 搜索相关能力。</li>
+<li><code>imageUploader</code>：是否启用 Waline 图片上传入口。</li>
+</ul>
+<p>单篇文章还可以通过 frontmatter 的 <code>comment: true/false</code> 覆盖文章级行为。</p>
+<h2 id="#stats"><code>stats</code></h2>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">stats</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></div><p>控制 Daybook 的访问统计功能是否启用。这个字段本身只表达站点配置，不会在本地凭空创建 Cloudflare D1 等外部资源；部署环境仍需要提供统计功能所需的后端绑定。</p>
+<h2 id="#share"><code>share</code></h2>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">share</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;「{Title}」&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>定义文章分享时使用的文本模板。<code>{Title}</code> 会被当前文章标题替换。</p>
+<p>例如文章标题为 <code>静夜思</code> 时，上面的模板会得到：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">「静夜思」
+</span></span></code></pre></div><p>为空时 Daybook 使用内置的标题模板。</p>
+<h2 id="#配置与内容保持独立">配置与内容保持独立</h2>
+<p><code>daybook.yaml</code> 适合存放站点级、可以公开提交到仓库的设置；文章自身的元数据放在 frontmatter，正文保持 Markdown。这样更换站点名称或评论服务时，不需要批量修改每一篇文章。</p>
+<p>写作语法继续见 <a href="/notes/markdown-syntax/">Markdown、Obsidian 与 Daybook 语法</a>；附件规则见 <a href="/notes/obsidian-media-local-remote-test/">附件与远程媒体</a>。</p>
+
+      </div>
+
+      
+      <section class="note-tags" aria-label="Tags">
+        <hr class="note-tags-divider">
+        <div class="note-tags-list">
+          
+          <a href="/en/tags/Daybook/" class="note-tag-capsule">#Daybook</a>
+          
+          <a href="/en/tags/Configuration/" class="note-tag-capsule">#Configuration</a>
+          
+          <a href="/en/tags/Guide/" class="note-tag-capsule">#Guide</a>
+          
+        </div>
+      </section>
+      
+
+      
+      <section class="post-comments">
+        <div id="waline"
+             data-server-url=""
+             data-lang="en-US"
+             data-page-size="10"
+             data-comment-sorting="latest"
+             data-search="false"
+             data-image-uploader="false"
+             data-path="/en/notes/daybook-yaml/"></div>
+        <link rel="stylesheet" href="/vendor/waline/waline.css">
+        <link rel="stylesheet" href="/css/components/waline-theme.672e43ce5a.css">
+      </section>
+      
+    </article>
+  </section>
+
+  
+<aside class="notes-aside" aria-label="站点信息" data-transition-region="notes-aside">
+  <div class="notes-brand notes-aside-identity">
+    <h1 class="notes-brand-name">
+      <span class="notes-brand-cn">佚名</span>
+      <span class="notes-brand-en">Author</span>
+    </h1>
+    <p class="notes-brand-slogan"><span class="slogan-morphable" data-slogan-transition-key="site-slogan"><span class="slogan-glyph" style="view-transition-name: slogan-glyph-0" data-glyph-index="0">A</span> <span class="slogan-glyph" style="view-transition-name: slogan-glyph-2" data-glyph-index="2">p</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-3" data-glyph-index="3">e</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-4" data-glyph-index="4">r</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-5" data-glyph-index="5">s</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-6" data-glyph-index="6">o</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-7" data-glyph-index="7">n</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-8" data-glyph-index="8">a</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-9" data-glyph-index="9">l</span> <span class="slogan-glyph" style="view-transition-name: slogan-glyph-11" data-glyph-index="11">s</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-12" data-glyph-index="12">p</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-13" data-glyph-index="13">a</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-14" data-glyph-index="14">c</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-15" data-glyph-index="15">e</span> <span class="slogan-glyph" style="view-transition-name: slogan-glyph-17" data-glyph-index="17">f</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-18" data-glyph-index="18">o</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-19" data-glyph-index="19">r</span> <span class="slogan-glyph" style="view-transition-name: slogan-glyph-21" data-glyph-index="21">t</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-22" data-glyph-index="22">h</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-23" data-glyph-index="23">o</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-24" data-glyph-index="24">u</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-25" data-glyph-index="25">g</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-26" data-glyph-index="26">h</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-27" data-glyph-index="27">t</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-28" data-glyph-index="28">s</span> <span class="slogan-glyph" style="view-transition-name: slogan-glyph-30" data-glyph-index="30">a</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-31" data-glyph-index="31">n</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-32" data-glyph-index="32">d</span> <span class="slogan-glyph" style="view-transition-name: slogan-glyph-34" data-glyph-index="34">n</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-35" data-glyph-index="35">o</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-36" data-glyph-index="36">t</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-37" data-glyph-index="37">e</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-38" data-glyph-index="38">s</span><span class="slogan-glyph" style="view-transition-name: slogan-glyph-39" data-glyph-index="39">.</span></span></p>
+  </div>
+
+  <div class="notes-aside-controls">
+    <div class="notes-tools" data-notes-tools>
+      <div class="notes-tool-panel notes-search-panel" id="notes-search-panel" data-notes-panel="search" aria-hidden="true">
+        <input class="notes-search-input" type="search" placeholder="Search: Title/Summary/Tag" autocomplete="off" spellcheck="false" aria-label="Search: Title/Summary/Tag" data-notes-search>
+      </div>
+
+      <div class="notes-tool-panel notes-tags-panel" id="notes-tags-panel" data-notes-panel="tags" aria-hidden="true">
+        
+        <div class="notes-tags-scroll-viewport">
+          <nav class="notes-tag-list" aria-label="标签筛选">
+            
+            <a class="notes-tag-link" href="/en/tags/Configuration/" data-notes-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 19;">
+              <span class="notes-tag-text">Configuration</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Daybook/" data-notes-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 18;">
+              <span class="notes-tag-text">Daybook</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Fonts/" data-notes-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 17;">
+              <span class="notes-tag-text">Fonts</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Frontmatter/" data-notes-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 16;">
+              <span class="notes-tag-text">Frontmatter</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Guide/" data-notes-tag="Guide" style="--tag-index: 4; --tag-exit-index: 15;">
+              <span class="notes-tag-text">Guide</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 14;">
+              <span class="notes-tag-text">KaTeX</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-notes-tag="Li Bai" style="--tag-index: 6; --tag-exit-index: 13;">
+              <span class="notes-tag-text">Li Bai</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 7; --tag-exit-index: 12;">
+              <span class="notes-tag-text">Markdown</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-notes-tag="Mathematical-formula" style="--tag-index: 8; --tag-exit-index: 11;">
+              <span class="notes-tag-text">Mathematical-formula</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Media/" data-notes-tag="Media" style="--tag-index: 9; --tag-exit-index: 10;">
+              <span class="notes-tag-text">Media</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 10; --tag-exit-index: 9;">
+              <span class="notes-tag-text">Obsidian</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 11; --tag-exit-index: 8;">
+              <span class="notes-tag-text">Poetry</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 12; --tag-exit-index: 7;">
+              <span class="notes-tag-text">Shakespeare</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 13; --tag-exit-index: 6;">
+              <span class="notes-tag-text">Sonnet</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-notes-tag="Tang Poetry" style="--tag-index: 14; --tag-exit-index: 5;">
+              <span class="notes-tag-text">Tang Poetry</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Test/" data-notes-tag="Test" style="--tag-index: 15; --tag-exit-index: 4;">
+              <span class="notes-tag-text">Test</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Typography/" data-notes-tag="Typography" style="--tag-index: 16; --tag-exit-index: 3;">
+              <span class="notes-tag-text">Typography</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e5%93%b2%e5%ad%a6/" data-notes-tag="哲学" style="--tag-index: 17; --tag-exit-index: 2;">
+              <span class="notes-tag-text">哲学</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e5%ae%9e%e8%b7%b5/" data-notes-tag="实践" style="--tag-index: 18; --tag-exit-index: 1;">
+              <span class="notes-tag-text">实践</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-notes-tag="认识论" style="--tag-index: 19; --tag-exit-index: 0;">
+              <span class="notes-tag-text">认识论</span>
+            </a>
+            
+          </nav>
+        </div>
+        <div class="notes-tags-scrollbar"><div class="notes-tags-scrollbar-thumb"></div></div>
+        
+      </div>
+    </div>
+
+    <div class="notes-footer">
+      
+<div class="notes-footer-actions" aria-label="页面操作">
+  <button class="notes-action-button" type="button" aria-label="Search" aria-expanded="false" aria-controls="notes-search-panel" data-tooltip="Search" data-notes-tool="search">
+    <span class="material-symbol" aria-hidden="true">search</span>
+  </button>
+  <button class="notes-action-button" type="button" aria-label="Tags" aria-expanded="false" aria-controls="notes-tags-panel" data-tooltip="Tags" data-notes-tool="tags">
+    <span class="material-symbol" aria-hidden="true">sell</span>
+  </button>
+  
+<button class="notes-action-button theme-toggle" type="button" aria-label="System" data-tooltip="System">
+  <div class="theme-icon-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-moon-icon lucide-sun-moon"><path d="M12 2v2"/><path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="m19 5-1.256 1.256"/><path d="M20 12h2"/></svg>
+  </div>
+</button>
+<button class="notes-action-button palette-toggle" type="button" aria-label="Cool" aria-pressed="false" data-tooltip="Cool">
+  <span class="material-symbol" aria-hidden="true">palette</span>
+</button>
+<a class="notes-action-button lang-toggle" href="/notes/daybook-yaml/" aria-label="Bilingual" data-tooltip="中/EN" data-notes-tool="lang">
+  <span class="material-symbol" aria-hidden="true">translate</span>
+</a>
+
+</div>
+
+      
+<nav class="notes-footer-links" aria-label="页脚链接" style="display: flex; flex-wrap: wrap; gap: 0 8px;">
+  
+  
+    
+    <a href="/en/rss.xml" 
+      >RSS</a>
+  
+</nav>
+
+      <p>© 2026 佚名</p>
+    </div>
+  </div>
+</aside>
+
+</div>
+
+      </div>
+    </main>
+  </div>
+  
+  </div>
+  
+<div class="mobile-drawer-mask" id="mobile-drawer-mask" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobile-drawer" aria-label="移动端导航" aria-hidden="true">
+  <div class="mobile-drawer-content">
+    <nav class="mobile-drawer-nav" aria-label="主导航">
+      <a class="drawer-nav-link" href="/en/">
+        <span class="material-symbol" aria-hidden="true">home</span>
+        <span class="drawer-nav-label">Home</span>
+      </a>
+      <a class="drawer-nav-link" href="/en/notes/">
+        <span class="material-symbol" aria-hidden="true">article</span>
+        <span class="drawer-nav-label">Notes</span>
+      </a>
+      <a class="drawer-nav-link" href="/en/archive/">
+        <span class="material-symbol" aria-hidden="true">archive</span>
+        <span class="drawer-nav-label">Archive</span>
+      </a>
+      <a class="drawer-nav-link" href="/en/graph/">
+        <span class="material-symbol" aria-hidden="true">account_tree</span>
+        <span class="drawer-nav-label">Graph</span>
+      </a>
+      <a class="drawer-nav-link" href="/en/about/">
+        <span class="material-symbol" aria-hidden="true">info</span>
+        <span class="drawer-nav-label">About</span>
+      </a>
+    </nav>
+
+    <div class="mobile-drawer-divider"></div>
+
+    <div class="mobile-drawer-funcs" data-mobile-overlay-tools>
+      <button class="drawer-nav-link" type="button" aria-expanded="false" data-mobile-overlay-target="search" id="drawer-search-btn">
+        <span class="material-symbol" aria-hidden="true">search</span>
+        <span class="drawer-nav-label">Search</span>
+      </button>
+      <button class="drawer-nav-link" type="button" aria-expanded="false" data-mobile-overlay-target="tags" id="drawer-tags-btn">
+        <span class="material-symbol" aria-hidden="true">sell</span>
+        <span class="drawer-nav-label">Tags</span>
+      </button>
+
+    </div>
+
+    <div class="mobile-drawer-switches">
+      <div class="drawer-switch-item" role="radiogroup" aria-label="Theme">
+        <div class="drawer-switch-label">
+          <span class="drawer-switch-text">Theme</span>
+        </div>
+        <div class="mobile-theme-selector" id="mobile-theme-selector">
+          <div class="theme-selector-indicator"></div>
+          <button type="button" class="theme-selector-btn" role="radio" aria-checked="false" aria-label="Light" data-mode="light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </button>
+          <button type="button" class="theme-selector-btn" role="radio" aria-checked="false" aria-label="System" data-mode="system">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-moon-icon lucide-sun-moon"><path d="M12 2v2"/><path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="m19 5-1.256 1.256"/><path d="M20 12h2"/></svg>
+          </button>
+          <button type="button" class="theme-selector-btn" role="radio" aria-checked="false" aria-label="Dark" data-mode="dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <label class="drawer-switch-item">
+        <div class="drawer-switch-label">
+          <span class="drawer-switch-text">Warm theme</span>
+        </div>
+        <button type="button" class="material-switch drawer-palette-toggle palette-toggle" role="switch" aria-checked="false" aria-label="Warm theme">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </button>
+      </label>
+      
+      <a class="drawer-switch-item" href="/notes/daybook-yaml/" style="text-decoration: none; color: inherit;">
+        <div class="drawer-switch-label">
+          <span class="material-symbol" aria-hidden="true">translate</span>
+          <span class="drawer-switch-text">中/EN</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-footer-row" style="display: flex; flex-wrap: wrap; gap: 0 8px; justify-content: center; padding: 0 16px;">
+        
+                
+          
+    <a href="/en/rss.xml" 
+            >RSS</a>
+          
+        
+      </div>
+      <p class="drawer-copyright">© 2026 佚名</p>
+    </div>
+  </div>
+</aside>
+
+  
+<div class="mobile-overlay-container" id="mobile-overlay-container" aria-hidden="true">
+  <div class="mobile-overlay-mask" id="mobile-overlay-mask"></div>
+
+  <div class="mobile-overlay mobile-tags-overlay" id="mobile-tags-overlay" data-overlay-panel="tags" aria-label="标签筛选">
+    <div class="mobile-overlay-header">
+      <h2 class="mobile-overlay-title">标签</h2>
+      <button class="mobile-overlay-close" type="button" aria-label="关闭标签" data-overlay-close>
+        <span class="material-symbol" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="mobile-overlay-content">
+      
+      <nav class="notes-tag-list" aria-label="标签列表">
+        
+        <a class="notes-tag-link" href="/en/tags/Configuration/" data-mobile-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 19;">
+          <span class="notes-tag-text">Configuration</span>
+          <span class="notes-tag-measure" aria-hidden="true">Configuration</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Daybook/" data-mobile-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 18;">
+          <span class="notes-tag-text">Daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">Daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Fonts/" data-mobile-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 17;">
+          <span class="notes-tag-text">Fonts</span>
+          <span class="notes-tag-measure" aria-hidden="true">Fonts</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Frontmatter/" data-mobile-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 16;">
+          <span class="notes-tag-text">Frontmatter</span>
+          <span class="notes-tag-measure" aria-hidden="true">Frontmatter</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Guide/" data-mobile-tag="Guide" style="--tag-index: 4; --tag-exit-index: 15;">
+          <span class="notes-tag-text">Guide</span>
+          <span class="notes-tag-measure" aria-hidden="true">Guide</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 14;">
+          <span class="notes-tag-text">KaTeX</span>
+          <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-mobile-tag="Li Bai" style="--tag-index: 6; --tag-exit-index: 13;">
+          <span class="notes-tag-text">Li Bai</span>
+          <span class="notes-tag-measure" aria-hidden="true">Li Bai</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 7; --tag-exit-index: 12;">
+          <span class="notes-tag-text">Markdown</span>
+          <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-mobile-tag="Mathematical-formula" style="--tag-index: 8; --tag-exit-index: 11;">
+          <span class="notes-tag-text">Mathematical-formula</span>
+          <span class="notes-tag-measure" aria-hidden="true">Mathematical-formula</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Media/" data-mobile-tag="Media" style="--tag-index: 9; --tag-exit-index: 10;">
+          <span class="notes-tag-text">Media</span>
+          <span class="notes-tag-measure" aria-hidden="true">Media</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 10; --tag-exit-index: 9;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 11; --tag-exit-index: 8;">
+          <span class="notes-tag-text">Poetry</span>
+          <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 12; --tag-exit-index: 7;">
+          <span class="notes-tag-text">Shakespeare</span>
+          <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 13; --tag-exit-index: 6;">
+          <span class="notes-tag-text">Sonnet</span>
+          <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-mobile-tag="Tang Poetry" style="--tag-index: 14; --tag-exit-index: 5;">
+          <span class="notes-tag-text">Tang Poetry</span>
+          <span class="notes-tag-measure" aria-hidden="true">Tang Poetry</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Test/" data-mobile-tag="Test" style="--tag-index: 15; --tag-exit-index: 4;">
+          <span class="notes-tag-text">Test</span>
+          <span class="notes-tag-measure" aria-hidden="true">Test</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Typography/" data-mobile-tag="Typography" style="--tag-index: 16; --tag-exit-index: 3;">
+          <span class="notes-tag-text">Typography</span>
+          <span class="notes-tag-measure" aria-hidden="true">Typography</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e5%93%b2%e5%ad%a6/" data-mobile-tag="哲学" style="--tag-index: 17; --tag-exit-index: 2;">
+          <span class="notes-tag-text">哲学</span>
+          <span class="notes-tag-measure" aria-hidden="true">哲学</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e5%ae%9e%e8%b7%b5/" data-mobile-tag="实践" style="--tag-index: 18; --tag-exit-index: 1;">
+          <span class="notes-tag-text">实践</span>
+          <span class="notes-tag-measure" aria-hidden="true">实践</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-mobile-tag="认识论" style="--tag-index: 19; --tag-exit-index: 0;">
+          <span class="notes-tag-text">认识论</span>
+          <span class="notes-tag-measure" aria-hidden="true">认识论</span>
+        </a>
+        
+      </nav>
+      
+    </div>
+  </div>
+
+  <div class="mobile-overlay mobile-search-overlay" id="mobile-search-overlay" data-overlay-panel="search" aria-label="搜索">
+    <div class="mobile-overlay-header">
+      <div class="mobile-search-input-wrapper">
+        <span class="material-symbol mobile-search-icon" aria-hidden="true">search</span>
+        <input class="mobile-search-input" type="search" placeholder="搜索：标题/摘要/标签" autocomplete="off" spellcheck="false" aria-label="搜索：标题/摘要/标签" id="mobile-search-input">
+      </div>
+      <button class="mobile-overlay-close" type="button" aria-label="关闭搜索" data-overlay-close>
+        <span class="material-symbol" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="mobile-overlay-content mobile-search-results-container">
+      <div class="mobile-search-results" id="mobile-search-results">
+        
+      </div>
+      <p class="mobile-overlay-empty mobile-search-empty" id="mobile-search-empty" hidden>没有找到匹配的文章。</p>
+      <div class="mobile-search-loading" id="mobile-search-loading" hidden>
+        <p>正在加载搜索索引...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="module">
+    let walineLoader = null;
+    
+    function updateStaggerIndices() {
+      const staggerMeta = document.querySelector(".article-stagger-meta");
+      if (staggerMeta) {
+        const items = staggerMeta.children;
+        for (let i = 0; i < items.length; i++) {
+          items[i].style.setProperty("--stagger-index", i);
+        }
+      }
+    }
+    
+    
+    updateStaggerIndices();
+    
+    document.addEventListener("daybook:page-load", async () => {
+      updateStaggerIndices();
+      
+      const container = document.getElementById("waline");
+      if (container) {
+        if (!walineLoader) {
+          walineLoader = await import("\/js\/waline-loader.8738d7dad3.js");
+        }
+        walineLoader.setupWaline();
+      } else if (walineLoader) {
+        walineLoader.setupWaline(); 
+      }
+    });
+
+    import("\/js\/reading-controls.4bb2a8066a.js").then(module => {
+      module.initReadingControls();
+      document.addEventListener("daybook:page-load", () => {
+        module.initReadingControls();
+      });
+    });
+
+    import("\/js\/reader-mode.eb4f7971fa.js").then(module => {
+      module.initReaderMode();
+    });
+
+    import("\/js\/settings-overlay.5e8ef74fdc.js").then(module => {
+      module.initSettingsOverlay();
+    });
+
+    import("\/js\/share-overlay.0c1b061c0b.js").then(module => {
+      module.initShareOverlay();
+    });
+
+    import("\/js\/image-loader.9dcdac9c73.js");
+    import("\/js\/lightbox.a15c0f66e6.js");
+  </script>
+</body>
+</html>

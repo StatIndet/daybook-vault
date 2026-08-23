@@ -5,38 +5,52 @@
     <link>http://localhost:1313/</link>
     <description>My Daybook</description>
     <item>
-      <title>Obsidian 本地与远程附件测试</title>
+      <title>daybook.yaml 配置</title>
+      <link>http://localhost:1313/notes/daybook-yaml/</link>
+      <guid>http://localhost:1313/notes/daybook-yaml/</guid>
+      <description>Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。</description>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>文章 Frontmatter</title>
+      <link>http://localhost:1313/notes/frontmatter/</link>
+      <guid>http://localhost:1313/notes/frontmatter/</guid>
+      <description>Daybook 文章 frontmatter 的完整字段参考，并说明文件路径、单语文章和双语文章之间的关系。</description>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>附件与远程媒体</title>
       <link>http://localhost:1313/notes/obsidian-media-local-remote-test/</link>
       <guid>http://localhost:1313/notes/obsidian-media-local-remote-test/</guid>
-      <description>测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。</description>
+      <description>介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。</description>
       <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Markdown 语法说明</title>
+      <title>Markdown、Obsidian 与 Daybook 语法</title>
       <link>http://localhost:1313/notes/markdown-syntax/</link>
       <guid>http://localhost:1313/notes/markdown-syntax/</guid>
-      <description>关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。</description>
+      <description>Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。</description>
       <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Shall I Compare Thee to a Summer’s Day?</title>
       <link>http://localhost:1313/notes/Shakespeare/</link>
       <guid>http://localhost:1313/notes/Shakespeare/</guid>
-      <description>Shakespeare’s Sonnet 18, used here as an English-only sample post for Daybook’s multilingual article model.</description>
+      <description>Shakespeare’s Sonnet 18, also serving as a compact example of an English-only Daybook article.</description>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>静夜思</title>
       <link>http://localhost:1313/notes/静夜思/</link>
       <guid>http://localhost:1313/notes/静夜思/</guid>
-      <description>李白最广为流传的五言绝句之一，以极短的篇幅写出月色、故乡与游子的思念。</description>
+      <description>李白的《静夜思》，同时作为 Daybook 中英文双语文章配对的简洁示例。</description>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>自托管字体测试</title>
+      <title>排版、字体与富文本</title>
       <link>http://localhost:1313/notes/typography-test/</link>
       <guid>http://localhost:1313/notes/typography-test/</guid>
-      <description>这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。</description>
+      <description>一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。</description>
       <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -52,6 +66,13 @@
       <guid>http://localhost:1313/notes/examples/Markdown扩展语法测试页/</guid>
       <description>用于检查 daybook Markdown 扩展语法、嵌入组件、Lightbox、Mermaid 和嵌套任务列表渲染。</description>
       <pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>实践论</title>
+      <link>http://localhost:1313/notes/实践论/</link>
+      <guid>http://localhost:1313/notes/实践论/</guid>
+      <description>论认识和实践的关系——知和行的关系。原文作于一九三七年七月。</description>
+      <pubDate>Thu, 01 Jul 1937 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

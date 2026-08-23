@@ -1,21 +1,21 @@
 ---
 title: Shall I Compare Thee to a Summer’s Day?
 date: 2026-06-25
+updated: 2026-08-23
 lang: en
-i18n_key: shall-i-compare-thee
 tags:
   - Poetry
   - Shakespeare
   - Sonnet
-summary: Shakespeare’s Sonnet 18, used here as an English-only sample post for Daybook’s multilingual article model.
+summary: Shakespeare’s Sonnet 18, also serving as a compact example of an English-only Daybook article.
 draft: false
 listed: true
 math: false
 pin: false
 comment: true
-updated: 2026-06-25
 toc: false
 ---
+
 Shall I compare thee to a summer’s day?\
 Thou art more lovely and more temperate:\
 Rough winds do shake the darling buds of May,\
@@ -33,11 +33,11 @@ When in eternal lines to time thou grow’st:
 
 So long as men can breathe or eyes can see,\
 So long lives this, and this gives life to thee.
-## Note 
-This is an English-only post. It has no Chinese counterpart, so the site should treat it as a single-language `ArticleGroup`. 
 
-Expected behavior: 
-- It should appear normally in `/notes/`. 
-- It should appear normally in `/en/notes/`. 
-- In Chinese UI, because no Chinese version exists, the title and summary should fall back to English. 
-- It should not display the bilingual badge.
+## About this example
+
+This page is intentionally English-only. Its frontmatter sets `lang: en` and omits `i18n_key`, so Daybook treats it as a standalone article rather than one half of a bilingual pair.
+
+If the current site language has no matching version, Daybook falls back to an available version; it does not generate a translation. A bilingual article instead uses the same `i18n_key` in two files, one with `lang: zh-CN` and one with `lang: en`.
+
+See [[frontmatter|Article frontmatter]] for the complete field reference. The paired Chinese–English example is **Thoughts in a Quiet Night / 静夜思**.

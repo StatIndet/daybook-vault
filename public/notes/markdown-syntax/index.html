@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Markdown 语法说明 | My Daybook</title>
+  <title>Markdown、Obsidian 与 Daybook 语法 | My Daybook</title>
   
-  <meta name="description" content="关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。">
+  <meta name="description" content="Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。">
   
 
   <link rel="canonical" href="http://localhost:1313/notes/markdown-syntax/">
@@ -20,8 +20,8 @@
   
   
 
-  <meta property="og:title" content="Markdown 语法说明 | My Daybook">
-  <meta property="og:description" content="关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。">
+  <meta property="og:title" content="Markdown、Obsidian 与 Daybook 语法 | My Daybook">
+  <meta property="og:description" content="Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="http://localhost:1313/notes/markdown-syntax/">
   
@@ -29,13 +29,13 @@
   <meta property="og:locale" content="zh_CN">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Markdown 语法说明 | My Daybook">
-  <meta name="twitter:description" content="关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。">
+  <meta name="twitter:title" content="Markdown、Obsidian 与 Daybook 语法 | My Daybook">
+  <meta name="twitter:description" content="Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。">
   
 
   
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/notes/markdown-syntax/#article","url":"http://localhost:1313/notes/markdown-syntax/","headline":"Markdown 语法说明","description":"关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。","datePublished":"2026-06-28","dateModified":"2026-06-28","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/notes/markdown-syntax/","keywords":"Markdown, obsidian"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/notes/markdown-syntax/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"http://localhost:1313/"},{"@type":"ListItem","position":2,"name":"笔记","item":"http://localhost:1313/notes/"},{"@type":"ListItem","position":3,"name":"Markdown 语法说明","item":"http://localhost:1313/notes/markdown-syntax/"}]}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/notes/markdown-syntax/#article","url":"http://localhost:1313/notes/markdown-syntax/","headline":"Markdown、Obsidian 与 Daybook 语法","description":"Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。","datePublished":"2026-06-28","dateModified":"2026-08-23","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/notes/markdown-syntax/","keywords":"Markdown, Obsidian, Daybook"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/notes/markdown-syntax/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"http://localhost:1313/"},{"@type":"ListItem","position":2,"name":"笔记","item":"http://localhost:1313/notes/"},{"@type":"ListItem","position":3,"name":"Markdown、Obsidian 与 Daybook 语法","item":"http://localhost:1313/notes/markdown-syntax/"}]}]}
   </script>
   
 
@@ -57,7 +57,7 @@
   <script src="/js/code-copy.0248e0ee56.js" defer></script>
   <script src="/js/toc.f2baf40c54.js" defer></script>
   <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
-  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/heading-anchors.a0aad74fb9.js" defer></script>
   <script src="/js/note-filters.2d2f20797c.js" defer></script>
   <script src="/js/lightbox.a15c0f66e6.js" defer></script>
   <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
@@ -67,17 +67,16 @@
   <script src="/js/graph-loader.b1c100b294.js" defer></script>
   <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
   <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
-  <script src="/js/daybook-router.3f0a75a11a.js" defer></script>
+  <script src="/js/daybook-router.3a0f3938c4.js" defer></script>
   <script src="/js/katex-loader.b639ed40fa.js" defer></script>
   <script src="/js/custom-cursor.5a89752a8a.js" defer></script>
-  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <script src="/js/note-bilingual.27772b9611.js" defer></script>
   <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
-  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.905c7d5a64.css">
-  
-  <link rel="stylesheet" href="/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="/vendor/fonts/noto-serif-sc/wght.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.baec377b53.css">
+  <link rel="stylesheet" href="/css/global.b70a6d448a.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   
@@ -268,7 +267,7 @@
 
 <div class="notes-page note-detail-page has-toc">
   <section class="note-detail article-stage" aria-label="文章详情">
-    <article class="note" data-has-mermaid="false" data-has-math="true">
+    <article class="note" data-has-mermaid="false" data-has-math="false">
       <header class="note-header">
         <div class="note-title-wrapper">
           <a class="note-back-link" href="/notes/" aria-label="返回">
@@ -276,7 +275,7 @@
           </a>
           <h1 class="note-title">
             <span data-title-transition-key="markdown-syntax">
-              <span class="title-morphable" data-title-transition-key="markdown-syntax"><span class="title-glyph" data-glyph-index="0">M</span><span class="title-glyph" data-glyph-index="1">a</span><span class="title-glyph" data-glyph-index="2">r</span><span class="title-glyph" data-glyph-index="3">k</span><span class="title-glyph" data-glyph-index="4">d</span><span class="title-glyph" data-glyph-index="5">o</span><span class="title-glyph" data-glyph-index="6">w</span><span class="title-glyph" data-glyph-index="7">n</span> <span class="title-glyph" data-glyph-index="9">语</span><span class="title-glyph" data-glyph-index="10">法</span><span class="title-glyph" data-glyph-index="11">说</span><span class="title-glyph" data-glyph-index="12">明</span></span>
+              <span class="title-morphable" data-title-transition-key="markdown-syntax"><span class="title-glyph" data-glyph-index="0">M</span><span class="title-glyph" data-glyph-index="1">a</span><span class="title-glyph" data-glyph-index="2">r</span><span class="title-glyph" data-glyph-index="3">k</span><span class="title-glyph" data-glyph-index="4">d</span><span class="title-glyph" data-glyph-index="5">o</span><span class="title-glyph" data-glyph-index="6">w</span><span class="title-glyph" data-glyph-index="7">n</span><span class="title-glyph" data-glyph-index="8">、</span><span class="title-glyph" data-glyph-index="9">O</span><span class="title-glyph" data-glyph-index="10">b</span><span class="title-glyph" data-glyph-index="11">s</span><span class="title-glyph" data-glyph-index="12">i</span><span class="title-glyph" data-glyph-index="13">d</span><span class="title-glyph" data-glyph-index="14">i</span><span class="title-glyph" data-glyph-index="15">a</span><span class="title-glyph" data-glyph-index="16">n</span> <span class="title-glyph" data-glyph-index="18">与</span> <span class="title-glyph" data-glyph-index="20">D</span><span class="title-glyph" data-glyph-index="21">a</span><span class="title-glyph" data-glyph-index="22">y</span><span class="title-glyph" data-glyph-index="23">b</span><span class="title-glyph" data-glyph-index="24">o</span><span class="title-glyph" data-glyph-index="25">o</span><span class="title-glyph" data-glyph-index="26">k</span> <span class="title-glyph" data-glyph-index="28">语</span><span class="title-glyph" data-glyph-index="29">法</span></span>
             </span>
           </h1>
           <button type="button" class="reader-mode-exit" aria-label="退出阅读模式" data-tooltip="退出阅读模式" data-reader-exit hidden>
@@ -290,11 +289,13 @@
             
             
             <time datetime="2026-06-28" data-article-shared="published">2026-06-28</time>
-            <span class="reading-time" data-article-shared="reading">3 min</span>
+            <span class="reading-time" data-article-shared="reading">2 min</span>
+            
+              <span class="updated-time" data-article-shared="updated">&bull; updated <time datetime="2026-08-23">2026-08-23</time></span>
             
           </div>
           <div class="article-stagger-meta">
-            <span class="meta-stagger-item">857 chars</span>
+            <span class="meta-stagger-item">386 chars</span>
             
             <span class="meta-stagger-item">
               <span data-page-views data-path="/notes/markdown-syntax/">--</span>
@@ -303,7 +304,7 @@
             
 
             <span class="meta-stagger-item share-entry">
-              <button type="button" class="share-toggle-btn" aria-label="分享" data-tooltip="分享" data-share-open data-share-title="Markdown 语法说明" data-share-link="http://localhost:1313/notes/markdown-syntax/" data-share-text="「Markdown 语法说明」">
+              <button type="button" class="share-toggle-btn" aria-label="分享" data-tooltip="分享" data-share-open data-share-title="Markdown、Obsidian 与 Daybook 语法" data-share-link="http://localhost:1313/notes/markdown-syntax/" data-share-text="「Markdown、Obsidian 与 Daybook 语法」">
                 <span class="material-symbol" aria-hidden="true">share</span>
               </button>
             </span>
@@ -317,7 +318,7 @@
             
           </div>
         </div>
-        <p class="note-summary">关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。</p>
+        <p class="note-summary">Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。</p>
       </header>
 
       
@@ -338,73 +339,105 @@
       <ol>
         
         <li class="note-toc-depth-2" style="--toc-index: 0">
-          <a href="#-markdown--gfm">标准 Markdown 与 GFM</a>
+          <a href="#%23%e6%a0%87%e5%87%86-Markdown-%e4%b8%8e-GFM">标准 Markdown 与 GFM</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 1">
-          <a href="#heading">文本格式</a>
+          <a href="#%23%23%e6%a0%87%e9%a2%98%e4%b8%8e%e6%96%87%e6%9c%ac">标题与文本</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 2">
-          <a href="#heading-1">列表</a>
+          <a href="#%23%23%e5%88%97%e8%a1%a8%e4%b8%8e%e4%bb%bb%e5%8a%a1">列表与任务</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 3">
-          <a href="#heading-2">引用块</a>
+          <a href="#%23%23%e8%a1%a8%e6%a0%bc">表格</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 4">
-          <a href="#heading-3">表格</a>
+          <a href="#%23%23%e8%84%9a%e6%b3%a8">脚注</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 5">
-          <a href="#heading-4">代码块</a>
+          <a href="#%23%23%e9%93%be%e6%8e%a5">链接</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 6">
-          <a href="#heading-5">脚注</a>
+          <a href="#%23%23%e4%bb%a3%e7%a0%81%e5%9d%97">代码块</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 7">
-          <a href="#heading-6">本地附件系统</a>
+        <li class="note-toc-depth-3" style="--toc-index: 7">
+          <a href="#%23%23%e5%9b%be%e7%89%87%e4%b8%8e%e5%9b%be%e6%b3%a8">图片与图注</a>
         </li>
         
-        <li class="note-toc-depth-3" style="--toc-index: 8">
-          <a href="#heading-7">图片嵌入与排版</a>
+        <li class="note-toc-depth-2" style="--toc-index: 8">
+          <a href="#%23Obsidian-%e5%8f%8c%e9%93%be">Obsidian 双链</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 9">
-          <a href="#-pdf-">音视频与 PDF 嵌入</a>
+          <a href="#%23%23%e9%93%be%e6%8e%a5%e6%96%87%e7%ab%a0">链接文章</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 10">
-          <a href="#heading-8">远程富媒体与音乐播放器</a>
+        <li class="note-toc-depth-3" style="--toc-index: 10">
+          <a href="#%23%23%e9%93%be%e6%8e%a5%e6%96%87%e7%ab%a0%e5%b0%8f%e8%8a%82">链接文章小节</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 11">
-          <a href="#heading-9">远程媒体组件</a>
+          <a href="#%23%23%e5%9d%97-ID">块 ID</a>
         </li>
         
-        <li class="note-toc-depth-3" style="--toc-index: 12">
-          <a href="#heading-10">无缝音乐播放器</a>
+        <li class="note-toc-depth-2" style="--toc-index: 12">
+          <a href="#%23Obsidian-%e9%a1%b5%e9%9d%a2%e4%b8%8e%e5%b1%80%e9%83%a8%e5%b5%8c%e5%85%a5">Obsidian 页面与局部嵌入</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 13">
-          <a href="#obsidian-callout-">Obsidian Callout (提示块)</a>
+        <li class="note-toc-depth-3" style="--toc-index: 13">
+          <a href="#%23%23%e6%95%b4%e7%af%87%e6%96%87%e7%ab%a0%e5%b5%8c%e5%85%a5">整篇文章嵌入</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 14">
-          <a href="#obsidian-">Obsidian 注释与高亮</a>
+        <li class="note-toc-depth-3" style="--toc-index: 14">
+          <a href="#%23%23%e5%b0%8f%e8%8a%82%e5%b5%8c%e5%85%a5">小节嵌入</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 15">
-          <a href="#obsidian--1">Obsidian 页面与块级嵌入</a>
+        <li class="note-toc-depth-3" style="--toc-index: 15">
+          <a href="#%23%23%e5%9d%97%e7%ba%a7%e5%b5%8c%e5%85%a5">块级嵌入</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 16">
+          <a href="#%23Obsidian-%e9%ab%98%e4%ba%ae%e4%b8%8e%e6%b3%a8%e9%87%8a">Obsidian 高亮与注释</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 17">
+          <a href="#%23Callout">Callout</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 18">
+          <a href="#%23Daybook-%e5%ae%b9%e5%99%a8">Daybook 容器</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 19">
+          <a href="#%23%23%e6%8a%98%e5%8f%a0%e5%9d%97">折叠块</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 20">
+          <a href="#%23%23%e7%94%bb%e5%bb%8a">画廊</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 21">
+          <a href="#%23Mermaid">Mermaid</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 22">
+          <a href="#%23%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f">数学公式</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 23">
+          <a href="#%23%e5%a4%96%e9%83%a8%e5%86%85%e5%ae%b9%e4%b8%8e%e5%aa%92%e4%bd%93">外部内容与媒体</a>
         </li>
         
       </ol>
     </nav>
-    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 16"></div>
-    <div class="note-toc-reading-controls" style="--toc-index: 16">
+    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 24"></div>
+    <div class="note-toc-reading-controls" style="--toc-index: 24">
       
 <div class="note-right-controls" aria-label="阅读进度控制">
   <div class="note-rc-progress">
@@ -467,67 +500,99 @@
       <ol>
         
         <li class="note-toc-depth-2" style="--toc-index: 0">
-          <a href="#-markdown--gfm">标准 Markdown 与 GFM</a>
+          <a href="#%23%e6%a0%87%e5%87%86-Markdown-%e4%b8%8e-GFM">标准 Markdown 与 GFM</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 1">
-          <a href="#heading">文本格式</a>
+          <a href="#%23%23%e6%a0%87%e9%a2%98%e4%b8%8e%e6%96%87%e6%9c%ac">标题与文本</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 2">
-          <a href="#heading-1">列表</a>
+          <a href="#%23%23%e5%88%97%e8%a1%a8%e4%b8%8e%e4%bb%bb%e5%8a%a1">列表与任务</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 3">
-          <a href="#heading-2">引用块</a>
+          <a href="#%23%23%e8%a1%a8%e6%a0%bc">表格</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 4">
-          <a href="#heading-3">表格</a>
+          <a href="#%23%23%e8%84%9a%e6%b3%a8">脚注</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 5">
-          <a href="#heading-4">代码块</a>
+          <a href="#%23%23%e9%93%be%e6%8e%a5">链接</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 6">
-          <a href="#heading-5">脚注</a>
+          <a href="#%23%23%e4%bb%a3%e7%a0%81%e5%9d%97">代码块</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 7">
-          <a href="#heading-6">本地附件系统</a>
+        <li class="note-toc-depth-3" style="--toc-index: 7">
+          <a href="#%23%23%e5%9b%be%e7%89%87%e4%b8%8e%e5%9b%be%e6%b3%a8">图片与图注</a>
         </li>
         
-        <li class="note-toc-depth-3" style="--toc-index: 8">
-          <a href="#heading-7">图片嵌入与排版</a>
+        <li class="note-toc-depth-2" style="--toc-index: 8">
+          <a href="#%23Obsidian-%e5%8f%8c%e9%93%be">Obsidian 双链</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 9">
-          <a href="#-pdf-">音视频与 PDF 嵌入</a>
+          <a href="#%23%23%e9%93%be%e6%8e%a5%e6%96%87%e7%ab%a0">链接文章</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 10">
-          <a href="#heading-8">远程富媒体与音乐播放器</a>
+        <li class="note-toc-depth-3" style="--toc-index: 10">
+          <a href="#%23%23%e9%93%be%e6%8e%a5%e6%96%87%e7%ab%a0%e5%b0%8f%e8%8a%82">链接文章小节</a>
         </li>
         
         <li class="note-toc-depth-3" style="--toc-index: 11">
-          <a href="#heading-9">远程媒体组件</a>
+          <a href="#%23%23%e5%9d%97-ID">块 ID</a>
         </li>
         
-        <li class="note-toc-depth-3" style="--toc-index: 12">
-          <a href="#heading-10">无缝音乐播放器</a>
+        <li class="note-toc-depth-2" style="--toc-index: 12">
+          <a href="#%23Obsidian-%e9%a1%b5%e9%9d%a2%e4%b8%8e%e5%b1%80%e9%83%a8%e5%b5%8c%e5%85%a5">Obsidian 页面与局部嵌入</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 13">
-          <a href="#obsidian-callout-">Obsidian Callout (提示块)</a>
+        <li class="note-toc-depth-3" style="--toc-index: 13">
+          <a href="#%23%23%e6%95%b4%e7%af%87%e6%96%87%e7%ab%a0%e5%b5%8c%e5%85%a5">整篇文章嵌入</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 14">
-          <a href="#obsidian-">Obsidian 注释与高亮</a>
+        <li class="note-toc-depth-3" style="--toc-index: 14">
+          <a href="#%23%23%e5%b0%8f%e8%8a%82%e5%b5%8c%e5%85%a5">小节嵌入</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 15">
-          <a href="#obsidian--1">Obsidian 页面与块级嵌入</a>
+        <li class="note-toc-depth-3" style="--toc-index: 15">
+          <a href="#%23%23%e5%9d%97%e7%ba%a7%e5%b5%8c%e5%85%a5">块级嵌入</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 16">
+          <a href="#%23Obsidian-%e9%ab%98%e4%ba%ae%e4%b8%8e%e6%b3%a8%e9%87%8a">Obsidian 高亮与注释</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 17">
+          <a href="#%23Callout">Callout</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 18">
+          <a href="#%23Daybook-%e5%ae%b9%e5%99%a8">Daybook 容器</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 19">
+          <a href="#%23%23%e6%8a%98%e5%8f%a0%e5%9d%97">折叠块</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 20">
+          <a href="#%23%23%e7%94%bb%e5%bb%8a">画廊</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 21">
+          <a href="#%23Mermaid">Mermaid</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 22">
+          <a href="#%23%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f">数学公式</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 23">
+          <a href="#%23%e5%a4%96%e9%83%a8%e5%86%85%e5%ae%b9%e4%b8%8e%e5%aa%92%e4%bd%93">外部内容与媒体</a>
         </li>
         
       </ol>
@@ -539,163 +604,181 @@
       
 
       <div class="markdown post-content">
-        <h1 id="markdown-">Markdown 语法说明</h1>
-<p>这篇文章是 Daybook 对标准 Markdown、GitHub Flavored Markdown (GFM) 以及各种 Obsidian 特色扩展语法的渲染效果汇总。</p>
-<h2 id="-markdown--gfm">标准 Markdown 与 GFM</h2>
-<h3 id="heading">文本格式</h3>
-<p>这里有 <strong>加粗文本</strong>、<em>斜体文本</em>、<del>删除线文本</del>，以及一段行内代码：<code>go run ./cmd/daybook build</code>。</p>
-<h3 id="heading-1">列表</h3>
-<p><strong>无序列表与嵌套列表</strong>：</p>
-<ul>
-<li>第一项</li>
-<li>第二项
-<ul>
-<li>嵌套项目 A</li>
-<li>嵌套项目 B</li>
-</ul>
-</li>
-</ul>
-<p><strong>有序列表</strong>：</p>
-<ol>
-<li>读取 Markdown 文件。</li>
-<li>解析 frontmatter。</li>
-<li>渲染 HTML 页面。</li>
-</ol>
-<p><strong>任务列表</strong>：</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 支持 GFM 表格</li>
-<li><input checked="" disabled="" type="checkbox"> 支持任务列表</li>
-<li><input disabled="" type="checkbox"> 待办事项</li>
-</ul>
-<h3 id="heading-2">引用块</h3>
-<blockquote>
-<p>引用块用于展示一段被强调的说明。它应该有清晰的左边界，并在浅色和暗色主题下都保持可读。</p>
-</blockquote>
-<h3 id="heading-3">表格</h3>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>渲染效果</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加粗</td>
-<td><strong>text</strong></td>
-<td>已测试</td>
-</tr>
-<tr>
-<td>删除线</td>
-<td><del>text</del></td>
-<td>已测试</td>
-</tr>
-<tr>
-<td>任务列表</td>
-<td><code>- [x] item</code></td>
-<td>已测试</td>
-</tr>
-</tbody>
-</table>
-<h3 id="heading-4">代码块</h3>
-<p>支持带语法高亮的代码块：</p>
-<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
+        <p>Daybook 以 Goldmark 解析 Markdown，并在其上加入 GFM、Obsidian 兼容语法和少量面向博客的扩展。日常写作仍然可以从标准 Markdown 开始；只有需要双链、嵌入或特殊组件时，才需要额外语法。</p>
+<p>文章元数据本身不属于 Markdown 正文。它写在文件顶部的 YAML frontmatter 中，详见 <a href="/notes/frontmatter/">文章 Frontmatter</a>。</p>
+<h2 id="#标准-Markdown-与-GFM">标准 Markdown 与 GFM</h2>
+<h3 id="##标题与文本">标题与文本</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="gu">## 二级标题
+</span></span></span><span class="line"><span class="cl"><span class="gu">### 三级标题
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gs">**加粗**</span>
+</span></span><span class="line"><span class="cl"><span class="ge">*斜体*</span>
+</span></span><span class="line"><span class="cl"><span class="gd">~~删除线~~</span>
+</span></span><span class="line"><span class="cl"><span class="sb">`inline code`</span>
+</span></span></code></pre></div><p>Daybook 的文章目录收集二级到四级标题。普通链接、自动链接、水平线和引用块都按常见 Markdown 方式书写。</p>
+<h3 id="##列表与任务">列表与任务</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">-</span> Item
+</span></span><span class="line"><span class="cl">  <span class="k">-</span> Nested item
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> First
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> Second
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">- [x]</span> Done
+</span></span><span class="line"><span class="cl"><span class="k">- [ ]</span> Todo
+</span></span></code></pre></div><h3 id="##表格">表格</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">| Field | Meaning |
+</span></span><span class="line"><span class="cl">| --- | --- |
+</span></span><span class="line"><span class="cl">| <span class="sb">`title`</span> | Article title |
+</span></span><span class="line"><span class="cl">| <span class="sb">`date`</span> | Publication date |
+</span></span></code></pre></div><h3 id="##脚注">脚注</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Daybook 使用 Goldmark 解析正文。[^goldmark]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[^goldmark]: 脚注会被集中渲染到文章末尾。
+</span></span></code></pre></div><p>实际效果：</p>
+<p>Daybook 使用 Goldmark 解析正文。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h3 id="##链接">链接</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">[<span class="nt">Daybook on GitHub</span>](<span class="na">https://github.com/StatIndet/daybook</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;https://github.com/StatIndet/daybook&gt;
+</span></span></code></pre></div><p>实际效果：</p>
+<p><a href="https://github.com/StatIndet/daybook">Daybook on GitHub</a></p>
+<p><a href="https://github.com/StatIndet/daybook">https://github.com/StatIndet/daybook</a></p>
+<h3 id="##代码块">代码块</h3>
+<p>为 fenced code block 标注语言即可启用语法高亮：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">```go
+</span></span></span><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello daybook&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="heading-5">脚注</h3>
-<p>脚注引用会出现在正文中。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<hr>
-<h2 id="heading-6">本地附件系统</h2>
-<p>Daybook 完整兼容了 Obsidian 的双链附件引用语法。</p>
-<h3 id="heading-7">图片嵌入与排版</h3>
-<p>你可以使用 <code>![[filename.jpg]]</code> 语法插入本地图片，并可以通过管道符 <code>|</code> 添加宽度和对齐方式参数。支持的语法格式包括：</p>
-<ul>
-<li>默认图片：<code>![[shi-li.jpg]]</code></li>
-<li>指定宽度：<code>![[shi-li.jpg|200]]</code></li>
-<li>指定宽高：<code>![[shi-li.jpg|640x480]]</code></li>
-<li>居中/左/右对齐：<code>![[shi-li.jpg|center]]</code>、<code>![[shi-li.jpg|left]]</code>、<code>![[shi-li.jpg|right]]</code></li>
-<li>组合参数：<code>![[shi-li.jpg|center|300]]</code></li>
-</ul>
-<p><strong>渲染示例</strong>：
-<figure class="media-embed media-image is-center" style="--image-width: 300px"><img src="/attachments/picture/shelby.jpg" alt="center" loading="lazy" decoding="async"></figure></p>
-<h3 id="-pdf-">音视频与 PDF 嵌入</h3>
-<p>所有的本地 PDF, Audio, Video 都被当作普通的附件处理，自动在构建时复制：</p>
-<p><strong>PDF 预览</strong>：
-语法：<code>![[shi-jian-lun.pdf]]</code></p>
-<p><strong>音频播放</strong>：
-语法：<code>![[JayChou.FLAC]]</code></p>
-<p><strong>视频播放</strong>：
-语法：<code>![[1130650335.mp4|center|720]]</code></p>
-<hr>
-<h2 id="heading-8">远程富媒体与音乐播放器</h2>
-<p>Daybook 提供了自有的 <code>::type</code> directive 语法用于加载远程媒体资源。</p>
-<h3 id="heading-9">远程媒体组件</h3>
-<p>你可以使用以下语法直接挂载任何 HTTP(S) URL 媒体：</p>
-<ul>
-<li><code>::image{url=&quot;https://...&quot; align=&quot;center&quot; width=&quot;400&quot; caption=&quot;Image Caption&quot;}</code></li>
-<li><code>::video{url=&quot;https://...&quot; align=&quot;center&quot; width=&quot;720&quot; autoplay=&quot;true&quot; loop=&quot;true&quot;}</code></li>
-<li><code>::audio{url=&quot;https://...&quot;}</code></li>
-<li><code>::pdf{url=&quot;https://...&quot; height=&quot;800&quot;}</code></li>
-</ul>
-<h3 id="heading-10">无缝音乐播放器</h3>
-<p>使用 <code>::music</code> 指令，Daybook 会在构建阶段按需请求远程 FLAC 文件的开头部分以提取 <code>STREAMINFO</code>, <code>VORBIS_COMMENT</code>, 和 <code>PICTURE</code>。它能自动获取歌曲的时长、歌名、歌手和封面，生成并内嵌出一个美观的音乐播放器：</p>
-<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::music{url=&#34;https://example.com/audio/song.flac&#34; loop=&#34;true&#34;}
-</span></span></code></pre></div><p>你也可以手动覆盖音乐信息：</p>
-<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::music{url=&#34;https://example.com/audio/song.mp3&#34; title=&#34;自定义标题&#34; artist=&#34;自定义歌手&#34; cover=&#34;https://example.com/cover.jpg&#34;}
-</span></span></code></pre></div><hr>
-<h2 id="obsidian-callout-">Obsidian Callout (提示块)</h2>
-<p>通过 <code>&gt; [!type]</code> 语法，可以创建各种样式的提示块。</p>
-<p><strong>基础类型</strong>：
-<div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">Note</div></div><div class="callout-content"><p>这是一个普通 Note callout。</p></div></div></p>
-<div class="callout" data-callout="tip"><div class="callout-title"><span class="callout-icon material-symbol">lightbulb</span><div class="callout-title-inner">Tip</div></div><div class="callout-content"><p>这是一个 Tip callout。</p></div></div>
-<div class="callout" data-callout="important"><div class="callout-title"><span class="callout-icon material-symbol">priority_high</span><div class="callout-title-inner">Important</div></div><div class="callout-content"><p>这是一个 Important callout。</p></div></div>
-<div class="callout" data-callout="warning"><div class="callout-title"><span class="callout-icon material-symbol">warning</span><div class="callout-title-inner">Warning</div></div><div class="callout-content"><p>这是一个 Warning callout。</p></div></div>
-<div class="callout" data-callout="caution"><div class="callout-title"><span class="callout-icon material-symbol">error</span><div class="callout-title-inner">Caution</div></div><div class="callout-content"><p>这是一个 Caution callout。</p></div></div>
-<p><strong>自定义标题与折叠</strong>：
-可以通过 <code>+</code> 或 <code>-</code> 控制默认展开/折叠状态，并在括号后追加自定义标题。</p>
-<details class="callout is-collapsible" data-callout="question" data-callout-original="faq"><summary class="callout-title"><span class="callout-icon material-symbol">help</span><div class="callout-title-inner">点击展开查看答案</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>这段内容默认是折叠的。
-可以包含 <strong>加粗</strong> 或 <code>代码</code>。</p></div></details>
-<p><strong>嵌套 Callout</strong>：
-<div class="callout" data-callout="question"><div class="callout-title"><span class="callout-icon material-symbol">help</span><div class="callout-title-inner">外层 Callout</div></div><div class="callout-content"><p>这是外层内容。
-<div class="callout" data-callout="todo"><div class="callout-title"><span class="callout-icon material-symbol">checklist</span><div class="callout-title-inner">内层 Callout</div></div><div class="callout-content"><p>这是嵌套在内部的 Callout 块。</p></div></div></p></div></div></p>
-<hr>
-<h2 id="obsidian-">Obsidian 注释与高亮</h2>
-<p><strong>高亮文本</strong>：
-使用 <code>==</code> 将文本包裹，可以渲染出原生的 <mark>高亮文本</mark>。</p>
-<p><strong>注释语法</strong>：
-使用 <code>%%</code> 包裹的内容将被作为 Obsidian 专属注释处理，在最终构建的 HTML 页面中完全不可见，不会被发布。
-<code>%% 这是一段不会被发布的注释 %%</code></p>
-<p><em>（注意：代码块、行内代码、数学公式中的双等号和百分号会被安全保留，不会被误解析）</em></p>
-<hr>
-<h2 id="obsidian--1">Obsidian 页面与块级嵌入</h2>
-<p>你可以将其他 Markdown 笔记的内容嵌入到当前文章中。</p>
-<p><strong>页面整体嵌入</strong>：
-语法：<code>![[english test]]</code>
+</span></span></span><span class="line"><span class="cl"><span class="s">```</span>
+</span></span></code></pre></div><p>^64da35</p>
+<p>渲染后的代码块带有复制按钮。无语言标记的代码块仍保持普通等宽排版。</p>
+<h3 id="##图片与图注">图片与图注</h3>
+<p>标准 Markdown 图片可以直接使用远程 URL：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![<span class="nt">A caption</span>](<span class="na">https://example.com/image.jpg</span>)
+</span></span></code></pre></div><p>Daybook 会把普通 <code>alt</code> 作为图注。若 <code>alt</code> 以 <code>_</code> 开头，或 <code>alt</code> 为空，则不显示图注：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![<span class="nt">_Alt text without a visible caption</span>](<span class="na">https://example.com/image.jpg</span>)
+</span></span><span class="line"><span class="cl">![](https://example.com/image.jpg)
+</span></span></code></pre></div><p>Vault 内附件更适合使用 Obsidian embed，具体见 <a href="/notes/obsidian-media-local-remote-test/">附件与远程媒体</a>。</p>
+<h2 id="#Obsidian-双链">Obsidian 双链</h2>
+<p>Daybook 会解析 Obsidian 的 <code>[[...]]</code> 语法。目标可以使用文章标题、slug 或 Markdown 文件名；也可以追加别名、小节或块 ID。</p>
+<h3 id="##链接文章">链接文章</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">[[静夜思]]
+</span></span><span class="line"><span class="cl">[[Shakespeare|English-only Shakespeare example]]
+</span></span></code></pre></div><p>实际效果：</p>
+<p><a href="/notes/%E9%9D%99%E5%A4%9C%E6%80%9D/">静夜思</a></p>
+<p><a href="/notes/Shakespeare/">English-only Shakespeare example</a></p>
+<h3 id="##链接文章小节">链接文章小节</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">[[typography-test<span class="ni">#4</span>. 行内代码与代码块测试|查看代码排版]]
+</span></span></code></pre></div><p>如果目标文章中不存在这个标题，Daybook 会在构建阶段输出 <code>obsidian/missing-heading</code> 警告。</p>
+<h3 id="##块-ID">块 ID</h3>
+<p>在文本块末尾添加 <code>^block-id</code>，即可让这个块成为可嵌入目标。</p>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">这是一个可以被精确嵌入的段落。 ^syntax-block-demo
+</span></span></code></pre></div><p>实际效果：</p>
+<p>这是一个可以被精确嵌入的段落。 ^syntax-block-demo</p>
+<p>当前 Daybook 主要将 block ID 用于 <code>![[note#^block-id]]</code> 块级嵌入；普通 Wikilink 暂不生成精确的块锚点跳转。块 ID 只使用字母、数字与连字符最稳妥。</p>
+<h2 id="#Obsidian-页面与局部嵌入">Obsidian 页面与局部嵌入</h2>
+<p>在双链前添加 <code>!</code>，Daybook 会把目标内容直接嵌入当前文章。</p>
+<h3 id="##整篇文章嵌入">整篇文章嵌入</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[静夜思]]
+</span></span></code></pre></div><p>实际效果：</p>
 <blockquote class="obsidian-embed obsidian-note-embed" data-embed-type="note"><div class="obsidian-embed-content"><div class="obsidian-embed-title">静夜思</div>
-<p>床前明月光，</p>
-<p>疑是地上霜。</p>
-<p>举头望明月，</p>
-<p>低头思故乡。</p>
-<h2 id="heading">札记</h2>
-<p>《静夜思》几乎是中文世界最熟悉的古诗之一。它没有复杂的典故，也没有华丽的修辞，只是把一个人在夜里看见月光、想起故乡的瞬间写了出来。 这首诗适合用于测试中文正文、短诗换行、标签翻译、归档排序，以及中英文文章的双语标识。</p>
+<p>床前明月光，<br>
+疑是地上霜。<br>
+举头望明月，<br>
+低头思故乡。</p>
+<h2 id="#关于这个示例">关于这个示例</h2>
+<p>这篇文章与英文版使用同一个：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">i18n_key</span><span class="p">:</span><span class="w"> </span><span class="l">thoughts-in-a-quiet-night</span><span class="w">
+</span></span></span></code></pre></div><p>中文文件使用 <code>lang: zh-CN</code>，英文文件使用 <code>lang: en</code>。两份 Markdown 各自保存标题、摘要、标签和正文，Daybook 在构建时再把它们归入同一个文章组，因此读者可以在文章元数据中切换语言。</p>
+<p>同一个 <code>i18n_key</code> 下，每种语言只能有一个版本。建议双语版本保持相同的发布日期，并为 <code>listed</code> 等影响文章可见性的字段采用一致设置。</p>
+<p>完整字段说明见 <a href="/notes/frontmatter/">文章 Frontmatter</a>。如果文章只有一种语言，则不需要填写 <code>i18n_key</code>。</p>
+</div><a href="/notes/静夜思/" data-tooltip="在新页面打开" aria-label="在新页面打开" class="obsidian-embed-link" target="_blank" rel="noopener"><span class="material-symbol">open_in_new</span></a></blockquote>
+<h3 id="##小节嵌入">小节嵌入</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[typography-test<span class="ni">#常见强调</span>]]
+</span></span></code></pre></div><p>实际效果：</p>
+<blockquote class="obsidian-embed obsidian-note-embed" data-embed-type="note"><div class="obsidian-embed-content"><h3 id="##常见强调">常见强调</h3>
+<p>这里有 <strong>加粗文本</strong>、<em>斜体文本</em>、<em><strong>加粗斜体</strong></em>、<del>删除线</del>，以及 Obsidian 风格的 <mark>高亮文本</mark>。</p>
+<p>行内代码使用等宽字体，例如 <code>daybook build</code>、<code>const value = a !== b</code> 和 <code>user?.profile ?? null</code>。</p>
 <blockquote>
-<p>这篇文章用于测试中英文支持，点击阅读量<code>views</code>旁的中英文标志可切换文章内容的语言。</p>
+<p>好的排版并不要求每个元素都引人注目。正文、代码、引用和元数据各自承担清晰的层级即可。</p>
 </blockquote>
-</div><a href="/notes/静夜思/" data-tooltip="在新页面打开" aria-label="在新页面打开" class="obsidian-embed-link" target="_blank" rel="noopener"><span class="material-symbol">open_in_new</span></a></blockquote></p>
-<p><strong>小节标题嵌入</strong>：
-语法：<code>![[obsidian-embed-test#可被标题嵌入的小节]]</code></p>
-<p><strong>块级 (Block ID)嵌入</strong>：
-语法：<code>![[obsidian-embed-test#^embed-test-block]]</code></p>
+</div><a href="/notes/typography-test/#%23%23%E5%B8%B8%E8%A7%81%E5%BC%BA%E8%B0%83" data-tooltip="在新页面打开" aria-label="在新页面打开" class="obsidian-embed-link" target="_blank" rel="noopener"><span class="material-symbol">open_in_new</span></a></blockquote>
+<h3 id="##块级嵌入">块级嵌入</h3>
+<p>源 Markdown：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[markdown-syntax#^syntax-block-demo]]
+</span></span></code></pre></div><p>实际效果：</p>
+<blockquote class="obsidian-embed obsidian-note-embed" data-embed-type="note"><div class="obsidian-embed-content"><p>这是一个可以被精确嵌入的段落。</p>
+</div><a href="/notes/markdown-syntax/" data-tooltip="在新页面打开" aria-label="在新页面打开" class="obsidian-embed-link" target="_blank" rel="noopener"><span class="material-symbol">open_in_new</span></a></blockquote>
+<p>Daybook 会限制嵌入递归深度，并检测循环引用，避免两篇文章相互嵌入后无限展开。</p>
+<h2 id="#Obsidian-高亮与注释">Obsidian 高亮与注释</h2>
+<p>高亮：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">==important text==
+</span></span></code></pre></div><p>渲染为 <mark>important text</mark>。</p>
+<p>注释使用 <code>%%</code> 包裹。它们保留在 Markdown 源文件中，但不会出现在最终 HTML：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">%% 这段内容只留在源文件中。 %%
+</span></span></code></pre></div><p>代码和数学内容会先被保护，不应因为其中出现 <code>==</code> 或 <code>%%</code> 而被当作高亮或注释。</p>
+<h2 id="#Callout">Callout</h2>
+<p>Obsidian 风格：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!note]
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">A short note.
+</span></span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!warning]- 默认折叠
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">点击标题展开。
+</span></span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!tip]+ 默认展开
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">仍然可以手动收起。
+</span></span></span></code></pre></div><p>常用类型包括 <code>note</code>、<code>tip</code>、<code>important</code>、<code>warning</code>、<code>caution</code>、<code>abstract</code>、<code>info</code>、<code>todo</code>、<code>success</code>、<code>question</code>、<code>failure</code>、<code>danger</code>、<code>bug</code>、<code>example</code> 与 <code>quote</code>。<code>faq</code>、<code>hint</code>、<code>tldr</code> 等常见别名也会映射到对应类型。</p>
+<p>Daybook 还支持容器写法：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">:::note[自定义标题]
+</span></span><span class="line"><span class="cl">这里仍然可以写 <span class="gs">**Markdown**</span>。
+</span></span><span class="line"><span class="cl">:::
+</span></span></code></pre></div><h2 id="#Daybook-容器">Daybook 容器</h2>
+<h3 id="##折叠块">折叠块</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">:::fold[展开查看]
+</span></span><span class="line"><span class="cl">这里可以放较长的补充内容。
+</span></span><span class="line"><span class="cl">:::
+</span></span></code></pre></div><h3 id="##画廊">画廊</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">:::gallery
+</span></span><span class="line"><span class="cl">![<span class="nt">Image one</span>](<span class="na">https://example.com/1.jpg</span>)
+</span></span><span class="line"><span class="cl">![<span class="nt">Image two</span>](<span class="na">https://example.com/2.jpg</span>)
+</span></span><span class="line"><span class="cl">:::
+</span></span></code></pre></div><h2 id="#Mermaid">Mermaid</h2>
+<p>使用 <code>mermaid</code> 或 <code>{mermaid}</code> 作为代码块语言：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">```mermaid
+</span></span></span><span class="line"><span class="cl">graph LR
+</span></span><span class="line"><span class="cl">    A[Markdown] --&gt; B[Daybook]
+</span></span><span class="line"><span class="cl">    B --&gt; C[Static HTML]
+</span></span><span class="line"><span class="cl"><span class="s">```</span>
+</span></span></code></pre></div><h2 id="#数学公式">数学公式</h2>
+<p>含有数学公式的文章应在 frontmatter 中设置：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">math</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></div><p>然后使用行内 <code>$...$</code> 或块级 <code>$$...$$</code> 数学语法。完整效果可查看 <a href="/notes/examples/KaTeX%20%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/">KaTeX 数学公式测试</a>。</p>
+<h2 id="#外部内容与媒体">外部内容与媒体</h2>
+<p>Daybook 的 leaf directive 必须单独占一行，属性使用引号：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::github{repo=&#34;StatIndet/daybook&#34;}
+</span></span><span class="line"><span class="cl">::youtube{id=&#34;9pP0pIgP2kE&#34;}
+</span></span><span class="line"><span class="cl">::bilibili{id=&#34;BV1sK4y1Z7KG&#34;}
+</span></span><span class="line"><span class="cl">::spotify{url=&#34;https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6&#34;}
+</span></span><span class="line"><span class="cl">::tweet{url=&#34;https://x.com/example/status/1234567890&#34;}
+</span></span><span class="line"><span class="cl">::codepen{url=&#34;https://codepen.io/example/pen/example&#34;}
+</span></span></code></pre></div><p>图片、视频、音频、PDF 与音乐播放器分别使用 <code>::image</code>、<code>::video</code>、<code>::audio</code>、<code>::pdf</code> 和 <code>::music</code>。参数与本地附件的区别见 <a href="/notes/obsidian-media-local-remote-test/">附件与远程媒体</a>。</p>
+<p>如果想直接查看这些组件组合后的页面，可阅读 <a href="/notes/examples/Markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95%E9%A1%B5/">Markdown 扩展语法测试页</a>。</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>这是一条脚注内容，用来测试 footnote 渲染。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>脚注会被集中渲染到文章末尾。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -709,12 +792,27 @@
           
           <a href="/tags/Markdown/" class="note-tag-capsule">#Markdown</a>
           
-          <a href="/tags/obsidian/" class="note-tag-capsule">#obsidian</a>
+          <a href="/tags/Obsidian/" class="note-tag-capsule">#Obsidian</a>
+          
+          <a href="/tags/Daybook/" class="note-tag-capsule">#Daybook</a>
           
         </div>
       </section>
       
 
+      
+      <section class="post-comments">
+        <div id="waline"
+             data-server-url=""
+             data-lang="zh-CN"
+             data-page-size="10"
+             data-comment-sorting="latest"
+             data-search="false"
+             data-image-uploader="false"
+             data-path="/notes/markdown-syntax/"></div>
+        <link rel="stylesheet" href="/vendor/waline/waline.css">
+        <link rel="stylesheet" href="/css/components/waline-theme.672e43ce5a.css">
+      </section>
       
     </article>
   </section>
@@ -740,59 +838,87 @@
         <div class="notes-tags-scroll-viewport">
           <nav class="notes-tag-list" aria-label="标签筛选">
             
-            <a class="notes-tag-link" href="/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
-              <span class="notes-tag-text">daybook</span>
+            <a class="notes-tag-link" href="/tags/Configuration/" data-notes-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 20;">
+              <span class="notes-tag-text">Configuration</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+            <a class="notes-tag-link" href="/tags/Daybook/" data-notes-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 19;">
+              <span class="notes-tag-text">Daybook</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Fonts/" data-notes-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 18;">
+              <span class="notes-tag-text">Fonts</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Frontmatter/" data-notes-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 17;">
+              <span class="notes-tag-text">Frontmatter</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Guide/" data-notes-tag="Guide" style="--tag-index: 4; --tag-exit-index: 16;">
+              <span class="notes-tag-text">Guide</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 15;">
               <span class="notes-tag-text">KaTeX</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+            <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 6; --tag-exit-index: 14;">
               <span class="notes-tag-text">Markdown</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/obsidian/" data-notes-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
-              <span class="notes-tag-text">obsidian</span>
+            <a class="notes-tag-link" href="/tags/Media/" data-notes-tag="Media" style="--tag-index: 7; --tag-exit-index: 13;">
+              <span class="notes-tag-text">Media</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+            <a class="notes-tag-link" href="/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 8; --tag-exit-index: 12;">
+              <span class="notes-tag-text">Obsidian</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 9; --tag-exit-index: 11;">
               <span class="notes-tag-text">Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+            <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 10; --tag-exit-index: 10;">
               <span class="notes-tag-text">Shakespeare</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+            <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 11; --tag-exit-index: 9;">
               <span class="notes-tag-text">Sonnet</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+            <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 12; --tag-exit-index: 8;">
               <span class="notes-tag-text">Test</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+            <a class="notes-tag-link" href="/tags/Typography/" data-notes-tag="Typography" style="--tag-index: 13; --tag-exit-index: 7;">
+              <span class="notes-tag-text">Typography</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/%e5%93%b2%e5%ad%a6/" data-notes-tag="哲学" style="--tag-index: 14; --tag-exit-index: 6;">
+              <span class="notes-tag-text">哲学</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 15; --tag-exit-index: 5;">
               <span class="notes-tag-text">唐诗</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
-              <span class="notes-tag-text">字体</span>
+            <a class="notes-tag-link" href="/tags/%e5%ae%9e%e8%b7%b5/" data-notes-tag="实践" style="--tag-index: 16; --tag-exit-index: 4;">
+              <span class="notes-tag-text">实践</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+            <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 17; --tag-exit-index: 3;">
               <span class="notes-tag-text">数学公式</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+            <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 18; --tag-exit-index: 2;">
               <span class="notes-tag-text">李白</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
-              <span class="notes-tag-text">测试</span>
+            <a class="notes-tag-link" href="/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-notes-tag="认识论" style="--tag-index: 19; --tag-exit-index: 1;">
+              <span class="notes-tag-text">认识论</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+            <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 20; --tag-exit-index: 0;">
               <span class="notes-tag-text">诗歌</span>
             </a>
             
@@ -959,72 +1085,107 @@
       
       <nav class="notes-tag-list" aria-label="标签列表">
         
-        <a class="notes-tag-link" href="/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
-          <span class="notes-tag-text">daybook</span>
-          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        <a class="notes-tag-link" href="/tags/Configuration/" data-mobile-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 20;">
+          <span class="notes-tag-text">Configuration</span>
+          <span class="notes-tag-measure" aria-hidden="true">Configuration</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+        <a class="notes-tag-link" href="/tags/Daybook/" data-mobile-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 19;">
+          <span class="notes-tag-text">Daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">Daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Fonts/" data-mobile-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 18;">
+          <span class="notes-tag-text">Fonts</span>
+          <span class="notes-tag-measure" aria-hidden="true">Fonts</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Frontmatter/" data-mobile-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 17;">
+          <span class="notes-tag-text">Frontmatter</span>
+          <span class="notes-tag-measure" aria-hidden="true">Frontmatter</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Guide/" data-mobile-tag="Guide" style="--tag-index: 4; --tag-exit-index: 16;">
+          <span class="notes-tag-text">Guide</span>
+          <span class="notes-tag-measure" aria-hidden="true">Guide</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 15;">
           <span class="notes-tag-text">KaTeX</span>
           <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 6; --tag-exit-index: 14;">
           <span class="notes-tag-text">Markdown</span>
           <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/obsidian/" data-mobile-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
-          <span class="notes-tag-text">obsidian</span>
-          <span class="notes-tag-measure" aria-hidden="true">obsidian</span>
+        <a class="notes-tag-link" href="/tags/Media/" data-mobile-tag="Media" style="--tag-index: 7; --tag-exit-index: 13;">
+          <span class="notes-tag-text">Media</span>
+          <span class="notes-tag-measure" aria-hidden="true">Media</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+        <a class="notes-tag-link" href="/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 8; --tag-exit-index: 12;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 9; --tag-exit-index: 11;">
           <span class="notes-tag-text">Poetry</span>
           <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 10; --tag-exit-index: 10;">
           <span class="notes-tag-text">Shakespeare</span>
           <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 11; --tag-exit-index: 9;">
           <span class="notes-tag-text">Sonnet</span>
           <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 12; --tag-exit-index: 8;">
           <span class="notes-tag-text">Test</span>
           <span class="notes-tag-measure" aria-hidden="true">Test</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+        <a class="notes-tag-link" href="/tags/Typography/" data-mobile-tag="Typography" style="--tag-index: 13; --tag-exit-index: 7;">
+          <span class="notes-tag-text">Typography</span>
+          <span class="notes-tag-measure" aria-hidden="true">Typography</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%93%b2%e5%ad%a6/" data-mobile-tag="哲学" style="--tag-index: 14; --tag-exit-index: 6;">
+          <span class="notes-tag-text">哲学</span>
+          <span class="notes-tag-measure" aria-hidden="true">哲学</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 15; --tag-exit-index: 5;">
           <span class="notes-tag-text">唐诗</span>
           <span class="notes-tag-measure" aria-hidden="true">唐诗</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
-          <span class="notes-tag-text">字体</span>
-          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        <a class="notes-tag-link" href="/tags/%e5%ae%9e%e8%b7%b5/" data-mobile-tag="实践" style="--tag-index: 16; --tag-exit-index: 4;">
+          <span class="notes-tag-text">实践</span>
+          <span class="notes-tag-measure" aria-hidden="true">实践</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 17; --tag-exit-index: 3;">
           <span class="notes-tag-text">数学公式</span>
           <span class="notes-tag-measure" aria-hidden="true">数学公式</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 18; --tag-exit-index: 2;">
           <span class="notes-tag-text">李白</span>
           <span class="notes-tag-measure" aria-hidden="true">李白</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
-          <span class="notes-tag-text">测试</span>
-          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        <a class="notes-tag-link" href="/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-mobile-tag="认识论" style="--tag-index: 19; --tag-exit-index: 1;">
+          <span class="notes-tag-text">认识论</span>
+          <span class="notes-tag-measure" aria-hidden="true">认识论</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 20; --tag-exit-index: 0;">
           <span class="notes-tag-text">诗歌</span>
           <span class="notes-tag-measure" aria-hidden="true">诗歌</span>
         </a>
@@ -1101,7 +1262,7 @@
       module.initSettingsOverlay();
     });
 
-    import("\/js\/share-overlay.257b8de5fb.js").then(module => {
+    import("\/js\/share-overlay.0c1b061c0b.js").then(module => {
       module.initShareOverlay();
     });
 

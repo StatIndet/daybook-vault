@@ -85,6 +85,30 @@ lang: zh-CN
 这是一个自定义标题的提示块。
 :::
 
+### Obsidian 风格
+
+```markdown
+> [!note]
+> A short note.
+
+> [!warning]- 默认折叠
+> 点击标题展开。
+
+> [!tip]+ 默认展开
+> 仍然可以手动收起。
+```
+
+实际效果：
+
+> [!note]
+> A short note.
+
+> [!warning]- 默认折叠
+> 点击标题展开。
+
+> [!tip]+ 默认展开
+> 仍然可以手动收起。
+
 ## 折叠块
 
 使用三冒号语法 `:::fold[title]`，即可创建折叠块。点击标题可以展开或收起。
@@ -162,12 +186,12 @@ graph TD;
 ### 语法
 
 ```
-::github{repo="radishzzz/astro-theme-retypeset"}
+::github{repo="StatIndet/daybook"}
 ```
 
 ### 效果
 
-::github{repo="radishzzz/astro-theme-retypeset"}
+::github{repo="StatIndet/daybook"}
 
 ## 视频
 

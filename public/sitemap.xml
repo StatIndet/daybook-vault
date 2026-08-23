@@ -14,7 +14,19 @@
     <lastmod>2026-06-28</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/daybook/</loc>
+    <loc>http://localhost:1313/tags/Configuration/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/Daybook/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/Fonts/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/Frontmatter/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/Guide/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/KaTeX/</loc>
@@ -23,7 +35,10 @@
     <loc>http://localhost:1313/tags/Markdown/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/obsidian/</loc>
+    <loc>http://localhost:1313/tags/Media/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/Obsidian/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/Poetry/</loc>
@@ -38,10 +53,16 @@
     <loc>http://localhost:1313/tags/Test/</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/Typography/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/哲学/</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/唐诗/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/字体/</loc>
+    <loc>http://localhost:1313/tags/实践/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/数学公式/</loc>
@@ -50,30 +71,38 @@
     <loc>http://localhost:1313/tags/李白/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/测试/</loc>
+    <loc>http://localhost:1313/tags/认识论/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/诗歌/</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/notes/daybook-yaml/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/notes/frontmatter/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/notes/obsidian-media-local-remote-test/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/notes/markdown-syntax/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/notes/Shakespeare/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/notes/静夜思/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/notes/typography-test/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/notes/examples/KaTeX 数学公式测试/</loc>
@@ -82,6 +111,10 @@
   <url>
     <loc>http://localhost:1313/notes/examples/Markdown扩展语法测试页/</loc>
     <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/notes/实践论/</loc>
+    <lastmod>1937-07-01</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/</loc>
@@ -97,7 +130,19 @@
     <lastmod>2026-06-28</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/en/tags/daybook/</loc>
+    <loc>http://localhost:1313/en/tags/Configuration/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/Daybook/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/Fonts/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/Frontmatter/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/Guide/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/en/tags/KaTeX/</loc>
@@ -112,7 +157,10 @@
     <loc>http://localhost:1313/en/tags/Mathematical-formula/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/en/tags/obsidian/</loc>
+    <loc>http://localhost:1313/en/tags/Media/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/Obsidian/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/en/tags/Poetry/</loc>
@@ -130,30 +178,44 @@
     <loc>http://localhost:1313/en/tags/Test/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/en/tags/字体/</loc>
+    <loc>http://localhost:1313/en/tags/Typography/</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/en/tags/测试/</loc>
+    <loc>http://localhost:1313/en/tags/哲学/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/实践/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/认识论/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/notes/daybook-yaml/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/notes/frontmatter/</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/notes/obsidian-media-local-remote-test/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/notes/markdown-syntax/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/notes/Shakespeare/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/notes/Thoughts in a Quiet Night/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/notes/typography-test/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-23</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/en/notes/examples/katex mathematical demo/</loc>
@@ -162,5 +224,9 @@
   <url>
     <loc>http://localhost:1313/en/notes/examples/markdown-extended-demo/</loc>
     <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/notes/实践论/</loc>
+    <lastmod>1937-07-01</lastmod>
   </url>
 </urlset>

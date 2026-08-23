@@ -1,196 +1,314 @@
 ---
-title: Markdown 语法说明
+title: Markdown、Obsidian 与 Daybook 语法
 date: 2026-06-28
+updated: 2026-08-23
+lang: zh-CN
 tags:
   - Markdown
   - Obsidian
-summary: 关于 Daybook 所支持的标准 Markdown 以及 Obsidian 扩展语法特性的完整参考指南。
+  - Daybook
+summary: Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。
 draft: false
-math: true
+listed: true
+math: false
+pin: false
+comment: true
+toc: true
 ---
 
-# Markdown 语法说明
+Daybook 以 Goldmark 解析 Markdown，并在其上加入 GFM、Obsidian 兼容语法和少量面向博客的扩展。日常写作仍然可以从标准 Markdown 开始；只有需要双链、嵌入或特殊组件时，才需要额外语法。
 
-这篇文章是 Daybook 对标准 Markdown、GitHub Flavored Markdown (GFM) 以及各种 Obsidian 特色扩展语法的渲染效果汇总。
+文章元数据本身不属于 Markdown 正文。它写在文件顶部的 YAML frontmatter 中，详见 [[frontmatter|文章 Frontmatter]]。
 
 ## 标准 Markdown 与 GFM
 
-### 文本格式
+### 标题与文本
 
-这里有 **加粗文本**、*斜体文本*、~~删除线文本~~，以及一段行内代码：`go run ./cmd/daybook build`。
+```markdown
+## 二级标题
+### 三级标题
 
-### 列表
+**加粗**
+*斜体*
+~~删除线~~
+`inline code`
+```
 
-**无序列表与嵌套列表**：
-- 第一项
-- 第二项
-  - 嵌套项目 A
-  - 嵌套项目 B
+Daybook 的文章目录收集二级到四级标题。普通链接、自动链接、水平线和引用块都按常见 Markdown 方式书写。
 
-**有序列表**：
-1. 读取 Markdown 文件。
-2. 解析 frontmatter。
-3. 渲染 HTML 页面。
+### 列表与任务
 
-**任务列表**：
-- [x] 支持 GFM 表格
-- [x] 支持任务列表
-- [ ] 待办事项
+```markdown
+- Item
+  - Nested item
 
-### 引用块
+1. First
+2. Second
 
-> 引用块用于展示一段被强调的说明。它应该有清晰的左边界，并在浅色和暗色主题下都保持可读。
+- [x] Done
+- [ ] Todo
+```
 
 ### 表格
 
-| 功能 | 渲染效果 | 状态 |
-| --- | --- | --- |
-| 加粗 | **text** | 已测试 |
-| 删除线 | ~~text~~ | 已测试 |
-| 任务列表 | `- [x] item` | 已测试 |
+```markdown
+| Field | Meaning |
+| --- | --- |
+| `title` | Article title |
+| `date` | Publication date |
+```
+
+### 脚注
+
+源 Markdown：
+
+```markdown
+Daybook 使用 Goldmark 解析正文。[^goldmark]
+
+[^goldmark]: 脚注会被集中渲染到文章末尾。
+```
+
+实际效果：
+
+Daybook 使用 Goldmark 解析正文。[^goldmark]
+
+[^goldmark]: 脚注会被集中渲染到文章末尾。
+### 链接
+
+源 Markdown：
+
+```markdown
+[Daybook on GitHub](https://github.com/StatIndet/daybook)
+
+<https://github.com/StatIndet/daybook>
+```
+
+实际效果：
+
+[Daybook on GitHub](https://github.com/StatIndet/daybook)
+
+<https://github.com/StatIndet/daybook>
 
 ### 代码块
 
-支持带语法高亮的代码块：
+为 fenced code block 标注语言即可启用语法高亮：
 
+````markdown
 ```go
 package main
 
 import "fmt"
 
 func main() {
-	fmt.Println("hello daybook")
+    fmt.Println("hello")
 }
 ```
+````
 
-### 脚注
+^64da35
 
-脚注引用会出现在正文中。[^markdown-note]
+渲染后的代码块带有复制按钮。无语言标记的代码块仍保持普通等宽排版。
 
-[^markdown-note]: 这是一条脚注内容，用来测试 footnote 渲染。
+### 图片与图注
 
----
-
-## 本地附件系统
-
-Daybook 完整兼容了 Obsidian 的双链附件引用语法。
-
-### 图片嵌入与排版
-
-你可以使用 `![[filename.jpg]]` 语法插入本地图片，并可以通过管道符 `|` 添加宽度和对齐方式参数。支持的语法格式包括：
-- 默认图片：`![[shi-li.jpg]]`
-- 指定宽度：`![[shi-li.jpg|200]]`
-- 指定宽高：`![[shi-li.jpg|640x480]]`
-- 居中/左/右对齐：`![[shi-li.jpg|center]]`、`![[shi-li.jpg|left]]`、`![[shi-li.jpg|right]]`
-- 组合参数：`![[shi-li.jpg|center|300]]`
-
-**渲染示例**：
-![[shelby.jpg|center|300]]
-
-### 音视频与 PDF 嵌入
-
-所有的本地 PDF, Audio, Video 都被当作普通的附件处理，自动在构建时复制：
-
-**PDF 预览**：
-语法：`![[shi-jian-lun.pdf]]`
-
-**音频播放**：
-语法：`![[JayChou.FLAC]]`
-
-**视频播放**：
-语法：`![[1130650335.mp4|center|720]]`
-
----
-
-## 远程富媒体与音乐播放器
-
-Daybook 提供了自有的 `::type` directive 语法用于加载远程媒体资源。
-
-### 远程媒体组件
-
-你可以使用以下语法直接挂载任何 HTTP(S) URL 媒体：
-
-- `::image{url="https://..." align="center" width="400" caption="Image Caption"}`
-- `::video{url="https://..." align="center" width="720" autoplay="true" loop="true"}`
-- `::audio{url="https://..."}`
-- `::pdf{url="https://..." height="800"}`
-
-### 无缝音乐播放器
-
-使用 `::music` 指令，Daybook 会在构建阶段按需请求远程 FLAC 文件的开头部分以提取 `STREAMINFO`, `VORBIS_COMMENT`, 和 `PICTURE`。它能自动获取歌曲的时长、歌名、歌手和封面，生成并内嵌出一个美观的音乐播放器：
+标准 Markdown 图片可以直接使用远程 URL：
 
 ```markdown
-::music{url="https://example.com/audio/song.flac" loop="true"}
+![A caption](https://example.com/image.jpg)
 ```
 
-你也可以手动覆盖音乐信息：
+Daybook 会把普通 `alt` 作为图注。若 `alt` 以 `_` 开头，或 `alt` 为空，则不显示图注：
 
 ```markdown
-::music{url="https://example.com/audio/song.mp3" title="自定义标题" artist="自定义歌手" cover="https://example.com/cover.jpg"}
+![_Alt text without a visible caption](https://example.com/image.jpg)
+![](https://example.com/image.jpg)
 ```
 
----
+Vault 内附件更适合使用 Obsidian embed，具体见 [[obsidian-media-local-remote-test|附件与远程媒体]]。
 
-## Obsidian Callout (提示块)
+## Obsidian 双链
 
-通过 `> [!type]` 语法，可以创建各种样式的提示块。
+Daybook 会解析 Obsidian 的 `[[...]]` 语法。目标可以使用文章标题、slug 或 Markdown 文件名；也可以追加别名、小节或块 ID。
 
-**基础类型**：
-> [!note]
-> 这是一个普通 Note callout。
+### 链接文章
 
-> [!tip]
-> 这是一个 Tip callout。
+源 Markdown：
 
-> [!important]
-> 这是一个 Important callout。
+```markdown
+[[静夜思]]
+[[Shakespeare|English-only Shakespeare example]]
+```
 
-> [!warning]
-> 这是一个 Warning callout。
+实际效果：
 
-> [!caution]
-> 这是一个 Caution callout。
+[[静夜思]]
 
-**自定义标题与折叠**：
-可以通过 `+` 或 `-` 控制默认展开/折叠状态，并在括号后追加自定义标题。
+[[Shakespeare|English-only Shakespeare example]]
 
-> [!faq]- 点击展开查看答案
-> 这段内容默认是折叠的。
-> 可以包含 **加粗** 或 `代码`。
+### 链接文章小节
 
-**嵌套 Callout**：
-> [!question] 外层 Callout
-> 这是外层内容。
-> > [!todo] 内层 Callout
-> > 这是嵌套在内部的 Callout 块。
+源 Markdown：
 
----
+```markdown
+[[typography-test#4. 行内代码与代码块测试|查看代码排版]]
+```
 
-## Obsidian 注释与高亮
+如果目标文章中不存在这个标题，Daybook 会在构建阶段输出 `obsidian/missing-heading` 警告。
 
-**高亮文本**：
-使用 `==` 将文本包裹，可以渲染出原生的 ==高亮文本==。
+### 块 ID
 
-**注释语法**：
-使用 `%%` 包裹的内容将被作为 Obsidian 专属注释处理，在最终构建的 HTML 页面中完全不可见，不会被发布。
-`%% 这是一段不会被发布的注释 %%`
+在文本块末尾添加 `^block-id`，即可让这个块成为可嵌入目标。
 
-*（注意：代码块、行内代码、数学公式中的双等号和百分号会被安全保留，不会被误解析）*
+源 Markdown：
 
----
+```markdown
+这是一个可以被精确嵌入的段落。 ^syntax-block-demo
+```
 
-## Obsidian 页面与块级嵌入
+实际效果：
 
-你可以将其他 Markdown 笔记的内容嵌入到当前文章中。
+这是一个可以被精确嵌入的段落。 ^syntax-block-demo
 
-**页面整体嵌入**：
-语法：`![[english test]]`
+当前 Daybook 主要将 block ID 用于 `![[note#^block-id]]` 块级嵌入；普通 Wikilink 暂不生成精确的块锚点跳转。块 ID 只使用字母、数字与连字符最稳妥。
+
+## Obsidian 页面与局部嵌入
+
+在双链前添加 `!`，Daybook 会把目标内容直接嵌入当前文章。
+
+### 整篇文章嵌入
+
+源 Markdown：
+
+```markdown
+![[静夜思]]
+```
+
+实际效果：
+
 ![[静夜思]]
 
+### 小节嵌入
 
+源 Markdown：
 
-**小节标题嵌入**：
-语法：`![[obsidian-embed-test#可被标题嵌入的小节]]`
+```markdown
+![[typography-test#常见强调]]
+```
 
-**块级 (Block ID)嵌入**：
-语法：`![[obsidian-embed-test#^embed-test-block]]`
+实际效果：
+
+![[typography-test#常见强调]]
+
+### 块级嵌入
+
+源 Markdown：
+
+```markdown
+![[markdown-syntax#^syntax-block-demo]]
+```
+
+实际效果：
+
+![[markdown-syntax#^syntax-block-demo]]
+
+Daybook 会限制嵌入递归深度，并检测循环引用，避免两篇文章相互嵌入后无限展开。
+
+## Obsidian 高亮与注释
+
+高亮：
+
+```markdown
+==important text==
+```
+
+渲染为 ==important text==。
+
+注释使用 `%%` 包裹。它们保留在 Markdown 源文件中，但不会出现在最终 HTML：
+
+```markdown
+%% 这段内容只留在源文件中。 %%
+```
+
+代码和数学内容会先被保护，不应因为其中出现 `==` 或 `%%` 而被当作高亮或注释。
+
+## Callout
+
+Obsidian 风格：
+
+```markdown
+> [!note]
+> A short note.
+
+> [!warning]- 默认折叠
+> 点击标题展开。
+
+> [!tip]+ 默认展开
+> 仍然可以手动收起。
+```
+
+常用类型包括 `note`、`tip`、`important`、`warning`、`caution`、`abstract`、`info`、`todo`、`success`、`question`、`failure`、`danger`、`bug`、`example` 与 `quote`。`faq`、`hint`、`tldr` 等常见别名也会映射到对应类型。
+
+Daybook 还支持容器写法：
+
+```markdown
+:::note[自定义标题]
+这里仍然可以写 **Markdown**。
+:::
+```
+
+## Daybook 容器
+
+### 折叠块
+
+```markdown
+:::fold[展开查看]
+这里可以放较长的补充内容。
+:::
+```
+
+### 画廊
+
+```markdown
+:::gallery
+![Image one](https://example.com/1.jpg)
+![Image two](https://example.com/2.jpg)
+:::
+```
+
+## Mermaid
+
+使用 `mermaid` 或 `{mermaid}` 作为代码块语言：
+
+````markdown
+```mermaid
+graph LR
+    A[Markdown] --> B[Daybook]
+    B --> C[Static HTML]
+```
+````
+## 数学公式
+
+含有数学公式的文章应在 frontmatter 中设置：
+
+```yaml
+math: true
+```
+
+然后使用行内 `$...$` 或块级 `$$...$$` 数学语法。完整效果可查看 [[KaTeX 数学公式测试|KaTeX 数学公式测试]]。
+
+## 外部内容与媒体
+
+Daybook 的 leaf directive 必须单独占一行，属性使用引号：
+
+```markdown
+::github{repo="StatIndet/daybook"}
+::youtube{id="9pP0pIgP2kE"}
+::bilibili{id="BV1sK4y1Z7KG"}
+::spotify{url="https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6"}
+::tweet{url="https://x.com/example/status/1234567890"}
+::codepen{url="https://codepen.io/example/pen/example"}
+```
+
+图片、视频、音频、PDF 与音乐播放器分别使用 `::image`、`::video`、`::audio`、`::pdf` 和 `::music`。参数与本地附件的区别见 [[obsidian-media-local-remote-test|附件与远程媒体]]。
+
+如果想直接查看这些组件组合后的页面，可阅读 [[Markdown扩展语法测试页|Markdown 扩展语法测试页]]。

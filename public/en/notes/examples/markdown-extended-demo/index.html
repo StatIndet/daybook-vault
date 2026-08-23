@@ -61,7 +61,7 @@
   <script src="/js/code-copy.0248e0ee56.js" defer></script>
   <script src="/js/toc.f2baf40c54.js" defer></script>
   <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
-  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/heading-anchors.a0aad74fb9.js" defer></script>
   <script src="/js/note-filters.2d2f20797c.js" defer></script>
   <script src="/js/lightbox.a15c0f66e6.js" defer></script>
   <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
@@ -71,15 +71,16 @@
   <script src="/js/graph-loader.b1c100b294.js" defer></script>
   <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
   <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
-  <script src="/js/daybook-router.3f0a75a11a.js" defer></script>
+  <script src="/js/daybook-router.3a0f3938c4.js" defer></script>
   <script src="/js/katex-loader.b639ed40fa.js" defer></script>
   <script src="/js/custom-cursor.5a89752a8a.js" defer></script>
-  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <script src="/js/note-bilingual.27772b9611.js" defer></script>
   <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
-  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.905c7d5a64.css">
+  <link rel="stylesheet" href="/vendor/fonts/noto-serif-sc/wght.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.baec377b53.css">
+  <link rel="stylesheet" href="/css/global.b70a6d448a.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   
@@ -296,7 +297,7 @@
             
           </div>
           <div class="article-stagger-meta">
-            <span class="meta-stagger-item">322 words</span>
+            <span class="meta-stagger-item">347 words</span>
             
             <span class="meta-stagger-item">
               <span data-page-views data-path="/en/notes/examples/markdown-extended-demo/">--</span>
@@ -338,18 +339,18 @@
       <div class="markdown post-content">
         <p>This article introduces extended Markdown features, including syntax examples and rendered previews.</p>
 <p><em>Examples are taken from <a href="https://retypeset.radishzz.cc/en/posts/markdown-extended-features/">Retypeset</a>.</em></p>
-<h2 id="figure-captions">Figure Captions</h2>
+<h2 id="#Figure-Captions">Figure Captions</h2>
 <p>To create automatic figure captions, use the standard Markdown image syntax <code>![alt](src)</code>. To hide the caption, add an underscore <code>_</code> before the <code>alt</code> text or leave the <code>alt</code> text empty.</p>
-<h3 id="syntax">Syntax</h3>
-<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>![Image description](https://static.daybook.page/image/gallery/06.webp)
+<h3 id="##Syntax">Syntax</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>![Image description](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_Image description](https://static.daybook.page/image/gallery/06.webp)
-</code></pre></div><h3 id="output">Output</h3>
-<figure><img src="https://static.daybook.page/image/gallery/06.webp" alt="Image description" loading="lazy" decoding="async"><figcaption>Image description</figcaption></figure>
-<p><img src="https://static.daybook.page/image/gallery/06.webp" alt="Image description" loading="lazy" decoding="async"></p>
-<h2 id="admonition-blocks">Admonition Blocks</h2>
+![_Image description](https://static.daybook.page/picture/06_27TtR7.webp)
+</code></pre></div><h3 id="##Output">Output</h3>
+<figure><img src="https://static.daybook.page/picture/06_27TtR7.webp" alt="Image description" loading="lazy" decoding="async"><figcaption>Image description</figcaption></figure>
+<p><img src="https://static.daybook.page/picture/06_27TtR7.webp" alt="Image description" loading="lazy" decoding="async"></p>
+<h2 id="#Admonition-Blocks">Admonition Blocks</h2>
 <p>To create admonition blocks, use the GitHub syntax <code>&gt; [!TYPE]</code> or the container directive <code>:::type</code>. The following types are supported: <code>note</code>, <code>tip</code>, <code>important</code>, <code>warning</code>, and <code>caution</code>.</p>
-<h3 id="syntax-1">Syntax</h3>
+<h3 id="##Syntax-2">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>&gt; [!NOTE]
 &gt; Useful information that users should know, even when skimming content.
 
@@ -370,24 +371,37 @@ Advises about risks or negative outcomes of certain actions.
 :::note[YOUR CUSTOM TITLE]
 This is a note with a custom title.
 :::
-</code></pre></div><h3 id="output-1">Output</h3>
+</code></pre></div><h3 id="##Output-2">Output</h3>
 <div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">Note</div></div><div class="callout-content"><p>Useful information that users should know, even when skimming content.</p></div></div>
 <div class="callout" data-callout="tip"><div class="callout-title"><span class="callout-icon material-symbol">lightbulb</span><div class="callout-title-inner">Tip</div></div><div class="callout-content"><p>Helpful advice for doing things better or more easily.</p></div></div>
 <div class="callout" data-callout="important"><div class="callout-title"><span class="callout-icon material-symbol">priority_high</span><div class="callout-title-inner">Important</div></div><div class="callout-content"><p>Key information users need to know to achieve their goal.</p></div></div>
 <div class="callout" data-callout="warning"><div class="callout-title"><span class="callout-icon material-symbol">warning</span><div class="callout-title-inner">Warning</div></div><div class="callout-content"><p>Urgent info that needs immediate user attention to avoid problems.</p></div></div>
 <div class="callout" data-callout="caution"><div class="callout-title"><span class="callout-icon material-symbol">error</span><div class="callout-title-inner">Caution</div></div><div class="callout-content"><p>Advises about risks or negative outcomes of certain actions.</p></div></div>
 <div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">YOUR CUSTOM TITLE</div></div><div class="callout-content"><p>This is a note with a custom title.</p></div></div>
-<h2 id="collapsible-sections">Collapsible Sections</h2>
+<h3 id="##Obsidian-Style">Obsidian Style</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!note]
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">A short note.
+</span></span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!warning]- Collapsed by default
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">Click the title to expand.
+</span></span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!tip]+ Expanded by default
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">You can still collapse it manually.
+</span></span></span></code></pre></div><p>Actual result:</p>
+<div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">Note</div></div><div class="callout-content"><p>A short note.</p></div></div>
+<details class="callout is-collapsible" data-callout="warning"><summary class="callout-title"><span class="callout-icon material-symbol">warning</span><div class="callout-title-inner">Collapsed by default</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>Click the title to expand.</p></div></details>
+<details class="callout is-collapsible" data-callout="tip" open><summary class="callout-title"><span class="callout-icon material-symbol">lightbulb</span><div class="callout-title-inner">Expanded by default</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>You can still collapse it manually.</p></div></details>
+<h2 id="#Collapsible-Sections">Collapsible Sections</h2>
 <p>To create collapsible sections, use the container directive syntax <code>:::fold[title]</code>. Click the title to expand or collapse.</p>
-<h3 id="syntax-2">Syntax</h3>
+<h3 id="##Syntax-3">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>:::fold[Usage Tips]
 Content that may not interest all readers can be placed in a collapsible section.
 :::
-</code></pre></div><h3 id="output-2">Output</h3>
+</code></pre></div><h3 id="##Output-3">Output</h3>
 <details class="md-fold"><summary>Usage Tips</summary><div class="md-fold-content"><p>Content that may not interest all readers can be placed in a collapsible section.</p></div></details>
-<h2 id="mermaid-diagrams">Mermaid Diagrams</h2>
+<h2 id="#Mermaid-Diagrams">Mermaid Diagrams</h2>
 <p>To create Mermaid diagrams, wrap Mermaid syntax in code blocks and specify the language type as <code>mermaid</code>.</p>
-<h3 id="syntax-3">Syntax</h3>
+<h3 id="##Syntax-4">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>```mermaid
 graph TD;
     A--&gt;B;
@@ -395,35 +409,35 @@ graph TD;
     B--&gt;D;
     C--&gt;D;
 ```
-</code></pre></div><h3 id="output-3">Output</h3>
+</code></pre></div><h3 id="##Output-4">Output</h3>
 <div class="mermaid-block" data-mermaid-status="pending"><pre class="mermaid-source"><code>graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;
     C--&gt;D;</code></pre><div class="mermaid-diagram" aria-hidden="true"></div><p class="mermaid-error" hidden></p></div>
-<h2 id="galleries">Galleries</h2>
+<h2 id="#Galleries">Galleries</h2>
 <p>To create image galleries, use the container directive <code>:::gallery</code>. Scroll horizontally to view more images.</p>
-<h3 id="syntax-4">Syntax</h3>
+<h3 id="##Syntax-5">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>:::gallery
-![Alpaca](https://static.daybook.page/image/gallery/sheep-1.jpg)
-![Turning head](https://static.daybook.page/image/gallery/sheep-2.jpg)
-![Eye contact](https://static.daybook.page/image/gallery/sheep-3.jpg)
-![Baby alpaca](https://static.daybook.page/image/gallery/sheep-4.jpg)
-![Aww, so cute!](https://static.daybook.page/image/gallery/sheep-5.jpg)
+![Alpaca](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![Turning head](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![Eye contact](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![Baby alpaca](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![Aww, so cute!](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
-</code></pre></div><h3 id="output-4">Output</h3>
-<div class="md-gallery"><figure><img src="https://static.daybook.page/image/gallery/sheep-1.jpg" alt="Alpaca" loading="lazy" decoding="async"><figcaption>Alpaca</figcaption></figure><figure><img src="https://static.daybook.page/image/gallery/sheep-2.jpg" alt="Turning head" loading="lazy" decoding="async"><figcaption>Turning head</figcaption></figure><figure><img src="https://static.daybook.page/image/gallery/sheep-3.jpg" alt="Eye contact" loading="lazy" decoding="async"><figcaption>Eye contact</figcaption></figure><figure><img src="https://static.daybook.page/image/gallery/sheep-4.jpg" alt="Baby alpaca" loading="lazy" decoding="async"><figcaption>Baby alpaca</figcaption></figure><figure><img src="https://static.daybook.page/image/gallery/sheep-5.jpg" alt="Aww, so cute!" loading="lazy" decoding="async"><figcaption>Aww, so cute!</figcaption></figure></div>
-<h2 id="github-repositories">GitHub Repositories</h2>
+</code></pre></div><h3 id="##Output-5">Output</h3>
+<div class="md-gallery"><figure><img src="https://static.daybook.page/picture/sheep-1_LogLD.webp" alt="Alpaca" loading="lazy" decoding="async"><figcaption>Alpaca</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp" alt="Turning head" loading="lazy" decoding="async"><figcaption>Turning head</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-3_Vxtvd.webp" alt="Eye contact" loading="lazy" decoding="async"><figcaption>Eye contact</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp" alt="Baby alpaca" loading="lazy" decoding="async"><figcaption>Baby alpaca</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-5_16GGeM.webp" alt="Aww, so cute!" loading="lazy" decoding="async"><figcaption>Aww, so cute!</figcaption></figure></div>
+<h2 id="#GitHub-Repositories">GitHub Repositories</h2>
 <p>To embed GitHub repositories, use the leaf directive <code>::github{repo=&quot;owner/repo&quot;}</code>.</p>
-<h3 id="syntax-5">Syntax</h3>
-<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::github{repo=&quot;radishzzz/astro-theme-retypeset&quot;}
-</code></pre></div><h3 id="output-5">Output</h3>
+<h3 id="##Syntax-6">Syntax</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::github{repo=&quot;StatIndet/daybook&quot;}
+</code></pre></div><h3 id="##Output-6">Output</h3>
 
-    <a href="https://github.com/radishzzz/astro-theme-retypeset" class="no-heti gc-container" target="_blank" rel="noopener noreferrer" data-repo="radishzzz/astro-theme-retypeset">
+    <a href="https://github.com/StatIndet/daybook" class="no-heti gc-container" target="_blank" rel="noopener noreferrer" data-repo="StatIndet/daybook">
       <div class="gc-title-bar">
         <div class="gc-owner-avatar" aria-hidden="true"></div>
         <span class="gc-repo-title">
-          <span>radishzzz<span class="gc-slash" aria-hidden="true">/</span><strong>astro-theme-retypeset</strong></span>
+          <span>StatIndet<span class="gc-slash" aria-hidden="true">/</span><strong>daybook</strong></span>
         </span>
         <svg class="gc-github-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
@@ -445,22 +459,22 @@ graph TD;
         <span class="gc-license-info" aria-label="License">--</span>
       </div>
     </a>
-<h2 id="videos">Videos</h2>
+<h2 id="#Videos">Videos</h2>
 <p>To embed videos, use the leaf directive <code>::youtube{id=&quot;video-id&quot;}</code>.</p>
-<h3 id="syntax-6">Syntax</h3>
+<h3 id="##Syntax-7">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::youtube{id=&quot;9pP0pIgP2kE&quot;}
 
 ::bilibili{id=&quot;BV1sK4y1Z7KG&quot;}
-</code></pre></div><h3 id="output-6">Output</h3>
+</code></pre></div><h3 id="##Output-7">Output</h3>
 <div class="embed-card embed-frame embed-frame-video embed-frame-youtube"><iframe src="https://www.youtube-nocookie.com/embed/9pP0pIgP2kE" title="YouTube video player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 <div class="embed-card embed-frame embed-frame-video embed-frame-bilibili"><iframe src="https://player.bilibili.com/player.html?autoplay=0&amp;bvid=BV1sK4y1Z7KG&amp;isOutside=true&amp;muted=0&amp;p=1" title="Bilibili video player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<h2 id="spotify">Spotify</h2>
+<h2 id="#Spotify">Spotify</h2>
 <p>To embed Spotify content, use the leaf directive <code>::spotify{url=&quot;spotify-url&quot;}</code>.</p>
-<h3 id="syntax-7">Syntax</h3>
+<h3 id="##Syntax-8">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::spotify{url=&quot;https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6&quot;}
 
 ::spotify{url=&quot;https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG&quot;}
-</code></pre></div><h3 id="output-7">Output</h3>
+</code></pre></div><h3 id="##Output-8">Output</h3>
 
     <figure class="embed-frame embed-frame-spotify" style="border-radius: 12px; overflow: hidden; padding: 0; line-height: 0;">
       <iframe
@@ -485,22 +499,22 @@ graph TD;
         referrerpolicy="strict-origin-when-cross-origin"
       ></iframe>
     </figure>
-<h2 id="tweets">Tweets</h2>
+<h2 id="#Tweets">Tweets</h2>
 <p>To embed tweets, use the leaf directive <code>::tweet{url=&quot;tweet-url&quot;}</code>.</p>
-<h3 id="syntax-8">Syntax</h3>
+<h3 id="##Syntax-9">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::tweet{url=&quot;https://x.com/hachi_08/status/1906456524337123549&quot;}
-</code></pre></div><h3 id="output-8">Output</h3>
+</code></pre></div><h3 id="##Output-9">Output</h3>
 
     <figure>
       <blockquote class="twitter-tweet" data-dnt="true">
         <a href="https://twitter.com/hachi_08/status/1906456524337123549"></a>
       </blockquote>
     </figure>
-<h2 id="codepen">CodePen</h2>
+<h2 id="#CodePen">CodePen</h2>
 <p>To embed CodePen demos, use the leaf directive <code>::codepen{url=&quot;codepen-url&quot;}</code>.</p>
-<h3 id="syntax-9">Syntax</h3>
+<h3 id="##Syntax-10">Syntax</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::codepen{url=&quot;https://codepen.io/jh3y/pen/NWdNMBJ&quot;}
-</code></pre></div><h3 id="output-9">Output</h3>
+</code></pre></div><h3 id="##Output-10">Output</h3>
 <div class="embed-card embed-frame embed-frame-codepen"><iframe src="https://codepen.io/jh3y/embed/NWdNMBJ?default-tab=result" title="CodePen embed" height="420" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
 
       </div>
@@ -543,56 +557,84 @@ graph TD;
         <div class="notes-tags-scroll-viewport">
           <nav class="notes-tag-list" aria-label="标签筛选">
             
-            <a class="notes-tag-link" href="/en/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 12;">
-              <span class="notes-tag-text">daybook</span>
+            <a class="notes-tag-link" href="/en/tags/Configuration/" data-notes-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 19;">
+              <span class="notes-tag-text">Configuration</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 11;">
+            <a class="notes-tag-link" href="/en/tags/Daybook/" data-notes-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 18;">
+              <span class="notes-tag-text">Daybook</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Fonts/" data-notes-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 17;">
+              <span class="notes-tag-text">Fonts</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Frontmatter/" data-notes-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 16;">
+              <span class="notes-tag-text">Frontmatter</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Guide/" data-notes-tag="Guide" style="--tag-index: 4; --tag-exit-index: 15;">
+              <span class="notes-tag-text">Guide</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 14;">
               <span class="notes-tag-text">KaTeX</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-notes-tag="Li-Bai" style="--tag-index: 2; --tag-exit-index: 10;">
-              <span class="notes-tag-text">Li-Bai</span>
+            <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-notes-tag="Li Bai" style="--tag-index: 6; --tag-exit-index: 13;">
+              <span class="notes-tag-text">Li Bai</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 3; --tag-exit-index: 9;">
+            <a class="notes-tag-link" href="/en/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 7; --tag-exit-index: 12;">
               <span class="notes-tag-text">Markdown</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-notes-tag="Mathematical-formula" style="--tag-index: 4; --tag-exit-index: 8;">
+            <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-notes-tag="Mathematical-formula" style="--tag-index: 8; --tag-exit-index: 11;">
               <span class="notes-tag-text">Mathematical-formula</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/obsidian/" data-notes-tag="obsidian" style="--tag-index: 5; --tag-exit-index: 7;">
-              <span class="notes-tag-text">obsidian</span>
+            <a class="notes-tag-link" href="/en/tags/Media/" data-notes-tag="Media" style="--tag-index: 9; --tag-exit-index: 10;">
+              <span class="notes-tag-text">Media</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 6; --tag-exit-index: 6;">
+            <a class="notes-tag-link" href="/en/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 10; --tag-exit-index: 9;">
+              <span class="notes-tag-text">Obsidian</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 11; --tag-exit-index: 8;">
               <span class="notes-tag-text">Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 7; --tag-exit-index: 5;">
+            <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 12; --tag-exit-index: 7;">
               <span class="notes-tag-text">Shakespeare</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 8; --tag-exit-index: 4;">
+            <a class="notes-tag-link" href="/en/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 13; --tag-exit-index: 6;">
               <span class="notes-tag-text">Sonnet</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-notes-tag="Tang-Poetry" style="--tag-index: 9; --tag-exit-index: 3;">
-              <span class="notes-tag-text">Tang-Poetry</span>
+            <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-notes-tag="Tang Poetry" style="--tag-index: 14; --tag-exit-index: 5;">
+              <span class="notes-tag-text">Tang Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Test/" data-notes-tag="Test" style="--tag-index: 10; --tag-exit-index: 2;">
+            <a class="notes-tag-link" href="/en/tags/Test/" data-notes-tag="Test" style="--tag-index: 15; --tag-exit-index: 4;">
               <span class="notes-tag-text">Test</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 11; --tag-exit-index: 1;">
-              <span class="notes-tag-text">字体</span>
+            <a class="notes-tag-link" href="/en/tags/Typography/" data-notes-tag="Typography" style="--tag-index: 16; --tag-exit-index: 3;">
+              <span class="notes-tag-text">Typography</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 0;">
-              <span class="notes-tag-text">测试</span>
+            <a class="notes-tag-link" href="/en/tags/%e5%93%b2%e5%ad%a6/" data-notes-tag="哲学" style="--tag-index: 17; --tag-exit-index: 2;">
+              <span class="notes-tag-text">哲学</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e5%ae%9e%e8%b7%b5/" data-notes-tag="实践" style="--tag-index: 18; --tag-exit-index: 1;">
+              <span class="notes-tag-text">实践</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-notes-tag="认识论" style="--tag-index: 19; --tag-exit-index: 0;">
+              <span class="notes-tag-text">认识论</span>
             </a>
             
           </nav>
@@ -758,69 +800,104 @@ graph TD;
       
       <nav class="notes-tag-list" aria-label="标签列表">
         
-        <a class="notes-tag-link" href="/en/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 12;">
-          <span class="notes-tag-text">daybook</span>
-          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        <a class="notes-tag-link" href="/en/tags/Configuration/" data-mobile-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 19;">
+          <span class="notes-tag-text">Configuration</span>
+          <span class="notes-tag-measure" aria-hidden="true">Configuration</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 11;">
+        <a class="notes-tag-link" href="/en/tags/Daybook/" data-mobile-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 18;">
+          <span class="notes-tag-text">Daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">Daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Fonts/" data-mobile-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 17;">
+          <span class="notes-tag-text">Fonts</span>
+          <span class="notes-tag-measure" aria-hidden="true">Fonts</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Frontmatter/" data-mobile-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 16;">
+          <span class="notes-tag-text">Frontmatter</span>
+          <span class="notes-tag-measure" aria-hidden="true">Frontmatter</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Guide/" data-mobile-tag="Guide" style="--tag-index: 4; --tag-exit-index: 15;">
+          <span class="notes-tag-text">Guide</span>
+          <span class="notes-tag-measure" aria-hidden="true">Guide</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 14;">
           <span class="notes-tag-text">KaTeX</span>
           <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-mobile-tag="Li-Bai" style="--tag-index: 2; --tag-exit-index: 10;">
-          <span class="notes-tag-text">Li-Bai</span>
-          <span class="notes-tag-measure" aria-hidden="true">Li-Bai</span>
+        <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-mobile-tag="Li Bai" style="--tag-index: 6; --tag-exit-index: 13;">
+          <span class="notes-tag-text">Li Bai</span>
+          <span class="notes-tag-measure" aria-hidden="true">Li Bai</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 3; --tag-exit-index: 9;">
+        <a class="notes-tag-link" href="/en/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 7; --tag-exit-index: 12;">
           <span class="notes-tag-text">Markdown</span>
           <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-mobile-tag="Mathematical-formula" style="--tag-index: 4; --tag-exit-index: 8;">
+        <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-mobile-tag="Mathematical-formula" style="--tag-index: 8; --tag-exit-index: 11;">
           <span class="notes-tag-text">Mathematical-formula</span>
           <span class="notes-tag-measure" aria-hidden="true">Mathematical-formula</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/obsidian/" data-mobile-tag="obsidian" style="--tag-index: 5; --tag-exit-index: 7;">
-          <span class="notes-tag-text">obsidian</span>
-          <span class="notes-tag-measure" aria-hidden="true">obsidian</span>
+        <a class="notes-tag-link" href="/en/tags/Media/" data-mobile-tag="Media" style="--tag-index: 9; --tag-exit-index: 10;">
+          <span class="notes-tag-text">Media</span>
+          <span class="notes-tag-measure" aria-hidden="true">Media</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 6; --tag-exit-index: 6;">
+        <a class="notes-tag-link" href="/en/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 10; --tag-exit-index: 9;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 11; --tag-exit-index: 8;">
           <span class="notes-tag-text">Poetry</span>
           <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 7; --tag-exit-index: 5;">
+        <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 12; --tag-exit-index: 7;">
           <span class="notes-tag-text">Shakespeare</span>
           <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 8; --tag-exit-index: 4;">
+        <a class="notes-tag-link" href="/en/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 13; --tag-exit-index: 6;">
           <span class="notes-tag-text">Sonnet</span>
           <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-mobile-tag="Tang-Poetry" style="--tag-index: 9; --tag-exit-index: 3;">
-          <span class="notes-tag-text">Tang-Poetry</span>
-          <span class="notes-tag-measure" aria-hidden="true">Tang-Poetry</span>
+        <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-mobile-tag="Tang Poetry" style="--tag-index: 14; --tag-exit-index: 5;">
+          <span class="notes-tag-text">Tang Poetry</span>
+          <span class="notes-tag-measure" aria-hidden="true">Tang Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Test/" data-mobile-tag="Test" style="--tag-index: 10; --tag-exit-index: 2;">
+        <a class="notes-tag-link" href="/en/tags/Test/" data-mobile-tag="Test" style="--tag-index: 15; --tag-exit-index: 4;">
           <span class="notes-tag-text">Test</span>
           <span class="notes-tag-measure" aria-hidden="true">Test</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 11; --tag-exit-index: 1;">
-          <span class="notes-tag-text">字体</span>
-          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        <a class="notes-tag-link" href="/en/tags/Typography/" data-mobile-tag="Typography" style="--tag-index: 16; --tag-exit-index: 3;">
+          <span class="notes-tag-text">Typography</span>
+          <span class="notes-tag-measure" aria-hidden="true">Typography</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 0;">
-          <span class="notes-tag-text">测试</span>
-          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        <a class="notes-tag-link" href="/en/tags/%e5%93%b2%e5%ad%a6/" data-mobile-tag="哲学" style="--tag-index: 17; --tag-exit-index: 2;">
+          <span class="notes-tag-text">哲学</span>
+          <span class="notes-tag-measure" aria-hidden="true">哲学</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e5%ae%9e%e8%b7%b5/" data-mobile-tag="实践" style="--tag-index: 18; --tag-exit-index: 1;">
+          <span class="notes-tag-text">实践</span>
+          <span class="notes-tag-measure" aria-hidden="true">实践</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-mobile-tag="认识论" style="--tag-index: 19; --tag-exit-index: 0;">
+          <span class="notes-tag-text">认识论</span>
+          <span class="notes-tag-measure" aria-hidden="true">认识论</span>
         </a>
         
       </nav>
@@ -895,7 +972,7 @@ graph TD;
       module.initSettingsOverlay();
     });
 
-    import("\/js\/share-overlay.257b8de5fb.js").then(module => {
+    import("\/js\/share-overlay.0c1b061c0b.js").then(module => {
       module.initShareOverlay();
     });
 

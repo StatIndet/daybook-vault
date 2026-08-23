@@ -2,16 +2,64 @@
   "nodes": [
     {
       "id": "",
-      "title": "Obsidian 本地与远程附件测试",
+      "title": "daybook.yaml 配置",
+      "url": "/en/notes/daybook-yaml/",
+      "tags": [
+        {
+          "id": "tag:daybook",
+          "title": "Daybook"
+        },
+        {
+          "id": "tag:configuration",
+          "title": "Configuration"
+        },
+        {
+          "id": "tag:guide",
+          "title": "Guide"
+        }
+      ],
+      "date": "2026-08-23",
+      "degree": 4,
+      "exists": true
+    },
+    {
+      "id": "",
+      "title": "文章 Frontmatter",
+      "url": "/en/notes/frontmatter/",
+      "tags": [
+        {
+          "id": "tag:daybook",
+          "title": "Daybook"
+        },
+        {
+          "id": "tag:frontmatter",
+          "title": "Frontmatter"
+        },
+        {
+          "id": "tag:guide",
+          "title": "Guide"
+        }
+      ],
+      "date": "2026-08-23",
+      "degree": 4,
+      "exists": true
+    },
+    {
+      "id": "",
+      "title": "附件与远程媒体",
       "url": "/en/notes/obsidian-media-local-remote-test/",
       "tags": [
         {
           "id": "tag:daybook",
-          "title": "daybook"
+          "title": "Daybook"
         },
         {
           "id": "tag:obsidian",
-          "title": "obsidian"
+          "title": "Obsidian"
+        },
+        {
+          "id": "tag:media",
+          "title": "Media"
         }
       ],
       "attachments": [
@@ -24,20 +72,15 @@
           "id": "attachment:shi-jian-lun.pdf",
           "title": "shi-jian-lun.pdf",
           "url": "/attachments/pdf/shi-jian-lun.pdf"
-        },
-        {
-          "id": "attachment:audio_JayChou-ai-zai-xi-yuan-qian.FLAC",
-          "title": "audio_JayChou-ai-zai-xi-yuan-qian.FLAC",
-          "url": "/attachments/music/audio_JayChou-ai-zai-xi-yuan-qian.FLAC"
         }
       ],
       "date": "2026-06-29",
-      "degree": 1,
+      "degree": 4,
       "exists": true
     },
     {
       "id": "",
-      "title": "Markdown 语法说明",
+      "title": "Markdown、Obsidian 与 Daybook 语法",
       "url": "/en/notes/markdown-syntax/",
       "tags": [
         {
@@ -46,22 +89,19 @@
         },
         {
           "id": "tag:obsidian",
-          "title": "obsidian"
-        }
-      ],
-      "attachments": [
+          "title": "Obsidian"
+        },
         {
-          "id": "attachment:shelby.jpg",
-          "title": "shelby.jpg",
-          "url": "/attachments/picture/shelby.jpg"
+          "id": "tag:daybook",
+          "title": "Daybook"
         }
       ],
       "date": "2026-06-28",
-      "degree": 1,
+      "degree": 4,
       "exists": true
     },
     {
-      "id": "shall-i-compare-thee",
+      "id": "",
       "title": "Shall I Compare Thee to a Summer’s Day?",
       "url": "/en/notes/Shakespeare/",
       "tags": [
@@ -79,7 +119,7 @@
         }
       ],
       "date": "2026-06-25",
-      "degree": 0,
+      "degree": 4,
       "exists": true
     },
     {
@@ -93,33 +133,37 @@
         },
         {
           "id": "tag:tang-poetry",
-          "title": "Tang-Poetry"
+          "title": "Tang Poetry"
         },
         {
           "id": "tag:li-bai",
-          "title": "Li-Bai"
+          "title": "Li Bai"
         }
       ],
       "date": "2026-06-25",
-      "degree": 1,
+      "degree": 2,
       "exists": true
     },
     {
       "id": "",
-      "title": "自托管字体测试",
+      "title": "排版、字体与富文本",
       "url": "/en/notes/typography-test/",
       "tags": [
         {
-          "id": "tag:测试",
-          "title": "测试"
+          "id": "tag:typography",
+          "title": "Typography"
         },
         {
-          "id": "tag:字体",
-          "title": "字体"
+          "id": "tag:fonts",
+          "title": "Fonts"
+        },
+        {
+          "id": "tag:markdown",
+          "title": "Markdown"
         }
       ],
       "date": "2026-06-23",
-      "degree": 1,
+      "degree": 4,
       "exists": true
     },
     {
@@ -141,7 +185,7 @@
         }
       ],
       "date": "2026-06-18",
-      "degree": 0,
+      "degree": 1,
       "exists": true
     },
     {
@@ -159,7 +203,29 @@
         }
       ],
       "date": "2026-06-16",
-      "degree": 0,
+      "degree": 1,
+      "exists": true
+    },
+    {
+      "id": "",
+      "title": "实践论",
+      "url": "/en/notes/实践论/",
+      "tags": [
+        {
+          "id": "tag:哲学",
+          "title": "哲学"
+        },
+        {
+          "id": "tag:认识论",
+          "title": "认识论"
+        },
+        {
+          "id": "tag:实践",
+          "title": "实践"
+        }
+      ],
+      "date": "1937-07-01",
+      "degree": 4,
       "exists": true
     }
   ],
@@ -168,12 +234,27 @@
       "source": "",
       "target": "thoughts-in-a-quiet-night",
       "type": "wikilink"
+    },
+    {
+      "source": "",
+      "target": "katex-mathematical-demo",
+      "type": "wikilink"
+    },
+    {
+      "source": "",
+      "target": "markdown-extended-demo",
+      "type": "wikilink"
+    },
+    {
+      "source": "thoughts-in-a-quiet-night",
+      "target": "",
+      "type": "wikilink"
     }
   ],
   "meta": {
-    "nodeCount": 7,
-    "linkCount": 1,
-    "maxDegree": 1,
+    "nodeCount": 10,
+    "linkCount": 4,
+    "maxDegree": 4,
     "defaultScale": 1.75
   }
 }

@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>自托管字体测试 | My Daybook</title>
+  <title>排版、字体与富文本 | My Daybook</title>
   
-  <meta name="description" content="这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。">
+  <meta name="description" content="一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。">
   
 
   <link rel="canonical" href="http://localhost:1313/notes/typography-test/">
@@ -20,8 +20,8 @@
   
   
 
-  <meta property="og:title" content="自托管字体测试 | My Daybook">
-  <meta property="og:description" content="这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。">
+  <meta property="og:title" content="排版、字体与富文本 | My Daybook">
+  <meta property="og:description" content="一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="http://localhost:1313/notes/typography-test/">
   
@@ -29,13 +29,13 @@
   <meta property="og:locale" content="zh_CN">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="自托管字体测试 | My Daybook">
-  <meta name="twitter:description" content="这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。">
+  <meta name="twitter:title" content="排版、字体与富文本 | My Daybook">
+  <meta name="twitter:description" content="一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。">
   
 
   
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/notes/typography-test/#article","url":"http://localhost:1313/notes/typography-test/","headline":"自托管字体测试","description":"这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。","datePublished":"2026-06-23","dateModified":"2026-06-23","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/notes/typography-test/","keywords":"测试, 字体"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/notes/typography-test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"http://localhost:1313/"},{"@type":"ListItem","position":2,"name":"笔记","item":"http://localhost:1313/notes/"},{"@type":"ListItem","position":3,"name":"自托管字体测试","item":"http://localhost:1313/notes/typography-test/"}]}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/notes/typography-test/#article","url":"http://localhost:1313/notes/typography-test/","headline":"排版、字体与富文本","description":"一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。","datePublished":"2026-06-23","dateModified":"2026-08-23","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/notes/typography-test/","keywords":"Typography, Fonts, Markdown"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/notes/typography-test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"http://localhost:1313/"},{"@type":"ListItem","position":2,"name":"笔记","item":"http://localhost:1313/notes/"},{"@type":"ListItem","position":3,"name":"排版、字体与富文本","item":"http://localhost:1313/notes/typography-test/"}]}]}
   </script>
   
 
@@ -57,7 +57,7 @@
   <script src="/js/code-copy.0248e0ee56.js" defer></script>
   <script src="/js/toc.f2baf40c54.js" defer></script>
   <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
-  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/heading-anchors.a0aad74fb9.js" defer></script>
   <script src="/js/note-filters.2d2f20797c.js" defer></script>
   <script src="/js/lightbox.a15c0f66e6.js" defer></script>
   <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
@@ -67,15 +67,16 @@
   <script src="/js/graph-loader.b1c100b294.js" defer></script>
   <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
   <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
-  <script src="/js/daybook-router.3f0a75a11a.js" defer></script>
+  <script src="/js/daybook-router.3a0f3938c4.js" defer></script>
   <script src="/js/katex-loader.b639ed40fa.js" defer></script>
   <script src="/js/custom-cursor.5a89752a8a.js" defer></script>
-  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <script src="/js/note-bilingual.27772b9611.js" defer></script>
   <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
-  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.905c7d5a64.css">
+  <link rel="stylesheet" href="/vendor/fonts/noto-serif-sc/wght.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.baec377b53.css">
+  <link rel="stylesheet" href="/css/global.b70a6d448a.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   
@@ -274,7 +275,7 @@
           </a>
           <h1 class="note-title">
             <span data-title-transition-key="typography-test">
-              <span class="title-morphable" data-title-transition-key="typography-test"><span class="title-glyph" data-glyph-index="0">自</span><span class="title-glyph" data-glyph-index="1">托</span><span class="title-glyph" data-glyph-index="2">管</span><span class="title-glyph" data-glyph-index="3">字</span><span class="title-glyph" data-glyph-index="4">体</span><span class="title-glyph" data-glyph-index="5">测</span><span class="title-glyph" data-glyph-index="6">试</span></span>
+              <span class="title-morphable" data-title-transition-key="typography-test"><span class="title-glyph" data-glyph-index="0">排</span><span class="title-glyph" data-glyph-index="1">版</span><span class="title-glyph" data-glyph-index="2">、</span><span class="title-glyph" data-glyph-index="3">字</span><span class="title-glyph" data-glyph-index="4">体</span><span class="title-glyph" data-glyph-index="5">与</span><span class="title-glyph" data-glyph-index="6">富</span><span class="title-glyph" data-glyph-index="7">文</span><span class="title-glyph" data-glyph-index="8">本</span></span>
             </span>
           </h1>
           <button type="button" class="reader-mode-exit" aria-label="退出阅读模式" data-tooltip="退出阅读模式" data-reader-exit hidden>
@@ -288,11 +289,13 @@
             
             
             <time datetime="2026-06-23" data-article-shared="published">2026-06-23</time>
-            <span class="reading-time" data-article-shared="reading">3 min</span>
+            <span class="reading-time" data-article-shared="reading">2 min</span>
+            
+              <span class="updated-time" data-article-shared="updated">&bull; updated <time datetime="2026-08-23">2026-08-23</time></span>
             
           </div>
           <div class="article-stagger-meta">
-            <span class="meta-stagger-item">741 chars</span>
+            <span class="meta-stagger-item">590 chars</span>
             
             <span class="meta-stagger-item">
               <span data-page-views data-path="/notes/typography-test/">--</span>
@@ -301,7 +304,7 @@
             
 
             <span class="meta-stagger-item share-entry">
-              <button type="button" class="share-toggle-btn" aria-label="分享" data-tooltip="分享" data-share-open data-share-title="自托管字体测试" data-share-link="http://localhost:1313/notes/typography-test/" data-share-text="「自托管字体测试」">
+              <button type="button" class="share-toggle-btn" aria-label="分享" data-tooltip="分享" data-share-open data-share-title="排版、字体与富文本" data-share-link="http://localhost:1313/notes/typography-test/" data-share-text="「排版、字体与富文本」">
                 <span class="material-symbol" aria-hidden="true">share</span>
               </button>
             </span>
@@ -315,7 +318,7 @@
             
           </div>
         </div>
-        <p class="note-summary">这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。</p>
+        <p class="note-summary">一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。</p>
       </header>
 
       
@@ -336,49 +339,29 @@
       <ol>
         
         <li class="note-toc-depth-2" style="--toc-index: 0">
-          <a href="#1-">1. 普通正文与混排测试</a>
+          <a href="#%23%e6%ad%a3%e6%96%87%e4%b8%8e%e4%b8%ad%e8%8b%b1%e6%96%87%e6%b7%b7%e6%8e%92">正文与中英文混排</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 1">
-          <a href="#2-">2. 字体样式测试</a>
+        <li class="note-toc-depth-3" style="--toc-index: 1">
+          <a href="#%23%23%e5%b8%b8%e8%a7%81%e5%bc%ba%e8%b0%83">常见强调</a>
         </li>
         
         <li class="note-toc-depth-2" style="--toc-index: 2">
-          <a href="#3-">3. 引用块测试</a>
+          <a href="#%23%e5%88%97%e8%a1%a8%e4%b8%8e%e8%a1%a8%e6%a0%bc">列表与表格</a>
         </li>
         
         <li class="note-toc-depth-2" style="--toc-index: 3">
-          <a href="#4-">4. 行内代码与代码块测试</a>
+          <a href="#%23%e4%bb%a3%e7%a0%81%e5%9d%97">代码块</a>
         </li>
         
-        <li class="note-toc-depth-3" style="--toc-index: 4">
-          <a href="#javascript--typescript-">JavaScript / TypeScript 连字测试</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 5">
-          <a href="#go--chroma-">Go 代码块测试 (Chroma 高亮)</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 6">
-          <a href="#heading">英文样张</a>
-        </li>
-        
-        <li class="note-toc-depth-2" style="--toc-index: 7">
-          <a href="#5-">5. 表格与列表测试</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 8">
-          <a href="#markdown-">Markdown 表格</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 9">
-          <a href="#heading-1">各类列表</a>
+        <li class="note-toc-depth-2" style="--toc-index: 4">
+          <a href="#%23%e5%af%8c%e6%96%87%e6%9c%ac%e4%b8%8d%e6%ad%a2%e6%98%af%e5%ad%97%e4%bd%93">富文本不止是字体</a>
         </li>
         
       </ol>
     </nav>
-    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 10"></div>
-    <div class="note-toc-reading-controls" style="--toc-index: 10">
+    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 5"></div>
+    <div class="note-toc-reading-controls" style="--toc-index: 5">
       
 <div class="note-right-controls" aria-label="阅读进度控制">
   <div class="note-rc-progress">
@@ -441,43 +424,23 @@
       <ol>
         
         <li class="note-toc-depth-2" style="--toc-index: 0">
-          <a href="#1-">1. 普通正文与混排测试</a>
+          <a href="#%23%e6%ad%a3%e6%96%87%e4%b8%8e%e4%b8%ad%e8%8b%b1%e6%96%87%e6%b7%b7%e6%8e%92">正文与中英文混排</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 1">
-          <a href="#2-">2. 字体样式测试</a>
+        <li class="note-toc-depth-3" style="--toc-index: 1">
+          <a href="#%23%23%e5%b8%b8%e8%a7%81%e5%bc%ba%e8%b0%83">常见强调</a>
         </li>
         
         <li class="note-toc-depth-2" style="--toc-index: 2">
-          <a href="#3-">3. 引用块测试</a>
+          <a href="#%23%e5%88%97%e8%a1%a8%e4%b8%8e%e8%a1%a8%e6%a0%bc">列表与表格</a>
         </li>
         
         <li class="note-toc-depth-2" style="--toc-index: 3">
-          <a href="#4-">4. 行内代码与代码块测试</a>
+          <a href="#%23%e4%bb%a3%e7%a0%81%e5%9d%97">代码块</a>
         </li>
         
-        <li class="note-toc-depth-3" style="--toc-index: 4">
-          <a href="#javascript--typescript-">JavaScript / TypeScript 连字测试</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 5">
-          <a href="#go--chroma-">Go 代码块测试 (Chroma 高亮)</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 6">
-          <a href="#heading">英文样张</a>
-        </li>
-        
-        <li class="note-toc-depth-2" style="--toc-index: 7">
-          <a href="#5-">5. 表格与列表测试</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 8">
-          <a href="#markdown-">Markdown 表格</a>
-        </li>
-        
-        <li class="note-toc-depth-3" style="--toc-index: 9">
-          <a href="#heading-1">各类列表</a>
+        <li class="note-toc-depth-2" style="--toc-index: 4">
+          <a href="#%23%e5%af%8c%e6%96%87%e6%9c%ac%e4%b8%8d%e6%ad%a2%e6%98%af%e5%ad%97%e4%bd%93">富文本不止是字体</a>
         </li>
         
       </ol>
@@ -489,133 +452,93 @@
       
 
       <div class="markdown post-content">
-        <p>这篇笔记用于人工检查 <strong>霞鹜文楷 (LXGW WenKai)</strong> 与 <strong>Maple Mono CN</strong> 的实际渲染效果。由于系统目前对于 Draft 状态的笔记会完全忽略无法预览，因此本笔记设为发布状态。测试完毕后可随时删除。</p>
-<h2 id="1-">1. 普通正文与混排测试</h2>
-<p>这是普通的中文段落，主要用于测试正文是否成功应用了霞鹜文楷。这款字体应当呈现出优美的楷体书写特征，为博客带来更好的中文阅读体验。</p>
-<p>接下来是中英文混排段落。我们测试一下 English words and numbers like 12345 in the middle of Chinese sentences，以及一些常见的全角标点符号：比如“双引号”、（括号）和——破折号、……省略号，看看标点挤压和中英文字距是否看起来舒适自然。</p>
-<h2 id="2-">2. 字体样式测试</h2>
-<p>这里测试基本的 Markdown 文本样式。目前我们只引入了 Regular 字重，所以这里的效果应该是浏览器通过算法<strong>合成</strong>（Faux Bold / Faux Italic）的：</p>
-<ul>
-<li>这是<strong>加粗的霞鹜文楷文本</strong>。</li>
-<li>这是<em>斜体的霞鹜文楷文本</em>。</li>
-<li>这是<em><strong>加粗斜体的霞鹜文楷文本</strong></em>。</li>
-</ul>
-<h2 id="3-">3. 引用块测试</h2>
-<p>以下是一个引用块，用于确认普通引用仍然使用霞鹜文楷，而不会变成等宽字体：</p>
+        <p>Daybook 将主要字体随站点资源一起提供，浏览文章时不需要再向第三方字体 CDN 请求正文或代码字体。默认排版中，正文与大部分界面使用 <strong>LXGW WenKai Screen</strong>，代码使用 <strong>Maple Mono CN</strong>；元数据、签名、Logo 与图标则使用各自的专用字体。</p>
+<p>这篇文章不要求读者记住字体文件的位置。它更像一张排版样张：在一页中放入中文、英文、数字、标点、代码与常见富文本，便于观察主题在真实内容中的表现。</p>
+<h2 id="#正文与中英文混排">正文与中英文混排</h2>
+<p>春水初生，春林初盛。A quiet paragraph can move naturally between 中文、English words、numbers such as 2026 and punctuation such as <code>()</code>, <code>[]</code>, <code>—</code> and <code>…</code>.</p>
+<p>Daybook 的默认字体栈仍然保留系统字体作为回退，因此即使某个字符不在首选字体中，也应由浏览器选择可用字形继续显示。</p>
+<h3 id="##常见强调">常见强调</h3>
+<p>这里有 <strong>加粗文本</strong>、<em>斜体文本</em>、<em><strong>加粗斜体</strong></em>、<del>删除线</del>，以及 Obsidian 风格的 <mark>高亮文本</mark>。</p>
+<p>行内代码使用等宽字体，例如 <code>daybook build</code>、<code>const value = a !== b</code> 和 <code>user?.profile ?? null</code>。</p>
 <blockquote>
-<p>这里是一段普通的引用文字。
-落霞与孤鹜齐飞，秋水共长天一色。</p>
-<p>在引用块中也可以嵌套代码，例如行内代码 <code>console.log(&quot;Hello&quot;)</code>，或者代码块：</p>
-<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="c1">// 引用内的代码块也应当使用 Maple Mono CN
-</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">arrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-</span></span></code></pre></div></blockquote>
-<blockquote>
-<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>all class
-ultra suffix
-</code></pre></div></blockquote>
-<blockquote>
-<p><code>all class , ultra suffix</code></p>
+<p>好的排版并不要求每个元素都引人注目。正文、代码、引用和元数据各自承担清晰的层级即可。</p>
 </blockquote>
-<h2 id="4-">4. 行内代码与代码块测试</h2>
-<p>正文中的行内代码示例：<code>const value = a !== b &amp;&amp; user?.name</code>。行内代码应当使用 Maple Mono CN，并且由于我们开启了连字特性，<code>!==</code> 和 <code>?.</code> 可能会渲染为紧凑的形式。</p>
-<p><code>all class . ultra suffix</code></p>
-<h3 id="javascript--typescript-">JavaScript / TypeScript 连字测试</h3>
-<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="c1">// Maple Mono CN 连字特性测试
-</span></span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">evaluateConditions</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">user</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 比较运算符
-</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span> <span class="o">||</span> <span class="nx">a</span> <span class="o">===</span> <span class="nx">b</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">!=</span> <span class="nx">b</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span> <span class="o">!==</span> <span class="nx">b</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;=</span> <span class="nx">b</span> <span class="o">||</span> <span class="nx">a</span> <span class="o">&gt;=</span> <span class="nx">b</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<h2 id="#列表与表格">列表与表格</h2>
+<ul>
+<li>正文：LXGW WenKai Screen</li>
+<li>代码：Maple Mono CN</li>
+<li>文章元数据：Cormorant Garamond Meta</li>
+<li>Logo：Daybook Fraunces</li>
+<li>英文签名：Daybook Allura</li>
+<li>图标：Material Symbols Rounded</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>主要字体角色</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正文与 UI</td>
+<td>LXGW WenKai Screen</td>
+<td>长文阅读与界面文本</td>
+</tr>
+<tr>
+<td>行内代码与代码块</td>
+<td>Maple Mono CN</td>
+<td>等宽排版与代码连字</td>
+</tr>
+<tr>
+<td>日期等元数据</td>
+<td>Cormorant Garamond Meta</td>
+<td>与正文形成轻微层级差</td>
+</tr>
+<tr>
+<td>Logo / 签名</td>
+<td>装饰字体</td>
+<td>品牌与签名元素</td>
+</tr>
+<tr>
+<td>操作图标</td>
+<td>Material Symbols Rounded</td>
+<td>界面图标</td>
+</tr>
+</tbody>
+</table>
+<h2 id="#代码块">代码块</h2>
+<p>带语言标记的 fenced code block 会使用 Chroma 进行语法高亮，并带有复制按钮。</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Article</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">published</span>: <span class="kt">boolean</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c1">// 逻辑与可选链
-</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">valid</span> <span class="o">=</span> <span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">profile</span> <span class="o">??</span> <span class="kc">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isActive</span> <span class="o">=</span> <span class="p">(</span><span class="nx">valid</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">article</span>: <span class="kt">Article</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;A small Daybook example&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">published</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c1">// 箭头函数
-</span></span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">process</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">};</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c1">// HTML/XML 闭合与特殊组合
-</span></span></span><span class="line"><span class="cl">  <span class="c1">// &lt;!-- 这是一段注释 --&gt;
-</span></span></span><span class="line"><span class="cl">  <span class="c1">// &lt;/tag&gt;
-</span></span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">process</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 id="go--chroma-">Go 代码块测试 (Chroma 高亮)</h3>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">article</span><span class="p">.</span><span class="nx">published</span> <span class="o">?</span> <span class="s2">&#34;published&#34;</span> <span class="o">:</span> <span class="s2">&#34;draft&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+</span></span></code></pre></div><p>Go 代码同样适用：</p>
 <div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 这是一个 Go 语言代码块，用于测试 Chroma 的语法高亮</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">message</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;Daybook Typography Test&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s: %d\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;note %d\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="heading">英文样张</h3>
-<p>在等宽环境下，以下是一组英文字母样张：</p>
-<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">all class ultra suffix italic calt ligature
-</span></span><span class="line"><span class="cl">0123456789 O0 Il1
-</span></span></code></pre></div><h2 id="5-">5. 表格与列表测试</h2>
-<h3 id="markdown-">Markdown 表格</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">字体用途</th>
-<th style="text-align:left">使用字体</th>
-<th style="text-align:left">回退字体 (Fallback)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">普通正文</td>
-<td style="text-align:left">霞鹜文楷</td>
-<td style="text-align:left">PingFang SC</td>
-</tr>
-<tr>
-<td style="text-align:left">UI 元素</td>
-<td style="text-align:left">霞鹜文楷</td>
-<td style="text-align:left">PingFang SC</td>
-</tr>
-<tr>
-<td style="text-align:left">代码块与等宽</td>
-<td style="text-align:left">Maple Mono CN</td>
-<td style="text-align:left">Maple Mono</td>
-</tr>
-</tbody>
-</table>
-<h3 id="heading-1">各类列表</h3>
-<p><strong>无序列表：</strong></p>
-<ul>
-<li>第一项测试</li>
-<li>第二项测试包含 <code>inline code</code></li>
-<li>第三项测试</li>
-</ul>
-<p><strong>有序列表：</strong></p>
-<ol>
-<li>第一步</li>
-<li>第二步</li>
-<li>第三步</li>
-</ol>
-<p><strong>任务列表：</strong></p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 完成字体切片与复制</li>
-<li><input checked="" disabled="" type="checkbox"> 更新全局 CSS Token 变量</li>
-<li><input disabled="" type="checkbox"> 人工检查当前页面的渲染效果</li>
-</ul>
-<hr>
-<p><strong>测试说明（请人工核对）：</strong></p>
-<ol>
-<li>普通正文、引用、列表、表格应使用 <strong>霞鹜文楷</strong>。</li>
-<li>行内代码、代码块、Chroma 高亮应使用 <strong>Maple Mono CN</strong>。</li>
-<li><code>liga</code> / <code>calt</code> 连字效果（如 <code>=&gt;</code>, <code>!==</code>）只应该在代码/等宽区域生效，不应该影响整篇正文。</li>
-<li>页面左侧的 Slogan（中文草书）、昵称（英文草书）、Logo 签名、以及侧边栏的 Material Symbols 图标不属于本测试页面范围，应保持原有字体不受影响。</li>
-</ol>
+</span></span></span></code></pre></div><p>没有语言标记的代码块仍会保持等宽排版：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">0123456789
+</span></span><span class="line"><span class="cl">Il1 O0
+</span></span><span class="line"><span class="cl">=&gt; !== &lt;= &gt;= ?? ?.
+</span></span></code></pre></div><h2 id="#富文本不止是字体">富文本不止是字体</h2>
+<p>排版还包括引用、表格、任务列表、脚注、Callout、折叠块、图片图注、数学公式与 Mermaid 等内容结构。完整写法见 <a href="/notes/markdown-syntax/">Markdown、Obsidian 与 Daybook 语法</a>。</p>
+<p>如果需要查看更密集的扩展组件示例，可继续阅读 <a href="/notes/examples/Markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95%E9%A1%B5/">Markdown 扩展语法测试页</a>。</p>
 
       </div>
 
@@ -624,14 +547,29 @@ ultra suffix
         <hr class="note-tags-divider">
         <div class="note-tags-list">
           
-          <a href="/tags/%e6%b5%8b%e8%af%95/" class="note-tag-capsule">#测试</a>
+          <a href="/tags/Typography/" class="note-tag-capsule">#Typography</a>
           
-          <a href="/tags/%e5%ad%97%e4%bd%93/" class="note-tag-capsule">#字体</a>
+          <a href="/tags/Fonts/" class="note-tag-capsule">#Fonts</a>
+          
+          <a href="/tags/Markdown/" class="note-tag-capsule">#Markdown</a>
           
         </div>
       </section>
       
 
+      
+      <section class="post-comments">
+        <div id="waline"
+             data-server-url=""
+             data-lang="zh-CN"
+             data-page-size="10"
+             data-comment-sorting="latest"
+             data-search="false"
+             data-image-uploader="false"
+             data-path="/notes/typography-test/"></div>
+        <link rel="stylesheet" href="/vendor/waline/waline.css">
+        <link rel="stylesheet" href="/css/components/waline-theme.672e43ce5a.css">
+      </section>
       
     </article>
   </section>
@@ -657,59 +595,87 @@ ultra suffix
         <div class="notes-tags-scroll-viewport">
           <nav class="notes-tag-list" aria-label="标签筛选">
             
-            <a class="notes-tag-link" href="/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
-              <span class="notes-tag-text">daybook</span>
+            <a class="notes-tag-link" href="/tags/Configuration/" data-notes-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 20;">
+              <span class="notes-tag-text">Configuration</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+            <a class="notes-tag-link" href="/tags/Daybook/" data-notes-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 19;">
+              <span class="notes-tag-text">Daybook</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Fonts/" data-notes-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 18;">
+              <span class="notes-tag-text">Fonts</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Frontmatter/" data-notes-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 17;">
+              <span class="notes-tag-text">Frontmatter</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Guide/" data-notes-tag="Guide" style="--tag-index: 4; --tag-exit-index: 16;">
+              <span class="notes-tag-text">Guide</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 15;">
               <span class="notes-tag-text">KaTeX</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+            <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 6; --tag-exit-index: 14;">
               <span class="notes-tag-text">Markdown</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/obsidian/" data-notes-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
-              <span class="notes-tag-text">obsidian</span>
+            <a class="notes-tag-link" href="/tags/Media/" data-notes-tag="Media" style="--tag-index: 7; --tag-exit-index: 13;">
+              <span class="notes-tag-text">Media</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+            <a class="notes-tag-link" href="/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 8; --tag-exit-index: 12;">
+              <span class="notes-tag-text">Obsidian</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 9; --tag-exit-index: 11;">
               <span class="notes-tag-text">Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+            <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 10; --tag-exit-index: 10;">
               <span class="notes-tag-text">Shakespeare</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+            <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 11; --tag-exit-index: 9;">
               <span class="notes-tag-text">Sonnet</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+            <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 12; --tag-exit-index: 8;">
               <span class="notes-tag-text">Test</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+            <a class="notes-tag-link" href="/tags/Typography/" data-notes-tag="Typography" style="--tag-index: 13; --tag-exit-index: 7;">
+              <span class="notes-tag-text">Typography</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/%e5%93%b2%e5%ad%a6/" data-notes-tag="哲学" style="--tag-index: 14; --tag-exit-index: 6;">
+              <span class="notes-tag-text">哲学</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 15; --tag-exit-index: 5;">
               <span class="notes-tag-text">唐诗</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
-              <span class="notes-tag-text">字体</span>
+            <a class="notes-tag-link" href="/tags/%e5%ae%9e%e8%b7%b5/" data-notes-tag="实践" style="--tag-index: 16; --tag-exit-index: 4;">
+              <span class="notes-tag-text">实践</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+            <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 17; --tag-exit-index: 3;">
               <span class="notes-tag-text">数学公式</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+            <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 18; --tag-exit-index: 2;">
               <span class="notes-tag-text">李白</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
-              <span class="notes-tag-text">测试</span>
+            <a class="notes-tag-link" href="/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-notes-tag="认识论" style="--tag-index: 19; --tag-exit-index: 1;">
+              <span class="notes-tag-text">认识论</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+            <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 20; --tag-exit-index: 0;">
               <span class="notes-tag-text">诗歌</span>
             </a>
             
@@ -876,72 +842,107 @@ ultra suffix
       
       <nav class="notes-tag-list" aria-label="标签列表">
         
-        <a class="notes-tag-link" href="/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
-          <span class="notes-tag-text">daybook</span>
-          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        <a class="notes-tag-link" href="/tags/Configuration/" data-mobile-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 20;">
+          <span class="notes-tag-text">Configuration</span>
+          <span class="notes-tag-measure" aria-hidden="true">Configuration</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+        <a class="notes-tag-link" href="/tags/Daybook/" data-mobile-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 19;">
+          <span class="notes-tag-text">Daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">Daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Fonts/" data-mobile-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 18;">
+          <span class="notes-tag-text">Fonts</span>
+          <span class="notes-tag-measure" aria-hidden="true">Fonts</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Frontmatter/" data-mobile-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 17;">
+          <span class="notes-tag-text">Frontmatter</span>
+          <span class="notes-tag-measure" aria-hidden="true">Frontmatter</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Guide/" data-mobile-tag="Guide" style="--tag-index: 4; --tag-exit-index: 16;">
+          <span class="notes-tag-text">Guide</span>
+          <span class="notes-tag-measure" aria-hidden="true">Guide</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 15;">
           <span class="notes-tag-text">KaTeX</span>
           <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 6; --tag-exit-index: 14;">
           <span class="notes-tag-text">Markdown</span>
           <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/obsidian/" data-mobile-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
-          <span class="notes-tag-text">obsidian</span>
-          <span class="notes-tag-measure" aria-hidden="true">obsidian</span>
+        <a class="notes-tag-link" href="/tags/Media/" data-mobile-tag="Media" style="--tag-index: 7; --tag-exit-index: 13;">
+          <span class="notes-tag-text">Media</span>
+          <span class="notes-tag-measure" aria-hidden="true">Media</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+        <a class="notes-tag-link" href="/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 8; --tag-exit-index: 12;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 9; --tag-exit-index: 11;">
           <span class="notes-tag-text">Poetry</span>
           <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 10; --tag-exit-index: 10;">
           <span class="notes-tag-text">Shakespeare</span>
           <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 11; --tag-exit-index: 9;">
           <span class="notes-tag-text">Sonnet</span>
           <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 12; --tag-exit-index: 8;">
           <span class="notes-tag-text">Test</span>
           <span class="notes-tag-measure" aria-hidden="true">Test</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+        <a class="notes-tag-link" href="/tags/Typography/" data-mobile-tag="Typography" style="--tag-index: 13; --tag-exit-index: 7;">
+          <span class="notes-tag-text">Typography</span>
+          <span class="notes-tag-measure" aria-hidden="true">Typography</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%93%b2%e5%ad%a6/" data-mobile-tag="哲学" style="--tag-index: 14; --tag-exit-index: 6;">
+          <span class="notes-tag-text">哲学</span>
+          <span class="notes-tag-measure" aria-hidden="true">哲学</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 15; --tag-exit-index: 5;">
           <span class="notes-tag-text">唐诗</span>
           <span class="notes-tag-measure" aria-hidden="true">唐诗</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
-          <span class="notes-tag-text">字体</span>
-          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        <a class="notes-tag-link" href="/tags/%e5%ae%9e%e8%b7%b5/" data-mobile-tag="实践" style="--tag-index: 16; --tag-exit-index: 4;">
+          <span class="notes-tag-text">实践</span>
+          <span class="notes-tag-measure" aria-hidden="true">实践</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 17; --tag-exit-index: 3;">
           <span class="notes-tag-text">数学公式</span>
           <span class="notes-tag-measure" aria-hidden="true">数学公式</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 18; --tag-exit-index: 2;">
           <span class="notes-tag-text">李白</span>
           <span class="notes-tag-measure" aria-hidden="true">李白</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
-          <span class="notes-tag-text">测试</span>
-          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        <a class="notes-tag-link" href="/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-mobile-tag="认识论" style="--tag-index: 19; --tag-exit-index: 1;">
+          <span class="notes-tag-text">认识论</span>
+          <span class="notes-tag-measure" aria-hidden="true">认识论</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 20; --tag-exit-index: 0;">
           <span class="notes-tag-text">诗歌</span>
           <span class="notes-tag-measure" aria-hidden="true">诗歌</span>
         </a>
@@ -1018,7 +1019,7 @@ ultra suffix
       module.initSettingsOverlay();
     });
 
-    import("\/js\/share-overlay.257b8de5fb.js").then(module => {
+    import("\/js\/share-overlay.0c1b061c0b.js").then(module => {
       module.initShareOverlay();
     });
 

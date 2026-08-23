@@ -61,7 +61,7 @@
   <script src="/js/code-copy.0248e0ee56.js" defer></script>
   <script src="/js/toc.f2baf40c54.js" defer></script>
   <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
-  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/heading-anchors.a0aad74fb9.js" defer></script>
   <script src="/js/note-filters.2d2f20797c.js" defer></script>
   <script src="/js/lightbox.a15c0f66e6.js" defer></script>
   <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
@@ -71,15 +71,16 @@
   <script src="/js/graph-loader.b1c100b294.js" defer></script>
   <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
   <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
-  <script src="/js/daybook-router.3f0a75a11a.js" defer></script>
+  <script src="/js/daybook-router.3a0f3938c4.js" defer></script>
   <script src="/js/katex-loader.b639ed40fa.js" defer></script>
   <script src="/js/custom-cursor.5a89752a8a.js" defer></script>
-  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <script src="/js/note-bilingual.27772b9611.js" defer></script>
   <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
-  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.905c7d5a64.css">
+  <link rel="stylesheet" href="/vendor/fonts/noto-serif-sc/wght.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.baec377b53.css">
+  <link rel="stylesheet" href="/css/global.b70a6d448a.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   
@@ -296,7 +297,7 @@
             
           </div>
           <div class="article-stagger-meta">
-            <span class="meta-stagger-item">493 chars</span>
+            <span class="meta-stagger-item">526 chars</span>
             
             <span class="meta-stagger-item">
               <span data-page-views data-path="/notes/examples/Markdown扩展语法测试页/">--</span>
@@ -338,18 +339,18 @@
       <div class="markdown post-content">
         <p>本文介绍 Markdown 扩展功能，包括语法示例与效果展示。
 <em>示例取自 <a href="https://retypeset.radishzz.cc/en/posts/markdown-extended-features/">Retypeset</a></em></p>
-<h2 id="heading">图注</h2>
+<h2 id="#图注">图注</h2>
 <p>使用标准的 Markdown 图像语法 <code>![alt](src)</code>，即可自动生成图注。在 <code>alt</code> 前添加下划线 <code>_</code> 或留空 <code>alt</code>，即可隐藏图注。</p>
-<h3 id="heading-1">语法</h3>
+<h3 id="##语法">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>![图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
 ![_图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
-</code></pre></div><h3 id="heading-2">效果</h3>
+</code></pre></div><h3 id="##效果">效果</h3>
 <figure><img src="https://static.daybook.page/picture/06_27TtR7.webp" alt="图片描述" loading="lazy" decoding="async"><figcaption>图片描述</figcaption></figure>
 <p><img src="https://static.daybook.page/picture/06_27TtR7.webp" alt="图片描述" loading="lazy" decoding="async"></p>
-<h2 id="heading-3">提示块</h2>
+<h2 id="#提示块">提示块</h2>
 <p>使用 GitHub 语法 <code>&gt; [!TYPE]</code> 或三冒号语法 <code>:::type</code>，即可创建提示块。支持 <code>note</code>、<code>tip</code>、<code>important</code>、<code>warning</code>、<code>caution</code> 五种类型。</p>
-<h3 id="heading-4">语法</h3>
+<h3 id="##语法-2">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>&gt; [!NOTE]
 &gt; 即使快速浏览，也值得用户留意的信息。
 
@@ -370,24 +371,37 @@
 :::note[自定义标题]
 这是一个自定义标题的提示块。
 :::
-</code></pre></div><h3 id="heading-5">效果</h3>
+</code></pre></div><h3 id="##效果-2">效果</h3>
 <details class="callout is-collapsible" data-callout="note"><summary class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">Note</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>即使快速浏览，也值得用户留意的信息。</p></div></details>
 <div class="callout" data-callout="tip"><div class="callout-title"><span class="callout-icon material-symbol">lightbulb</span><div class="callout-title-inner">Tip</div></div><div class="callout-content"><p>可选信息，可帮助用户更轻松地完成操作。</p></div></div>
 <div class="callout" data-callout="important"><div class="callout-title"><span class="callout-icon material-symbol">priority_high</span><div class="callout-title-inner">Important</div></div><div class="callout-content"><p>用户成功所需的关键信息。</p></div></div>
 <div class="callout" data-callout="warning"><div class="callout-title"><span class="callout-icon material-symbol">warning</span><div class="callout-title-inner">Warning</div></div><div class="callout-content"><p>由于存在潜在风险，需要用户立即关注的关键内容。</p></div></div>
 <div class="callout" data-callout="caution"><div class="callout-title"><span class="callout-icon material-symbol">error</span><div class="callout-title-inner">Caution</div></div><div class="callout-content"><p>某些操作可能带来的负面后果。</p></div></div>
 <div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">自定义标题</div></div><div class="callout-content"><p>这是一个自定义标题的提示块。</p></div></div>
-<h2 id="heading-6">折叠块</h2>
+<h3 id="##Obsidian-风格">Obsidian 风格</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!note]
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">A short note.
+</span></span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!warning]- 默认折叠
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">点击标题展开。
+</span></span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">[!tip]+ 默认展开
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">仍然可以手动收起。
+</span></span></span></code></pre></div><p>实际效果：</p>
+<div class="callout" data-callout="note"><div class="callout-title"><span class="callout-icon material-symbol">info</span><div class="callout-title-inner">Note</div></div><div class="callout-content"><p>A short note.</p></div></div>
+<details class="callout is-collapsible" data-callout="warning"><summary class="callout-title"><span class="callout-icon material-symbol">warning</span><div class="callout-title-inner">默认折叠</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>点击标题展开。</p></div></details>
+<details class="callout is-collapsible" data-callout="tip" open><summary class="callout-title"><span class="callout-icon material-symbol">lightbulb</span><div class="callout-title-inner">默认展开</div><span class="callout-fold-icon material-symbol">expand_more</span></summary><div class="callout-content"><p>仍然可以手动收起。</p></div></details>
+<h2 id="#折叠块">折叠块</h2>
 <p>使用三冒号语法 <code>:::fold[title]</code>，即可创建折叠块。点击标题可以展开或收起。</p>
-<h3 id="heading-7">语法</h3>
+<h3 id="##语法-3">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>:::fold[使用提示]
 如果需要添加并非所有读者都会感兴趣的内容，可以将其放在折叠块中。
 :::
-</code></pre></div><h3 id="heading-8">效果</h3>
+</code></pre></div><h3 id="##效果-3">效果</h3>
 <details class="md-fold"><summary>使用提示</summary><div class="md-fold-content"><p>如果需要添加并非所有读者都会感兴趣的内容，可以将其放在折叠块中。</p></div></details>
-<h2 id="mermaid-">Mermaid 图表</h2>
+<h2 id="#Mermaid-图表">Mermaid 图表</h2>
 <p>使用代码块包裹 Mermaid 语法，并标注语言类型 <code>mermaid</code>，即可创建 Mermaid 图表。</p>
-<h3 id="heading-9">语法</h3>
+<h3 id="##语法-4">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>```mermaid
 graph TD;
     A--&gt;B;
@@ -395,15 +409,15 @@ graph TD;
     B--&gt;D;
     C--&gt;D;
 ```
-</code></pre></div><h3 id="heading-10">效果</h3>
+</code></pre></div><h3 id="##效果-4">效果</h3>
 <div class="mermaid-block" data-mermaid-status="pending"><pre class="mermaid-source"><code>graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;
     C--&gt;D;</code></pre><div class="mermaid-diagram" aria-hidden="true"></div><p class="mermaid-error" hidden></p></div>
-<h2 id="heading-11">画廊</h2>
+<h2 id="#画廊">画廊</h2>
 <p>使用三冒号语法 <code>:::gallery</code>，即可创建图片画廊。水平滚动以查看更多图片。</p>
-<h3 id="heading-12">语法</h3>
+<h3 id="##语法-5">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>:::gallery
 ![羊驼](https://static.daybook.page/picture/sheep-1_LogLD.webp)
 ![转头](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
@@ -411,19 +425,19 @@ graph TD;
 ![小羊驼](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
 ![可爱捏](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
-</code></pre></div><h3 id="heading-13">效果</h3>
+</code></pre></div><h3 id="##效果-5">效果</h3>
 <div class="md-gallery"><figure><img src="https://static.daybook.page/picture/sheep-1_LogLD.webp" alt="羊驼" loading="lazy" decoding="async"><figcaption>羊驼</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp" alt="转头" loading="lazy" decoding="async"><figcaption>转头</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-3_Vxtvd.webp" alt="对视" loading="lazy" decoding="async"><figcaption>对视</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp" alt="小羊驼" loading="lazy" decoding="async"><figcaption>小羊驼</figcaption></figure><figure><img src="https://static.daybook.page/picture/sheep-5_16GGeM.webp" alt="可爱捏" loading="lazy" decoding="async"><figcaption>可爱捏</figcaption></figure></div>
-<h2 id="github-">GitHub 仓库</h2>
+<h2 id="#GitHub-仓库">GitHub 仓库</h2>
 <p>使用双冒号语法 <code>::github{repo=&quot;owner/repo&quot;}</code>，即可嵌入 GitHub 仓库。</p>
-<h3 id="heading-14">语法</h3>
-<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::github{repo=&quot;radishzzz/astro-theme-retypeset&quot;}
-</code></pre></div><h3 id="heading-15">效果</h3>
+<h3 id="##语法-6">语法</h3>
+<div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::github{repo=&quot;StatIndet/daybook&quot;}
+</code></pre></div><h3 id="##效果-6">效果</h3>
 
-    <a href="https://github.com/radishzzz/astro-theme-retypeset" class="no-heti gc-container" target="_blank" rel="noopener noreferrer" data-repo="radishzzz/astro-theme-retypeset">
+    <a href="https://github.com/StatIndet/daybook" class="no-heti gc-container" target="_blank" rel="noopener noreferrer" data-repo="StatIndet/daybook">
       <div class="gc-title-bar">
         <div class="gc-owner-avatar" aria-hidden="true"></div>
         <span class="gc-repo-title">
-          <span>radishzzz<span class="gc-slash" aria-hidden="true">/</span><strong>astro-theme-retypeset</strong></span>
+          <span>StatIndet<span class="gc-slash" aria-hidden="true">/</span><strong>daybook</strong></span>
         </span>
         <svg class="gc-github-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
@@ -445,22 +459,22 @@ graph TD;
         <span class="gc-license-info" aria-label="License">--</span>
       </div>
     </a>
-<h2 id="heading-16">视频</h2>
+<h2 id="#视频">视频</h2>
 <p>使用双冒号语法 <code>::youtube{id=&quot;video-id&quot;}</code>，即可嵌入视频。</p>
-<h3 id="heading-17">语法</h3>
+<h3 id="##语法-7">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::youtube{id=&quot;9pP0pIgP2kE&quot;}
 
 ::bilibili{id=&quot;BV1sK4y1Z7KG&quot;}
-</code></pre></div><h3 id="heading-18">效果</h3>
+</code></pre></div><h3 id="##效果-7">效果</h3>
 <div class="embed-card embed-frame embed-frame-video embed-frame-youtube"><iframe src="https://www.youtube-nocookie.com/embed/9pP0pIgP2kE" title="YouTube video player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 <div class="embed-card embed-frame embed-frame-video embed-frame-bilibili"><iframe src="https://player.bilibili.com/player.html?autoplay=0&amp;bvid=BV1sK4y1Z7KG&amp;isOutside=true&amp;muted=0&amp;p=1" title="Bilibili video player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<h2 id="spotify">Spotify</h2>
+<h2 id="#Spotify">Spotify</h2>
 <p>使用双冒号语法 <code>::spotify{url=&quot;spotify-url&quot;}</code>，即可嵌入 Spotify 内容。</p>
-<h3 id="heading-19">语法</h3>
+<h3 id="##语法-8">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::spotify{url=&quot;https://open.spotify.com/track/0HYAsQwJIO6FLqpyTeD3l6&quot;}
 
 ::spotify{url=&quot;https://open.spotify.com/album/03QiFOKDh6xMiSTkOnsmMG&quot;}
-</code></pre></div><h3 id="heading-20">效果</h3>
+</code></pre></div><h3 id="##效果-8">效果</h3>
 
     <figure class="embed-frame embed-frame-spotify" style="border-radius: 12px; overflow: hidden; padding: 0; line-height: 0;">
       <iframe
@@ -485,22 +499,22 @@ graph TD;
         referrerpolicy="strict-origin-when-cross-origin"
       ></iframe>
     </figure>
-<h2 id="x-">X 推文</h2>
+<h2 id="#X-推文">X 推文</h2>
 <p>使用双冒号语法 <code>::tweet{url=&quot;tweet-url&quot;}</code>，即可嵌入 X 推文。</p>
-<h3 id="heading-21">语法</h3>
+<h3 id="##语法-9">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::tweet{url=&quot;https://x.com/hachi_08/status/1906456524337123549&quot;}
-</code></pre></div><h3 id="heading-22">效果</h3>
+</code></pre></div><h3 id="##效果-9">效果</h3>
 
     <figure>
       <blockquote class="twitter-tweet" data-dnt="true">
         <a href="https://twitter.com/hachi_08/status/1906456524337123549"></a>
       </blockquote>
     </figure>
-<h2 id="codepen">CodePen</h2>
+<h2 id="#CodePen">CodePen</h2>
 <p>使用双冒号语法 <code>::codepen{url=&quot;codepen-url&quot;}</code>，即可嵌入 CodePen 演示。</p>
-<h3 id="heading-23">语法</h3>
+<h3 id="##语法-10">语法</h3>
 <div class="highlight is-plain"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0"><code>::codepen{url=&quot;https://codepen.io/jh3y/pen/NWdNMBJ&quot;}
-</code></pre></div><h3 id="heading-24">效果</h3>
+</code></pre></div><h3 id="##效果-10">效果</h3>
 <div class="embed-card embed-frame embed-frame-codepen"><iframe src="https://codepen.io/jh3y/embed/NWdNMBJ?default-tab=result" title="CodePen embed" height="420" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
 
       </div>
@@ -543,59 +557,87 @@ graph TD;
         <div class="notes-tags-scroll-viewport">
           <nav class="notes-tag-list" aria-label="标签筛选">
             
-            <a class="notes-tag-link" href="/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
-              <span class="notes-tag-text">daybook</span>
+            <a class="notes-tag-link" href="/tags/Configuration/" data-notes-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 20;">
+              <span class="notes-tag-text">Configuration</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+            <a class="notes-tag-link" href="/tags/Daybook/" data-notes-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 19;">
+              <span class="notes-tag-text">Daybook</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Fonts/" data-notes-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 18;">
+              <span class="notes-tag-text">Fonts</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Frontmatter/" data-notes-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 17;">
+              <span class="notes-tag-text">Frontmatter</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Guide/" data-notes-tag="Guide" style="--tag-index: 4; --tag-exit-index: 16;">
+              <span class="notes-tag-text">Guide</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 15;">
               <span class="notes-tag-text">KaTeX</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+            <a class="notes-tag-link" href="/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 6; --tag-exit-index: 14;">
               <span class="notes-tag-text">Markdown</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/obsidian/" data-notes-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
-              <span class="notes-tag-text">obsidian</span>
+            <a class="notes-tag-link" href="/tags/Media/" data-notes-tag="Media" style="--tag-index: 7; --tag-exit-index: 13;">
+              <span class="notes-tag-text">Media</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+            <a class="notes-tag-link" href="/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 8; --tag-exit-index: 12;">
+              <span class="notes-tag-text">Obsidian</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 9; --tag-exit-index: 11;">
               <span class="notes-tag-text">Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+            <a class="notes-tag-link" href="/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 10; --tag-exit-index: 10;">
               <span class="notes-tag-text">Shakespeare</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+            <a class="notes-tag-link" href="/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 11; --tag-exit-index: 9;">
               <span class="notes-tag-text">Sonnet</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+            <a class="notes-tag-link" href="/tags/Test/" data-notes-tag="Test" style="--tag-index: 12; --tag-exit-index: 8;">
               <span class="notes-tag-text">Test</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+            <a class="notes-tag-link" href="/tags/Typography/" data-notes-tag="Typography" style="--tag-index: 13; --tag-exit-index: 7;">
+              <span class="notes-tag-text">Typography</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/%e5%93%b2%e5%ad%a6/" data-notes-tag="哲学" style="--tag-index: 14; --tag-exit-index: 6;">
+              <span class="notes-tag-text">哲学</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-notes-tag="唐诗" style="--tag-index: 15; --tag-exit-index: 5;">
               <span class="notes-tag-text">唐诗</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
-              <span class="notes-tag-text">字体</span>
+            <a class="notes-tag-link" href="/tags/%e5%ae%9e%e8%b7%b5/" data-notes-tag="实践" style="--tag-index: 16; --tag-exit-index: 4;">
+              <span class="notes-tag-text">实践</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+            <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-notes-tag="数学公式" style="--tag-index: 17; --tag-exit-index: 3;">
               <span class="notes-tag-text">数学公式</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+            <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-notes-tag="李白" style="--tag-index: 18; --tag-exit-index: 2;">
               <span class="notes-tag-text">李白</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
-              <span class="notes-tag-text">测试</span>
+            <a class="notes-tag-link" href="/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-notes-tag="认识论" style="--tag-index: 19; --tag-exit-index: 1;">
+              <span class="notes-tag-text">认识论</span>
             </a>
             
-            <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+            <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-notes-tag="诗歌" style="--tag-index: 20; --tag-exit-index: 0;">
               <span class="notes-tag-text">诗歌</span>
             </a>
             
@@ -762,72 +804,107 @@ graph TD;
       
       <nav class="notes-tag-list" aria-label="标签列表">
         
-        <a class="notes-tag-link" href="/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 13;">
-          <span class="notes-tag-text">daybook</span>
-          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        <a class="notes-tag-link" href="/tags/Configuration/" data-mobile-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 20;">
+          <span class="notes-tag-text">Configuration</span>
+          <span class="notes-tag-measure" aria-hidden="true">Configuration</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 12;">
+        <a class="notes-tag-link" href="/tags/Daybook/" data-mobile-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 19;">
+          <span class="notes-tag-text">Daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">Daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Fonts/" data-mobile-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 18;">
+          <span class="notes-tag-text">Fonts</span>
+          <span class="notes-tag-measure" aria-hidden="true">Fonts</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Frontmatter/" data-mobile-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 17;">
+          <span class="notes-tag-text">Frontmatter</span>
+          <span class="notes-tag-measure" aria-hidden="true">Frontmatter</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Guide/" data-mobile-tag="Guide" style="--tag-index: 4; --tag-exit-index: 16;">
+          <span class="notes-tag-text">Guide</span>
+          <span class="notes-tag-measure" aria-hidden="true">Guide</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 15;">
           <span class="notes-tag-text">KaTeX</span>
           <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 2; --tag-exit-index: 11;">
+        <a class="notes-tag-link" href="/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 6; --tag-exit-index: 14;">
           <span class="notes-tag-text">Markdown</span>
           <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/obsidian/" data-mobile-tag="obsidian" style="--tag-index: 3; --tag-exit-index: 10;">
-          <span class="notes-tag-text">obsidian</span>
-          <span class="notes-tag-measure" aria-hidden="true">obsidian</span>
+        <a class="notes-tag-link" href="/tags/Media/" data-mobile-tag="Media" style="--tag-index: 7; --tag-exit-index: 13;">
+          <span class="notes-tag-text">Media</span>
+          <span class="notes-tag-measure" aria-hidden="true">Media</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 4; --tag-exit-index: 9;">
+        <a class="notes-tag-link" href="/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 8; --tag-exit-index: 12;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 9; --tag-exit-index: 11;">
           <span class="notes-tag-text">Poetry</span>
           <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 5; --tag-exit-index: 8;">
+        <a class="notes-tag-link" href="/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 10; --tag-exit-index: 10;">
           <span class="notes-tag-text">Shakespeare</span>
           <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 6; --tag-exit-index: 7;">
+        <a class="notes-tag-link" href="/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 11; --tag-exit-index: 9;">
           <span class="notes-tag-text">Sonnet</span>
           <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 7; --tag-exit-index: 6;">
+        <a class="notes-tag-link" href="/tags/Test/" data-mobile-tag="Test" style="--tag-index: 12; --tag-exit-index: 8;">
           <span class="notes-tag-text">Test</span>
           <span class="notes-tag-measure" aria-hidden="true">Test</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 8; --tag-exit-index: 5;">
+        <a class="notes-tag-link" href="/tags/Typography/" data-mobile-tag="Typography" style="--tag-index: 13; --tag-exit-index: 7;">
+          <span class="notes-tag-text">Typography</span>
+          <span class="notes-tag-measure" aria-hidden="true">Typography</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%93%b2%e5%ad%a6/" data-mobile-tag="哲学" style="--tag-index: 14; --tag-exit-index: 6;">
+          <span class="notes-tag-text">哲学</span>
+          <span class="notes-tag-measure" aria-hidden="true">哲学</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/tags/%e5%94%90%e8%af%97/" data-mobile-tag="唐诗" style="--tag-index: 15; --tag-exit-index: 5;">
           <span class="notes-tag-text">唐诗</span>
           <span class="notes-tag-measure" aria-hidden="true">唐诗</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 9; --tag-exit-index: 4;">
-          <span class="notes-tag-text">字体</span>
-          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        <a class="notes-tag-link" href="/tags/%e5%ae%9e%e8%b7%b5/" data-mobile-tag="实践" style="--tag-index: 16; --tag-exit-index: 4;">
+          <span class="notes-tag-text">实践</span>
+          <span class="notes-tag-measure" aria-hidden="true">实践</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 10; --tag-exit-index: 3;">
+        <a class="notes-tag-link" href="/tags/%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f/" data-mobile-tag="数学公式" style="--tag-index: 17; --tag-exit-index: 3;">
           <span class="notes-tag-text">数学公式</span>
           <span class="notes-tag-measure" aria-hidden="true">数学公式</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 11; --tag-exit-index: 2;">
+        <a class="notes-tag-link" href="/tags/%e6%9d%8e%e7%99%bd/" data-mobile-tag="李白" style="--tag-index: 18; --tag-exit-index: 2;">
           <span class="notes-tag-text">李白</span>
           <span class="notes-tag-measure" aria-hidden="true">李白</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 1;">
-          <span class="notes-tag-text">测试</span>
-          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        <a class="notes-tag-link" href="/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-mobile-tag="认识论" style="--tag-index: 19; --tag-exit-index: 1;">
+          <span class="notes-tag-text">认识论</span>
+          <span class="notes-tag-measure" aria-hidden="true">认识论</span>
         </a>
         
-        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 13; --tag-exit-index: 0;">
+        <a class="notes-tag-link" href="/tags/%e8%af%97%e6%ad%8c/" data-mobile-tag="诗歌" style="--tag-index: 20; --tag-exit-index: 0;">
           <span class="notes-tag-text">诗歌</span>
           <span class="notes-tag-measure" aria-hidden="true">诗歌</span>
         </a>
@@ -904,7 +981,7 @@ graph TD;
       module.initSettingsOverlay();
     });
 
-    import("\/js\/share-overlay.257b8de5fb.js").then(module => {
+    import("\/js\/share-overlay.0c1b061c0b.js").then(module => {
       module.initShareOverlay();
     });
 

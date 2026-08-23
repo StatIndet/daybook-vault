@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Obsidian 本地与远程附件测试 | My Daybook</title>
+  <title>附件与远程媒体 | My Daybook</title>
   
-  <meta name="description" content="测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。">
+  <meta name="description" content="介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。">
   
 
   <link rel="canonical" href="http://localhost:1313/en/notes/obsidian-media-local-remote-test/">
@@ -19,8 +19,8 @@
   
   
 
-  <meta property="og:title" content="Obsidian 本地与远程附件测试 | My Daybook">
-  <meta property="og:description" content="测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。">
+  <meta property="og:title" content="附件与远程媒体 | My Daybook">
+  <meta property="og:description" content="介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="http://localhost:1313/en/notes/obsidian-media-local-remote-test/">
   
@@ -28,13 +28,13 @@
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Obsidian 本地与远程附件测试 | My Daybook">
-  <meta name="twitter:description" content="测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。">
+  <meta name="twitter:title" content="附件与远程媒体 | My Daybook">
+  <meta name="twitter:description" content="介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。">
   
 
   
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/#article","url":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/","headline":"Obsidian 本地与远程附件测试","description":"测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/","keywords":"daybook, obsidian"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"http://localhost:1313/en/"},{"@type":"ListItem","position":2,"name":"Notes","item":"http://localhost:1313/en/notes/"},{"@type":"ListItem","position":3,"name":"Obsidian 本地与远程附件测试","item":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/"}]}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/#article","url":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/","headline":"附件与远程媒体","description":"介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。","datePublished":"2026-06-29","dateModified":"2026-08-23","author":{"@id":"http://localhost:1313/#person"},"mainEntityOfPage":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/","keywords":"Daybook, Obsidian, Media"},{"@type":"BreadcrumbList","@id":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"http://localhost:1313/en/"},{"@type":"ListItem","position":2,"name":"Notes","item":"http://localhost:1313/en/notes/"},{"@type":"ListItem","position":3,"name":"附件与远程媒体","item":"http://localhost:1313/en/notes/obsidian-media-local-remote-test/"}]}]}
   </script>
   
 
@@ -56,7 +56,7 @@
   <script src="/js/code-copy.0248e0ee56.js" defer></script>
   <script src="/js/toc.f2baf40c54.js" defer></script>
   <script src="/js/mobile-toc.6d4359fdf0.js" defer></script>
-  <script src="/js/heading-anchors.3c2b411442.js" defer></script>
+  <script src="/js/heading-anchors.a0aad74fb9.js" defer></script>
   <script src="/js/note-filters.2d2f20797c.js" defer></script>
   <script src="/js/lightbox.a15c0f66e6.js" defer></script>
   <script src="/js/mermaid-loader.bff01f3c95.js" defer></script>
@@ -66,15 +66,16 @@
   <script src="/js/graph-loader.b1c100b294.js" defer></script>
   <script src="/js/mobile-drawer.f92abc8704.js" defer></script>
   <script src="/js/search-overlay.0f7e6c40fc.js" defer></script>
-  <script src="/js/daybook-router.3f0a75a11a.js" defer></script>
+  <script src="/js/daybook-router.3a0f3938c4.js" defer></script>
   <script src="/js/katex-loader.b639ed40fa.js" defer></script>
   <script src="/js/custom-cursor.5a89752a8a.js" defer></script>
-  <script src="/js/note-bilingual.e46b4c39c9.js" defer></script>
+  <script src="/js/note-bilingual.27772b9611.js" defer></script>
   <link rel="stylesheet" href="/vendor/fonts/lxgw-wenkai-screen/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/regular/result.css">
   <link rel="stylesheet" href="/vendor/fonts/maple-mono-cn/italic/result.css">
-  <link rel="stylesheet" href="/css/decorative-fonts.3cf8690f14.css">
-  <link rel="stylesheet" href="/css/global.905c7d5a64.css">
+  <link rel="stylesheet" href="/vendor/fonts/noto-serif-sc/wght.css">
+  <link rel="stylesheet" href="/css/decorative-fonts.baec377b53.css">
+  <link rel="stylesheet" href="/css/global.b70a6d448a.css">
   
   <link rel="alternate" type="application/rss+xml" title="My Daybook RSS" href="/rss.xml">
   
@@ -273,7 +274,7 @@
           </a>
           <h1 class="note-title">
             <span data-title-transition-key="obsidian-media-local-remote-test">
-              <span class="title-morphable" data-title-transition-key="obsidian-media-local-remote-test"><span class="title-glyph" data-glyph-index="0">O</span><span class="title-glyph" data-glyph-index="1">b</span><span class="title-glyph" data-glyph-index="2">s</span><span class="title-glyph" data-glyph-index="3">i</span><span class="title-glyph" data-glyph-index="4">d</span><span class="title-glyph" data-glyph-index="5">i</span><span class="title-glyph" data-glyph-index="6">a</span><span class="title-glyph" data-glyph-index="7">n</span> <span class="title-glyph" data-glyph-index="9">本</span><span class="title-glyph" data-glyph-index="10">地</span><span class="title-glyph" data-glyph-index="11">与</span><span class="title-glyph" data-glyph-index="12">远</span><span class="title-glyph" data-glyph-index="13">程</span><span class="title-glyph" data-glyph-index="14">附</span><span class="title-glyph" data-glyph-index="15">件</span><span class="title-glyph" data-glyph-index="16">测</span><span class="title-glyph" data-glyph-index="17">试</span></span>
+              <span class="title-morphable" data-title-transition-key="obsidian-media-local-remote-test"><span class="title-glyph" data-glyph-index="0">附</span><span class="title-glyph" data-glyph-index="1">件</span><span class="title-glyph" data-glyph-index="2">与</span><span class="title-glyph" data-glyph-index="3">远</span><span class="title-glyph" data-glyph-index="4">程</span><span class="title-glyph" data-glyph-index="5">媒</span><span class="title-glyph" data-glyph-index="6">体</span></span>
             </span>
           </h1>
           <button type="button" class="reader-mode-exit" aria-label="Exit reader mode" data-tooltip="Exit reader mode" data-reader-exit hidden>
@@ -291,11 +292,13 @@
             <span class="material-symbol notes-item-music" aria-hidden="true" title="包含音乐" data-article-shared="music">music_note_2</span>
             
             <time datetime="2026-06-29" data-article-shared="published">2026-06-29</time>
-            <span class="reading-time" data-article-shared="reading">1 min</span>
+            <span class="reading-time" data-article-shared="reading">3 min</span>
+            
+              <span class="updated-time" data-article-shared="updated">&bull; updated <time datetime="2026-08-23">2026-08-23</time></span>
             
           </div>
           <div class="article-stagger-meta">
-            <span class="meta-stagger-item">165 words</span>
+            <span class="meta-stagger-item">692 words</span>
             
             <span class="meta-stagger-item">
               <span data-page-views data-path="/en/notes/obsidian-media-local-remote-test/">--</span>
@@ -304,7 +307,7 @@
             
 
             <span class="meta-stagger-item share-entry">
-              <button type="button" class="share-toggle-btn" aria-label="Share" data-tooltip="Share" data-share-open data-share-title="Obsidian 本地与远程附件测试" data-share-link="http://localhost:1313/en/notes/obsidian-media-local-remote-test/" data-share-text="「Obsidian 本地与远程附件测试」">
+              <button type="button" class="share-toggle-btn" aria-label="Share" data-tooltip="Share" data-share-open data-share-title="附件与远程媒体" data-share-link="http://localhost:1313/en/notes/obsidian-media-local-remote-test/" data-share-text="「附件与远程媒体」">
                 <span class="material-symbol" aria-hidden="true">share</span>
               </button>
             </span>
@@ -318,7 +321,7 @@
             
           </div>
         </div>
-        <p class="note-summary">测试 Daybook 对本地附件和 Cloudflare R2 远程附件的图片、PDF、音频、视频嵌入支持。</p>
+        <p class="note-summary">介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。</p>
       </header>
 
       
@@ -339,29 +342,53 @@
       <ol>
         
         <li class="note-toc-depth-2" style="--toc-index: 0">
-          <a href="#shelbypng">本地图片：shelby.png</a>
+          <a href="#%23Vault-%e5%86%85%e9%99%84%e4%bb%b6">Vault 内附件</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 1">
-          <a href="#heading">本地图片：居中并指定宽度</a>
+        <li class="note-toc-depth-3" style="--toc-index: 1">
+          <a href="#%23%23%e5%9b%be%e7%89%87">图片</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 2">
-          <a href="#-pdfpdf">本地 PDF：实践论.pdf</a>
+        <li class="note-toc-depth-3" style="--toc-index: 2">
+          <a href="#%23%23PDF">PDF</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 3">
-          <a href="#---flac">本地音频：周杰伦 - 爱在西元前.FLAC</a>
+        <li class="note-toc-depth-3" style="--toc-index: 3">
+          <a href="#%23%23%e9%9f%b3%e9%a2%91">音频</a>
         </li>
         
         <li class="note-toc-depth-2" style="--toc-index: 4">
-          <a href="#heading-1">远程附件</a>
+          <a href="#%23%e8%bf%9c%e7%a8%8b%e5%aa%92%e4%bd%93">远程媒体</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 5">
+          <a href="#%23%23%e5%9b%be%e7%89%87-2">图片</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 6">
+          <a href="#%23%23PDF-2">PDF</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 7">
+          <a href="#%23%23%e9%9f%b3%e9%a2%91-2">音频</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 8">
+          <a href="#%23%23%e8%a7%86%e9%a2%91">视频</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 9">
+          <a href="#%23%23%e9%9f%b3%e4%b9%90%e6%92%ad%e6%94%be%e5%99%a8">音乐播放器</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 10">
+          <a href="#%23%e6%80%8e%e6%a0%b7%e9%80%89%e6%8b%a9">怎样选择</a>
         </li>
         
       </ol>
     </nav>
-    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 5"></div>
-    <div class="note-toc-reading-controls" style="--toc-index: 5">
+    <div class="note-toc-divider" aria-hidden="true" style="--toc-index: 11"></div>
+    <div class="note-toc-reading-controls" style="--toc-index: 11">
       
 <div class="note-right-controls" aria-label="阅读进度控制">
   <div class="note-rc-progress">
@@ -424,23 +451,47 @@
       <ol>
         
         <li class="note-toc-depth-2" style="--toc-index: 0">
-          <a href="#shelbypng">本地图片：shelby.png</a>
+          <a href="#%23Vault-%e5%86%85%e9%99%84%e4%bb%b6">Vault 内附件</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 1">
-          <a href="#heading">本地图片：居中并指定宽度</a>
+        <li class="note-toc-depth-3" style="--toc-index: 1">
+          <a href="#%23%23%e5%9b%be%e7%89%87">图片</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 2">
-          <a href="#-pdfpdf">本地 PDF：实践论.pdf</a>
+        <li class="note-toc-depth-3" style="--toc-index: 2">
+          <a href="#%23%23PDF">PDF</a>
         </li>
         
-        <li class="note-toc-depth-2" style="--toc-index: 3">
-          <a href="#---flac">本地音频：周杰伦 - 爱在西元前.FLAC</a>
+        <li class="note-toc-depth-3" style="--toc-index: 3">
+          <a href="#%23%23%e9%9f%b3%e9%a2%91">音频</a>
         </li>
         
         <li class="note-toc-depth-2" style="--toc-index: 4">
-          <a href="#heading-1">远程附件</a>
+          <a href="#%23%e8%bf%9c%e7%a8%8b%e5%aa%92%e4%bd%93">远程媒体</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 5">
+          <a href="#%23%23%e5%9b%be%e7%89%87-2">图片</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 6">
+          <a href="#%23%23PDF-2">PDF</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 7">
+          <a href="#%23%23%e9%9f%b3%e9%a2%91-2">音频</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 8">
+          <a href="#%23%23%e8%a7%86%e9%a2%91">视频</a>
+        </li>
+        
+        <li class="note-toc-depth-3" style="--toc-index: 9">
+          <a href="#%23%23%e9%9f%b3%e4%b9%90%e6%92%ad%e6%94%be%e5%99%a8">音乐播放器</a>
+        </li>
+        
+        <li class="note-toc-depth-2" style="--toc-index: 10">
+          <a href="#%23%e6%80%8e%e6%a0%b7%e9%80%89%e6%8b%a9">怎样选择</a>
         </li>
         
       </ol>
@@ -452,22 +503,54 @@
       
 
       <div class="markdown post-content">
-        <h1 id="obsidian-">Obsidian 本地与远程附件测试</h1>
-<p>这篇文章用于测试 Daybook 的附件发布策略：<code>content/attachments/</code> 根目录直属文件走本地 local，<code>audio/</code>、<code>video/</code>、<code>picture/</code>、<code>pdf/</code> 子目录走远程 R2。</p>
-<h2 id="shelbypng">本地图片：shelby.png</h2>
-<figure class="media-embed media-image"><img src="/attachments/picture/shelby.jpg" alt="shelby.jpg" loading="lazy" decoding="async"></figure>
-<h2 id="heading">本地图片：居中并指定宽度</h2>
-<figure class="media-embed media-image is-center" style="--image-width: 500px"><img src="/attachments/picture/shelby.jpg" alt="center" loading="lazy" decoding="async"></figure>
-<h2 id="-pdfpdf">本地 PDF：实践论.pdf</h2>
+        <p>Daybook 对附件采用一条简单的规则：<strong>Vault 中受支持的媒体文件作为本地附件处理；远程媒体则由文章显式引用 HTTP(S) URL。</strong></p>
+<p>目录名本身不会决定附件“本地”还是“远程”。例如 <code>attachments/picture/</code>、<code>attachments/pdf/</code> 和 <code>attachments/music/</code> 只是组织文件的方式，不会自动把某个子目录上传到 R2。</p>
+<h2 id="#Vault-内附件">Vault 内附件</h2>
+<p>构建时，Daybook 会扫描 Vault 中受支持的媒体，并按 Vault 相对路径复制到 <code>public/</code>。当前支持：</p>
+<ul>
+<li>图片：PNG、JPEG、GIF、WebP、AVIF、SVG</li>
+<li>音频：FLAC、MP3、WAV、OGG、M4A</li>
+<li>视频：MP4、WebM、MOV</li>
+<li>PDF</li>
+</ul>
+<p>当前示例 Vault 的 Obsidian 配置把附件目录设为 <code>attachments</code>，但 Daybook 也会读取 <code>.obsidian/app.json</code> 中的 <code>attachmentFolderPath</code> 来辅助解析链接。</p>
+<h3 id="##图片">图片</h3>
+<p>最直接的写法是 Obsidian embed：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[attachments/picture/shelby.jpg]]
+</span></span></code></pre></div><p>可以指定对齐与宽度：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[attachments/picture/shelby.jpg|center|480]]
+</span></span></code></pre></div><p>实际效果：</p>
+<figure class="media-embed media-image is-center" style="--image-width: 480px"><img src="/attachments/picture/shelby.jpg" alt="center" loading="lazy" decoding="async"></figure>
+<p>如果文件名在整个 Vault 中唯一，也可以只写文件名。大型 Vault 中更推荐明确路径；如果存在多个同名附件，Daybook 会给出歧义警告，而不是猜测应该使用哪一个。</p>
+<h3 id="##PDF">PDF</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[attachments/pdf/shi-jian-lun.pdf]]
+</span></span></code></pre></div><p>实际效果：</p>
 <figure class="media-embed media-pdf"><iframe src="/attachments/pdf/shi-jian-lun.pdf" loading="lazy" title="shi-jian-lun.pdf" frameborder="0" height="800"></iframe></figure>
-<h2 id="---flac">本地音频：周杰伦 - 爱在西元前.FLAC</h2>
-<figure class="media-embed media-audio"><audio controls preload="metadata" src="/attachments/music/audio_JayChou-ai-zai-xi-yuan-qian.FLAC"></audio></figure>
-<h2 id="heading-1">远程附件</h2>
-<figure class="media-embed media-pdf"><iframe src="https://static.daybook.page/pdf/shi-jian-lun.pdf" loading="lazy" title="PDF Document" frameborder="0" height="800"></iframe></figure>
-<figure class="media-embed media-video is-center"><video controls preload="metadata" src="https://static.daybook.page/video/1130650335-1-208.mp4" width="720"></video></figure>
-<figure class="media-embed media-audio"><audio controls preload="metadata" src="https://static.daybook.page/audio/JayChou-ai-zai-xi-yuan-qian.FLAC"></audio></figure>
-<figure class="media-embed media-image is-center" style="--image-width: 720px"><img src="https://static.daybook.page/picture/shelby.jpg" alt="" loading="lazy" decoding="async"></figure>
-
+<h3 id="##音频">音频</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">![[attachments/music/audio_JayChou-ai-zai-xi-yuan-qian.FLAC]]
+</span></span></code></pre></div><p>这个示例文件超过 25 MiB。Daybook 会提示它可能超过 Cloudflare Pages 的单文件限制，因此较大的音频或视频更适合放在对象存储或其他静态文件服务中，再使用远程 URL。</p>
+<h2 id="#远程媒体">远程媒体</h2>
+<p>远程资源不需要位于 Cloudflare R2。任何浏览器可访问的 <code>http://</code> 或 <code>https://</code> 媒体 URL 都可以作为来源；R2、S3、对象存储、自建静态站点或其他 CDN 只是不同的托管方式。</p>
+<h3 id="##图片-2">图片</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::image{url=&#34;https://static.daybook.page/picture/shelby.jpg&#34; width=&#34;720&#34; align=&#34;center&#34; caption=&#34;Remote image&#34;}
+</span></span></code></pre></div><figure class="media-embed media-image is-center" style="--image-width: 720px"><img src="https://static.daybook.page/picture/shelby.jpg" alt="" loading="lazy" decoding="async"><figcaption>Remote image</figcaption></figure>
+<p><code>::image</code> 支持 <code>url</code>、<code>alt</code>、<code>caption</code>、<code>width</code> 与 <code>align</code>。</p>
+<h3 id="##PDF-2">PDF</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::pdf{url=&#34;https://static.daybook.page/pdf/shi-jian-lun.pdf&#34; height=&#34;720&#34; caption=&#34;Remote PDF&#34;}
+</span></span></code></pre></div><figure class="media-embed media-pdf"><iframe src="https://static.daybook.page/pdf/shi-jian-lun.pdf" loading="lazy" title="PDF Document" frameborder="0" height="720"></iframe><figcaption>Remote PDF</figcaption></figure>
+<p><code>::pdf</code> 支持 <code>url</code>、<code>caption</code>、<code>width</code>、<code>height</code> 与 <code>align</code>。</p>
+<h3 id="##音频-2">音频</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::audio{url=&#34;https://static.daybook.page/audio/JayChou-ai-zai-xi-yuan-qian.FLAC&#34;}
+</span></span></code></pre></div><figure class="media-embed media-audio"><audio controls preload="metadata" src="https://static.daybook.page/audio/JayChou-ai-zai-xi-yuan-qian.FLAC"></audio></figure>
+<p><code>::audio</code> 还支持 <code>caption</code>、<code>width</code>、<code>align</code>、<code>autoplay</code>、<code>muted</code> 与 <code>loop</code>。</p>
+<h3 id="##视频">视频</h3>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::video{url=&#34;https://static.daybook.page/video/1130650335-1-208.mp4&#34; width=&#34;720&#34; align=&#34;center&#34;}
+</span></span></code></pre></div><figure class="media-embed media-video is-center"><video controls preload="metadata" src="https://static.daybook.page/video/1130650335-1-208.mp4" width="720"></video></figure>
+<p><code>::video</code> 还支持 <code>caption</code>、<code>height</code>、<code>poster</code>、<code>autoplay</code>、<code>muted</code> 与 <code>loop</code>。</p>
+<h3 id="##音乐播放器">音乐播放器</h3>
+<p><code>::music</code> 使用独立的 Daybook 音乐播放器。构建阶段会尝试读取远程音频的元数据；如果需要，也可以显式覆盖标题、艺术家或封面。</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::music{url=&#34;https://static.daybook.page/music/474667755.flac&#34; loop=&#34;true&#34;}
+</span></span></code></pre></div>
 		<div class="music-custom-player" data-status="ready">
 			<div class="music-player">
 				<div class="music-bg" style="background-image: url('/generated/music/72ac319337ea.jpg')"></div>
@@ -490,9 +573,42 @@
 						</button>
 					</div>
 				</div>
+				<audio src="https://static.daybook.page/music/474667755.flac" preload="metadata" loop></audio>
+			</div>
+		</div>
+<p>可选字段为 <code>title</code>、<code>artist</code>、<code>cover</code> 与 <code>loop</code>。<code>cover</code> 也应使用可访问的远程 URL。</p>
+<p>手动覆盖元数据：</p>
+<div class="highlight"><button class="code-copy-button" type="button" aria-label="复制代码"><span class="material-symbol" aria-hidden="true">content_copy</span></button><pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">::music{url=&#34;https://static.daybook.page/music/474667755.flac&#34; title=&#34;Example Track&#34; artist=&#34;Example Artist&#34; cover=&#34;https://static.daybook.page/picture/shelby.jpg&#34;}
+</span></span></code></pre></div><p>实际效果：</p>
+
+		<div class="music-custom-player" data-status="ready">
+			<div class="music-player">
+				<div class="music-bg" style="background-image: url('https://static.daybook.page/picture/shelby.jpg')"></div>
+				<div class="music-overlay"></div>
+				<div class="music-inner">
+					<img class="music-cover" src="https://static.daybook.page/picture/shelby.jpg" alt="Example Track" />
+					<div class="music-body">
+						<div class="music-text">
+							<div class="music-title">Example Track</div>
+							<div class="music-artist">Example Artist</div>
+						</div>
+						<div class="music-time">0:00 / 0:00</div>
+						<div class="music-bottom">
+							<canvas class="music-canvas"></canvas>
+						</div>
+					</div>
+					<div class="music-playbtn-wrapper">
+						<button class="music-playbtn" aria-label="Play">
+							<span class="material-symbol music-icon">play_arrow</span>
+						</button>
+					</div>
+				</div>
 				<audio src="https://static.daybook.page/music/474667755.flac" preload="metadata"></audio>
 			</div>
 		</div>
+<h2 id="#怎样选择">怎样选择</h2>
+<p>小型图片、PDF 或音频可以直接保留在 Vault 中，获得最自然的 Obsidian 写作体验。体积较大的媒体更适合外部存储，再通过远程 directive 引用。两种方式可以在同一篇文章中同时使用。</p>
+<p>更多语法见 <a href="/notes/markdown-syntax/">Markdown、Obsidian 与 Daybook 语法</a>；站点级配置见 <a href="/notes/daybook-yaml/">daybook.yaml 配置</a>。</p>
 
       </div>
 
@@ -501,14 +617,29 @@
         <hr class="note-tags-divider">
         <div class="note-tags-list">
           
-          <a href="/en/tags/daybook/" class="note-tag-capsule">#daybook</a>
+          <a href="/en/tags/Daybook/" class="note-tag-capsule">#Daybook</a>
           
-          <a href="/en/tags/obsidian/" class="note-tag-capsule">#obsidian</a>
+          <a href="/en/tags/Obsidian/" class="note-tag-capsule">#Obsidian</a>
+          
+          <a href="/en/tags/Media/" class="note-tag-capsule">#Media</a>
           
         </div>
       </section>
       
 
+      
+      <section class="post-comments">
+        <div id="waline"
+             data-server-url=""
+             data-lang="en-US"
+             data-page-size="10"
+             data-comment-sorting="latest"
+             data-search="false"
+             data-image-uploader="false"
+             data-path="/en/notes/obsidian-media-local-remote-test/"></div>
+        <link rel="stylesheet" href="/vendor/waline/waline.css">
+        <link rel="stylesheet" href="/css/components/waline-theme.672e43ce5a.css">
+      </section>
       
     </article>
   </section>
@@ -534,56 +665,84 @@
         <div class="notes-tags-scroll-viewport">
           <nav class="notes-tag-list" aria-label="标签筛选">
             
-            <a class="notes-tag-link" href="/en/tags/daybook/" data-notes-tag="daybook" style="--tag-index: 0; --tag-exit-index: 12;">
-              <span class="notes-tag-text">daybook</span>
+            <a class="notes-tag-link" href="/en/tags/Configuration/" data-notes-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 19;">
+              <span class="notes-tag-text">Configuration</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 11;">
+            <a class="notes-tag-link" href="/en/tags/Daybook/" data-notes-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 18;">
+              <span class="notes-tag-text">Daybook</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Fonts/" data-notes-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 17;">
+              <span class="notes-tag-text">Fonts</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Frontmatter/" data-notes-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 16;">
+              <span class="notes-tag-text">Frontmatter</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Guide/" data-notes-tag="Guide" style="--tag-index: 4; --tag-exit-index: 15;">
+              <span class="notes-tag-text">Guide</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/KaTeX/" data-notes-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 14;">
               <span class="notes-tag-text">KaTeX</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-notes-tag="Li-Bai" style="--tag-index: 2; --tag-exit-index: 10;">
-              <span class="notes-tag-text">Li-Bai</span>
+            <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-notes-tag="Li Bai" style="--tag-index: 6; --tag-exit-index: 13;">
+              <span class="notes-tag-text">Li Bai</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 3; --tag-exit-index: 9;">
+            <a class="notes-tag-link" href="/en/tags/Markdown/" data-notes-tag="Markdown" style="--tag-index: 7; --tag-exit-index: 12;">
               <span class="notes-tag-text">Markdown</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-notes-tag="Mathematical-formula" style="--tag-index: 4; --tag-exit-index: 8;">
+            <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-notes-tag="Mathematical-formula" style="--tag-index: 8; --tag-exit-index: 11;">
               <span class="notes-tag-text">Mathematical-formula</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/obsidian/" data-notes-tag="obsidian" style="--tag-index: 5; --tag-exit-index: 7;">
-              <span class="notes-tag-text">obsidian</span>
+            <a class="notes-tag-link" href="/en/tags/Media/" data-notes-tag="Media" style="--tag-index: 9; --tag-exit-index: 10;">
+              <span class="notes-tag-text">Media</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 6; --tag-exit-index: 6;">
+            <a class="notes-tag-link" href="/en/tags/Obsidian/" data-notes-tag="Obsidian" style="--tag-index: 10; --tag-exit-index: 9;">
+              <span class="notes-tag-text">Obsidian</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/Poetry/" data-notes-tag="Poetry" style="--tag-index: 11; --tag-exit-index: 8;">
               <span class="notes-tag-text">Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 7; --tag-exit-index: 5;">
+            <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-notes-tag="Shakespeare" style="--tag-index: 12; --tag-exit-index: 7;">
               <span class="notes-tag-text">Shakespeare</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 8; --tag-exit-index: 4;">
+            <a class="notes-tag-link" href="/en/tags/Sonnet/" data-notes-tag="Sonnet" style="--tag-index: 13; --tag-exit-index: 6;">
               <span class="notes-tag-text">Sonnet</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-notes-tag="Tang-Poetry" style="--tag-index: 9; --tag-exit-index: 3;">
-              <span class="notes-tag-text">Tang-Poetry</span>
+            <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-notes-tag="Tang Poetry" style="--tag-index: 14; --tag-exit-index: 5;">
+              <span class="notes-tag-text">Tang Poetry</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/Test/" data-notes-tag="Test" style="--tag-index: 10; --tag-exit-index: 2;">
+            <a class="notes-tag-link" href="/en/tags/Test/" data-notes-tag="Test" style="--tag-index: 15; --tag-exit-index: 4;">
               <span class="notes-tag-text">Test</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/%e5%ad%97%e4%bd%93/" data-notes-tag="字体" style="--tag-index: 11; --tag-exit-index: 1;">
-              <span class="notes-tag-text">字体</span>
+            <a class="notes-tag-link" href="/en/tags/Typography/" data-notes-tag="Typography" style="--tag-index: 16; --tag-exit-index: 3;">
+              <span class="notes-tag-text">Typography</span>
             </a>
             
-            <a class="notes-tag-link" href="/en/tags/%e6%b5%8b%e8%af%95/" data-notes-tag="测试" style="--tag-index: 12; --tag-exit-index: 0;">
-              <span class="notes-tag-text">测试</span>
+            <a class="notes-tag-link" href="/en/tags/%e5%93%b2%e5%ad%a6/" data-notes-tag="哲学" style="--tag-index: 17; --tag-exit-index: 2;">
+              <span class="notes-tag-text">哲学</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e5%ae%9e%e8%b7%b5/" data-notes-tag="实践" style="--tag-index: 18; --tag-exit-index: 1;">
+              <span class="notes-tag-text">实践</span>
+            </a>
+            
+            <a class="notes-tag-link" href="/en/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-notes-tag="认识论" style="--tag-index: 19; --tag-exit-index: 0;">
+              <span class="notes-tag-text">认识论</span>
             </a>
             
           </nav>
@@ -749,69 +908,104 @@
       
       <nav class="notes-tag-list" aria-label="标签列表">
         
-        <a class="notes-tag-link" href="/en/tags/daybook/" data-mobile-tag="daybook" style="--tag-index: 0; --tag-exit-index: 12;">
-          <span class="notes-tag-text">daybook</span>
-          <span class="notes-tag-measure" aria-hidden="true">daybook</span>
+        <a class="notes-tag-link" href="/en/tags/Configuration/" data-mobile-tag="Configuration" style="--tag-index: 0; --tag-exit-index: 19;">
+          <span class="notes-tag-text">Configuration</span>
+          <span class="notes-tag-measure" aria-hidden="true">Configuration</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 1; --tag-exit-index: 11;">
+        <a class="notes-tag-link" href="/en/tags/Daybook/" data-mobile-tag="Daybook" style="--tag-index: 1; --tag-exit-index: 18;">
+          <span class="notes-tag-text">Daybook</span>
+          <span class="notes-tag-measure" aria-hidden="true">Daybook</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Fonts/" data-mobile-tag="Fonts" style="--tag-index: 2; --tag-exit-index: 17;">
+          <span class="notes-tag-text">Fonts</span>
+          <span class="notes-tag-measure" aria-hidden="true">Fonts</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Frontmatter/" data-mobile-tag="Frontmatter" style="--tag-index: 3; --tag-exit-index: 16;">
+          <span class="notes-tag-text">Frontmatter</span>
+          <span class="notes-tag-measure" aria-hidden="true">Frontmatter</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Guide/" data-mobile-tag="Guide" style="--tag-index: 4; --tag-exit-index: 15;">
+          <span class="notes-tag-text">Guide</span>
+          <span class="notes-tag-measure" aria-hidden="true">Guide</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/KaTeX/" data-mobile-tag="KaTeX" style="--tag-index: 5; --tag-exit-index: 14;">
           <span class="notes-tag-text">KaTeX</span>
           <span class="notes-tag-measure" aria-hidden="true">KaTeX</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-mobile-tag="Li-Bai" style="--tag-index: 2; --tag-exit-index: 10;">
-          <span class="notes-tag-text">Li-Bai</span>
-          <span class="notes-tag-measure" aria-hidden="true">Li-Bai</span>
+        <a class="notes-tag-link" href="/en/tags/Li-Bai/" data-mobile-tag="Li Bai" style="--tag-index: 6; --tag-exit-index: 13;">
+          <span class="notes-tag-text">Li Bai</span>
+          <span class="notes-tag-measure" aria-hidden="true">Li Bai</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 3; --tag-exit-index: 9;">
+        <a class="notes-tag-link" href="/en/tags/Markdown/" data-mobile-tag="Markdown" style="--tag-index: 7; --tag-exit-index: 12;">
           <span class="notes-tag-text">Markdown</span>
           <span class="notes-tag-measure" aria-hidden="true">Markdown</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-mobile-tag="Mathematical-formula" style="--tag-index: 4; --tag-exit-index: 8;">
+        <a class="notes-tag-link" href="/en/tags/Mathematical-formula/" data-mobile-tag="Mathematical-formula" style="--tag-index: 8; --tag-exit-index: 11;">
           <span class="notes-tag-text">Mathematical-formula</span>
           <span class="notes-tag-measure" aria-hidden="true">Mathematical-formula</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/obsidian/" data-mobile-tag="obsidian" style="--tag-index: 5; --tag-exit-index: 7;">
-          <span class="notes-tag-text">obsidian</span>
-          <span class="notes-tag-measure" aria-hidden="true">obsidian</span>
+        <a class="notes-tag-link" href="/en/tags/Media/" data-mobile-tag="Media" style="--tag-index: 9; --tag-exit-index: 10;">
+          <span class="notes-tag-text">Media</span>
+          <span class="notes-tag-measure" aria-hidden="true">Media</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 6; --tag-exit-index: 6;">
+        <a class="notes-tag-link" href="/en/tags/Obsidian/" data-mobile-tag="Obsidian" style="--tag-index: 10; --tag-exit-index: 9;">
+          <span class="notes-tag-text">Obsidian</span>
+          <span class="notes-tag-measure" aria-hidden="true">Obsidian</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/Poetry/" data-mobile-tag="Poetry" style="--tag-index: 11; --tag-exit-index: 8;">
           <span class="notes-tag-text">Poetry</span>
           <span class="notes-tag-measure" aria-hidden="true">Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 7; --tag-exit-index: 5;">
+        <a class="notes-tag-link" href="/en/tags/Shakespeare/" data-mobile-tag="Shakespeare" style="--tag-index: 12; --tag-exit-index: 7;">
           <span class="notes-tag-text">Shakespeare</span>
           <span class="notes-tag-measure" aria-hidden="true">Shakespeare</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 8; --tag-exit-index: 4;">
+        <a class="notes-tag-link" href="/en/tags/Sonnet/" data-mobile-tag="Sonnet" style="--tag-index: 13; --tag-exit-index: 6;">
           <span class="notes-tag-text">Sonnet</span>
           <span class="notes-tag-measure" aria-hidden="true">Sonnet</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-mobile-tag="Tang-Poetry" style="--tag-index: 9; --tag-exit-index: 3;">
-          <span class="notes-tag-text">Tang-Poetry</span>
-          <span class="notes-tag-measure" aria-hidden="true">Tang-Poetry</span>
+        <a class="notes-tag-link" href="/en/tags/Tang-Poetry/" data-mobile-tag="Tang Poetry" style="--tag-index: 14; --tag-exit-index: 5;">
+          <span class="notes-tag-text">Tang Poetry</span>
+          <span class="notes-tag-measure" aria-hidden="true">Tang Poetry</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/Test/" data-mobile-tag="Test" style="--tag-index: 10; --tag-exit-index: 2;">
+        <a class="notes-tag-link" href="/en/tags/Test/" data-mobile-tag="Test" style="--tag-index: 15; --tag-exit-index: 4;">
           <span class="notes-tag-text">Test</span>
           <span class="notes-tag-measure" aria-hidden="true">Test</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/%e5%ad%97%e4%bd%93/" data-mobile-tag="字体" style="--tag-index: 11; --tag-exit-index: 1;">
-          <span class="notes-tag-text">字体</span>
-          <span class="notes-tag-measure" aria-hidden="true">字体</span>
+        <a class="notes-tag-link" href="/en/tags/Typography/" data-mobile-tag="Typography" style="--tag-index: 16; --tag-exit-index: 3;">
+          <span class="notes-tag-text">Typography</span>
+          <span class="notes-tag-measure" aria-hidden="true">Typography</span>
         </a>
         
-        <a class="notes-tag-link" href="/en/tags/%e6%b5%8b%e8%af%95/" data-mobile-tag="测试" style="--tag-index: 12; --tag-exit-index: 0;">
-          <span class="notes-tag-text">测试</span>
-          <span class="notes-tag-measure" aria-hidden="true">测试</span>
+        <a class="notes-tag-link" href="/en/tags/%e5%93%b2%e5%ad%a6/" data-mobile-tag="哲学" style="--tag-index: 17; --tag-exit-index: 2;">
+          <span class="notes-tag-text">哲学</span>
+          <span class="notes-tag-measure" aria-hidden="true">哲学</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e5%ae%9e%e8%b7%b5/" data-mobile-tag="实践" style="--tag-index: 18; --tag-exit-index: 1;">
+          <span class="notes-tag-text">实践</span>
+          <span class="notes-tag-measure" aria-hidden="true">实践</span>
+        </a>
+        
+        <a class="notes-tag-link" href="/en/tags/%e8%ae%a4%e8%af%86%e8%ae%ba/" data-mobile-tag="认识论" style="--tag-index: 19; --tag-exit-index: 0;">
+          <span class="notes-tag-text">认识论</span>
+          <span class="notes-tag-measure" aria-hidden="true">认识论</span>
         </a>
         
       </nav>
@@ -886,7 +1080,7 @@
       module.initSettingsOverlay();
     });
 
-    import("\/js\/share-overlay.257b8de5fb.js").then(module => {
+    import("\/js\/share-overlay.0c1b061c0b.js").then(module => {
       module.initShareOverlay();
     });
 
