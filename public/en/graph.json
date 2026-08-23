@@ -123,28 +123,6 @@
       "exists": true
     },
     {
-      "id": "thoughts-in-a-quiet-night",
-      "title": "Thoughts in a Quiet Night",
-      "url": "/en/notes/Thoughts in a Quiet Night/",
-      "tags": [
-        {
-          "id": "tag:poetry",
-          "title": "Poetry"
-        },
-        {
-          "id": "tag:tang-poetry",
-          "title": "Tang Poetry"
-        },
-        {
-          "id": "tag:li-bai",
-          "title": "Li Bai"
-        }
-      ],
-      "date": "2026-06-25",
-      "degree": 2,
-      "exists": true
-    },
-    {
       "id": "",
       "title": "排版、字体与富文本",
       "url": "/en/notes/typography-test/",
@@ -226,6 +204,20 @@
       ],
       "date": "1937-07-01",
       "degree": 4,
+      "exists": true
+    },
+    {
+      "id": "thoughts-in-a-quiet-night",
+      "title": "Thoughts in a Quiet Night",
+      "url": "/en/notes/Thoughts in a Quiet Night/",
+      "tags": [
+        {
+          "id": "tag:poetry",
+          "title": "Poetry"
+        }
+      ],
+      "date": "2026-06-25",
+      "degree": 2,
       "exists": true
     }
   ],

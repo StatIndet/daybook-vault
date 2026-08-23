@@ -6,8 +6,6 @@ lang: en
 i18n_key: thoughts-in-a-quiet-night
 tags:
   - Poetry
-  - Tang Poetry
-  - Li Bai
 summary: A short English rendering of Li Bai’s poem, paired with the Chinese original to demonstrate Daybook’s bilingual article model.
 draft: false
 listed: true
