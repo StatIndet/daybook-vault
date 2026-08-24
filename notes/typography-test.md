@@ -1,82 +1,76 @@
 ---
-title: 自托管字体测试
+title: 排版、字体与富文本
 date: 2026-06-23
+updated: 2026-08-23
+lang: zh-CN
 tags:
-  - 测试
-  - 字体
-summary: 这是一篇用于人工检查霞鹜文楷与 Maple Mono CN 实际排版与渲染效果的测试笔记。
+  - Typography
+  - Fonts
+  - Markdown
+summary: 一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。
 draft: false
+listed: true
+math: false
+pin: false
+comment: true
+toc: true
 ---
 
-这篇笔记用于人工检查 **霞鹜文楷 (LXGW WenKai)** 与 **Maple Mono CN** 的实际渲染效果。由于系统目前对于 Draft 状态的笔记会完全忽略无法预览，因此本笔记设为发布状态。测试完毕后可随时删除。
+Daybook 将主要字体随站点资源一起提供，浏览文章时不需要再向第三方字体 CDN 请求正文或代码字体。默认排版中，正文与大部分界面使用 **LXGW WenKai Screen**，代码使用 **Maple Mono CN**；元数据、签名、Logo 与图标则使用各自的专用字体。
 
-## 1. 普通正文与混排测试
+这篇文章不要求读者记住字体文件的位置。它更像一张排版样张：在一页中放入中文、英文、数字、标点、代码与常见富文本，便于观察主题在真实内容中的表现。
 
-这是普通的中文段落，主要用于测试正文是否成功应用了霞鹜文楷。这款字体应当呈现出优美的楷体书写特征，为博客带来更好的中文阅读体验。
+## 正文与中英文混排
 
-接下来是中英文混排段落。我们测试一下 English words and numbers like 12345 in the middle of Chinese sentences，以及一些常见的全角标点符号：比如“双引号”、（括号）和——破折号、……省略号，看看标点挤压和中英文字距是否看起来舒适自然。
+春水初生，春林初盛。A quiet paragraph can move naturally between 中文、English words、numbers such as 2026 and punctuation such as `()`, `[]`, `—` and `…`.
 
-## 2. 字体样式测试
+Daybook 的默认字体栈仍然保留系统字体作为回退，因此即使某个字符不在首选字体中，也应由浏览器选择可用字形继续显示。
 
-这里测试基本的 Markdown 文本样式。目前我们只引入了 Regular 字重，所以这里的效果应该是浏览器通过算法**合成**（Faux Bold / Faux Italic）的：
-* 这是**加粗的霞鹜文楷文本**。
-* 这是*斜体的霞鹜文楷文本*。
-* 这是***加粗斜体的霞鹜文楷文本***。
+### 常见强调
 
-## 3. 引用块测试
+这里有 **加粗文本**、*斜体文本*、***加粗斜体***、~~删除线~~，以及 Obsidian 风格的 ==高亮文本==。
 
-以下是一个引用块，用于确认普通引用仍然使用霞鹜文楷，而不会变成等宽字体：
+行内代码使用等宽字体，例如 `daybook build`、`const value = a !== b` 和 `user?.profile ?? null`。
 
-> 这里是一段普通的引用文字。
-> 落霞与孤鹜齐飞，秋水共长天一色。
-> 
-> 在引用块中也可以嵌套代码，例如行内代码 `console.log("Hello")`，或者代码块：
-> ```javascript
-> // 引用内的代码块也应当使用 Maple Mono CN
-> const arrow = (x) => x * 2;
-> ```
+> 好的排版并不要求每个元素都引人注目。正文、代码、引用和元数据各自承担清晰的层级即可。
 
->```
-> all class
-> ultra suffix
->```
+## 列表与表格
 
-> `all class , ultra suffix`
+- 正文：LXGW WenKai Screen
+- 代码：Maple Mono CN
+- 文章元数据：Cormorant Garamond Meta
+- Logo：Daybook Fraunces
+- 英文签名：Daybook Allura
+- 图标：Material Symbols Rounded
 
-## 4. 行内代码与代码块测试
+| 内容 | 主要字体角色 | 目的 |
+| --- | --- | --- |
+| 正文与 UI | LXGW WenKai Screen | 长文阅读与界面文本 |
+| 行内代码与代码块 | Maple Mono CN | 等宽排版与代码连字 |
+| 日期等元数据 | Cormorant Garamond Meta | 与正文形成轻微层级差 |
+| Logo / 签名 | 装饰字体 | 品牌与签名元素 |
+| 操作图标 | Material Symbols Rounded | 界面图标 |
 
-正文中的行内代码示例：`const value = a !== b && user?.name`。行内代码应当使用 Maple Mono CN，并且由于我们开启了连字特性，`!==` 和 `?.` 可能会渲染为紧凑的形式。
+## 代码块
 
-`all class . ultra suffix`
-
-### JavaScript / TypeScript 连字测试
+带语言标记的 fenced code block 会使用 Chroma 进行语法高亮，并带有复制按钮。
 
 ```typescript
-// Maple Mono CN 连字特性测试
-function evaluateConditions(a: number, b: number, user: any) {
-  // 比较运算符
-  if (a == b || a === b) return;
-  if (a != b && a !== b) return;
-  if (a <= b || a >= b) return;
+type Article = {
+  title: string;
+  published: boolean;
+};
 
-  // 逻辑与可选链
-  const valid = user?.profile ?? null;
-  const isActive = (valid !== null) && (a > 0 || b < 0);
+const article: Article = {
+  title: "A small Daybook example",
+  published: true,
+};
 
-  // 箭头函数
-  const process = (x: number) => {
-    return x * 2;
-  };
-  
-  // HTML/XML 闭合与特殊组合
-  // <!-- 这是一段注释 -->
-  // </tag>
-
-  return process(a) -> result;
-}
+const label = article.published ? "published" : "draft";
+console.log(label);
 ```
 
-### Go 代码块测试 (Chroma 高亮)
+Go 代码同样适用：
 
 ```go
 package main
@@ -84,56 +78,22 @@ package main
 import "fmt"
 
 func main() {
-    // 这是一个 Go 语言代码块，用于测试 Chroma 的语法高亮
-    message := "Daybook Typography Test"
-    
-    for i := 0; i < 3; i++ {
-        if i != 1 {
-            fmt.Printf("%s: %d\n", message, i)
-        }
+    for i := 1; i <= 3; i++ {
+        fmt.Printf("note %d\n", i)
     }
 }
 ```
 
-### 英文样张
+没有语言标记的代码块仍会保持等宽排版：
 
-在等宽环境下，以下是一组英文字母样张：
 ```text
-all class ultra suffix italic calt ligature
-0123456789 O0 Il1
+0123456789
+Il1 O0
+=> !== <= >= ?? ?.
 ```
 
-## 5. 表格与列表测试
+## 富文本不止是字体
 
-### Markdown 表格
+排版还包括引用、表格、任务列表、脚注、Callout、折叠块、图片图注、数学公式与 Mermaid 等内容结构。完整写法见 [[markdown-syntax|Markdown、Obsidian 与 Daybook 语法]]。
 
-| 字体用途 | 使用字体 | 回退字体 (Fallback) |
-| :--- | :--- | :--- |
-| 普通正文 | 霞鹜文楷 | PingFang SC |
-| UI 元素 | 霞鹜文楷 | PingFang SC |
-| 代码块与等宽 | Maple Mono CN | Maple Mono |
-
-### 各类列表
-
-**无序列表：**
-* 第一项测试
-* 第二项测试包含 `inline code`
-* 第三项测试
-
-**有序列表：**
-1. 第一步
-2. 第二步
-3. 第三步
-
-**任务列表：**
-- [x] 完成字体切片与复制
-- [x] 更新全局 CSS Token 变量
-- [ ] 人工检查当前页面的渲染效果
-
----
-
-**测试说明（请人工核对）：**
-1. 普通正文、引用、列表、表格应使用 **霞鹜文楷**。
-2. 行内代码、代码块、Chroma 高亮应使用 **Maple Mono CN**。
-3. `liga` / `calt` 连字效果（如 `=>`, `!==`）只应该在代码/等宽区域生效，不应该影响整篇正文。
-4. 页面左侧的 Slogan（中文草书）、昵称（英文草书）、Logo 签名、以及侧边栏的 Material Symbols 图标不属于本测试页面范围，应保持原有字体不受影响。
+如果需要查看更密集的扩展组件示例，可继续阅读 [[Markdown扩展语法测试页|Markdown 扩展语法测试页]]。

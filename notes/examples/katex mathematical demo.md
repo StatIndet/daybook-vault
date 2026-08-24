@@ -8,7 +8,7 @@ tags:
 summary: Test Daybook’s rendering support for KaTeX mathematical formulas, the align environment, matrices, Greek letters, and common mathematical symbols.
 draft: false
 math: true
-toc: true
+toc: false
 lang: en
 i18n_key: katex-mathematical-demo
 ---

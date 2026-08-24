@@ -3,3 +3,5 @@
 # but other Obsidian user/workspace settings stay private.
 **/.obsidian/*
 !**/.obsidian/app.json
+
+/public/

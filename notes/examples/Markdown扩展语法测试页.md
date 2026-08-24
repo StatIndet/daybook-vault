@@ -22,16 +22,16 @@ lang: zh-CN
 ### 语法
 
 ```
-![图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+![图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+![_图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 ```
 
 ### 效果
 
-![图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+![图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
-![_图片描述](https://image.radishzz.cc/image/gallery/06.webp)
+![_图片描述](https://static.daybook.page/picture/06_27TtR7.webp)
 
 ## 提示块
 
@@ -85,6 +85,30 @@ lang: zh-CN
 这是一个自定义标题的提示块。
 :::
 
+### Obsidian 风格
+
+```markdown
+> [!note]
+> A short note.
+
+> [!warning]- 默认折叠
+> 点击标题展开。
+
+> [!tip]+ 默认展开
+> 仍然可以手动收起。
+```
+
+实际效果：
+
+> [!note]
+> A short note.
+
+> [!warning]- 默认折叠
+> 点击标题展开。
+
+> [!tip]+ 默认展开
+> 仍然可以手动收起。
+
 ## 折叠块
 
 使用三冒号语法 `:::fold[title]`，即可创建折叠块。点击标题可以展开或收起。
@@ -137,22 +161,22 @@ graph TD;
 
 ```
 :::gallery
-![羊驼](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![转头](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![对视](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![小羊驼](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![可爱捏](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+![羊驼](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![转头](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![对视](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![小羊驼](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![可爱捏](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
 ```
 
 ### 效果
 
 :::gallery
-![羊驼](https://image.radishzz.cc/image/gallery/sheep-1.jpg)
-![转头](https://image.radishzz.cc/image/gallery/sheep-2.jpg)
-![对视](https://image.radishzz.cc/image/gallery/sheep-3.jpg)
-![小羊驼](https://image.radishzz.cc/image/gallery/sheep-4.jpg)
-![可爱捏](https://image.radishzz.cc/image/gallery/sheep-5.jpg)
+![羊驼](https://static.daybook.page/picture/sheep-1_LogLD.webp)
+![转头](https://static.daybook.page/picture/sheep-2_Z1FCbKx.webp)
+![对视](https://static.daybook.page/picture/sheep-3_Vxtvd.webp)
+![小羊驼](https://static.daybook.page/picture/sheep-4_Z1vsY1X.webp)
+![可爱捏](https://static.daybook.page/picture/sheep-5_16GGeM.webp)
 :::
 
 ## GitHub 仓库
@@ -162,12 +186,12 @@ graph TD;
 ### 语法
 
 ```
-::github{repo="radishzzz/astro-theme-retypeset"}
+::github{repo="StatIndet/daybook"}
 ```
 
 ### 效果
 
-::github{repo="radishzzz/astro-theme-retypeset"}
+::github{repo="StatIndet/daybook"}
 
 ## 视频
 

@@ -1,27 +1,37 @@
 ---
 title: Thoughts in a Quiet Night
 date: 2026-06-25
+updated: 2026-08-23
 lang: en
 i18n_key: thoughts-in-a-quiet-night
 tags:
   - Poetry
   - Tang-Poetry
   - Li-Bai
-summary: summary A short English rendering of Li Bai’s famous poem about moonlight, homesickness, and a traveler’s quiet longing.
+summary: A short English rendering of Li Bai’s poem, paired with the Chinese original to demonstrate Daybook’s bilingual article model.
 draft: false
+listed: true
 math: false
 pin: false
 comment: true
-updated: 2026-06-25
+toc: false
 ---
-Before my bed, the moonlight gleams; 
 
-I wonder if it is frost upon the ground. 
+Before my bed, the moonlight gleams;\
+I wonder if it is frost upon the ground.\
+I raise my head and gaze at the bright moon;\
+I lower my head and think of home.
 
-I raise my head and gaze at the bright moon; 
+## About this example
 
-I lower my head and think of home. 
-## Note 
-This is not meant to be a literal academic translation. It is a lightweight English rendering for testing Daybook’s bilingual article system. This post should share the same `i18n_key` as the Chinese version. In the English environment, the list page should display this English title, summary, and tags. However, because `listed: false`, it should not appear as a second duplicate article.
+This file and its Chinese counterpart share:
 
-> This article is used to test bilingual (Chinese and English) support. Click the Chinese/English toggle next to the `views` count to switch the language of the article content.
+```yaml
+i18n_key: thoughts-in-a-quiet-night
+```
+
+The two files keep their own title, summary, tags, body, and language, while Daybook groups them as one article. The article metadata can then offer the other language without duplicating the entry as two unrelated posts.
+
+For a bilingual pair, use exactly one `zh-CN` version and one `en` version for the same `i18n_key`. Keeping fields such as `date` and `listed` consistent between the two versions makes the result easier to reason about.
+
+See [[frontmatter|Article frontmatter]] for the complete rule set. For a single-language article, compare the English-only Shakespeare sample.

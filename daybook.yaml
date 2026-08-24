@@ -1,0 +1,49 @@
+site:
+  title: "My Daybook"
+  url: "http://localhost:1313"
+  startedAt: "2024-01-01"
+  copyright: "© 2026 Your Name"
+  # Set a path relative to the vault root to use a custom favicon. Empty uses the built-in Daybook favicon.
+  favicon: ""
+
+profile:
+  author:
+    name: "佚名"
+    nameEn: "Author"
+    logoText: "Author"
+    avatar: ""
+    aboutUrl: "/about"
+  social: []
+  # - type: github
+  #   url: "https://github.com/your-name"
+  # - type: youtube
+  #   url: "https://youtube.com/@your-channel"
+
+  slogan:
+    en: "A personal space for thoughts and notes."
+    zh: "记录思考与笔记的个人空间。"
+
+seo:
+  homeTitle:
+    en: "My Daybook"
+    zh: "我的 Daybook"
+  homeDescription:
+    en: "Welcome to my personal Daybook."
+    zh: "欢迎来到我的个人 Daybook。"
+
+comment:
+  enabled: false
+  provider: "waline"
+  waline:
+    serverURL: ""
+    lang: "zh-CN"
+    pageSize: 10
+    commentSorting: "latest"
+    search: false
+    imageUploader: false
+
+stats:
+  enabled: true
+
+share:
+  text: '「{Title}」'
