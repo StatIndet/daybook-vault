@@ -74,7 +74,7 @@ share:
 
 ## site
 
-## **title**
+### `title`
 
 站点名称。为空时使用 `Daybook`。
 

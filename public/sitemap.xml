@@ -148,6 +148,9 @@
     <loc>http://localhost:1313/en/tags/KaTeX/</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/en/tags/Li-Bai/</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/en/tags/Markdown/</loc>
   </url>
   <url>
@@ -167,6 +170,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/en/tags/Sonnet/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en/tags/Tang-Poetry/</loc>
   </url>
   <url>
     <loc>http://localhost:1313/en/tags/Test/</loc>

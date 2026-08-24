@@ -214,6 +214,14 @@
         {
           "id": "tag:poetry",
           "title": "Poetry"
+        },
+        {
+          "id": "tag:tang-poetry",
+          "title": "Tang-Poetry"
+        },
+        {
+          "id": "tag:li-bai",
+          "title": "Li-Bai"
         }
       ],
       "date": "2026-06-25",
