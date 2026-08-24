@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-      "id": "",
+      "id": "single:zh-CN:daybook-yaml",
       "title": "daybook.yaml 配置",
       "url": "/en/notes/daybook-yaml/",
       "tags": [
@@ -19,11 +19,11 @@
         }
       ],
       "date": "2026-08-23",
-      "degree": 4,
+      "degree": 3,
       "exists": true
     },
     {
-      "id": "",
+      "id": "single:zh-CN:frontmatter",
       "title": "文章 Frontmatter",
       "url": "/en/notes/frontmatter/",
       "tags": [
@@ -45,7 +45,7 @@
       "exists": true
     },
     {
-      "id": "",
+      "id": "single:zh-CN:obsidian-media-local-remote-test",
       "title": "附件与远程媒体",
       "url": "/en/notes/obsidian-media-local-remote-test/",
       "tags": [
@@ -75,11 +75,11 @@
         }
       ],
       "date": "2026-06-29",
-      "degree": 4,
+      "degree": 2,
       "exists": true
     },
     {
-      "id": "",
+      "id": "single:zh-CN:markdown-syntax",
       "title": "Markdown、Obsidian 与 Daybook 语法",
       "url": "/en/notes/markdown-syntax/",
       "tags": [
@@ -97,11 +97,11 @@
         }
       ],
       "date": "2026-06-28",
-      "degree": 4,
+      "degree": 8,
       "exists": true
     },
     {
-      "id": "",
+      "id": "single:en:Shakespeare",
       "title": "Shall I Compare Thee to a Summer’s Day?",
       "url": "/en/notes/Shakespeare/",
       "tags": [
@@ -119,11 +119,11 @@
         }
       ],
       "date": "2026-06-25",
-      "degree": 4,
+      "degree": 2,
       "exists": true
     },
     {
-      "id": "",
+      "id": "single:zh-CN:typography-test",
       "title": "排版、字体与富文本",
       "url": "/en/notes/typography-test/",
       "tags": [
@@ -141,7 +141,7 @@
         }
       ],
       "date": "2026-06-23",
-      "degree": 4,
+      "degree": 2,
       "exists": true
     },
     {
@@ -181,11 +181,11 @@
         }
       ],
       "date": "2026-06-16",
-      "degree": 1,
+      "degree": 2,
       "exists": true
     },
     {
-      "id": "",
+      "id": "single:zh-CN:实践论",
       "title": "实践论",
       "url": "/en/notes/实践论/",
       "tags": [
@@ -203,7 +203,7 @@
         }
       ],
       "date": "1937-07-01",
-      "degree": 4,
+      "degree": 0,
       "exists": true
     },
     {
@@ -223,30 +223,75 @@
   ],
   "links": [
     {
-      "source": "",
+      "source": "single:zh-CN:daybook-yaml",
+      "target": "single:zh-CN:frontmatter",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:daybook-yaml",
+      "target": "single:zh-CN:markdown-syntax",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:daybook-yaml",
+      "target": "single:zh-CN:obsidian-media-local-remote-test",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:frontmatter",
+      "target": "single:en:Shakespeare",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:obsidian-media-local-remote-test",
+      "target": "single:zh-CN:markdown-syntax",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:markdown-syntax",
+      "target": "single:zh-CN:frontmatter",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:markdown-syntax",
       "target": "thoughts-in-a-quiet-night",
       "type": "wikilink"
     },
     {
-      "source": "",
+      "source": "single:zh-CN:markdown-syntax",
+      "target": "single:en:Shakespeare",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:markdown-syntax",
+      "target": "single:zh-CN:typography-test",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:markdown-syntax",
       "target": "katex-mathematical-demo",
       "type": "wikilink"
     },
     {
-      "source": "",
+      "source": "single:zh-CN:markdown-syntax",
+      "target": "markdown-extended-demo",
+      "type": "wikilink"
+    },
+    {
+      "source": "single:zh-CN:typography-test",
       "target": "markdown-extended-demo",
       "type": "wikilink"
     },
     {
       "source": "thoughts-in-a-quiet-night",
-      "target": "",
+      "target": "single:zh-CN:frontmatter",
       "type": "wikilink"
     }
   ],
   "meta": {
     "nodeCount": 10,
-    "linkCount": 4,
-    "maxDegree": 4,
-    "defaultScale": 1.75
+    "linkCount": 13,
+    "maxDegree": 8,
+    "layoutDiameter": 3.478505426185218
   }
 }
