@@ -1,1 +1,0 @@
-(function(){function l(t){var e=t.target.closest(".md-gallery");if(e){var r=e.scrollLeft;e.scrollLeft+=t.deltaY,e.scrollLeft!==r&&t.preventDefault()}}document.addEventListener("wheel",l,{passive:!1})})();
