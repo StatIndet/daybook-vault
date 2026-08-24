@@ -63,11 +63,10 @@ Daybook 对附件采用一条简单的规则：**Vault 中受支持的媒体文�
 
 ### 音频
 
-```markdown
-![[attachments/music/audio_JayChou-ai-zai-xi-yuan-qian.FLAC]]
-```
 
-这个示例文件超过 25 MiB。Daybook 会提示它可能超过 Cloudflare Pages 的单文件限制，因此较大的音频或视频更适合放在对象存储或其他静态文件服务中，再使用远程 URL。
+![[Justin Timberlake; Carey Mulligan; Stark Sands - Five Hundred Miles.flac]]
+
+如果文件超过 25 MiB。Daybook 会提示它可能超过 Cloudflare Pages 的单文件限制，因此较大的音频或视频更适合放在对象存储或其他静态文件服务中，再使用远程 URL。
 
 ## 远程媒体
 
@@ -118,22 +117,22 @@ Daybook 对附件采用一条简单的规则：**Vault 中受支持的媒体文�
 `::music` 使用独立的 Daybook 音乐播放器。构建阶段会尝试读取远程音频的元数据；如果需要，也可以显式覆盖标题、艺术家或封面。
 
 ```markdown
-::music{url="https://static.daybook.page/music/474667755.flac" loop="true"}
+::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" loop="true"}
 ```
 
-::music{url="https://static.daybook.page/music/474667755.flac" loop="true"}
+::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" loop="true"}
 
 可选字段为 `title`、`artist`、`cover` 与 `loop`。`cover` 也应使用可访问的远程 URL。
 
 手动覆盖元数据：
 
 ```markdown
-::music{url="https://static.daybook.page/music/474667755.flac" title="Example Track" artist="Example Artist" cover="https://static.daybook.page/picture/shelby.jpg"}
+::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" title="Example Track" artist="Example Artist" cover="https://static.daybook.page/picture/shelby.jpg"}
 ```
 
 实际效果：
 
-::music{url="https://static.daybook.page/music/474667755.flac" title="Example Track" artist="Example Artist" cover="https://static.daybook.page/picture/shelby.jpg"}
+::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" title="Example Track" artist="Example Artist" cover="https://static.daybook.page/picture/shelby.jpg"}
 
 ## 怎样选择
 

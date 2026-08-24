@@ -11,6 +11,7 @@ math: true
 toc: false
 lang: en
 i18n_key: katex-mathematical-demo
+pin: true
 ---
 KaTeX is a cross-browser JavaScript library that displays mathematical notation in web browsers. It puts special emphasis on being fast and easy to use. It was initially developed by Khan Academy, and became one of the top five trending projects on GitHub.
 
