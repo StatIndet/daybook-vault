@@ -3,11 +3,13 @@
   "name": "daybook",
   "main": "worker/index.js",
   "compatibility_date": "2026-08-24",
+
   "assets": {
     "directory": "public",
     "binding": "ASSETS",
     "run_worker_first": ["/api/*"]
   },
+
   "d1_databases": [
     {
       "binding": "DB",
@@ -15,9 +17,11 @@
       "database_id": "00000000-0000-0000-0000-000000000000"
     }
   ],
+
   "observability": {
     "enabled": true
   },
+
   "durable_objects": {
     "bindings": [
       {
@@ -26,10 +30,11 @@
       }
     ]
   },
+
   "migrations": [
     {
       "tag": "v1",
-      "new_classes": ["SitePresence"]
+      "new_sqlite_classes": ["SitePresence"]
     }
   ]
 }
