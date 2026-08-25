@@ -63,14 +63,16 @@ Daybook 对附件采用一条简单的规则：**Vault 中受支持的媒体文�
 
 ### 音频
 
-
+```
 ![[Justin Timberlake; Carey Mulligan; Stark Sands - Five Hundred Miles.flac]]
-
+```
 如果文件超过 25 MiB。Daybook 会提示它可能超过 Cloudflare Pages 的单文件限制，因此较大的音频或视频更适合放在对象存储或其他静态文件服务中，再使用远程 URL。
 
 ## 远程媒体
 
 远程资源不需要位于 Cloudflare R2。任何浏览器可访问的 `http://` 或 `https://` 媒体 URL 都可以作为来源；R2、S3、对象存储、自建静态站点或其他 CDN 只是不同的托管方式。
+
+> **版权与来源说明：** 本节中的音频、音乐与视频仅用于展示 Daybook 的远程媒体语法和播放器效果。相关作品、录音及视频版权归原作者、表演者、出版方、平台投稿者及其他权利人所有。文中链接指向官方流媒体或原始投稿页面；将媒体文件自行托管于对象存储或 CDN 并不自动获得再分发授权。公开部署时，请仅使用你拥有权利、已获授权或可合法公开分发的媒体。
 
 ### 图片
 
@@ -100,15 +102,19 @@ Daybook 对附件采用一条简单的规则：**Vault 中受支持的媒体文�
 
 ::audio{url="https://static.daybook.page/audio/JayChou-ai-zai-xi-yuan-qian.FLAC"}
 
+> **作品来源：** 周杰伦《[爱在西元前](https://open.spotify.com/track/36okEwTBuhG9dIOqCd0B2P)》（《范特西》，2001）。此处仅作为远程音频嵌入示例，作品与录音版权归相关权利人所有。
+
 `::audio` 还支持 `caption`、`width`、`align`、`autoplay`、`muted` 与 `loop`。
 
 ### 视频
 
 ```markdown
-::video{url="https://static.daybook.page/video/1130650335-1-208.mp4" width="720" align="center"}
+::video{url="https://static.daybook.page/video/yellow.mp4" width="720" align="center"}
 ```
 
-::video{url="https://static.daybook.page/video/1130650335-1-208.mp4" width="720" align="center"}
+::video{url="https://static.daybook.page/video/yellow.mp4" width="720" align="center"}
+
+> **来源：** Bilibili 视频《[22年前他花10分钟写的《Yellow》，我一听就是20年](https://www.bilibili.com/video/BV12P411u7en/)》。此处仅作为远程视频嵌入示例；视频内容、音乐及其他素材的权利归原投稿者及相关权利人所有。
 
 `::video` 还支持 `caption`、`height`、`poster`、`autoplay`、`muted` 与 `loop`。
 
@@ -117,10 +123,12 @@ Daybook 对附件采用一条简单的规则：**Vault 中受支持的媒体文�
 `::music` 使用独立的 Daybook 音乐播放器。构建阶段会尝试读取远程音频的元数据；如果需要，也可以显式覆盖标题、艺术家或封面。
 
 ```markdown
-::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" loop="true"}
+::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" loop="true" title="Five Hundred Miles" artist="Justin Timberlake Carey Mulligan Stark Sands"}
 ```
 
-::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" loop="true"}
+::music{url="https://static.daybook.page/music/Five-Hundred-Miles.flac" loop="true" title="Five Hundred Miles" artist="Justin Timberlake Carey Mulligan Stark Sands"}
+
+> **作品来源：** Justin Timberlake、Carey Mulligan、Stark Sands《[Five Hundred Miles](https://open.spotify.com/track/22hK03D93xGRYxJIWM2mST)》（*Inside Llewyn Davis: Original Soundtrack Recording*，2013）。此处仅作为 `::music` 播放器示例，作品与录音版权归相关权利人所有。
 
 可选字段为 `title`、`artist`、`cover` 与 `loop`。`cover` 也应使用可访问的远程 URL。
 
