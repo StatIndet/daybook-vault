@@ -243,7 +243,185 @@ export default {
         return new Response("Internal Server Error", { status: 500 });
       }
     }
+    
+    // GET /api/presence
+    if (url.pathname === '/api/presence') {
+      if (request.headers.get("Upgrade") !== "websocket") {
+        return new Response("Expected Upgrade: websocket", { status: 426 });
+      }
+      
+      const rawPath = url.searchParams.get("path") || "/";
+      const normalizedPath = normalizePath(rawPath);
+
+      // Bot check
+      const ua = (request.headers.get("user-agent") || "").toLowerCase();
+      if (ua.includes("bot") || ua.includes("crawler") || ua.includes("spider") || ua.includes("headless")) {
+        return new Response("OK", { status: 200 }); 
+      }
+
+      // Basic origin check
+      const origin = request.headers.get("origin");
+      if (origin) {
+        if (origin !== url.origin) {
+          return new Response("Forbidden Origin", { status: 403 });
+        }
+      }
+      
+      // Visitor cookie logic
+      let visitorToken = "";
+      const cookieHeader = request.headers.get("Cookie") || "";
+      const cookies = cookieHeader.split(";").map(c => c.trim());
+      for (const c of cookies) {
+        if (c.startsWith("daybook_visitor=")) {
+          visitorToken = c.substring("daybook_visitor=".length);
+          break;
+        }
+      }
+      
+      if (!visitorToken) {
+        // Fallback for presence if cookie isn't set yet (or user blocked it)
+        // We'll generate a random UUID just for this session so presence works minimally
+        visitorToken = crypto.randomUUID();
+      }
+
+      const salt = env.STATS_SALT || "daybook-default-salt";
+      const visitorHash = await hashVisitorToken(visitorToken, salt);
+
+      const id = env.SITE_PRESENCE.idFromName("global");
+      const obj = env.SITE_PRESENCE.get(id);
+
+      // Create a new request to pass headers to the DO
+      const doRequest = new Request(request.url, request);
+      doRequest.headers.set("X-Visitor-Hash", visitorHash);
+      doRequest.headers.set("X-Initial-Path", normalizedPath);
+
+      return obj.fetch(doRequest);
+    }
 
     return new Response("Not Found", { status: 404 });
   }
 };
+
+export class SitePresence {
+  constructor(state, env) {
+    this.state = state;
+    this.env = env;
+  }
+
+  async fetch(request) {
+    if (request.headers.get("Upgrade") !== "websocket") {
+      return new Response("Expected Upgrade: websocket", { status: 426 });
+    }
+
+    const visitorHash = request.headers.get("X-Visitor-Hash");
+    let currentPath = request.headers.get("X-Initial-Path") || "/";
+    currentPath = normalizePath(currentPath);
+
+    const webSocketPair = new WebSocketPair();
+    const [client, server] = Object.values(webSocketPair);
+
+    this.state.acceptWebSocket(server);
+    server.serializeAttachment({ visitorHash, currentPath });
+
+    this.scheduleBroadcast();
+
+    return new Response(null, {
+      status: 101,
+      webSocket: client,
+    });
+  }
+
+  getPresenceStats() {
+    const siteVisitors = new Set();
+    const pageVisitors = new Map();
+
+    for (const ws of this.state.getWebSockets()) {
+      const attachment = ws.deserializeAttachment();
+      if (!attachment) continue;
+      const { visitorHash, currentPath } = attachment;
+
+      siteVisitors.add(visitorHash);
+
+      if (!pageVisitors.has(currentPath)) {
+        pageVisitors.set(currentPath, new Set());
+      }
+      pageVisitors.get(currentPath).add(visitorHash);
+    }
+
+    const pageViewers = {};
+    for (const [path, set] of pageVisitors.entries()) {
+      pageViewers[path] = set.size;
+    }
+
+    return {
+      siteViewers: siteVisitors.size,
+      pageViewers
+    };
+  }
+
+  broadcastUpdate() {
+    const stats = this.getPresenceStats();
+    const siteViewers = stats.siteViewers;
+    const messageCache = new Map();
+
+    for (const ws of this.state.getWebSockets()) {
+      const attachment = ws.deserializeAttachment();
+      if (!attachment) continue;
+      
+      const currentPath = attachment.currentPath;
+      let msg = messageCache.get(currentPath);
+      
+      if (!msg) {
+        msg = JSON.stringify({
+          type: "presence",
+          path: currentPath,
+          pageViewers: stats.pageViewers[currentPath] || 0,
+          siteViewers: siteViewers
+        });
+        messageCache.set(currentPath, msg);
+      }
+      
+      try {
+        ws.send(msg);
+      } catch (e) {
+        // ignore send error
+      }
+    }
+  }
+
+  scheduleBroadcast() {
+    if (!this.broadcastPending) {
+      this.broadcastPending = true;
+      // Use setTimeout for debouncing slightly
+      setTimeout(() => {
+        this.broadcastPending = false;
+        this.broadcastUpdate();
+      }, 50);
+    }
+  }
+
+  webSocketMessage(ws, message) {
+    try {
+      const data = JSON.parse(message);
+      if (data.type === "navigate" && data.path) {
+        let newPath = normalizePath(data.path);
+        const attachment = ws.deserializeAttachment();
+        if (attachment) {
+          attachment.currentPath = newPath;
+          ws.serializeAttachment(attachment);
+          this.scheduleBroadcast();
+        }
+      }
+    } catch (e) {
+      // ignore parsing errors
+    }
+  }
+
+  webSocketClose(ws, code, reason, wasClean) {
+    this.scheduleBroadcast();
+  }
+
+  webSocketError(ws, error) {
+    this.scheduleBroadcast();
+  }
+}

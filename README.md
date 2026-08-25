@@ -8,8 +8,9 @@ A starter vault and template repository for [Daybook](https://github.com/StatInd
 
 This template is configured for Cloudflare Workers Builds. Click the button above to automatically:
 1. Clone this repository to your GitHub account.
-2. Provision a D1 Database for page-view statistics.
-3. Build the static site and deploy the API worker to Cloudflare.
+2. Provision a D1 Database (for page-view statistics).
+3. Provision a Durable Object namespace (for realtime viewing presence).
+4. Build the static site and deploy the API worker to Cloudflare.
 
 Subsequent git pushes to your repository will automatically trigger a new deployment.
 

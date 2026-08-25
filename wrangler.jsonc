@@ -17,5 +17,19 @@
   ],
   "observability": {
     "enabled": true
-  }
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SITE_PRESENCE",
+        "class_name": "SitePresence"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["SitePresence"]
+    }
+  ]
 }
