@@ -48,14 +48,25 @@ echo "Detected platform: ${OS}_${ARCH}"
 # Determine URLs
 REPO="StatIndet/daybook"
 if [ "$VERSION" = "latest" ]; then
-    API_URL="https://api.github.com/repos/$REPO/releases/latest"
-    # Fetch latest version tag without jq to keep dependencies minimal
-    TAG=$(curl -sSL "$API_URL" | grep '"tag_name":' | head -n 1 | sed -E 's/.*"([^"]+)".*/\1/')
-    if [ -z "$TAG" ]; then
-        echo "Failed to fetch latest Daybook release tag."
+    echo "Resolving latest Daybook release..."
+    LATEST_URL=$(
+        curl -fsSL \
+            -o /dev/null \
+            -w '%{url_effective}' \
+            "https://github.com/$REPO/releases/latest"
+    ) || {
+        echo "ERROR: Failed to resolve latest Daybook release."
+        exit 1
+    }
+
+    VERSION="${LATEST_URL##*/}"
+
+    if [ -z "$VERSION" ] || [ "$VERSION" = "latest" ]; then
+        echo "ERROR: Failed to resolve latest Daybook release tag."
         exit 1
     fi
-    VERSION="$TAG"
+
+    echo "Resolved latest Daybook release: $VERSION"
 fi
 
 DOWNLOAD_BASE="https://github.com/$REPO/releases/download/$VERSION"
