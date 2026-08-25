@@ -1,6 +1,6 @@
 site:
   title: "My Daybook"
-  url: "http://localhost:1313"
+  url: ""
   startedAt: "2024-01-01"
   copyright: "© 2026 Your Name"
   # Set a path relative to the vault root to use a custom favicon. Empty uses the built-in Daybook favicon.

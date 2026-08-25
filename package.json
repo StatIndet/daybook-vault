@@ -1,0 +1,21 @@
+{
+  "name": "daybook",
+  "private": true,
+  "scripts": {
+    "daybook:setup": "bash scripts/setup-daybook.sh",
+    "build": "npm run daybook:setup && ./.daybook/bin/daybook build",
+    "db:migrate": "wrangler d1 migrations apply DB --remote",
+    "deploy": "npm run db:migrate && wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "cloudflare": {
+    "bindings": {
+      "DB": {
+        "description": "D1 database used for Daybook page-view statistics."
+      }
+    }
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
