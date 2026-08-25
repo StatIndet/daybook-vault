@@ -1,17 +1,17 @@
 /**
- * Normalize path to be consistent with daybook's frontend logic
+ * Normalize path and decode URI for consistent matching (especially for CJK)
  */
 function normalizePath(p) {
   try {
     const url = new URL(p, "http://localhost");
-    let pathname = url.pathname;
+    let pathname = decodeURI(url.pathname);
     pathname = pathname.replace(/\/+/g, '/');
     if (pathname !== '/' && !pathname.endsWith('/')) {
       pathname += '/';
     }
     return pathname;
   } catch {
-    let pathname = p.split('?')[0].split('#')[0];
+    let pathname = decodeURI(p.split('?')[0].split('#')[0]);
     pathname = pathname.replace(/\/+/g, '/');
     if (!pathname.startsWith('/')) pathname = '/' + pathname;
     if (pathname !== '/' && !pathname.endsWith('/')) {
@@ -21,26 +21,70 @@ function normalizePath(p) {
   }
 }
 
+let cachedRoutes = null;
+let routesCacheTime = 0;
+
 /**
- * Basic allowlist to avoid tracking irrelevant assets if requested directly
+ * Dynamic whitelist using routes.json from ASSETS binding
  */
-function isWhitelisted(p) {
+async function isWhitelisted(env, request, p) {
   if (p === '/') return true;
   if (p === '/notes/') return true;
   if (p === '/archive/') return true;
   if (p === '/graph/') return true;
   if (p === '/about/') return true;
+  if (p === '/en/') return true;
+  if (p === '/en/notes/') return true;
+  if (p === '/en/archive/') return true;
+  if (p === '/en/graph/') return true;
+  if (p === '/en/about/') return true;
+
+  if (Date.now() - routesCacheTime > 60000 || !cachedRoutes) {
+    try {
+      const url = new URL(request.url);
+      const res = await env.ASSETS.fetch(new URL('/routes.json', url.origin));
+      if (res.ok) {
+        cachedRoutes = await res.json();
+        routesCacheTime = Date.now();
+      }
+    } catch {
+      // fallback
+    }
+  }
+
+  if (cachedRoutes && cachedRoutes.length > 0) {
+    if (cachedRoutes.includes(p)) return true;
+    
+    // tags fallback
+    if (p.startsWith('/tags/') || p.startsWith('/en/tags/')) return true;
+    
+    return false;
+  }
+
+  // Fallback if routes.json fails
   if (p.startsWith('/notes/') && p.length > '/notes/'.length) return true;
+  if (p.startsWith('/en/notes/') && p.length > '/en/notes/'.length) return true;
+  if (p.startsWith('/tags/') && p.length > '/tags/'.length) return true;
+  if (p.startsWith('/en/tags/') && p.length > '/en/tags/'.length) return true;
+  if (p.startsWith('/en/') && p.length > '/en/'.length) return true;
+  
   return false;
 }
 
 /**
- * Hash visitor ID to preserve privacy
+ * Hash visitor token using HMAC-SHA256
  */
-async function hashVisitorId(id, salt) {
-  const msgUint8 = new TextEncoder().encode(id + salt);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
+async function hashVisitorToken(token, salt) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    enc.encode(salt),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const signature = await crypto.subtle.sign("HMAC", key, enc.encode(token));
+  const hashArray = Array.from(new Uint8Array(signature));
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
@@ -48,6 +92,50 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // GET /api/stats
+    if (url.pathname === '/api/stats') {
+      if (request.method !== 'GET') {
+        return new Response("Method Not Allowed", { status: 405 });
+      }
+      
+      const rawPath = url.searchParams.get("path");
+      if (!rawPath) {
+        return new Response("Bad Request", { status: 400 });
+      }
+
+      const normalizedPath = normalizePath(rawPath);
+      if (!await isWhitelisted(env, request, normalizedPath)) {
+        return new Response("Forbidden", { status: 403 });
+      }
+
+      try {
+        const getPage = env.DB.prepare(`SELECT views FROM page_stats WHERE path = ?`).bind(normalizedPath);
+        const getSite = env.DB.prepare(`SELECT value FROM site_stats WHERE key = 'total_views'`);
+        const getVisitors = env.DB.prepare(`SELECT count(*) as count FROM visitors`);
+
+        const results = await env.DB.batch([getPage, getSite, getVisitors]);
+        const pageViews = results[0].results?.[0]?.views || 0;
+        const totalViews = results[1].results?.[0]?.value || 0;
+        const visitors = results[2].results?.[0]?.count || 0;
+
+        return new Response(JSON.stringify({
+          path: normalizedPath,
+          pageViews,
+          totalViews,
+          visitors
+        }), {
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=60"
+          }
+        });
+      } catch (err) {
+        console.error("stats api error", err);
+        return new Response("Internal Server Error", { status: 500 });
+      }
+    }
+
+    // POST /api/hit
     if (url.pathname === '/api/hit') {
       if (request.method !== 'POST') {
         return new Response("Method Not Allowed", { status: 405 });
@@ -55,17 +143,51 @@ export default {
 
       try {
         const body = await request.json();
-        if (!body.path || !body.visitorId) {
+        if (!body.path) {
           return new Response("Bad Request", { status: 400 });
         }
 
         const normalizedPath = normalizePath(body.path);
-        if (!isWhitelisted(normalizedPath)) {
+        if (!await isWhitelisted(env, request, normalizedPath)) {
           return new Response("Forbidden", { status: 403 });
         }
 
+        // We use a fallback salt instead of requiring the user to add a secret during one-click deployment.
         const salt = env.STATS_SALT || "daybook-default-salt";
-        const visitorHash = await hashVisitorId(body.visitorId, salt);
+
+        // Basic origin check
+        const origin = request.headers.get("origin");
+        if (origin) {
+          const u = new URL(request.url);
+          if (origin !== u.origin) {
+            return new Response("Forbidden Origin", { status: 403 });
+          }
+        }
+
+        // Bot check
+        const ua = (request.headers.get("user-agent") || "").toLowerCase();
+        if (ua.includes("bot") || ua.includes("crawler") || ua.includes("spider") || ua.includes("headless")) {
+          return new Response("OK", { status: 200 }); // fake success for bots
+        }
+
+        // Visitor cookie logic
+        let visitorToken = "";
+        const cookieHeader = request.headers.get("Cookie") || "";
+        const cookies = cookieHeader.split(";").map(c => c.trim());
+        for (const c of cookies) {
+          if (c.startsWith("daybook_visitor=")) {
+            visitorToken = c.substring("daybook_visitor=".length);
+            break;
+          }
+        }
+
+        let isNewVisitor = false;
+        if (!visitorToken) {
+          visitorToken = crypto.randomUUID();
+          isNewVisitor = true;
+        }
+
+        const visitorHash = await hashVisitorToken(visitorToken, salt);
 
         // Prepare D1 batch
         const updatePage = env.DB.prepare(
@@ -94,7 +216,7 @@ export default {
         const totalViews = results[1].results?.[0]?.value || 1;
         const visitors = results[2].results?.[0]?.count || 1;
 
-        return new Response(JSON.stringify({
+        const res = new Response(JSON.stringify({
           path: normalizedPath,
           pageViews,
           totalViews,
@@ -106,50 +228,18 @@ export default {
           }
         });
 
+        if (isNewVisitor) {
+          // Set-Cookie
+          res.headers.set("Set-Cookie", `daybook_visitor=${visitorToken}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${365 * 24 * 60 * 60}`);
+        }
+
+        return res;
+
       } catch (err) {
+        if (err instanceof SyntaxError) {
+          return new Response("Bad Request", { status: 400 });
+        }
         console.error("hit api error", err);
-        return new Response("Internal Server Error", { status: 500 });
-      }
-    }
-
-    if (url.pathname === '/api/stats') {
-      if (request.method !== 'GET') {
-        return new Response("Method Not Allowed", { status: 405 });
-      }
-      
-      const rawPath = url.searchParams.get("path");
-      if (!rawPath) {
-        return new Response("Bad Request", { status: 400 });
-      }
-
-      const normalizedPath = normalizePath(rawPath);
-      if (!isWhitelisted(normalizedPath)) {
-        return new Response("Forbidden", { status: 403 });
-      }
-
-      try {
-        const getPage = env.DB.prepare(`SELECT views FROM page_stats WHERE path = ?`).bind(normalizedPath);
-        const getSite = env.DB.prepare(`SELECT value FROM site_stats WHERE key = 'total_views'`);
-        const getVisitors = env.DB.prepare(`SELECT count(*) as count FROM visitors`);
-
-        const results = await env.DB.batch([getPage, getSite, getVisitors]);
-        const pageViews = results[0].results?.[0]?.views || 0;
-        const totalViews = results[1].results?.[0]?.value || 0;
-        const visitors = results[2].results?.[0]?.count || 0;
-
-        return new Response(JSON.stringify({
-          path: normalizedPath,
-          pageViews,
-          totalViews,
-          visitors
-        }), {
-          headers: {
-            "Content-Type": "application/json",
-            "Cache-Control": "public, max-age=60"
-          }
-        });
-      } catch (err) {
-        console.error("stats api error", err);
         return new Response("Internal Server Error", { status: 500 });
       }
     }
