@@ -14,6 +14,14 @@ This template is configured for Cloudflare Workers Builds. Click the button abov
 
 Subsequent git pushes to your repository will automatically trigger a new deployment.
 
+## Writing in Obsidian
+
+1. Open Obsidian and select **Open folder as vault**.
+2. Select the `vault/` directory inside this repository.
+3. Write your articles in `vault/notes/` and place attachments in `vault/attachments/`.
+4. The global Daybook configuration remains at the repository root (`daybook.yaml`), which is outside the Obsidian vault.
+5. The built static site is output to `public/`, completely separate from your source files.
+
 ## Local Build
 
 To build the static site locally:

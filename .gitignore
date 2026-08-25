@@ -1,8 +1,10 @@
 # Obsidian
 # Daybook needs app.json for attachmentFolderPath,
 # but other Obsidian user/workspace settings stay private.
-**/.obsidian/*
-!**/.obsidian/app.json
+vault/.obsidian/*
+!vault/.obsidian/app.json
+!vault/.obsidian/templates.json
+!vault/.obsidian/core-plugins.json
 
 /public/
 /node_modules/
