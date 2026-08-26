@@ -1,5 +1,7 @@
 site:
-  title: "My Daybook"
+  name:
+    en: "My Daybook"
+    zh: "我的笔记"
   url: ""
   startedAt: "2024-01-01"
   copyright: "© 2026 Your Name"
@@ -24,9 +26,6 @@ profile:
     zh: "记录思考与笔记的个人空间。"
 
 seo:
-  siteName:
-    en: "My Daybook"
-    zh: "我的笔记"
   homeTitle:
     en: "Notes from My Daybook"
     zh: "我的 Daybook · 随笔与记录"

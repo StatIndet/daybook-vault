@@ -23,7 +23,9 @@ toc: true
 
 ```yaml
 site:
-  title: "My Daybook"
+  name:
+    en: "My Daybook"
+    zh: "我的笔记"
   url: "https://example.com"
   startedAt: "2024-01-01"
   favicon: ""
@@ -45,9 +47,6 @@ profile:
     zh: "记录思考与笔记的个人空间。"
 
 seo:
-  siteName:
-    en: "My Daybook"
-    zh: "我的笔记"
   homeTitle:
     en: "Notes from My Daybook"
     zh: "我的 Daybook · 随笔与记录"
@@ -162,8 +161,7 @@ slogan:
 
 ## `seo`
 
-- **site.title**: Daybook 通用站点标题，也是配置缺省时的后备名称。
-- **seo.siteName**: SEO 网站短名称，用于后缀（例如：文章标题 | 短名称）以及分享时的站点名。
+- **site.name**: Daybook 本地化网站短名称，用于非首页后缀（例如：文章标题 | 短名称）、RSS 以及分享时的站点名。
 - **seo.homeTitle**: 首页专属的完整 SEO 标题。
 - **seo.homeDescription**: 首页的 SEO 描述。
 
