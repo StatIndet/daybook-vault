@@ -24,9 +24,12 @@ profile:
     zh: "记录思考与笔记的个人空间。"
 
 seo:
-  homeTitle:
+  siteName:
     en: "My Daybook"
-    zh: "我的 Daybook"
+    zh: "我的笔记"
+  homeTitle:
+    en: "Notes from My Daybook"
+    zh: "我的 Daybook · 随笔与记录"
   homeDescription:
     en: "Welcome to my personal Daybook."
     zh: "欢迎来到我的个人 Daybook。"
