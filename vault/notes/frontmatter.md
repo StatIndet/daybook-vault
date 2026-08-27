@@ -84,6 +84,10 @@ comment: true
 | `toc` | 否 | 是否显示文章目录。省略时默认为开启。 |
 | `comment` | 否 | 文章级评论开关，用于覆盖站点的评论设置。 |
 
+>[!tip]
+>关于`listed`，举例说明：
+>[hello-daybook](https://daybook.page/notes/hello-daybook/)这篇文章没有被站点地图收录，博客的文章列表里也找不到这篇文章，但是可以直接通过链接的方式进入这篇文章。
+
 > [!note]
 > 当前搜索索引收录所有非 `draft` 版本，因此 `listed: false` 不等同于“完全不可发现”。如果内容尚未准备公开，应使用 `draft: true`。
 
