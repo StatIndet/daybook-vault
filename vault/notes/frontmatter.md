@@ -1,7 +1,7 @@
 ---
 title: 文章 Frontmatter
 date: 2026-08-23
-lang: zh-CN
+lang: zh_CN
 tags:
   - Daybook
   - Frontmatter
@@ -51,7 +51,7 @@ notes/journal/2026-08-23.md
 title: 一篇完整示例
 date: 2026-08-23
 updated: 2026-08-24
-lang: zh-CN
+lang: zh_CN
 i18n_key: complete-example
 tags:
   - Daybook
@@ -99,7 +99,7 @@ comment: true
 ---
 title: An English Note
 date: 2026-08-23
-lang: en
+lang: en_US
 ---
 ```
 
@@ -115,7 +115,7 @@ lang: en
 ---
 title: 静夜思
 date: 2026-06-25
-lang: zh-CN
+lang: zh_CN
 i18n_key: thoughts-in-a-quiet-night
 ---
 ```
@@ -126,7 +126,7 @@ i18n_key: thoughts-in-a-quiet-night
 ---
 title: Thoughts in a Quiet Night
 date: 2026-06-25
-lang: en
+lang: en_US
 i18n_key: thoughts-in-a-quiet-night
 ---
 ```

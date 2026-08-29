@@ -2,7 +2,7 @@
 title: Shall I Compare Thee to a Summer’s Day?
 date: 2026-06-25
 updated: 2026-08-23
-lang: en
+lang: en_US
 tags:
   - Poetry
   - Shakespeare

@@ -1,7 +1,7 @@
 ---
 title: daybook.yaml 配置
 date: 2026-08-23
-lang: zh-CN
+lang: zh_CN
 tags:
   - Daybook
   - Configuration

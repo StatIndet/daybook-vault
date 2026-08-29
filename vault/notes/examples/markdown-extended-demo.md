@@ -9,7 +9,7 @@ summary: Used to test the rendering of Daybook’s extended Markdown syntax, emb
 draft: false
 toc: false
 i18n_key: markdown-extended-demo
-lang: en
+lang: en_US
 ---
 This article introduces extended Markdown features, including syntax examples and rendered previews.
 

@@ -5,7 +5,7 @@ tags:
 summary: Hello，welcome to my daybook！你好，欢迎来到我的博客！This is a static blog built with Go, and also my personal knowledge base for hosting my Obsidian notes.
 draft: false
 updated: 2026-06-28
-lang: en
+lang: en_US
 ---
 The original purpose of building this site was simple: I wanted a place to host my notes.
 

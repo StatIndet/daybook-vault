@@ -2,7 +2,7 @@
 title: 排版、字体与富文本
 date: 2026-06-23
 updated: 2026-08-23
-lang: zh-CN
+lang: zh_CN
 tags:
   - Typography
   - Fonts

@@ -2,7 +2,7 @@
 title: Thoughts in a Quiet Night
 date: 2026-06-25
 updated: 2026-08-23
-lang: en
+lang: en_US
 i18n_key: thoughts-in-a-quiet-night
 tags:
   - Poetry
