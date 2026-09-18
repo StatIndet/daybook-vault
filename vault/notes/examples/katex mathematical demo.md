@@ -9,7 +9,7 @@ summary: Test Daybook’s rendering support for KaTeX mathematical formulas, the
 draft: false
 math: true
 toc: false
-lang: en
+lang: en_US
 i18n_key: katex-mathematical-demo
 pin: true
 ---

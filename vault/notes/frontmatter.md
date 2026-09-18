@@ -1,7 +1,7 @@
 ---
 title: 文章 Frontmatter
 date: 2026-08-23
-lang: zh-CN
+lang: zh_CN
 tags:
   - Daybook
   - Frontmatter
@@ -26,7 +26,7 @@ date: 2026-08-23
 ---
 ```
 
-如果省略 `lang`，Daybook 默认按 `zh-CN` 处理。
+如果省略 `lang`，Daybook 默认按 `zh_CN` 处理。
 
 ## URL 由文件路径决定
 
@@ -51,7 +51,7 @@ notes/journal/2026-08-23.md
 title: 一篇完整示例
 date: 2026-08-23
 updated: 2026-08-24
-lang: zh-CN
+lang: zh_CN
 i18n_key: complete-example
 tags:
   - Daybook
@@ -73,7 +73,7 @@ comment: true
 | `title` | 是 | 文章标题。为空时构建会把该笔记视为无效。 |
 | `date` | 是 | 发布日期，用于排序、归档及发布元数据。建议使用 `YYYY-MM-DD`。 |
 | `updated` | 否 | 最后更新日期；为空时不单独显示修改日期。 |
-| `lang` | 否 | 文章语言，只接受 `zh-CN` 或 `en`；省略时为 `zh-CN`。 |
+| `lang` | 否 | 文章语言，只接受 `zh_CN` 或 `en_US`；省略时为 `zh_CN`。 |
 | `i18n_key` | 否 | 把不同语言文件归入同一个文章组。单语文章通常省略。 |
 | `tags` | 否 | 标签数组。每个语言版本可以使用自己的展示文本。 |
 | `summary` | 否 | 文章摘要，用于列表和页面元数据。 |
@@ -99,7 +99,7 @@ comment: true
 ---
 title: An English Note
 date: 2026-08-23
-lang: en
+lang: en_US
 ---
 ```
 
@@ -115,7 +115,7 @@ lang: en
 ---
 title: 静夜思
 date: 2026-06-25
-lang: zh-CN
+lang: zh_CN
 i18n_key: thoughts-in-a-quiet-night
 ---
 ```
@@ -126,7 +126,7 @@ i18n_key: thoughts-in-a-quiet-night
 ---
 title: Thoughts in a Quiet Night
 date: 2026-06-25
-lang: en
+lang: en_US
 i18n_key: thoughts-in-a-quiet-night
 ---
 ```

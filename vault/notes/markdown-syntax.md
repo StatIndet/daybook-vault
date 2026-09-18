@@ -2,7 +2,7 @@
 title: Markdown、Obsidian 与 Daybook 语法
 date: 2026-06-28
 updated: 2026-08-23
-lang: zh-CN
+lang: zh_CN
 tags:
   - Markdown
   - Obsidian

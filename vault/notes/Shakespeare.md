@@ -2,7 +2,7 @@
 title: Shall I Compare Thee to a Summer’s Day?
 date: 2026-06-25
 updated: 2026-08-23
-lang: en
+lang: en_US
 tags:
   - Poetry
   - Shakespeare
@@ -36,8 +36,8 @@ So long lives this, and this gives life to thee.
 
 ## About this example
 
-This page is intentionally English-only. Its frontmatter sets `lang: en` and omits `i18n_key`, so Daybook treats it as a standalone article rather than one half of a bilingual pair.
+This page is intentionally English-only. Its frontmatter sets `lang: en_US` and omits `i18n_key`, so Daybook treats it as a standalone article rather than one half of a bilingual pair.
 
-If the current site language has no matching version, Daybook falls back to an available version; it does not generate a translation. A bilingual article instead uses the same `i18n_key` in two files, one with `lang: zh-CN` and one with `lang: en`.
+If the current site language has no matching version, Daybook falls back to an available version; it does not generate a translation. A bilingual article instead uses the same `i18n_key` in two files, one with `lang: zh_CN` and one with `lang: en_US`.
 
 See [[frontmatter|Article frontmatter]] for the complete field reference. The paired Chinese–English example is **Thoughts in a Quiet Night / 静夜思**.

@@ -10,7 +10,7 @@ draft: false
 math: true
 toc: false
 i18n_key: katex-mathematical-demo
-lang: zh-CN
+lang: zh_CN
 pin: true
 ---
 
