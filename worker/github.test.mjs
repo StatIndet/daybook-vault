@@ -157,9 +157,17 @@ test('scheduled public activity keeps local build labels and destination links',
   assert.equal(data.events[1].url, 'https://github.com/example/public/issues/7');
 });
 
-test('refreshed homepage retains GitHub Projects and Packages navigation', async () => {
-  const response = await call({ action: 'rewrite', built: profile(), html: sourceHTML });
-  const html = await response.text();
-  assert.match(html, /href="https:\/\/github.com\/example\?tab=projects"[^>]*>.*account_tree.*项目/);
-  assert.match(html, /href="https:\/\/github.com\/example\?tab=packages"[^>]*>.*archive.*软件包/);
+test('refreshed homepage keeps README and pins while removing extra sections', async () => {
+  const built = { ...profile(),
+    pinnedRepositories: [{ name: 'pinned-project', htmlURL: 'https://github.com/example/pinned-project' }],
+    repositories: [{ name: 'unlisted-project', htmlURL: 'https://github.com/example/unlisted-project' }],
+    events: [{ summary: 'Unlisted activity', url: 'https://github.com/example/unlisted-project' }],
+  };
+  for (const url of ['https://example.com/', 'https://example.com/en_US/']) {
+    const response = await call({ action: 'rewrite', html: sourceHTML, built, url });
+    const html = await response.text();
+    assert.match(html, /<p>README<\/p>/);
+    assert.match(html, /pinned-project/);
+    assert.doesNotMatch(html, /github-profile-link|github-gists|github-tabs|github-readme-heading|github-activity|unlisted-project|Unlisted activity/);
+  }
 });
