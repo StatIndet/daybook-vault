@@ -13,3 +13,6 @@ vault/.obsidian/*
 .env
 /.daybook/
 !.daybook-version
+
+/.daybook-cache/
+/worker-configuration.d.ts

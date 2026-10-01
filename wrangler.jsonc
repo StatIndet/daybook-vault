@@ -2,14 +2,19 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "daybook",
   "main": "worker/index.js",
-  "compatibility_date": "2026-08-24",
-
+  "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "public",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": [
+      "/api/*",
+      "/",
+      "/index.html",
+      "/en_US",
+      "/en_US/",
+      "/en_US/index.html"
+    ]
   },
-
   "d1_databases": [
     {
       "binding": "DB",
@@ -17,11 +22,10 @@
       "database_id": "00000000-0000-0000-0000-000000000000"
     }
   ],
-
   "observability": {
-    "enabled": true
+    "enabled": true,
+    "head_sampling_rate": 1
   },
-
   "durable_objects": {
     "bindings": [
       {
@@ -30,11 +34,28 @@
       }
     ]
   },
-
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["SitePresence"]
+      "new_sqlite_classes": [
+        "SitePresence"
+      ]
     }
-  ]
+  ],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "GITHUB_CACHE"
+    }
+  ],
+  "vars": {
+    "GITHUB_USERNAME": "StatIndet"
+  },
+  "triggers": {
+    "crons": [
+      "17 * * * *"
+    ]
+  }
 }

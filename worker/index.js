@@ -1,3 +1,6 @@
+import { readProfile, refreshProfile } from './github-sync.js';
+import { rewriteHome } from './github-home.js';
+
 /**
  * Normalize path and decode URI for consistent matching (especially for CJK)
  */
@@ -33,11 +36,11 @@ async function isWhitelisted(env, request, p) {
   if (p === '/archive/') return true;
   if (p === '/graph/') return true;
   if (p === '/about/') return true;
-  if (p === '/en/') return true;
-  if (p === '/en/notes/') return true;
-  if (p === '/en/archive/') return true;
-  if (p === '/en/graph/') return true;
-  if (p === '/en/about/') return true;
+  if (p === '/en_US/') return true;
+  if (p === '/en_US/notes/') return true;
+  if (p === '/en_US/archive/') return true;
+  if (p === '/en_US/graph/') return true;
+  if (p === '/en_US/about/') return true;
 
   if (Date.now() - routesCacheTime > 60000 || !cachedRoutes) {
     try {
@@ -56,17 +59,17 @@ async function isWhitelisted(env, request, p) {
     if (cachedRoutes.includes(p)) return true;
     
     // tags fallback
-    if (p.startsWith('/tags/') || p.startsWith('/en/tags/')) return true;
+    if (p.startsWith('/tags/') || p.startsWith('/en_US/tags/')) return true;
     
     return false;
   }
 
   // Fallback if routes.json fails
   if (p.startsWith('/notes/') && p.length > '/notes/'.length) return true;
-  if (p.startsWith('/en/notes/') && p.length > '/en/notes/'.length) return true;
+  if (p.startsWith('/en_US/notes/') && p.length > '/en_US/notes/'.length) return true;
   if (p.startsWith('/tags/') && p.length > '/tags/'.length) return true;
-  if (p.startsWith('/en/tags/') && p.length > '/en/tags/'.length) return true;
-  if (p.startsWith('/en/') && p.length > '/en/'.length) return true;
+  if (p.startsWith('/en_US/tags/') && p.length > '/en_US/tags/'.length) return true;
+  if (p.startsWith('/en_US/') && p.length > '/en_US/'.length) return true;
   
   return false;
 }
@@ -89,8 +92,31 @@ async function hashVisitorToken(token, salt) {
 }
 
 export default {
+  async scheduled(controller, env, ctx) {
+    await refreshProfile(env);
+  },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === '/api/github') {
+      if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405 });
+      const profile = await readProfile(env, request);
+      return new Response(request.method === 'HEAD' ? null : JSON.stringify(profile || { error: 'GitHub profile unavailable' }), {
+        status: profile ? 200 : 503,
+        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=60, stale-while-revalidate=300' }
+      });
+    }
+    if (['/', '/index.html', '/en_US', '/en_US/', '/en_US/index.html'].includes(url.pathname)) {
+      // A static asset validator does not include the scheduled GitHub snapshot.
+      // Conditional requests must reach the HTML rewrite when the Bio changes.
+      const assetRequest = new Request(request);
+      assetRequest.headers.delete('If-None-Match');
+      assetRequest.headers.delete('If-Modified-Since');
+      const response = await env.ASSETS.fetch(assetRequest);
+      if (!response.ok || !(response.headers.get('Content-Type') || '').includes('text/html')) return response;
+      const profile = await readProfile(env, request);
+      return profile ? rewriteHome(response, profile, request) : response;
+    }
 
     // GET /api/stats
     if (url.pathname === '/api/stats') {
@@ -298,7 +324,7 @@ export default {
       return obj.fetch(doRequest);
     }
 
-    return new Response("Not Found", { status: 404 });
+    return env.ASSETS.fetch(request);
   }
 };
 
