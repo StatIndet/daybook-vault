@@ -168,6 +168,7 @@ test('refreshed homepage keeps README and pins while removing extra sections', a
     const html = await response.text();
     assert.match(html, /<p>README<\/p>/);
     assert.match(html, /pinned-project/);
-    assert.doesNotMatch(html, /github-profile-link|github-gists|github-tabs|github-readme-heading|github-activity|unlisted-project|Unlisted activity/);
+    assert.doesNotMatch(html, /github-profile-link|github-gists|github-tabs|github-readme-heading|github-activity|unlisted-project|Unlisted activity|>Public<|<h2>(?:置顶仓库|Pinned)<\/h2>/);
+    assert.match(html, /data-tooltip="Stars"/);
   }
 });
