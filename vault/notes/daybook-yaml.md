@@ -30,29 +30,16 @@ site:
   startedAt: "2024-01-01"
   favicon: ""
 
+github:
+  username: "StatIndet"
+  tokenEnv: "GITHUB_TOKEN"
+  apiURL: "/api/github"
+
 profile:
   author:
-    name: "佚名"
-    nameEn: "Author"
-    logoText: "Author"
-    avatar: ""
-    aboutUrl: "/about"
-
-  social:
-    - type: github
-      url: "https://github.com/your-name"
-
-  slogan:
-    en: "A personal space for thoughts and notes."
-    zh: "记录思考与笔记的个人空间。"
-
-seo:
-  homeTitle:
-    en: "Notes from My Daybook"
-    zh: "我的 Daybook · 随笔与记录"
-  homeDescription:
-    en: "Welcome to my personal Daybook."
-    zh: "欢迎来到我的个人 Daybook。"
+    logoText: "Daybook"
+    aboutUrl: "/about/"
+  social: []
 
 comment:
   enabled: false
@@ -110,54 +97,31 @@ favicon: "assets/favicon.svg"
 
 构建时如果这里指定的文件不存在，Daybook 会报错。
 
+## `github`
+
+首页以 GitHub 为唯一资料上游，每次 `daybook build` 更新公开资料、头像、Bio、README、仓库、组织、关注数和公开动态。Bio 同时进入首页 description、Open Graph、Twitter 和 JSON-LD。配置中的作者名、英文名、头像、slogan 和首页 SEO 文案不再用于覆盖 GitHub 信息。
+
+- `username`：GitHub 用户名。
+- `tokenEnv`：构建进程中保存 GitHub token 的环境变量名，默认为 `GITHUB_TOKEN`。token 不写入配置或构建产物。没有 token 也可以读取公开 REST 数据；精确置顶仓库、贡献日历和状态需要 GraphQL token。
+- `apiURL`：vault Worker 的公开资料端点，默认 `/api/github`。
+
+本地缓存位于 `.daybook-cache/github/`，上游不可用时复用最后一次成功的数据；从未成功同步时构建会明确报错。GitHub 成就徽章未由官方 API 提供，因此不渲染猜测的数据。
+
+Cloudflare 定时更新由 vault 的 Worker 实现：`GITHUB_CACHE` KV 保存快照，Cron 每小时更新，服务端一并改写首页内容与 SEO。GitHub 请求失败不清除已有快照。
+
 ## `profile`
 
-### `author`
+仅保留站点级的固定 Logo 和页脚偏好：
 
 ```yaml
-author:
-  name: "佚名"
-  nameEn: "Author"
-  logoText: "Author"
-  avatar: ""
-  aboutUrl: "/about"
+profile:
+  author:
+    logoText: "Daybook"
+    aboutUrl: "/about/"
+  social: []
 ```
 
-- `name`：主要作者名。
-- `nameEn`：英文作者名。
-- `logoText`：Logo 区域使用的文本；为空时依次回退到 `nameEn`、`name`。
-- `avatar`：头像资源。为空可以保留主题默认行为。若使用 Vault 内图片，可让文件随构建发布，并使用站点根路径引用，例如 `/attachments/picture/avatar.jpg`。
-- `aboutUrl`：作者信息区域指向的 About 页面地址，默认模板通常使用 `/about`。
-
-### `social`
-
-每项包含 `type` 与 `url`：
-
-```yaml
-social:
-  - type: github
-    url: "https://github.com/your-name"
-  - type: youtube
-    url: "https://youtube.com/@your-channel"
-```
-
-当前内置类型包括：
-
-`bilibili`、`bluesky`、`discord`、`email`、`github`、`gitlab`、`instagram`、`mastodon`、`qq`、`reddit`、`telegram`、`threads`、`twitch`、`x`、`youtube`。
-
-不支持的类型会被跳过并给出警告。RSS 链接由 Daybook 按当前语言自动添加，因此不需要在 `social` 中手动写 `rss`。
-
-### `slogan`
-
-首页/侧栏的多语言 slogan：
-
-```yaml
-slogan:
-  en: "A personal space for thoughts and notes."
-  zh: "记录思考与笔记的个人空间。"
-```
-
-站点界面使用英文时读取 `en`；中文环境会回退到 `zh`。
+`logoText` 控制固定 Logo，`aboutUrl` 控制站内作者链接。`social` 的平台格式继续兼容旧配置，但首页的社交信息来自 GitHub。文章、笔记等页面右侧不再展示中英文作者名与 slogan。
 
 ## `seo`
 

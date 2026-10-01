@@ -49,3 +49,34 @@ The Daybook CLI version used for building the site is specified in the `.daybook
 ## Configuration
 
 Configure your site globally in `daybook.yaml`. Leave `site.url` empty if you don't want to enforce a specific domain initially. You can configure it later once your domain is set up on Cloudflare.
+
+## GitHub updates
+
+The homepage is synchronized from the official GitHub APIs during every local build. This vault's Worker also refreshes a public profile snapshot in KV at minute 17 of each hour (UTC), then rewrites both the homepage HTML and SEO metadata on the server. Visitors do not wait for live GitHub requests. When GitHub is unavailable, the last successful snapshot remains available.
+
+Set `github.username` in `daybook.yaml` and `GITHUB_USERNAME` in `wrangler.jsonc` to the same account. The `GITHUB_CACHE` namespace is automatically provisioned by Wrangler when deploying; an existing namespace can instead be selected by adding its `id` to the binding. Set `GITHUB_TOKEN` as a local build environment variable and a Worker secret to enable exact pinned repositories, contribution calendar and profile status. Use public-read access only; do not put credentials in YAML, the Worker config or committed files. The first build can run without a token and provides public REST data.
+
+Use the updated Daybook CLI when building this vault. The setup script still follows `.daybook-version`; publishing this source change requires releasing the CLI or pointing the build to the corresponding compiled binary.
+
+For local review before a release, build the CLI source and select that binary explicitly:
+
+```bash
+cd /home/statindet/Projects/daybook
+go build -o /tmp/daybook-local ./cmd/daybook
+cd /home/statindet/Documents/daybook-vault
+DAYBOOK_BINARY=/tmp/daybook-local npm run build
+```
+
+Validate locally before publishing:
+
+```bash
+npm ci
+npm run build
+npx wrangler deploy --dry-run
+npx wrangler types
+npx wrangler dev --test-scheduled
+```
+
+With the local Worker running, visit `/`, `/en_US/`, and `/api/github`. Request `/__scheduled` to exercise the cron handler. Check that a changed GitHub Bio appears in the visible profile and in `description`, Open Graph, Twitter and JSON-LD metadata. The stats D1 database and presence Durable Object remain separate from the profile KV.
+
+The placeholder D1 database ID must be replaced with your existing database ID before a real deployment. Generated pages, local KV state, `.dev.vars`, and `.daybook-cache` remain ignored.

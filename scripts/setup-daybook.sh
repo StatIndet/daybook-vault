@@ -1,6 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
+# Allow a locally built CLI to be reviewed before its release is published.
+if [ -n "${DAYBOOK_BINARY:-}" ]; then
+    if [ ! -x "$DAYBOOK_BINARY" ]; then
+        echo "ERROR: DAYBOOK_BINARY must point to an executable Daybook CLI."
+        exit 1
+    fi
+    mkdir -p "$PWD/.daybook/bin"
+    if [ ! "$DAYBOOK_BINARY" -ef "$PWD/.daybook/bin/daybook" ]; then
+        cp "$DAYBOOK_BINARY" "$PWD/.daybook/bin/daybook"
+    fi
+    echo "Using local Daybook CLI at $DAYBOOK_BINARY."
+    exit 0
+fi
+
 # Find version
 VERSION="latest"
 if [ -f ".daybook-version" ]; then
