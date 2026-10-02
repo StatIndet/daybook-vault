@@ -9,5 +9,4 @@ toc: true
 math: false
 pin: false
 lang: zh
-listed: true
 ---

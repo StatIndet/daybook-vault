@@ -8,7 +8,6 @@ tags:
   - Guide
 summary: Daybook 文章 frontmatter 的完整字段参考，并说明文件路径、单语文章和双语文章之间的关系。
 draft: false
-listed: true
 math: false
 pin: false
 comment: true
@@ -58,7 +57,6 @@ tags:
   - Notes
 summary: 一段用于列表和 SEO 的简短摘要。
 draft: false
-listed: true
 math: false
 pin: false
 toc: true
@@ -78,18 +76,12 @@ comment: true
 | `tags` | 否 | 标签数组。每个语言版本可以使用自己的展示文本。 |
 | `summary` | 否 | 文章摘要，用于列表和页面元数据。 |
 | `draft` | 否 | `true` 时整篇文章在构建阶段被跳过，不生成详情页。默认 `false`。 |
-| `listed` | 否 | `false` 时不进入主要文章列表、归档、RSS、sitemap 与关系图常规集合，但详情页仍会生成。默认 `true`。 |
 | `math` | 否 | 标记文章需要数学公式支持。含 KaTeX 内容时设为 `true`。 |
 | `pin` | 否 | 标记文章的置顶状态，由文章列表界面展示。默认 `false`。 |
 | `toc` | 否 | 是否显示文章目录。省略时默认为开启。 |
 | `comment` | 否 | 文章级评论开关，用于覆盖站点的评论设置。 |
 
->[!tip]
->关于`listed`，举例说明：
->[hello-daybook](https://daybook.page/notes/hello-daybook/)这篇文章没有被站点地图收录，博客的文章列表里也找不到这篇文章，但是可以直接通过链接的方式进入这篇文章。
-
-> [!note]
-> 当前搜索索引收录所有非 `draft` 版本，因此 `listed: false` 不等同于“完全不可发现”。如果内容尚未准备公开，应使用 `draft: true`。
+所有非草稿文章都会生成详情页，并进入文章列表、归档、标签页、搜索索引、RSS、sitemap 和关系图。尚未准备公开的文章应设置 `draft: true`。
 
 ## 单语文章
 
@@ -133,7 +125,7 @@ i18n_key: thoughts-in-a-quiet-night
 
 同一个 `i18n_key` 下，同一种语言只能出现一次。Daybook 会优先选择当前界面的语言；缺少该语言时，优先回退到中文，再回退到英文。
 
-建议一组翻译保持一致的 `date` 与 `listed`，而 `title`、`summary`、`tags` 和正文则分别按各自语言编写。
+建议一组翻译保持一致的 `date`，而 `title`、`summary`、`tags` 和正文则分别按各自语言编写。
 
 实际效果可查看《静夜思》与其英文版本。
 

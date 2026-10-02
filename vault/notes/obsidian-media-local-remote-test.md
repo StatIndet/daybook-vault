@@ -9,7 +9,6 @@ tags:
   - Media
 summary: 介绍 Daybook 如何处理 Vault 内附件，以及如何用远程 HTTP(S) 资源嵌入图片、PDF、音频、视频和音乐。
 draft: false
-listed: true
 math: false
 pin: false
 comment: true

@@ -8,7 +8,6 @@ tags:
   - Guide
 summary: Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、giscus、统计与分享文本。
 draft: false
-listed: true
 math: false
 pin: false
 comment: true

@@ -10,7 +10,6 @@ tags:
   - Li-Bai
 summary: A short English rendering of Li Bai’s poem, paired with the Chinese original to demonstrate Daybook’s bilingual article model.
 draft: false
-listed: true
 math: false
 pin: false
 comment: true
@@ -32,6 +31,6 @@ i18n_key: thoughts-in-a-quiet-night
 
 The two files keep their own title, summary, tags, body, and language, while Daybook groups them as one article. The article metadata can then offer the other language without duplicating the entry as two unrelated posts.
 
-For a bilingual pair, use exactly one `zh-CN` version and one `en` version for the same `i18n_key`. Keeping fields such as `date` and `listed` consistent between the two versions makes the result easier to reason about.
+For a bilingual pair, use exactly one `zh-CN` version and one `en` version for the same `i18n_key`. Keeping the publication date consistent between the two versions makes the result easier to reason about. Every non-draft version appears in the article list, sitemap, and graph.
 
 See [[frontmatter|Article frontmatter]] for the complete rule set. For a single-language article, compare the English-only Shakespeare sample.

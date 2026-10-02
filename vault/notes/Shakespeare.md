@@ -9,7 +9,6 @@ tags:
   - Sonnet
 summary: Shakespeare’s Sonnet 18, also serving as a compact example of an English-only Daybook article.
 draft: false
-listed: true
 math: false
 pin: false
 comment: true

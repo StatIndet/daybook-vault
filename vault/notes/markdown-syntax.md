@@ -9,7 +9,6 @@ tags:
   - Daybook
 summary: Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。
 draft: false
-listed: true
 math: false
 pin: false
 comment: true
