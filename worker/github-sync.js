@@ -124,9 +124,10 @@ export async function fetchProfile(env, previous = null) {
   for (const result of results) if (result.status === 'rejected') console.warn(JSON.stringify({ event: 'github_section_refresh_failed', message: result.reason.message }));
   if (env.GITHUB_TOKEN) {
     try {
-      const { data } = await api(env, '/graphql', { body: { query: `query($login:String!){user(login:$login){status{emoji message} pinnedItems(first:6,types:[REPOSITORY]){nodes{... on Repository{name nameWithOwner url description isPrivate isArchived isFork stargazerCount forkCount homepageUrl updatedAt primaryLanguage{name color} repositoryTopics(first:20){nodes{topic{name}}}}}} contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{date contributionCount contributionLevel}}}}}}`, variables: { login: username } } });
+      const { data } = await api(env, '/graphql', { body: { query: `query($login:String!){user(login:$login){pronouns status{emoji message} pinnedItems(first:6,types:[REPOSITORY]){nodes{... on Repository{name nameWithOwner url description isPrivate isArchived isFork stargazerCount forkCount homepageUrl updatedAt primaryLanguage{name color} repositoryTopics(first:20){nodes{topic{name}}}}}} contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{date contributionCount contributionLevel}}}}}}`, variables: { login: username } } });
       if (data.errors?.length || !data.data?.user) throw new Error('GitHub GraphQL response unavailable');
       const graph = data.data.user;
+      profile.pronouns = graph.pronouns || '';
       profile.status = graph.status;
       profile.pinnedRepositories = graph.pinnedItems.nodes.filter(r => r && !r.isPrivate && r.name).map(r => repository({ ...r, topics: (r.repositoryTopics?.nodes || []).map(t => t.topic.name) }));
       for (const repo of profile.repositories || []) {
@@ -145,7 +146,7 @@ export async function fetchProfile(env, previous = null) {
 function snapshot(value, username) {
   if (!value || typeof value !== 'object' || typeof value.login !== 'string' || value.login.toLowerCase() !== username?.toLowerCase() || !safeURL(value.avatarURL) || !safeURL(value.htmlURL)) return null;
   const output = {};
-  for (const field of ['login', 'name', 'bio', 'company', 'location', 'email', 'twitterUsername', 'createdAt', 'updatedAt', 'fetchedAt', 'readmeHTML']) output[field] = typeof value[field] === 'string' ? value[field] : '';
+  for (const field of ['login', 'name', 'pronouns', 'bio', 'company', 'location', 'email', 'twitterUsername', 'createdAt', 'updatedAt', 'fetchedAt', 'readmeHTML']) output[field] = typeof value[field] === 'string' ? value[field] : '';
   for (const field of ['avatarURL', 'htmlURL', 'blog', 'readmeURL']) output[field] = safeURL(value[field]);
   const count = raw => Number.isFinite(Number(raw)) ? Math.max(0, Number(raw)) : 0;
   const string = raw => typeof raw === 'string' ? raw : '';

@@ -123,10 +123,10 @@ test('optional failures retain previous sections and private repositories are fi
 
 test('GraphQL public pins and calendar survive without emitting credentials or private repos', async () => {
   const response = await call({ action: 'fetch', token: 'server-only-secret', responses: {
-    '/users/example': { body: { login: 'example', avatar_url: profile().avatarURL, html_url: profile().htmlURL } },
+    '/users/example': { body: { login: 'example', email: 'public@example.com', avatar_url: profile().avatarURL, html_url: profile().htmlURL } },
     '/users/example/social_accounts': { body: [] }, '/users/example/orgs': { body: [] }, '/users/example/repos': { body: [{ name: 'public', full_name: 'example/public', html_url: 'https://github.com/example/public', language: 'Go' }] }, '/users/example/events/public': { body: [] }, '/users/example/starred': { body: [] }, '/repos/example/example/readme': { status: 404, body: '' },
     '/graphql': { body: { data: { user: {
-      status: { emoji: '🌱', message: 'Growing' },
+      pronouns: 'he/him', status: { emoji: '🌱', message: 'Growing' },
       pinnedItems: { nodes: [{ name: 'public', nameWithOwner: 'example/public', url: 'https://github.com/example/public', isPrivate: false, primaryLanguage: { name: 'Go', color: '#00ADD8' }, repositoryTopics: { nodes: [{ topic: { name: 'blog' } }] } }, { name: 'private', isPrivate: true }] },
       contributionsCollection: { contributionCalendar: { totalContributions: 3, weeks: [{ contributionDays: [{ date: '2026-09-30', contributionCount: 3, contributionLevel: 'THIRD_QUARTILE' }] }] } },
     } } } },
@@ -140,6 +140,8 @@ test('GraphQL public pins and calendar survive without emitting credentials or p
   assert.equal(data.repositories[0].languageColor, '#00ADD8');
   assert.equal(data.contributions.weeks[0].days[0].level, 3);
   assert.equal(data.status.message, 'Growing');
+  assert.equal(data.pronouns, 'he/him');
+  assert.equal(data.email, 'public@example.com');
 });
 
 test('scheduled public activity keeps local build labels and destination links', async () => {
@@ -190,5 +192,14 @@ test('refreshed contacts use local brand icons, the built favicon and a Material
     const contacts = output.match(/<ul class="github-profile-details">([\s\S]*?)<\/ul>/)[1];
     for (const icon of ['custom-favicon', 'icons/social/bilibili', 'icons/social/kofi', 'icons/social/afdian', 'icons/social/buymeacoffee']) assert.ok(contacts.includes('/' + icon + '.svg'), icon);
     for (const unknown of ['unknown.example/profile', 'ko-fi.com.evil.example/profile']) assert.ok(contacts.includes('class="material-symbol" aria-hidden="true">link</span><span>https://' + unknown));
+  }
+});
+
+test('profile pronouns and public email render safely in both locales', async () => {
+  for (const url of ['https://example.com/', 'https://example.com/en_US/']) {
+    const response = await call({ action: 'rewrite', built: { ...profile(), pronouns: 'he/him <test>', email: 'public@example.com' }, html: sourceHTML, url });
+    const html = await response.text();
+    assert.match(html, /class="github-profile-pronouns">he\/him &lt;test&gt;<\/small>/);
+    assert.match(html, /href="mailto:public@example.com"/);
   }
 });
