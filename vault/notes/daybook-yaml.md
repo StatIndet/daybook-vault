@@ -6,7 +6,7 @@ tags:
   - Daybook
   - Configuration
   - Guide
-summary: Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、Waline、统计与分享文本。
+summary: Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、giscus、统计与分享文本。
 draft: false
 listed: true
 math: false
@@ -42,15 +42,13 @@ profile:
   social: []
 
 comment:
-  enabled: false
-  provider: "waline"
-  waline:
-    serverURL: ""
-    lang: "zh-CN"
-    pageSize: 10
-    commentSorting: "latest"
-    search: false
-    imageUploader: false
+  enabled: true
+  provider: "giscus"
+  giscus:
+    repo: "StatIndet/giscus"
+    repoId: "R_kgDOU4xqeQ"
+    category: "Announcements"
+    categoryId: "DIC_kwDOU4xqec4DG4Zb"
 
 stats:
   enabled: true
@@ -148,31 +146,45 @@ seo:
 
 ## `comment`
 
-Daybook 当前内置 Waline 前端集成：
+Daybook 使用 giscus，将评论保存在公开 GitHub 仓库的 Discussions 中。仓库需要开启 Discussions，并安装 giscus GitHub App：
 
 ```yaml
 comment:
   enabled: true
-  provider: "waline"
-  waline:
-    serverURL: "https://comment.example.com"
-    lang: "zh-CN"
-    pageSize: 10
-    commentSorting: "latest"
-    search: false
-    imageUploader: false
+  provider: "giscus"
+  giscus:
+    repo: "StatIndet/giscus"
+    repoId: "R_kgDOU4xqeQ"
+    category: "Announcements"
+    categoryId: "DIC_kwDOU4xqec4DG4Zb"
 ```
 
 - `enabled`：站点级评论开关。
-- `provider`：当前实现使用 `waline`。
-- `serverURL`：Waline 服务地址。启用 Waline 却不填写该字段时，Daybook 会警告并关闭评论。
-- `lang`：Waline 界面语言；为空时默认 `zh-CN`。
-- `pageSize`：每页评论数；`0` 会回退到 `10`。
-- `commentSorting`：评论排序；为空时默认 `latest`。
-- `search`：是否启用 Waline 搜索相关能力。
-- `imageUploader`：是否启用 Waline 图片上传入口。
+- `provider`：填写 `giscus`。
+- `repo`、`repoId`：评论仓库名称和 GitHub 仓库 ID。
+- `category`、`categoryId`：用于文章评论的 Discussion 分类及其 ID，推荐公告类型的 Announcements。
 
-单篇文章还可以通过 frontmatter 的 `comment: true/false` 覆盖文章级行为。
+这些示例值属于 `StatIndet/giscus`。搭建自己的博客时，请从 giscus 配置页取得自己仓库的参数。参数不完整时，Daybook 会警告并关闭评论。
+
+文章的规范路径作为严格匹配的评论标识；界面语言、冷暖配色及浅深色由博客同步，不需要在 YAML 中重复配置。评论区接近视口时才加载，评论框位于评论上方。访客可以直接阅读，发表和回复需要 GitHub 登录。
+
+单篇文章可用 frontmatter 的 `comment: false` 关闭评论；`comment: true` 仍受站点开关限制。读者设置中的“禁用评论”也会停止加载。
+
+在评论仓库默认分支根目录的 `giscus.json` 中配置允许来源和排序，例如：
+
+```json
+{
+  "origins": [
+    "https://daybook.page",
+    "https://giscus.app",
+    "http://localhost:1313",
+    "http://127.0.0.1:1313"
+  ],
+  "defaultCommentOrder": "newest"
+}
+```
+
+本地预览使用本次构建的主题和字体；浏览器可能要求允许本地网络访问。本地提交的评论也会保存到真实 Discussions，应使用专门的测试文章验证留言。旧 Waline 配置不再使用，历史评论不会自动导入。
 
 ## `stats`
 

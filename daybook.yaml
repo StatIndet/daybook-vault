@@ -15,15 +15,13 @@ profile:
     logoText: "Daybook"
 
 comment:
-  enabled: false
-  provider: "waline"
-  waline:
-    serverURL: ""
-    lang: "zh-CN"
-    pageSize: 10
-    commentSorting: "latest"
-    search: false
-    imageUploader: false
+  enabled: true
+  provider: "giscus"
+  giscus:
+    repo: "StatIndet/giscus"
+    repoId: "R_kgDOU4xqeQ"
+    category: "Announcements"
+    categoryId: "DIC_kwDOU4xqec4DG4Zb"
 
 stats:
   enabled: true

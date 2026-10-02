@@ -80,3 +80,9 @@ npx wrangler dev --test-scheduled
 With the local Worker running, visit `/`, `/en_US/`, and `/api/github`. Request `/__scheduled` to exercise the cron handler. Check that a changed GitHub Bio appears in the visible profile and in `description`, Open Graph, Twitter and JSON-LD metadata. The stats D1 database and presence Durable Object remain separate from the profile KV.
 
 The placeholder D1 database ID must be replaced with your existing database ID before a real deployment. Generated pages, local KV state, `.dev.vars`, and `.daybook-cache` remain ignored.
+
+## Comments
+
+Comments use the public `StatIndet/giscus` Discussions repository and its Announcements category. `daybook.yaml` contains the repository/category IDs. Articles keep their canonical path as the discussion mapping; add `comment: false` to an article to disable comments. Reader settings can also disable loading. Posting requires GitHub sign-in. Historical Waline comments are not imported.
+
+The updated CLI supplies four matching themes and fonts, including CORS headers for immutable assets. For local testing of this unreleased migration, use the `DAYBOOK_BINARY` build command above, then run `./.daybook/bin/daybook serve` and open `http://localhost:1313`. Local pages use local theme assets; posting still writes real Discussions, so use a dedicated test article. Deploy with the updated CLI release after review.
