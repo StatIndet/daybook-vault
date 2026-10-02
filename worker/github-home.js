@@ -47,7 +47,7 @@ export function renderHome(p, english = false, { siteURL = '', favicon = '/favic
   const detail = (symbol, content) => `<li>${icon(symbol)}${content}</li>`;
   const contact = (url, label, provider = '') => {
     const asset = socialIcon(url, provider, siteURL, favicon);
-    const symbol = asset ? `<span class="github-contact-icon" style="mask-image:url('${escape(asset)}')" aria-hidden="true"></span>` : icon('link');
+    const symbol = url.startsWith('mailto:') ? icon('mail') : asset ? `<span class="github-contact-icon" style="mask-image:url('${escape(asset)}')" aria-hidden="true"></span>` : icon('link');
     const content = symbol + `<span>${escape(label)}</span>`;
     return `<li>${url.startsWith('mailto:') ? `<a href="${escape(url)}">${content}</a>` : link(url, content)}</li>`;
   };

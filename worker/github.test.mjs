@@ -200,6 +200,6 @@ test('profile pronouns and public email render safely in both locales', async ()
     const response = await call({ action: 'rewrite', built: { ...profile(), pronouns: 'he/him <test>', email: 'public@example.com' }, html: sourceHTML, url });
     const html = await response.text();
     assert.match(html, /class="github-profile-pronouns">he\/him &lt;test&gt;<\/small>/);
-    assert.match(html, /href="mailto:public@example.com"/);
+    assert.match(html, /href="mailto:public@example.com"><span class="material-symbol" aria-hidden="true">mail<\/span>/);
   }
 });
