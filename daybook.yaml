@@ -1,7 +1,4 @@
 site:
-  name:
-    en_US: "Daybook"
-    zh_CN: "Daybook"
   url: "https://daybook.page"
   startedAt: "2024-01-01"
   favicon: ""
@@ -16,8 +13,6 @@ github:
 profile:
   author:
     logoText: "Daybook"
-    aboutUrl: "/about/"
-  social: []
 
 comment:
   enabled: false
