@@ -172,3 +172,23 @@ test('refreshed homepage keeps README and pins while removing extra sections', a
     assert.match(html, /data-tooltip="Stars"/);
   }
 });
+
+test('refreshed contacts use local brand icons, the built favicon and a Material fallback', async () => {
+  const built = { ...profile(), blog: 'https://daybook.page', socialAccounts: [
+    { provider: 'generic', url: 'https://space.bilibili.com/123' },
+    { provider: 'generic', url: 'https://ko-fi.com/example' },
+    { provider: 'generic', url: 'https://ifdian.net/a/example' },
+    { provider: 'generic', url: 'https://buymeacoffee.com/example' },
+    { provider: 'generic', url: 'https://unknown.example/profile' },
+    { provider: 'generic', url: 'https://ko-fi.com.evil.example/profile' },
+  ] };
+  const html = sourceHTML.replace('</head>', '<link rel="icon" href="/custom-favicon.svg"></head>').replace('data-github-home>', 'data-github-home data-site-url="https://daybook.page">');
+  for (const url of ['https://example.com/', 'https://example.com/en_US/']) {
+    const response = await call({ action: 'rewrite', html, built, url });
+    assert.equal(response.status, 200);
+    const output = await response.text();
+    const contacts = output.match(/<ul class="github-profile-details">([\s\S]*?)<\/ul>/)[1];
+    for (const icon of ['custom-favicon', 'icons/social/bilibili', 'icons/social/kofi', 'icons/social/afdian', 'icons/social/buymeacoffee']) assert.ok(contacts.includes('/' + icon + '.svg'), icon);
+    for (const unknown of ['unknown.example/profile', 'ko-fi.com.evil.example/profile']) assert.ok(contacts.includes('class="material-symbol" aria-hidden="true">link</span><span>https://' + unknown));
+  }
+});
