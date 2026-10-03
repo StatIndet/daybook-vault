@@ -18,9 +18,19 @@ Subsequent git pushes to your repository will automatically trigger a new deploy
 
 1. Open Obsidian and select **Open folder as vault**.
 2. Select the `vault/` directory inside this repository.
-3. Write your articles in `vault/notes/` and place attachments in `vault/attachments/`.
+3. Write articles in `vault/notes/`, short entries in `vault/memos/`, and place attachments in `vault/attachments/`.
 4. The global Daybook configuration remains at the repository root (`daybook.yaml`), which is outside the Obsidian vault.
 5. The built static site is output to `public/`, completely separate from your source files.
+
+Notes and memos use the Markdown filename as their title; do not add a `title` property. Keep existing filenames to preserve published URLs. The only required property is a valid `date`, either `YYYY-MM-DD` or an RFC 3339 timestamp such as `2026-10-02T21:30:00+08:00`. `draft: true` keeps an entry out of every public output.
+
+Memos appear in the `/memos/` timeline alongside Notes and Archive in the navigation. `tags` and a plain-text `location` are optional. The included memo examples demonstrate text, a quotation, a local image and a checklist. They share RSS, search, Obsidian links and the graph with notes, but do not appear in Archive. Calendar and tag filters combine with search across body text, filenames, dates, locations and tags. The timeline shows the full text and up to four images, with additional images available on the detail page. Use `[[notes/filename]]` or `[[memos/filename]]` to disambiguate links across the two directories.
+
+The Obsidian templates are in `vault/_templates/daybook-note.md` and `vault/_templates/daybook-memo.md`. Use the updated local CLI described below until a release containing memos is available.
+
+Set `pinned: true` in a memo's frontmatter to pin it above ordinary entries; both groups remain newest first. Set `pinned: false` or omit it to unpin, then rebuild. Search, calendar and tag filters still apply. The `阅读间隙` example is pinned, and the memo template defaults to `pinned: false`.
+
+Memos support an optional `updated` property (a date or RFC 3339 timestamp), shown in the timeline and detail page without changing publication-date ordering. Memos do not calculate word counts or reading time, and their detail pages do not offer reader mode. The old `pin` frontmatter property has been renamed to `pinned` for both notes and memos; rename it in existing files.
 
 ## Local Build
 

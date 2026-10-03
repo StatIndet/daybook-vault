@@ -15,7 +15,7 @@ toc: true
 
 `daybook.yaml` 是 Daybook 的站点级配置文件，放在 **Vault 根目录**。`daybook build` 会从当前工作目录读取它；文件不存在或 YAML 无法解析时，构建会直接报错。
 
-文章自己的标题、日期、语言等信息不写在这里，而是写在各自的 frontmatter 中。两者的分工可参考 [[frontmatter|文章 Frontmatter]]。
+文章标题来自文件名，日期、语言等信息写在各自的 frontmatter 中，不写在站点配置里。两者的分工可参考 [[frontmatter|文章 Frontmatter]]。
 
 ## 一份可直接修改的示例
 
@@ -140,7 +140,7 @@ seo:
     zh: "欢迎来到我的个人 Daybook。"
 ```
 
-文章详情页的 SEO 标题、摘要、发布日期和标签主要来自文章 frontmatter，因此首页配置与文章配置互不替代。
+文章详情页的 SEO 标题来自文件名，摘要、发布日期和标签来自文章 frontmatter，因此首页配置与文章配置互不替代。
 
 ## `comment`
 
