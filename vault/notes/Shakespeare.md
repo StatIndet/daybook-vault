@@ -1,5 +1,4 @@
 ---
-title: Shall I Compare Thee to a Summer’s Day?
 date: 2026-06-25
 updated: 2026-08-23
 lang: en_US
@@ -10,7 +9,7 @@ tags:
 summary: Shakespeare’s Sonnet 18, also serving as a compact example of an English-only Daybook article.
 draft: false
 math: false
-pin: false
+pinned: false
 comment: true
 toc: false
 ---

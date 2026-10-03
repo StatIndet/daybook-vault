@@ -1,7 +1,6 @@
 ---
-title: Markdown Extended Syntax Test Page
 date: 2026-06-16
-pin: true
+pinned: true
 tags:
   - Markdown
   - Test

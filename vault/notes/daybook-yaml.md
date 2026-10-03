@@ -1,5 +1,4 @@
 ---
-title: daybook.yaml 配置
 date: 2026-08-23
 lang: zh_CN
 tags:
@@ -9,7 +8,7 @@ tags:
 summary: Daybook Vault 根目录中 daybook.yaml 的完整配置说明，包括站点资料、作者、SEO、giscus、统计与分享文本。
 draft: false
 math: false
-pin: false
+pinned: false
 comment: true
 toc: true
 ---

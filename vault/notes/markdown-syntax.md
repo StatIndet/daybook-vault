@@ -1,5 +1,4 @@
 ---
-title: Markdown、Obsidian 与 Daybook 语法
 date: 2026-06-28
 updated: 2026-08-23
 lang: zh_CN
@@ -10,7 +9,7 @@ tags:
 summary: Daybook 写作语法的实用参考：标准 Markdown、GFM、Obsidian 双链与 Callout，以及 Daybook 自带的扩展组件。
 draft: false
 math: false
-pin: false
+pinned: false
 comment: true
 toc: true
 ---

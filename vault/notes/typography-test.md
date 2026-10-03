@@ -1,5 +1,4 @@
 ---
-title: 排版、字体与富文本
 date: 2026-06-23
 updated: 2026-08-23
 lang: zh_CN
@@ -10,7 +9,7 @@ tags:
 summary: 一篇用于观察 Daybook 自托管字体、正文混排、代码高亮与常见富文本元素的排版样张。
 draft: false
 math: false
-pin: false
+pinned: false
 comment: true
 toc: true
 ---

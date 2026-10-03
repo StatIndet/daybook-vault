@@ -1,5 +1,4 @@
 ---
-title: 文章 Frontmatter
 date: 2026-08-23
 lang: zh_CN
 tags:
@@ -9,7 +8,7 @@ tags:
 summary: Daybook 文章 frontmatter 的完整字段参考，并说明文件路径、单语文章和双语文章之间的关系。
 draft: false
 math: false
-pin: false
+pinned: false
 comment: true
 toc: true
 ---

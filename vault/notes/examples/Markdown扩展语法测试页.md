@@ -1,7 +1,6 @@
 ---
-title: Markdown 扩展语法测试页
 date: 2026-06-16
-pin: true
+pinned: true
 tags:
   - Markdown
   - Test

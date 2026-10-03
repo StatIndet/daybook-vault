@@ -1,5 +1,4 @@
 ---
-title: Thoughts in a Quiet Night
 date: 2026-06-25
 updated: 2026-08-23
 lang: en_US
@@ -11,7 +10,7 @@ tags:
 summary: A short English rendering of Li Bai’s poem, paired with the Chinese original to demonstrate Daybook’s bilingual article model.
 draft: false
 math: false
-pin: false
+pinned: false
 comment: true
 toc: false
 ---
