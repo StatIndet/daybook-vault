@@ -96,3 +96,18 @@ The placeholder D1 database ID must be replaced with your existing database ID b
 Comments use the public `StatIndet/giscus` Discussions repository and its Announcements category. `daybook.yaml` contains the repository/category IDs. Articles keep their canonical path as the discussion mapping; add `comment: false` to an article to disable comments. Reader settings can also disable loading. Posting requires GitHub sign-in. Historical Waline comments are not imported.
 
 The updated CLI supplies four matching themes and fonts, including CORS headers for immutable assets. For local testing of this unreleased migration, use the `DAYBOOK_BINARY` build command above, then run `./.daybook/bin/daybook serve` and open `http://localhost:1313`. Local pages use local theme assets; posting still writes real Discussions, so use a dedicated test article. Deploy with the updated CLI release after review.
+
+## Likes and RSS
+
+The updated CLI adds anonymous, cancellable likes to note/memo details and the memos timeline when `stats.enabled: true`. Likes use the existing `daybook_visitor` Cookie (one year) and D1, independently of giscus. Returning in the same browser restores the liked state. Clearing cookies, private browsing or changing devices creates a new anonymous identity; this is lightweight feedback, not verified one-person-one-vote. Likes are runtime records, not Markdown frontmatter, and rebuilding the site does not reset them. Keep published article paths and `STATS_SALT` stable to preserve associations.
+
+Apply `migrations/0002_likes.sql` before serving the new Worker. The existing `npm run deploy` command applies pending remote migrations before deployment. For local preview, apply migrations locally first:
+
+```bash
+npx wrangler d1 migrations apply DB --local
+npm run dev
+```
+
+`GET /api/likes?path=/notes/example/` returns `{ "items": [{ "path": "/notes/example/", "count": 0, "liked": false }] }`. Repeated `path` parameters support up to 50 articles. Same-origin `PUT /api/likes` with JSON `{ "path": "/notes/example/", "liked": true }` sets a like; `false` removes it. Duplicate requests are idempotent. Only published article routes are accepted, and personal responses are never publicly cached. A failed API request leaves the button's last confirmed state unchanged and allows retry. `npm run test:worker` covers real local D1 transactions, concurrency, cancellations and request validation.
+
+Both the global RSS entry (in the mobile drawer on small screens) and article metadata subscribe to the same `/rss.xml` feed. The dialog offers an ordinary feed link and a copyable address for RSS readers. The feed includes published notes and memos with their title, link, publication date and optional summary. It is not an email subscription or a per-article edit/comment notification service. RSS works on static hosting without the Worker; use `wrangler dev` to preview actual likes rather than the static-only `daybook serve`.

@@ -12,7 +12,7 @@
   "cloudflare": {
     "bindings": {
       "DB": {
-        "description": "D1 database used for Daybook page-view statistics."
+        "description": "D1 database used for Daybook page-view statistics and anonymous likes."
       }
     }
   },

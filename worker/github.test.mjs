@@ -47,7 +47,7 @@ export default { async fetch(request, env, ctx) {
 `;
 const root = fileURLToPath(new URL('.', import.meta.url));
 const modules = [{ type: 'ESModule', path: root + 'test-harness.js', contents: harness }];
-for (const file of ['index.js', 'github-sync.js', 'github-home.js']) modules.push({ type: 'ESModule', path: root + file, contents: await readFile(root + file, 'utf8') });
+for (const file of ['index.js', 'github-sync.js', 'github-home.js', 'likes.js']) modules.push({ type: 'ESModule', path: root + file, contents: await readFile(root + file, 'utf8') });
 // The bundled workerd supports this date; the production config can stay newer.
 const options = { modules, compatibilityDate: '2026-08-27', cf: false, logRequests: false };
 const runtime = new Miniflare(convertV4MiniflareOptions ? convertV4MiniflareOptions(options) : options);

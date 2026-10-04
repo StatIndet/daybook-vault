@@ -1,3 +1,4 @@
+import { handleLikes } from './likes.js';
 import { readProfile, refreshProfile } from './github-sync.js';
 import { rewriteHome } from './github-home.js';
 
@@ -97,6 +98,8 @@ export default {
   },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === '/api/likes') return handleLikes(request, env, hashVisitorToken);
 
     if (url.pathname === '/api/github') {
       if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405 });

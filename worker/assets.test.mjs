@@ -9,7 +9,7 @@ const workerDir = fileURLToPath(new URL('.', import.meta.url));
 const manifest = JSON.parse(await readFile(publicDir + 'assets-manifest.json', 'utf8'));
 const routes = JSON.parse(await readFile(publicDir + 'routes.json', 'utf8'));
 const modules = [];
-for (const file of ['index.js', 'github-sync.js', 'github-home.js']) modules.push({ type: 'ESModule', path: workerDir + file, contents: await readFile(workerDir + file, 'utf8') });
+for (const file of ['index.js', 'github-sync.js', 'github-home.js', 'likes.js']) modules.push({ type: 'ESModule', path: workerDir + file, contents: await readFile(workerDir + file, 'utf8') });
 const options = {
   modules, compatibilityDate: '2026-08-27', cf: false, logRequests: false,
   bindings: { GITHUB_USERNAME: 'StatIndet' },
