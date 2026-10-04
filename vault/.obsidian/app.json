@@ -2,5 +2,6 @@
   "attachmentFolderPath": "attachments",
   "alwaysUpdateLinks": true,
   "newFileLocation": "root",
-  "newLinkFormat": "shortest"
+  "newLinkFormat": "shortest",
+  "promptDelete": false
 }
