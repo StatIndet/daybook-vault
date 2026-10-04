@@ -1,6 +1,6 @@
 // Likes are browser-scoped records, independent of page views and giscus.
-const cookieName = 'daybook_visitor';
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+import { identityCookie, readBody } from './privacy.js';
+const cookieName = 'daybook_engagement';
 
 function json(value, status = 200, cookie) {
   const headers = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'private, no-store', Vary: 'Cookie' };
@@ -14,26 +14,6 @@ function articlePath(raw) {
     const path = decodeURI(new URL(raw, 'https://daybook.invalid').pathname).replace(/\/+$/, '') + '/';
     return /^\/(?:en_US\/)?(?:notes|memos)\/.+\/$/.test(path) ? path : null;
   } catch { return null; }
-}
-
-async function readBody(request) {
-  if (!request.body) throw new Error('Missing body');
-  const reader = request.body.getReader();
-  const chunks = [];
-  let size = 0;
-  try {
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      size += value.length;
-      if (size > 2048) { await reader.cancel(); throw new Error('Body too large'); }
-      chunks.push(value);
-    }
-  } finally { reader.releaseLock(); }
-  const bytes = new Uint8Array(size);
-  let offset = 0;
-  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
-  return JSON.parse(new TextDecoder().decode(bytes));
 }
 
 export async function handleLikes(request, env, hashVisitorToken) {
@@ -64,11 +44,12 @@ export async function handleLikes(request, env, hashVisitorToken) {
     const published = new Set(routes.map(articlePath).filter(Boolean));
     if (paths.some(path => !published.has(path))) return json({ error: 'Unknown article' }, 404);
 
-    const saved = (request.headers.get('Cookie') || '').split(';').map(part => part.trim()).find(part => part.startsWith(`${cookieName}=`))?.slice(cookieName.length + 1);
-    const token = saved && uuid.test(saved) ? saved : crypto.randomUUID();
-    const visitor = await hashVisitorToken(token, env.STATS_SALT || 'daybook-default-salt');
+    const saved = identityCookie(request, cookieName);
+    const token = saved || (desired === true ? crypto.randomUUID() : null);
+    const visitor = token ? await hashVisitorToken(token, env.STATS_SALT || 'daybook-default-salt') : '';
     const statements = [];
-    if (desired !== undefined) {
+    const mutating = desired !== undefined && token !== null;
+    if (mutating) {
       statements.push(desired
         ? env.DB.prepare('INSERT INTO likes (path, visitor_hash) VALUES (?, ?) ON CONFLICT DO NOTHING').bind(paths[0], visitor)
         : env.DB.prepare('DELETE FROM likes WHERE path = ? AND visitor_hash = ?').bind(paths[0], visitor));
@@ -80,7 +61,7 @@ export async function handleLikes(request, env, hashVisitorToken) {
     }
     // D1 batch commits the mutation and its count triggers atomically.
     const results = await env.DB.batch(statements);
-    const items = results.slice(desired === undefined ? 0 : 1).map(result => {
+    const items = results.slice(mutating ? 1 : 0).map(result => {
       const row = result.results[0];
       return { path: row.path, count: row.count, liked: Boolean(row.liked) };
     });

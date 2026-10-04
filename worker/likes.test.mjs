@@ -13,7 +13,7 @@ export default { fetch(request, env, ctx) {
   } }, ctx);
 }};`;
 const modules = [{ type: 'ESModule', path: root + 'likes-harness.js', contents: harness }];
-for (const file of ['index.js', 'likes.js', 'github-sync.js', 'github-home.js']) modules.push({ type: 'ESModule', path: root + file, contents: await readFile(root + file, 'utf8') });
+for (const file of ['index.js', 'likes.js', 'privacy.js', 'github-sync.js', 'github-home.js']) modules.push({ type: 'ESModule', path: root + file, contents: await readFile(root + file, 'utf8') });
 const options = { modules, compatibilityDate: '2026-08-27', cf: false, logRequests: false, d1Databases: ['DB'] };
 const runtime = new Miniflare(convertV4MiniflareOptions ? convertV4MiniflareOptions(options) : options);
 after(() => runtime.dispose());
@@ -31,27 +31,31 @@ const cookieFor = response => response.headers.get('Set-Cookie')?.split(';')[0];
 
 test('likes survive revisits, deduplicate retries, cancel once, and remain private to each browser', async () => {
   const first = await get(['/notes/example/']);
-  const cookie = cookieFor(first);
-  assert.match(cookie, /^daybook_visitor=/);
-  assert.match(first.headers.get('Set-Cookie'), /HttpOnly; Secure; SameSite=Lax/);
+  assert.equal(cookieFor(first), undefined, 'Reading likes must not create a Cookie');
   assert.match(first.headers.get('Cache-Control'), /no-store/);
   assert.deepEqual(await state(first), { path: '/notes/example/', count: 0, liked: false });
-  assert.equal((await state(await put('/notes/example/', true, cookie))).count, 1);
+  const created = await put('/notes/example/', true);
+  const cookie = cookieFor(created);
+  assert.match(cookie, /^daybook_engagement=/);
+  assert.match(created.headers.get('Set-Cookie'), /HttpOnly; Secure; SameSite=Lax/);
+  assert.equal((await state(created)).count, 1);
   assert.equal((await state(await put('/notes/example/', true, cookie))).count, 1);
   const revisited = await get(['/notes/example/?ui=en_US#heading'], cookie);
   assert.equal(cookieFor(revisited), undefined);
   assert.deepEqual(await state(revisited), { path: '/notes/example/', count: 1, liked: true });
   const other = await get(['/notes/example/']);
-  const otherCookie = cookieFor(other);
+  assert.equal(cookieFor(other), undefined);
   assert.deepEqual(await state(other), { path: '/notes/example/', count: 1, liked: false });
-  assert.equal((await state(await put('/notes/example/', true, otherCookie))).count, 2);
+  const otherCreated = await put('/notes/example/', true);
+  const otherCookie = cookieFor(otherCreated);
+  assert.equal((await state(otherCreated)).count, 2);
   assert.deepEqual(await state(await put('/notes/example/', false, cookie)), { path: '/notes/example/', count: 1, liked: false });
   assert.equal((await state(await put('/notes/example/', false, cookie))).count, 1);
   assert.equal((await state(await get(['/notes/example/'], otherCookie))).liked, true);
 });
 
-test('encoded memo paths, batch reads, and an existing statistics Cookie share the same identity', async () => {
-  const cookie = 'daybook_visitor=12345678-1234-4234-8234-123456789abc';
+test('encoded memo paths, batch reads, and an existing engagement Cookie share the same identity', async () => {
+  const cookie = 'daybook_engagement=12345678-1234-4234-8234-123456789abc';
   assert.equal((await state(await put('/memos/%E9%9A%8F%E8%AE%B0/', true, cookie))).path, '/memos/随记/');
   const response = await get(['/memos/随记/', '/en_US/notes/example/'], cookie);
   assert.equal(cookieFor(response), undefined);
@@ -60,7 +64,7 @@ test('encoded memo paths, batch reads, and an existing statistics Cookie share t
 });
 
 test('concurrent duplicates and cancellations keep the total consistent', async () => {
-  const cookies = Array.from({ length: 8 }, () => `daybook_visitor=${crypto.randomUUID()}`);
+  const cookies = Array.from({ length: 8 }, () => `daybook_engagement=${crypto.randomUUID()}`);
   await Promise.all(cookies.flatMap(cookie => [put('/notes/parallel/', true, cookie), put('/notes/parallel/', true, cookie)]));
   assert.equal((await state(await get(['/notes/parallel/']))).count, 8);
   await Promise.all(cookies.flatMap(cookie => [put('/notes/parallel/', false, cookie), put('/notes/parallel/', false, cookie)]));

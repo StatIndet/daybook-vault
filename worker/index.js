@@ -1,4 +1,5 @@
 import { handleLikes } from './likes.js';
+import { handlePrivacy, identityCookie, readBody } from './privacy.js';
 import { readProfile, refreshProfile } from './github-sync.js';
 import { rewriteHome } from './github-home.js';
 
@@ -100,6 +101,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/api/likes') return handleLikes(request, env, hashVisitorToken);
+    if (url.pathname === '/api/privacy') return handlePrivacy(request, env, hashVisitorToken);
 
     if (url.pathname === '/api/github') {
       if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405 });
@@ -171,8 +173,8 @@ export default {
       }
 
       try {
-        const body = await request.json();
-        if (!body.path) {
+        const body = await readBody(request);
+        if (typeof body?.path !== 'string' || !body.path) {
           return new Response("Bad Request", { status: 400 });
         }
 
@@ -199,24 +201,7 @@ export default {
           return new Response("OK", { status: 200 }); // fake success for bots
         }
 
-        // Visitor cookie logic
-        let visitorToken = "";
-        const cookieHeader = request.headers.get("Cookie") || "";
-        const cookies = cookieHeader.split(";").map(c => c.trim());
-        for (const c of cookies) {
-          if (c.startsWith("daybook_visitor=")) {
-            visitorToken = c.substring("daybook_visitor=".length);
-            break;
-          }
-        }
-
-        let isNewVisitor = false;
-        if (!visitorToken) {
-          visitorToken = crypto.randomUUID();
-          isNewVisitor = true;
-        }
-
-        const visitorHash = await hashVisitorToken(visitorToken, salt);
+        const visitorToken = body.analytics === true ? identityCookie(request, 'daybook_analytics') : null;
 
         // Prepare D1 batch
         const updatePage = env.DB.prepare(
@@ -228,12 +213,15 @@ export default {
           `UPDATE site_stats SET value = value + 1, updated_at = CURRENT_TIMESTAMP WHERE key = 'total_views'`
         );
 
-        const updateVisitor = env.DB.prepare(
-          `INSERT INTO visitors (visitor_hash, first_seen_at, last_seen_at) VALUES (?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-           ON CONFLICT(visitor_hash) DO UPDATE SET last_seen_at = CURRENT_TIMESTAMP`
-        ).bind(visitorHash);
-
-        await env.DB.batch([updatePage, updateSite, updateVisitor]);
+        const updates = body.countView === false ? [] : [updatePage, updateSite];
+        if (visitorToken) {
+          const visitorHash = await hashVisitorToken('analytics:' + visitorToken, salt);
+          updates.push(env.DB.prepare(
+            `INSERT INTO visitors (visitor_hash, first_seen_at, last_seen_at) VALUES (?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+             ON CONFLICT(visitor_hash) DO UPDATE SET last_seen_at = CURRENT_TIMESTAMP`
+          ).bind(visitorHash));
+        }
+        if (updates.length) await env.DB.batch(updates);
 
         // Fetch the new stats to return
         const getPage = env.DB.prepare(`SELECT views FROM page_stats WHERE path = ?`).bind(normalizedPath);
@@ -241,9 +229,9 @@ export default {
         const getVisitors = env.DB.prepare(`SELECT count(*) as count FROM visitors`);
 
         const results = await env.DB.batch([getPage, getSite, getVisitors]);
-        const pageViews = results[0].results?.[0]?.views || 1;
-        const totalViews = results[1].results?.[0]?.value || 1;
-        const visitors = results[2].results?.[0]?.count || 1;
+        const pageViews = results[0].results?.[0]?.views || 0;
+        const totalViews = results[1].results?.[0]?.value || 0;
+        const visitors = results[2].results?.[0]?.count || 0;
 
         const res = new Response(JSON.stringify({
           path: normalizedPath,
@@ -256,11 +244,6 @@ export default {
             "Cache-Control": "no-store"
           }
         });
-
-        if (isNewVisitor) {
-          // Set-Cookie
-          res.headers.set("Set-Cookie", `daybook_visitor=${visitorToken}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${365 * 24 * 60 * 60}`);
-        }
 
         return res;
 
@@ -296,25 +279,8 @@ export default {
         }
       }
       
-      // Visitor cookie logic
-      let visitorToken = "";
-      const cookieHeader = request.headers.get("Cookie") || "";
-      const cookies = cookieHeader.split(";").map(c => c.trim());
-      for (const c of cookies) {
-        if (c.startsWith("daybook_visitor=")) {
-          visitorToken = c.substring("daybook_visitor=".length);
-          break;
-        }
-      }
-      
-      if (!visitorToken) {
-        // Fallback for presence if cookie isn't set yet (or user blocked it)
-        // We'll generate a random UUID just for this session so presence works minimally
-        visitorToken = crypto.randomUUID();
-      }
-
-      const salt = env.STATS_SALT || "daybook-default-salt";
-      const visitorHash = await hashVisitorToken(visitorToken, salt);
+      // A connection-only identity: never read analytics or engagement Cookies.
+      const visitorHash = crypto.randomUUID();
 
       const id = env.SITE_PRESENCE.idFromName("global");
       const obj = env.SITE_PRESENCE.get(id);
