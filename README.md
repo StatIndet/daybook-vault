@@ -49,6 +49,14 @@ You can preview the site and the worker API locally using:
 npm run dev
 ```
 
+## Dependency updates
+
+Dependabot checks npm dependencies weekly and opens pull requests that update both `package.json` and `package-lock.json`. Wrangler keeps a caret version range; the `increase` strategy raises its minimum version with each update. Keep both files committed and use `npm ci` for builds.
+
+Before merging dependency updates, run `npm ci`, `npm run build` (set `DAYBOOK_BINARY` when testing an unreleased local CLI), and then `npm run test:worker`; the asset tests read the generated site. Apply local migrations with `npx wrangler d1 migrations apply DB --local`, start `npm run dev -- --local`, and check that the homepage and Worker API respond. Repeat this validation whenever changing `compatibility_date` in `wrangler.jsonc`; the locked Wrangler runtime must support that date.
+
+Each repository created from this template needs its own Dependabot configuration on its default branch. Existing repositories must copy these dependency updates too; forks must explicitly enable Dependabot version updates in GitHub settings.
+
 ## Daybook Version
 
 The Daybook CLI version used for building the site is specified in the `.daybook-version` file at the root of this repository.
