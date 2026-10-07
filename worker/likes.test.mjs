@@ -9,7 +9,7 @@ const harness = `import worker from './index.js';
 export default { fetch(request, env, ctx) {
   return worker.fetch(request, { ...env, ASSETS: { fetch: async () =>
     request.headers.has('X-Fail-Routes') ? new Response('missing', {status: 404}) :
-    Response.json(['/notes/example/', '/memos/随记/', '/en_US/notes/example/', '/notes/parallel/', '/notes/rollback/'])
+    Response.json(['/notes/example/', '/memos/随记/', '/en_US/notes/example/', '/notes/parallel/', '/notes/rollback/', '/about/', '/en_US/about/'].filter(path => !request.headers.has('X-Omit-About') || !path.endsWith('/about/')))
   } }, ctx);
 }};`;
 const modules = [{ type: 'ESModule', path: root + 'likes-harness.js', contents: harness }];
@@ -52,6 +52,27 @@ test('likes survive revisits, deduplicate retries, cancel once, and remain priva
   assert.deepEqual(await state(await put('/notes/example/', false, cookie)), { path: '/notes/example/', count: 1, liked: false });
   assert.equal((await state(await put('/notes/example/', false, cookie))).count, 1);
   assert.equal((await state(await get(['/notes/example/'], otherCookie))).liked, true);
+});
+
+test('published About pages support reading, liking, revisiting and cancelling', async () => {
+  for (const path of ['/about/', '/en_US/about/']) {
+    const first = await get([path]);
+    assert.equal(cookieFor(first), undefined);
+    assert.deepEqual(await state(first), { path, count: 0, liked: false });
+    const created = await put(path, true);
+    const cookie = cookieFor(created);
+    assert.match(cookie, /^daybook_engagement=/);
+    assert.deepEqual(await state(created), { path, count: 1, liked: true });
+    assert.deepEqual(await state(await get([path + '?ui=en_US#top'], cookie)), { path, count: 1, liked: true });
+    assert.deepEqual(await state(await put(path, true, cookie)), { path, count: 1, liked: true });
+    assert.deepEqual(await state(await put(path, false, cookie)), { path, count: 0, liked: false });
+    assert.equal((await get([path], null, { 'X-Omit-About': '1' })).status, 404);
+    assert.equal((await put(path, true, null, { 'X-Omit-About': '1' })).status, 404);
+    assert.equal((await get([path], null, { 'X-Fail-Routes': '1' })).status, 503);
+  }
+  for (const path of ['/about/child/', '/aboutness/', '/archive/']) {
+    assert.equal((await put(path, true)).status, 400);
+  }
 });
 
 test('encoded memo paths, batch reads, and an existing engagement Cookie share the same identity', async () => {

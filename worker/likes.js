@@ -12,7 +12,7 @@ function articlePath(raw) {
   if (typeof raw !== 'string' || raw.length > 1024 || !raw.startsWith('/') || raw.startsWith('//')) return null;
   try {
     const path = decodeURI(new URL(raw, 'https://daybook.invalid').pathname).replace(/\/+$/, '') + '/';
-    return /^\/(?:en_US\/)?(?:notes|memos)\/.+\/$/.test(path) ? path : null;
+    return /^\/(?:en_US\/)?(?:about|(?:notes|memos)\/.+)\/$/.test(path) ? path : null;
   } catch { return null; }
 }
 
@@ -36,7 +36,7 @@ export async function handleLikes(request, env, hashVisitorToken) {
   if (!paths.length || paths.length > 50 || paths.includes(null)) return json({ error: 'Invalid article paths' }, 400);
 
   try {
-    // Fail closed: only currently published articles may receive likes.
+    // Fail closed: only currently published articles and About pages may receive likes.
     const response = await env.ASSETS.fetch(new URL('/routes.json', url.origin));
     if (!response.ok) return json({ error: 'Routes unavailable' }, 503);
     const routes = await response.json();
